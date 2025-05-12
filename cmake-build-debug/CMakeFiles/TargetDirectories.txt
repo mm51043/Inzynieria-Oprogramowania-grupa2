@@ -1,0 +1,5 @@
+C:/Users/Lenovo/CLionProjects/medimaxzut/cmake-build-debug/CMakeFiles/medimaxzut.dir
+C:/Users/Lenovo/CLionProjects/medimaxzut/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Lenovo/CLionProjects/medimaxzut/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/Lenovo/CLionProjects/medimaxzut/cmake-build-debug/CMakeFiles/medimaxzut_autogen_timestamp_deps.dir
+C:/Users/Lenovo/CLionProjects/medimaxzut/cmake-build-debug/CMakeFiles/medimaxzut_autogen.dir
