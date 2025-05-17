@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "c:/Users/Lenovo/CLionProjects/medimaxzut/cmake-build-release"
+			"value" : "d:/Inzynieria-Oprogramowania-grupa2/medimaxzut/cmake-build-release"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -591,7 +591,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/Lenovo/CLionProjects/medimaxzut/cmake-build-release/CMakeFiles/pkgRedirects"
+			"value" : "D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/cmake-build-release/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -675,7 +675,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Users/Lenovo/CLionProjects/medimaxzut"
+			"value" : "D:/Inzynieria-Oprogramowania-grupa2/medimaxzut"
 		},
 		{
 			"name" : "CMAKE_INSTALL_BINDIR",
@@ -4083,7 +4083,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/Lenovo/CLionProjects/medimaxzut/cmake-build-release"
+			"value" : "D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/cmake-build-release"
 		},
 		{
 			"name" : "medimaxzut_IS_TOP_LEVEL",
@@ -4107,7 +4107,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/Lenovo/CLionProjects/medimaxzut"
+			"value" : "D:/Inzynieria-Oprogramowania-grupa2/medimaxzut"
 		}
 	],
 	"kind" : "cache",

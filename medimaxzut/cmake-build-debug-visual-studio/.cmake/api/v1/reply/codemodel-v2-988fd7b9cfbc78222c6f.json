@@ -43,7 +43,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "medimaxzut::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-medimaxzut-Debug-e1f4418467f08d3a0d9d.json",
+					"jsonFile" : "target-medimaxzut-Debug-0c6c5e36612429f44b61.json",
 					"name" : "medimaxzut",
 					"projectIndex" : 0
 				},
@@ -67,8 +67,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/Lenovo/CLionProjects/medimaxzut/cmake-build-debug-visual-studio",
-		"source" : "C:/Users/Lenovo/CLionProjects/medimaxzut"
+		"build" : "D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/cmake-build-debug-visual-studio",
+		"source" : "D:/Inzynieria-Oprogramowania-grupa2/medimaxzut"
 	},
 	"version" : 
 	{

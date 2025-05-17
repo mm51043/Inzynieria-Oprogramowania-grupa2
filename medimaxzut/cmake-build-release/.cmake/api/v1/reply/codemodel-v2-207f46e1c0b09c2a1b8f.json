@@ -43,7 +43,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "medimaxzut::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-medimaxzut-Release-aaaab21f487c50473560.json",
+					"jsonFile" : "target-medimaxzut-Release-495afc32c4a346143536.json",
 					"name" : "medimaxzut",
 					"projectIndex" : 0
 				},
@@ -67,8 +67,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/Lenovo/CLionProjects/medimaxzut/cmake-build-release",
-		"source" : "C:/Users/Lenovo/CLionProjects/medimaxzut"
+		"build" : "D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/cmake-build-release",
+		"source" : "D:/Inzynieria-Oprogramowania-grupa2/medimaxzut"
 	},
 	"version" : 
 	{
