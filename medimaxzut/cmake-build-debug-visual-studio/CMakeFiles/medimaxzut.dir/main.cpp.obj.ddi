@@ -1,0 +1,14 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "CMakeFiles\\medimaxzut.dir\\main.cpp.obj",
+            "outputs": [
+                "C:\\Users\\Lenovo\\CLionProjects\\medimaxzut\\cmake-build-debug-visual-studio\\vc140.pdb",
+                "CMakeFiles\\medimaxzut.dir\\main.cpp.obj.ddi"
+            ],
+            "requires": []
+        }
+    ]
+}

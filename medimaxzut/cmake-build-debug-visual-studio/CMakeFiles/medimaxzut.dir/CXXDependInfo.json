@@ -1,0 +1,34 @@
+{
+	"bmi-installation" : null,
+	"compiler-frontend-variant" : "MSVC",
+	"compiler-id" : "MSVC",
+	"compiler-simulate-id" : "",
+	"config" : "Debug",
+	"cxx-modules" : {},
+	"database-info" : null,
+	"dir-cur-bld" : "C:/Users/Lenovo/CLionProjects/medimaxzut/cmake-build-debug-visual-studio",
+	"dir-cur-src" : "C:/Users/Lenovo/CLionProjects/medimaxzut",
+	"dir-top-bld" : "C:/Users/Lenovo/CLionProjects/medimaxzut/cmake-build-debug-visual-studio",
+	"dir-top-src" : "C:/Users/Lenovo/CLionProjects/medimaxzut",
+	"exports" : [],
+	"forward-modules-from-target-dirs" : [],
+	"include-dirs" : 
+	[
+		"C:\\Program Files\\MariaDB\\MariaDB C++ Connector 64-bit\\include",
+		"medimaxzut_autogen\\include",
+		"C:\\Qt\\6.9.0\\msvc2022_64\\include\\QtCore",
+		"C:\\Qt\\6.9.0\\msvc2022_64\\include",
+		"C:\\Qt\\6.9.0\\msvc2022_64\\mkspecs\\win32-msvc"
+	],
+	"language" : "CXX",
+	"linked-target-dirs" : [],
+	"module-dir" : "C:/Users/Lenovo/CLionProjects/medimaxzut/cmake-build-debug-visual-studio/CMakeFiles/medimaxzut.dir",
+	"sources" : 
+	{
+		"CMakeFiles/medimaxzut.dir/main.cpp.obj" : 
+		{
+			"language" : "CXX",
+			"source" : "C:/Users/Lenovo/CLionProjects/medimaxzut/main.cpp"
+		}
+	}
+}
