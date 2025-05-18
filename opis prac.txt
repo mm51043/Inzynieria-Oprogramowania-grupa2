@@ -1,0 +1,5 @@
+19.05
+1 tydzień prac
+ 
+Połączone zostały za pomocą connectorów pliki z CLion oraz MariaDB.
+Kod jest wstanie wczytywać dane z bazy danych oraz jest gotowy do hashowania inputów użytkownika.

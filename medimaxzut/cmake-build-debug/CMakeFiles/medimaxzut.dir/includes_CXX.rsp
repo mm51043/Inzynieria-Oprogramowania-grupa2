@@ -1,0 +1,1 @@
+-IC:/PROGRA~1/MariaDB/MARIAD~1/include -isystem "C:/Users/milos/Inzynieria-Oprogramowania-grupa2/medimaxzut/cmake-build-debug/medimaxzut_autogen/include" -isystem C:/Qt/6.9.0/msvc2022_64/include/QtCore -isystem C:/Qt/6.9.0/msvc2022_64/include -isystem "C:/Qt/6.9.0/msvc2022_64/mkspecs/win32-msvc"
