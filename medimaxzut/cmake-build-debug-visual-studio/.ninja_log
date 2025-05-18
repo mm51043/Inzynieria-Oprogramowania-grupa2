@@ -10,3 +10,14 @@
 47	58	7692117908866374	clean	19fe6b21503aaf7f
 4	434	7692146438053148	build.ninja	64af73eccf3e085
 2989	3385	7692135900129232	medimaxzut.exe	131b6d91dc2b107a
+41	641	7692756558575200	medimaxzut_autogen/timestamp	db19e25d18962e76
+41	641	7692756558575200	medimaxzut_autogen/mocs_compilation.cpp	db19e25d18962e76
+41	641	7692756558575200	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/cmake-build-debug-visual-studio/medimaxzut_autogen/timestamp	db19e25d18962e76
+41	641	7692756558575200	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/cmake-build-debug-visual-studio/medimaxzut_autogen/mocs_compilation.cpp	db19e25d18962e76
+650	1594	7692756564657799	CMakeFiles/medimaxzut.dir/medimaxzut_autogen/mocs_compilation.cpp.obj	a9fea6da21669275
+642	1597	7692756564576718	CMakeFiles/medimaxzut.dir/main.cpp.obj.ddi	eefa6b449ac96a96
+1598	1662	7692756574718403	CMakeFiles/medimaxzut.dir/CXX.dd	27c087e0aa2a0ba2
+1598	1662	7692756574718403	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/cmake-build-debug-visual-studio/CMakeFiles/medimaxzut.dir/CXXModules.json	27c087e0aa2a0ba2
+1598	1662	7692756574718403	CMakeFiles/medimaxzut.dir/main.cpp.obj.modmap	27c087e0aa2a0ba2
+1662	5177	7692756574785018	CMakeFiles/medimaxzut.dir/main.cpp.obj	fec79e8b51e654bb
+5178	5814	7692756609934511	medimaxzut.exe	43c8c254e8f2497d
