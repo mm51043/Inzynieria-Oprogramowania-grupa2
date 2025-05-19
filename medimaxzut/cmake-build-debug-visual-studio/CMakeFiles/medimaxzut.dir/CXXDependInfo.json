@@ -18,17 +18,29 @@
 		"medimaxzut_autogen\\include",
 		"C:\\Qt\\6.9.0\\msvc2022_64\\include\\QtCore",
 		"C:\\Qt\\6.9.0\\msvc2022_64\\include",
-		"C:\\Qt\\6.9.0\\msvc2022_64\\mkspecs\\win32-msvc"
+		"C:\\Qt\\6.9.0\\msvc2022_64\\mkspecs\\win32-msvc",
+		"C:\\Qt\\6.9.0\\msvc2022_64\\include\\QtWidgets",
+		"C:\\Qt\\6.9.0\\msvc2022_64\\include\\QtGui"
 	],
 	"language" : "CXX",
 	"linked-target-dirs" : [],
 	"module-dir" : "D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/cmake-build-debug-visual-studio/CMakeFiles/medimaxzut.dir",
 	"sources" : 
 	{
+		"CMakeFiles/medimaxzut.dir/login/login.cpp.obj" : 
+		{
+			"language" : "CXX",
+			"source" : "D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/login/login.cpp"
+		},
 		"CMakeFiles/medimaxzut.dir/main.cpp.obj" : 
 		{
 			"language" : "CXX",
 			"source" : "D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/main.cpp"
+		},
+		"CMakeFiles/medimaxzut.dir/mainWindow/mainwindow.cpp.obj" : 
+		{
+			"language" : "CXX",
+			"source" : "D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/mainWindow/mainwindow.cpp"
 		}
 	}
 }

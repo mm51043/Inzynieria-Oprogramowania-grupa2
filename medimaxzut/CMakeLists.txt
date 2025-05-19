@@ -19,15 +19,20 @@ include_directories("${MDB_DIR}/include")
 link_directories("${MDB_DIR}")
 
 find_package(Qt6 COMPONENTS Core REQUIRED)
+find_package(Qt6 REQUIRED COMPONENTS Widgets)
 
 add_executable(medimaxzut
         main.cpp
-        login.h
+        login/login.h
         baza.h
+        login/loginWindow.h
+        login/login.cpp
+        mainWindow/mainwindow.cpp
 )
 
 target_link_libraries(medimaxzut
-        Qt::Core
+        Qt6::Core
+        Qt6::Widgets
         mariadbcpp
 )
 

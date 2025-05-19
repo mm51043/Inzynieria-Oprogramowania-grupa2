@@ -31,4 +31,6 @@ int checkNewP(std::string inputP) {
         return 3;
     }
 }
+
+
 #endif //LOGIN_H

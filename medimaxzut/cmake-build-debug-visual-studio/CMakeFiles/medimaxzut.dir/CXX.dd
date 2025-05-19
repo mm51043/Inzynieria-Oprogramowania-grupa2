@@ -1,3 +1,7 @@
 ninja_dyndep_version = 1.0
 build CMakeFiles\medimaxzut.dir\main.cpp.obj: dyndep
 
+build CMakeFiles\medimaxzut.dir\login\login.cpp.obj: dyndep
+
+build CMakeFiles\medimaxzut.dir\mainWindow\mainwindow.cpp.obj: dyndep
+
