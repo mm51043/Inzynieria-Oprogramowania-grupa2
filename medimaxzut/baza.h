@@ -4,7 +4,7 @@
 #include <iostream>
 inline std::unique_ptr<sql::Connection> baza() {
     try {
-        const sql::SQLString url("jdbc:mariadb://localhost:3306/bazaprzychodnia");
+        const sql::SQLString url("jdbc:mariadb://localhost:4306/bazaprzychodnia");
         const sql::Properties properties({
                     {"user", "root"},
                     {"password", ""}
