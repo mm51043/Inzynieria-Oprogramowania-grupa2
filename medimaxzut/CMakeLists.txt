@@ -33,6 +33,7 @@ add_executable(medimaxzut
         baza.h
         mainWindow/buttonName.h
         userList/listuser.cpp
+        userList/listitem.cpp
 )
 
 target_link_libraries(medimaxzut

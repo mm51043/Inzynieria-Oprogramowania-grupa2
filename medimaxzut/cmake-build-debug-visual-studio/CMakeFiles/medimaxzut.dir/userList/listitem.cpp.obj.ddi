@@ -1,0 +1,14 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "CMakeFiles\\medimaxzut.dir\\userList\\listitem.cpp.obj",
+            "outputs": [
+                "D:\\Inzynieria-Oprogramowania-grupa2\\medimaxzut\\cmake-build-debug-visual-studio\\vc140.pdb",
+                "CMakeFiles\\medimaxzut.dir\\userList\\listitem.cpp.obj.ddi"
+            ],
+            "requires": []
+        }
+    ]
+}

@@ -9,3 +9,5 @@ build CMakeFiles\medimaxzut.dir\mainWindow\navibutton.cpp.obj: dyndep
 
 build CMakeFiles\medimaxzut.dir\userList\listuser.cpp.obj: dyndep
 
+build CMakeFiles\medimaxzut.dir\userList\listitem.cpp.obj: dyndep
+

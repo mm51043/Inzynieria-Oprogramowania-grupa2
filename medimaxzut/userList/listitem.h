@@ -15,6 +15,8 @@ public:
     explicit ListItem(QWidget *parent = nullptr);
     ~ListItem();
 
+    void setData(const QString &imie, const QString &nazwisko, const QString &pesel, const QString &telefon);
+
 private:
     Ui::ListItem *ui;
 };

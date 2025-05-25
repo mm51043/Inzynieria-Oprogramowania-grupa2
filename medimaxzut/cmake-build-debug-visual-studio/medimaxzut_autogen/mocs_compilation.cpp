@@ -2,4 +2,5 @@
 #include "7UJL7PXKVV/moc_loginWindow.cpp"
 #include "OVELE2FJD2/moc_mainwindow.cpp"
 #include "OVELE2FJD2/moc_navibutton.cpp"
+#include "KVHULQYYAR/moc_listitem.cpp"
 #include "KVHULQYYAR/moc_listuser.cpp"

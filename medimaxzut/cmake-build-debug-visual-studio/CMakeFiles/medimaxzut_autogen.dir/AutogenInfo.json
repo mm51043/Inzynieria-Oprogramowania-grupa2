@@ -399,6 +399,12 @@
 			null
 		],
 		[
+			"D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/userList/listitem.h",
+			"MU",
+			"KVHULQYYAR/moc_listitem.cpp",
+			null
+		],
+		[
 			"D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/userList/listuser.h",
 			"MU",
 			"KVHULQYYAR/moc_listuser.cpp",
@@ -474,6 +480,11 @@
 		],
 		[
 			"D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/mainWindow/navibutton.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/userList/listitem.cpp",
 			"MU",
 			null
 		],

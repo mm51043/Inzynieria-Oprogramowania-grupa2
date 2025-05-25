@@ -15,6 +15,8 @@ public:
     explicit ListUser(QWidget *parent = nullptr);
     ~ListUser();
 
+    void list();
+
 private:
     Ui::ListUser *ui;
 };

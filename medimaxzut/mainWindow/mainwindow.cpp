@@ -57,7 +57,7 @@ void MainWindow::navigation(const QStringList &buttons) {
         btn->setText(name);
         btn->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
         layout->addWidget(btn);
-        if (name == "Lista Użytkowników") {
+        if (name == "Lista Pacjentów") {
             connect(btn->pushButton, &QPushButton::clicked, this, [this]() {
                 showUserList();
             });

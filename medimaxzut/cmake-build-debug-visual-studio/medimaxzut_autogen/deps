@@ -405,6 +405,8 @@ medimaxzut_autogen/timestamp: \
 	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/mainWindow/navibutton.cpp \
 	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/mainWindow/navibutton.h \
 	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/mainWindow/ui_navibutton.h \
+	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/userList/listitem.cpp \
+	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/userList/listitem.h \
 	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/userList/listuser.cpp \
 	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/userList/listuser.h \
 	D:/JetBrains/CLion\ 2025.1/bin/cmake/win/x64/share/cmake-3.31/Modules/CMakeCInformation.cmake \
@@ -449,5 +451,6 @@ medimaxzut_autogen/timestamp: \
 	D:/JetBrains/CLion\ 2025.1/bin/cmake/win/x64/share/cmake-3.31/Modules/Platform/WindowsPaths.cmake \
 	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/mainWindow/mainwindow.ui \
 	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/mainWindow/navibutton.ui \
+	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/userList/listitem.ui \
 	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/userList/listuser.ui \
 	D:/JetBrains/CLion\ 2025.1/bin/cmake/win/x64/bin/cmake.exe

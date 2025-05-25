@@ -1,0 +1,78 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "medimaxzut",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "medimaxzut::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-medimaxzut-Debug-f3bdc7aeedaf2724d94c.json",
+					"name" : "medimaxzut",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "medimaxzut_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-medimaxzut_autogen-Debug-1dc65cb96c84b122ddfd.json",
+					"name" : "medimaxzut_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "medimaxzut_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-medimaxzut_autogen_timestamp_deps-Debug-c3b394a0bee7d55f3c1c.json",
+					"name" : "medimaxzut_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/cmake-build-debug-visual-studio",
+		"source" : "D:/Inzynieria-Oprogramowania-grupa2/medimaxzut"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}
