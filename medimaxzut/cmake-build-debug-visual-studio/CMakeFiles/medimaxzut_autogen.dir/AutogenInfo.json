@@ -381,9 +381,27 @@
 			null
 		],
 		[
+			"D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/mainWindow/buttonname.h",
+			"MU",
+			"OVELE2FJD2/moc_buttonname.cpp",
+			null
+		],
+		[
 			"D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/mainWindow/mainwindow.h",
 			"MU",
 			"OVELE2FJD2/moc_mainwindow.cpp",
+			null
+		],
+		[
+			"D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/mainWindow/navibutton.h",
+			"MU",
+			"OVELE2FJD2/moc_navibutton.cpp",
+			null
+		],
+		[
+			"D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/userList/listuser.h",
+			"MU",
+			"KVHULQYYAR/moc_listuser.cpp",
 			null
 		]
 	],
@@ -451,6 +469,16 @@
 		[ "D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/main.cpp", "MU", null ],
 		[
 			"D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/mainWindow/mainwindow.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/mainWindow/navibutton.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/userList/listuser.cpp",
 			"MU",
 			null
 		]

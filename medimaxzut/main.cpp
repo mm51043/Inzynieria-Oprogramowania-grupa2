@@ -4,6 +4,7 @@
 #include <iostream>
 #include <mariadb/conncpp.hpp>
 #include "baza.h"
+#include "mainWindow/buttonname.h"
 #include "mainWindow/mainwindow.h"
 
 int main(int argc, char *argv[]) {
@@ -12,11 +13,19 @@ int main(int argc, char *argv[]) {
     //std::unique_ptr<sql::Connection> conn = baza();
     //printPacjent(conn.get());
     LoginWindow lgw;
-    MainPageWindow mpw;
+    MainWindow mpw;
     QObject::connect(&lgw, &LoginWindow::loginPass, [&]() {
         lgw.close();
         mpw.showMaximized();
+
+        std::string user = "dyrektor";
+        if (user == "admin") {
+            mpw.navigation(adminButtons);
+        } else if (user == "dyrektor") {
+            mpw.navigation(dyrektorButtons);
+        }
     });
+
     lgw.show();
     return QApplication::exec();
 }

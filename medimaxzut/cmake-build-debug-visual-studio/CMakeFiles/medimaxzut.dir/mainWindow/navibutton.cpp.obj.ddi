@@ -3,10 +3,10 @@
     "revision": 0,
     "rules": [
         {
-            "primary-output": "CMakeFiles\\medimaxzut.dir\\qtui\\login.cpp.obj",
+            "primary-output": "CMakeFiles\\medimaxzut.dir\\mainWindow\\navibutton.cpp.obj",
             "outputs": [
                 "D:\\Inzynieria-Oprogramowania-grupa2\\medimaxzut\\cmake-build-debug-visual-studio\\vc140.pdb",
-                "CMakeFiles\\medimaxzut.dir\\qtui\\login.cpp.obj.ddi"
+                "CMakeFiles\\medimaxzut.dir\\mainWindow\\navibutton.cpp.obj.ddi"
             ],
             "requires": []
         }

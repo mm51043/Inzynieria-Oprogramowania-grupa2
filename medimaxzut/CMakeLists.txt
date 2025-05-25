@@ -24,10 +24,15 @@ find_package(Qt6 REQUIRED COMPONENTS Widgets)
 add_executable(medimaxzut
         main.cpp
         login/login.h
-        baza.h
         login/loginWindow.h
         login/login.cpp
+        mainWindow/mainwindow.h
         mainWindow/mainwindow.cpp
+        mainWindow/navibutton.h
+        mainWindow/navibutton.cpp
+        baza.h
+        mainWindow/buttonName.h
+        userList/listuser.cpp
 )
 
 target_link_libraries(medimaxzut

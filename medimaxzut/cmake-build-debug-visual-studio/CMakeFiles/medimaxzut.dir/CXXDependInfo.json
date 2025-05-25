@@ -41,6 +41,16 @@
 		{
 			"language" : "CXX",
 			"source" : "D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/mainWindow/mainwindow.cpp"
+		},
+		"CMakeFiles/medimaxzut.dir/mainWindow/navibutton.cpp.obj" : 
+		{
+			"language" : "CXX",
+			"source" : "D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/mainWindow/navibutton.cpp"
+		},
+		"CMakeFiles/medimaxzut.dir/userList/listuser.cpp.obj" : 
+		{
+			"language" : "CXX",
+			"source" : "D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/userList/listuser.cpp"
 		}
 	}
 }
