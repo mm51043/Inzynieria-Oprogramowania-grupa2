@@ -3,7 +3,7 @@
 #include <mariadb/conncpp.hpp>
 #include <iostream>
 std::unique_ptr<sql::Connection> baza() {
-    const sql::SQLString url("jdbc:mariadb://localhost:3306/bazaprzychodnia");
+    const sql::SQLString url("jdbc:mariadb://localhost:4306/bazaprzechodnia");
     const sql::Properties properties({
                 {"user", "root"},
                 {"password", ""}

@@ -1,0 +1,34 @@
+19.05
+1 tydzień prac
+ 
+Połączone zostały za pomocą connectorów pliki z CLion oraz MariaDB.
+Kod jest wstanie wczytywać dane z bazy danych oraz jest gotowy do hashowania inputów użytkownika.
+
+TEST RUN:
+std::unique_ptr<sql::Connection> conn = baza();
+    printPacjent(conn.get());
+
+Results:
+1. Adam Malinowski | PESEL: 20000101001 | Tel: 700001001 | Adres: Lipowa 10/1, Szczecin | Historia: Brak
+2. Beata Kaczmarek | PESEL: 20000101002 | Tel: 700001002 | Adres: Brzozowa 12/2, Szczecin | Historia:
+3. Cezary Lis | PESEL: 20000101003 | Tel: 700001003 | Adres: Topolowa 14, Szczecin | Historia: Alergie
+4. Dorota G├│rska | PESEL: 20000101004 | Tel: 700001004 | Adres: Klonowa 5/4, Szczecin | Historia:
+5. Emil Jab┼éo┼äski | PESEL: 20000101005 | Tel: 700001005 | Adres: Jesionowa 6/5, Szczecin | Historia: Cukrzyca
+6. Filip B─ůk | PESEL: 20000101006 | Tel: 700001006 | Adres: Grabowa 9, Szczecin | Historia:
+7. Gra┼╝yna Czarnecka | PESEL: 20000101007 | Tel: 700001007 | Adres: Akacjowa 20/1, Szczecin | Historia: Problemy z serc
+em
+8. Hubert Krupa | PESEL: 20000101008 | Tel: 700001008 | Adres: Wrzosowa 21, Szczecin | Historia:
+9. Irena Urban | PESEL: 20000101009 | Tel: 700001009 | Adres: Sosnowa 22/2, Szczecin | Historia:
+10. Jerzy Rogowski | PESEL: 20000101010 | Tel: 700001010 | Adres: Bukowa 23/3, Szczecin | Historia:
+11. Katarzyna Michalak | PESEL: 20000101011 | Tel: 700001011 | Adres: ┼Üwierkowa 24, Szczecin | Historia:
+12. ┼üukasz Sawicki | PESEL: 20000101012 | Tel: 700001012 | Adres: Cisowa 25/1, Szczecin | Historia:
+13. Monika Zalewska | PESEL: 20000101013 | Tel: 700001013 | Adres: Leszczynowa 26/2, Szczecin | Historia:
+14. Norbert Marciniak | PESEL: 20000101014 | Tel: 700001014 | Adres: Jarz─Öbinowa 27, Szczecin | Historia:
+15. Olga Pawlak | PESEL: 20000101015 | Tel: 700001015 | Adres: Modrzewiowa 28/3, Szczecin | Historia:
+16. Patryk Zi─Öba | PESEL: 20000101016 | Tel: 700001016 | Adres: Olchowa 29, Szczecin | Historia:
+17. Renata Bednarek | PESEL: 20000101017 | Tel: 700001017 | Adres: Ja┼Ťminowa 30/2, Szczecin | Historia:
+18. Sebastian Ratajczak | PESEL: 20000101018 | Tel: 700001018 | Adres: Czere┼Ťniowa 31, Szczecin | Historia:
+19. Teresa Czerwi┼äska | PESEL: 20000101019 | Tel: 700001019 | Adres: Malinowa 32/3, Szczecin | Historia:
+20. Urszula Makowska | PESEL: 20000101020 | Tel: 700001020 | Adres: Poziomkowa 33, Szczecin | Historia:
+
+Kod poprawnie wyświetla wcześniej utworzone dane z tabel bazy danych.
