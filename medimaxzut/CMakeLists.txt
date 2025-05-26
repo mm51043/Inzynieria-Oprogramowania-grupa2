@@ -6,10 +6,18 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 
-# Qt Path for CMake
-if(DEFINED ENV{QT_DIR})
-    list(APPEND CMAKE_PREFIX_PATH "$ENV{QT_DIR}")
+# Replace your Qt path logic with this:
+if(NOT DEFINED Qt6_DIR AND DEFINED ENV{Qt6_DIR})
+    set(Qt6_DIR "$ENV{Qt6_DIR}" CACHE PATH "Path to Qt6 CMake files")
 endif()
+
+find_package(Qt6 REQUIRED COMPONENTS Core Widgets)
+
+# Get the correct Qt installation path
+get_target_property(QT_LIB_LOCATION Qt6::Core LOCATION)
+get_filename_component(QT_INSTALL_PATH "${QT_LIB_LOCATION}" DIRECTORY)
+get_filename_component(QT_INSTALL_PATH "${QT_INSTALL_PATH}/../.." ABSOLUTE)
+message(STATUS "Qt6 installation path: ${QT_INSTALL_PATH}")  # Debug output
 
 # MariaDB include check
 set(MDB_DIR $ENV{MDB})
@@ -42,19 +50,18 @@ add_custom_command(TARGET medimaxzut POST_BUILD
         COMMAND ${CMAKE_COMMAND} -E copy_if_different
         "${QT_INSTALL_PATH}/bin/Qt6Core.dll"
         "${QT_INSTALL_PATH}/bin/Qt6Widgets.dll"
-        "${QT_INSTALL_PATH}/plugins/platforms/qwindows.dll"
         "$<TARGET_FILE_DIR:medimaxzut>"
 )
 
 # oraz folder "platforms":
 add_custom_command(TARGET medimaxzut POST_BUILD
         COMMAND ${CMAKE_COMMAND} -E make_directory
-        "$<TARGET_FILE_DIR:medimaxzut>/platforms"
+        "$<TARGET_FILE_DIR:medimaxzut>/plugins/platforms"
 )
 add_custom_command(TARGET medimaxzut POST_BUILD
         COMMAND ${CMAKE_COMMAND} -E copy_if_different
         "${QT_INSTALL_PATH}/plugins/platforms/qwindows.dll"
-        "$<TARGET_FILE_DIR:medimaxzut>/platforms"
+        "$<TARGET_FILE_DIR:medimaxzut>/plugins/platforms"
 )
 
 # Link all libraries at once
@@ -62,7 +69,6 @@ target_link_libraries(medimaxzut
         Qt6::Core
         Qt6::Widgets
         mariadbcpp
-        SDL2::SDL2
 )
 
 # DLL copying logic (unchanged, optional)
@@ -107,5 +113,4 @@ if(WIN32)
     )
 endif ()
 
-# Optional debug output (usuń lub popraw, bo używasz Qt6 a nie Qt5)
 # message(STATUS "Using Qt from: ${Qt5Widgets_INCLUDE_DIRS}")
