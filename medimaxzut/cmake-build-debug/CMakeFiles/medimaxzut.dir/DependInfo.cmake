@@ -8,8 +8,13 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "C:/Users/milos/Inzynieria-Oprogramowania-grupa2/medimaxzut/login/login.cpp" "CMakeFiles/medimaxzut.dir/login/login.cpp.obj" "gcc" "CMakeFiles/medimaxzut.dir/login/login.cpp.obj.d"
   "C:/Users/milos/Inzynieria-Oprogramowania-grupa2/medimaxzut/main.cpp" "CMakeFiles/medimaxzut.dir/main.cpp.obj" "gcc" "CMakeFiles/medimaxzut.dir/main.cpp.obj.d"
+  "C:/Users/milos/Inzynieria-Oprogramowania-grupa2/medimaxzut/mainWindow/mainwindow.cpp" "CMakeFiles/medimaxzut.dir/mainWindow/mainwindow.cpp.obj" "gcc" "CMakeFiles/medimaxzut.dir/mainWindow/mainwindow.cpp.obj.d"
+  "C:/Users/milos/Inzynieria-Oprogramowania-grupa2/medimaxzut/mainWindow/navibutton.cpp" "CMakeFiles/medimaxzut.dir/mainWindow/navibutton.cpp.obj" "gcc" "CMakeFiles/medimaxzut.dir/mainWindow/navibutton.cpp.obj.d"
   "C:/Users/milos/Inzynieria-Oprogramowania-grupa2/medimaxzut/cmake-build-debug/medimaxzut_autogen/mocs_compilation.cpp" "CMakeFiles/medimaxzut.dir/medimaxzut_autogen/mocs_compilation.cpp.obj" "gcc" "CMakeFiles/medimaxzut.dir/medimaxzut_autogen/mocs_compilation.cpp.obj.d"
+  "C:/Users/milos/Inzynieria-Oprogramowania-grupa2/medimaxzut/userList/listitem.cpp" "CMakeFiles/medimaxzut.dir/userList/listitem.cpp.obj" "gcc" "CMakeFiles/medimaxzut.dir/userList/listitem.cpp.obj.d"
+  "C:/Users/milos/Inzynieria-Oprogramowania-grupa2/medimaxzut/userList/listuser.cpp" "CMakeFiles/medimaxzut.dir/userList/listuser.cpp.obj" "gcc" "CMakeFiles/medimaxzut.dir/userList/listuser.cpp.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

@@ -161,6 +161,30 @@ medimaxzut_autogen/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\medimaxzut_autogen.dir\build.make CMakeFiles/medimaxzut_autogen.dir/build
 .PHONY : medimaxzut_autogen/fast
 
+login/login.obj: login/login.cpp.obj
+.PHONY : login/login.obj
+
+# target to build an object file
+login/login.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\medimaxzut.dir\build.make CMakeFiles/medimaxzut.dir/login/login.cpp.obj
+.PHONY : login/login.cpp.obj
+
+login/login.i: login/login.cpp.i
+.PHONY : login/login.i
+
+# target to preprocess a source file
+login/login.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\medimaxzut.dir\build.make CMakeFiles/medimaxzut.dir/login/login.cpp.i
+.PHONY : login/login.cpp.i
+
+login/login.s: login/login.cpp.s
+.PHONY : login/login.s
+
+# target to generate assembly for a file
+login/login.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\medimaxzut.dir\build.make CMakeFiles/medimaxzut.dir/login/login.cpp.s
+.PHONY : login/login.cpp.s
+
 main.obj: main.cpp.obj
 .PHONY : main.obj
 
@@ -184,6 +208,54 @@ main.s: main.cpp.s
 main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\medimaxzut.dir\build.make CMakeFiles/medimaxzut.dir/main.cpp.s
 .PHONY : main.cpp.s
+
+mainWindow/mainwindow.obj: mainWindow/mainwindow.cpp.obj
+.PHONY : mainWindow/mainwindow.obj
+
+# target to build an object file
+mainWindow/mainwindow.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\medimaxzut.dir\build.make CMakeFiles/medimaxzut.dir/mainWindow/mainwindow.cpp.obj
+.PHONY : mainWindow/mainwindow.cpp.obj
+
+mainWindow/mainwindow.i: mainWindow/mainwindow.cpp.i
+.PHONY : mainWindow/mainwindow.i
+
+# target to preprocess a source file
+mainWindow/mainwindow.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\medimaxzut.dir\build.make CMakeFiles/medimaxzut.dir/mainWindow/mainwindow.cpp.i
+.PHONY : mainWindow/mainwindow.cpp.i
+
+mainWindow/mainwindow.s: mainWindow/mainwindow.cpp.s
+.PHONY : mainWindow/mainwindow.s
+
+# target to generate assembly for a file
+mainWindow/mainwindow.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\medimaxzut.dir\build.make CMakeFiles/medimaxzut.dir/mainWindow/mainwindow.cpp.s
+.PHONY : mainWindow/mainwindow.cpp.s
+
+mainWindow/navibutton.obj: mainWindow/navibutton.cpp.obj
+.PHONY : mainWindow/navibutton.obj
+
+# target to build an object file
+mainWindow/navibutton.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\medimaxzut.dir\build.make CMakeFiles/medimaxzut.dir/mainWindow/navibutton.cpp.obj
+.PHONY : mainWindow/navibutton.cpp.obj
+
+mainWindow/navibutton.i: mainWindow/navibutton.cpp.i
+.PHONY : mainWindow/navibutton.i
+
+# target to preprocess a source file
+mainWindow/navibutton.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\medimaxzut.dir\build.make CMakeFiles/medimaxzut.dir/mainWindow/navibutton.cpp.i
+.PHONY : mainWindow/navibutton.cpp.i
+
+mainWindow/navibutton.s: mainWindow/navibutton.cpp.s
+.PHONY : mainWindow/navibutton.s
+
+# target to generate assembly for a file
+mainWindow/navibutton.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\medimaxzut.dir\build.make CMakeFiles/medimaxzut.dir/mainWindow/navibutton.cpp.s
+.PHONY : mainWindow/navibutton.cpp.s
 
 medimaxzut_autogen/mocs_compilation.obj: medimaxzut_autogen/mocs_compilation.cpp.obj
 .PHONY : medimaxzut_autogen/mocs_compilation.obj
@@ -209,6 +281,54 @@ medimaxzut_autogen/mocs_compilation.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\medimaxzut.dir\build.make CMakeFiles/medimaxzut.dir/medimaxzut_autogen/mocs_compilation.cpp.s
 .PHONY : medimaxzut_autogen/mocs_compilation.cpp.s
 
+userList/listitem.obj: userList/listitem.cpp.obj
+.PHONY : userList/listitem.obj
+
+# target to build an object file
+userList/listitem.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\medimaxzut.dir\build.make CMakeFiles/medimaxzut.dir/userList/listitem.cpp.obj
+.PHONY : userList/listitem.cpp.obj
+
+userList/listitem.i: userList/listitem.cpp.i
+.PHONY : userList/listitem.i
+
+# target to preprocess a source file
+userList/listitem.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\medimaxzut.dir\build.make CMakeFiles/medimaxzut.dir/userList/listitem.cpp.i
+.PHONY : userList/listitem.cpp.i
+
+userList/listitem.s: userList/listitem.cpp.s
+.PHONY : userList/listitem.s
+
+# target to generate assembly for a file
+userList/listitem.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\medimaxzut.dir\build.make CMakeFiles/medimaxzut.dir/userList/listitem.cpp.s
+.PHONY : userList/listitem.cpp.s
+
+userList/listuser.obj: userList/listuser.cpp.obj
+.PHONY : userList/listuser.obj
+
+# target to build an object file
+userList/listuser.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\medimaxzut.dir\build.make CMakeFiles/medimaxzut.dir/userList/listuser.cpp.obj
+.PHONY : userList/listuser.cpp.obj
+
+userList/listuser.i: userList/listuser.cpp.i
+.PHONY : userList/listuser.i
+
+# target to preprocess a source file
+userList/listuser.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\medimaxzut.dir\build.make CMakeFiles/medimaxzut.dir/userList/listuser.cpp.i
+.PHONY : userList/listuser.cpp.i
+
+userList/listuser.s: userList/listuser.cpp.s
+.PHONY : userList/listuser.s
+
+# target to generate assembly for a file
+userList/listuser.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\medimaxzut.dir\build.make CMakeFiles/medimaxzut.dir/userList/listuser.cpp.s
+.PHONY : userList/listuser.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -221,12 +341,27 @@ help:
 	@echo ... medimaxzut_autogen
 	@echo ... medimaxzut_autogen_timestamp_deps
 	@echo ... medimaxzut
+	@echo ... login/login.obj
+	@echo ... login/login.i
+	@echo ... login/login.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... mainWindow/mainwindow.obj
+	@echo ... mainWindow/mainwindow.i
+	@echo ... mainWindow/mainwindow.s
+	@echo ... mainWindow/navibutton.obj
+	@echo ... mainWindow/navibutton.i
+	@echo ... mainWindow/navibutton.s
 	@echo ... medimaxzut_autogen/mocs_compilation.obj
 	@echo ... medimaxzut_autogen/mocs_compilation.i
 	@echo ... medimaxzut_autogen/mocs_compilation.s
+	@echo ... userList/listitem.obj
+	@echo ... userList/listitem.i
+	@echo ... userList/listitem.s
+	@echo ... userList/listuser.obj
+	@echo ... userList/listuser.i
+	@echo ... userList/listuser.s
 .PHONY : help
 
 

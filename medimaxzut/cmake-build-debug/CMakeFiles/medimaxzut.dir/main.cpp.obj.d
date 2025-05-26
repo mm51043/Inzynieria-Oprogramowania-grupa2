@@ -1,7 +1,9 @@
 CMakeFiles/medimaxzut.dir/main.cpp.obj: \
  C:\Users\milos\Inzynieria-Oprogramowania-grupa2\medimaxzut\main.cpp \
- C:/Qt/6.9.0/msvc2022_64/include/QtCore/QCoreApplication \
- C:/Qt/6.9.0/msvc2022_64/include/QtCore/qcoreapplication.h \
+ C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/QApplication \
+ C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/qapplication.h \
+ C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/qtwidgetsglobal.h \
+ C:/Qt/6.9.0/msvc2022_64/include/QtGui/qtguiglobal.h \
  C:/Qt/6.9.0/msvc2022_64/include/QtCore/qglobal.h \
  C:/Program\ Files/JetBrains/CLion\ 2025.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/type_traits \
  C:/Program\ Files/JetBrains/CLion\ 2025.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++config.h \
@@ -175,6 +177,11 @@ CMakeFiles/medimaxzut.dir/main.cpp.obj: \
  C:/Qt/6.9.0/msvc2022_64/include/QtCore/qtresource.h \
  C:/Qt/6.9.0/msvc2022_64/include/QtCore/qttranslation.h \
  C:/Qt/6.9.0/msvc2022_64/include/QtCore/qversiontagging.h \
+ C:/Qt/6.9.0/msvc2022_64/include/QtGui/qtgui-config.h \
+ C:/Qt/6.9.0/msvc2022_64/include/QtGui/qtguiexports.h \
+ C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/qtwidgets-config.h \
+ C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/qtwidgetsexports.h \
+ C:/Qt/6.9.0/msvc2022_64/include/QtCore/qcoreapplication.h \
  C:/Qt/6.9.0/msvc2022_64/include/QtCore/qstring.h \
  C:/Qt/6.9.0/msvc2022_64/include/QtCore/qchar.h \
  C:/Qt/6.9.0/msvc2022_64/include/QtCore/qcompare.h \
@@ -369,14 +376,40 @@ CMakeFiles/medimaxzut.dir/main.cpp.obj: \
  C:/Qt/6.9.0/msvc2022_64/include/QtCore/qelapsedtimer.h \
  C:/Qt/6.9.0/msvc2022_64/include/QtCore/qnativeinterface.h \
  C:/Qt/6.9.0/msvc2022_64/include/QtCore/qcoreapplication_platform.h \
- C:/Qt/6.9.0/msvc2022_64/include/QtCore/qcoreapplication.h \
- C:/Qt/6.9.0/msvc2022_64/include/QtCore/QDebug \
+ C:/Qt/6.9.0/msvc2022_64/include/QtGui/qwindowdefs.h \
+ C:/Qt/6.9.0/msvc2022_64/include/QtGui/qwindowdefs_win.h \
+ C:/Qt/6.9.0/msvc2022_64/include/QtCore/qpoint.h \
+ C:/Qt/6.9.0/msvc2022_64/include/QtCore/q23utility.h \
+ C:/Qt/6.9.0/msvc2022_64/include/QtCore/q20utility.h \
+ C:/Qt/6.9.0/msvc2022_64/include/QtCore/qsize.h \
+ C:/Qt/6.9.0/msvc2022_64/include/QtCore/qmargins.h \
+ C:/Qt/6.9.0/msvc2022_64/include/QtGui/qcursor.h \
+ C:/Qt/6.9.0/msvc2022_64/include/QtGui/qbitmap.h \
+ C:/Qt/6.9.0/msvc2022_64/include/QtGui/qpixmap.h \
+ C:/Qt/6.9.0/msvc2022_64/include/QtGui/qpaintdevice.h \
+ C:/Qt/6.9.0/msvc2022_64/include/QtCore/qrect.h \
+ C:/Qt/6.9.0/msvc2022_64/include/QtGui/qcolor.h \
+ C:/Qt/6.9.0/msvc2022_64/include/QtGui/qrgb.h \
+ C:/Qt/6.9.0/msvc2022_64/include/QtGui/qrgba64.h \
+ C:/Qt/6.9.0/msvc2022_64/include/QtCore/qshareddata.h \
+ C:/Qt/6.9.0/msvc2022_64/include/QtGui/qimage.h \
+ C:/Qt/6.9.0/msvc2022_64/include/QtGui/qpixelformat.h \
+ C:/Qt/6.9.0/msvc2022_64/include/QtGui/qtransform.h \
+ C:/Qt/6.9.0/msvc2022_64/include/QtGui/qpolygon.h \
+ C:/Qt/6.9.0/msvc2022_64/include/QtGui/qregion.h \
+ C:/Qt/6.9.0/msvc2022_64/include/QtCore/qspan.h \
+ C:/Program\ Files/JetBrains/CLion\ 2025.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cassert \
+ C:/Qt/6.9.0/msvc2022_64/include/QtCore/q20iterator.h \
+ C:/Qt/6.9.0/msvc2022_64/include/QtCore/qline.h \
+ C:/Qt/6.9.0/msvc2022_64/include/QtGui/qguiapplication.h \
+ C:/Qt/6.9.0/msvc2022_64/include/QtGui/qinputmethod.h \
+ C:/Qt/6.9.0/msvc2022_64/include/QtCore/qlocale.h \
+ C:/Qt/6.9.0/msvc2022_64/include/QtCore/qvariant.h \
  C:/Qt/6.9.0/msvc2022_64/include/QtCore/qdebug.h \
  C:/Qt/6.9.0/msvc2022_64/include/QtCore/qtextstream.h \
  C:/Qt/6.9.0/msvc2022_64/include/QtCore/qcontiguouscache.h \
  C:/Program\ Files/JetBrains/CLion\ 2025.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/climits \
  C:/Qt/6.9.0/msvc2022_64/include/QtCore/qsharedpointer.h \
- C:/Qt/6.9.0/msvc2022_64/include/QtCore/qshareddata.h \
  C:/Qt/6.9.0/msvc2022_64/include/QtCore/qsharedpointer_impl.h \
  C:/Program\ Files/JetBrains/CLion\ 2025.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/set \
  C:/Program\ Files/JetBrains/CLion\ 2025.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_set.h \
@@ -388,6 +421,52 @@ CMakeFiles/medimaxzut.dir/main.cpp.obj: \
  C:/Qt/6.9.0/msvc2022_64/include/QtCore/qset.h \
  C:/Qt/6.9.0/msvc2022_64/include/QtCore/qhash.h \
  C:/Qt/6.9.0/msvc2022_64/include/QtCore/qvarlengtharray.h \
+ C:/Qt/6.9.0/msvc2022_64/include/QtGui/qguiapplication_platform.h \
+ C:/Qt/6.9.0/msvc2022_64/include/QtCore/QDebug \
+ C:/Qt/6.9.0/msvc2022_64/include/QtCore/qdebug.h \
+ C:\Users\milos\Inzynieria-Oprogramowania-grupa2\medimaxzut\login/loginWindow.h \
+ C:\Users\milos\Inzynieria-Oprogramowania-grupa2\medimaxzut\login/loginui.h \
+ C:/Qt/6.9.0/msvc2022_64/include/QtCore/QVariant \
+ C:/Qt/6.9.0/msvc2022_64/include/QtCore/qvariant.h \
+ C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/QApplication \
+ C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/QFrame \
+ C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/qframe.h \
+ C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/qwidget.h \
+ C:/Qt/6.9.0/msvc2022_64/include/QtGui/qaction.h \
+ C:/Qt/6.9.0/msvc2022_64/include/QtGui/qkeysequence.h \
+ C:/Qt/6.9.0/msvc2022_64/include/QtGui/qicon.h \
+ C:/Qt/6.9.0/msvc2022_64/include/QtGui/qpalette.h \
+ C:/Qt/6.9.0/msvc2022_64/include/QtGui/qbrush.h \
+ C:/Qt/6.9.0/msvc2022_64/include/QtGui/qfont.h \
+ C:/Qt/6.9.0/msvc2022_64/include/QtCore/qendian.h \
+ C:/Qt/6.9.0/msvc2022_64/include/QtGui/qfontmetrics.h \
+ C:/Qt/6.9.0/msvc2022_64/include/QtGui/qfontinfo.h \
+ C:/Qt/6.9.0/msvc2022_64/include/QtGui/qfontvariableaxis.h \
+ C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/qsizepolicy.h \
+ C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/QLabel \
+ C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/qlabel.h \
+ C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/qframe.h \
+ C:/Qt/6.9.0/msvc2022_64/include/QtGui/qpicture.h \
+ C:/Qt/6.9.0/msvc2022_64/include/QtCore/qiodevice.h \
+ C:/Qt/6.9.0/msvc2022_64/include/QtGui/qtextdocument.h \
+ C:/Qt/6.9.0/msvc2022_64/include/QtCore/qurl.h \
+ C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/QLineEdit \
+ C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/qlineedit.h \
+ C:/Qt/6.9.0/msvc2022_64/include/QtGui/qtextcursor.h \
+ C:/Qt/6.9.0/msvc2022_64/include/QtGui/qtextformat.h \
+ C:/Qt/6.9.0/msvc2022_64/include/QtGui/qpen.h \
+ C:/Qt/6.9.0/msvc2022_64/include/QtGui/qtextoption.h \
+ C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/QMainWindow \
+ C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/qmainwindow.h \
+ C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/qtabwidget.h \
+ C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/QPushButton \
+ C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/qpushbutton.h \
+ C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/qabstractbutton.h \
+ C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/QStatusBar \
+ C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/qstatusbar.h \
+ C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/QWidget \
+ C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/qwidget.h \
+ C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/QMainWindow \
  C:/Program\ Files/JetBrains/CLion\ 2025.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iostream \
  C:/PROGRA~1/MariaDB/MARIAD~1/include/mariadb/conncpp.hpp \
  C:/PROGRA~1/MariaDB/MARIAD~1/include/mariadb/conncpp/Driver.hpp \
@@ -428,4 +507,16 @@ CMakeFiles/medimaxzut.dir/main.cpp.obj: \
  C:/PROGRA~1/MariaDB/MARIAD~1/include/mariadb/conncpp/jdbccompat.hpp \
  C:/PROGRA~1/MariaDB/MARIAD~1/include/mariadb/MariaDbDataSource.hpp \
  C:/PROGRA~1/MariaDB/MARIAD~1/include/mariadb/conncpp.hpp \
- C:\Users\milos\Inzynieria-Oprogramowania-grupa2\medimaxzut\baza.h
+ C:\Users\milos\Inzynieria-Oprogramowania-grupa2\medimaxzut\baza.h \
+ C:\Users\milos\Inzynieria-Oprogramowania-grupa2\medimaxzut\mainWindow/buttonname.h \
+ C:\Users\milos\Inzynieria-Oprogramowania-grupa2\medimaxzut\mainWindow/mainwindow.h \
+ C:\Users\milos\Inzynieria-Oprogramowania-grupa2\medimaxzut\mainWindow/navibutton.h \
+ C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/QWidget \
+ C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/QPushButton \
+ C:\Users\milos\Inzynieria-Oprogramowania-grupa2\medimaxzut\mainWindow/ui_navibutton.h \
+ C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/QVBoxLayout \
+ C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/qboxlayout.h \
+ C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/qlayout.h \
+ C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/qlayoutitem.h \
+ C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/qboxlayout.h \
+ C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/qgridlayout.h
