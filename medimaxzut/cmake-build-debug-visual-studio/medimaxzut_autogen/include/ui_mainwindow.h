@@ -15,6 +15,7 @@
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTextBrowser>
 #include <QtWidgets/QWidget>
@@ -26,7 +27,6 @@ class Ui_MainWindow
 public:
     QWidget *centralwidget;
     QTextBrowser *textBrowser;
-    QTextBrowser *textBrowser_2;
     QGroupBox *groupBox;
     QLabel *label_8;
     QFrame *line;
@@ -45,8 +45,8 @@ public:
     QLabel *label_10;
     QFrame *frame_4;
     QLabel *label_7;
-    QLabel *label_11;
     QFrame *MainPanel;
+    QPushButton *mainMailButton;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *MainWindow)
@@ -66,11 +66,6 @@ public:
 "      border-radius: 10px;"));
         textBrowser->setSizeAdjustPolicy(QAbstractScrollArea::SizeAdjustPolicy::AdjustToContents);
         textBrowser->setAutoFormatting(QTextEdit::AutoFormattingFlag::AutoBulletList);
-        textBrowser_2 = new QTextBrowser(centralwidget);
-        textBrowser_2->setObjectName("textBrowser_2");
-        textBrowser_2->setGeometry(QRect(1680, 10, 221, 61));
-        textBrowser_2->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 62, 154);\n"
-"      border-radius: 10px;"));
         groupBox = new QGroupBox(centralwidget);
         groupBox->setObjectName("groupBox");
         groupBox->setGeometry(QRect(10, 80, 221, 901));
@@ -217,14 +212,6 @@ public:
         label_7->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 62, 154);"));
         label_7->setTextFormat(Qt::TextFormat::RichText);
         label_7->setAlignment(Qt::AlignmentFlag::AlignCenter);
-        label_11 = new QLabel(centralwidget);
-        label_11->setObjectName("label_11");
-        label_11->setGeometry(QRect(1690, 20, 201, 41));
-        label_11->setFont(font);
-        label_11->setLayoutDirection(Qt::LayoutDirection::LeftToRight);
-        label_11->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 62, 154);"));
-        label_11->setTextFormat(Qt::TextFormat::RichText);
-        label_11->setAlignment(Qt::AlignmentFlag::AlignCenter);
         MainPanel = new QFrame(centralwidget);
         MainPanel->setObjectName("MainPanel");
         MainPanel->setGeometry(QRect(240, 80, 1471, 901));
@@ -234,17 +221,22 @@ public:
 "      border-radius: 10px;"));
         MainPanel->setFrameShape(QFrame::Shape::StyledPanel);
         MainPanel->setFrameShadow(QFrame::Shadow::Raised);
+        mainMailButton = new QPushButton(centralwidget);
+        mainMailButton->setObjectName("mainMailButton");
+        mainMailButton->setGeometry(QRect(1680, 10, 221, 61));
+        mainMailButton->setFont(font);
+        mainMailButton->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 62, 154);\n"
+"      border-radius: 10px;"));
         MainWindow->setCentralWidget(centralwidget);
         MainPanel->raise();
         textBrowser->raise();
-        textBrowser_2->raise();
         groupBox->raise();
         label_2->raise();
         frame->raise();
         frame_2->raise();
         frame_3->raise();
         frame_4->raise();
-        label_11->raise();
+        mainMailButton->raise();
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");
         MainWindow->setStatusBar(statusbar);
@@ -266,15 +258,6 @@ public:
 "</style></head><body style=\" font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">      </p>\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", nullptr));
-        textBrowser_2->setHtml(QCoreApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">      </p>\n"
-"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", nullptr));
         groupBox->setTitle(QString());
         label_8->setText(QCoreApplication::translate("MainWindow", "Nawigacja", nullptr));
         naviList->setTitle(QString());
@@ -288,7 +271,7 @@ public:
         label->setText(QCoreApplication::translate("MainWindow", "7 lipca", nullptr));
         label_10->setText(QCoreApplication::translate("MainWindow", "2727r.", nullptr));
         label_7->setText(QCoreApplication::translate("MainWindow", "21:15", nullptr));
-        label_11->setText(QCoreApplication::translate("MainWindow", "Skrzynka odbiorcza", nullptr));
+        mainMailButton->setText(QCoreApplication::translate("MainWindow", "Skrzynka Odbiorcza", nullptr));
     } // retranslateUi
 
 };

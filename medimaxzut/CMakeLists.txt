@@ -34,6 +34,9 @@ add_executable(medimaxzut
         mainWindow/buttonName.h
         userList/listuser.cpp
         userList/listitem.cpp
+        mailList/listmail.cpp
+        prescriptionAdd/prescriptionitem.cpp
+        prescriptionAdd/prescriptionwindow.cpp
 )
 
 target_link_libraries(medimaxzut

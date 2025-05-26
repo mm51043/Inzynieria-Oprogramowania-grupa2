@@ -178,7 +178,27 @@ build CMakeFiles\medimaxzut.dir\userList\listitem.cpp.obj: CXX_COMPILER__medimax
   TARGET_PDB = medimaxzut.pdb
   dyndep = CMakeFiles/medimaxzut.dir/CXX.dd
 
-build CMakeFiles\medimaxzut.dir\CXX.dd | D$:\Inzynieria-Oprogramowania-grupa2\medimaxzut\cmake-build-debug-visual-studio\CMakeFiles\medimaxzut.dir\CXXModules.json CMakeFiles\medimaxzut.dir\main.cpp.obj.modmap CMakeFiles\medimaxzut.dir\login\login.cpp.obj.modmap CMakeFiles\medimaxzut.dir\mainWindow\mainwindow.cpp.obj.modmap CMakeFiles\medimaxzut.dir\mainWindow\navibutton.cpp.obj.modmap CMakeFiles\medimaxzut.dir\userList\listuser.cpp.obj.modmap CMakeFiles\medimaxzut.dir\userList\listitem.cpp.obj.modmap: CXX_DYNDEP__medimaxzut_Debug CMakeFiles\medimaxzut.dir\main.cpp.obj.ddi CMakeFiles\medimaxzut.dir\login\login.cpp.obj.ddi CMakeFiles\medimaxzut.dir\mainWindow\mainwindow.cpp.obj.ddi CMakeFiles\medimaxzut.dir\mainWindow\navibutton.cpp.obj.ddi CMakeFiles\medimaxzut.dir\userList\listuser.cpp.obj.ddi CMakeFiles\medimaxzut.dir\userList\listitem.cpp.obj.ddi | D$:\Inzynieria-Oprogramowania-grupa2\medimaxzut\cmake-build-debug-visual-studio\CMakeFiles\medimaxzut.dir\CXXDependInfo.json
+build CMakeFiles\medimaxzut.dir\mailList\listmail.cpp.obj.ddi: CXX_SCAN__medimaxzut_Debug D$:\Inzynieria-Oprogramowania-grupa2\medimaxzut\mailList\listmail.cpp || cmake_object_order_depends_target_medimaxzut
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\medimaxzut.dir\mailList\listmail.cpp.obj.ddi.d
+  DYNDEP_INTERMEDIATE_FILE = CMakeFiles\medimaxzut.dir\mailList\listmail.cpp.obj.ddi
+  FLAGS = /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++20 -MDd -Zi -Zc:__cplusplus -permissive- -utf-8
+  INCLUDES = -I"C:\Program Files\MariaDB\MariaDB C++ Connector 64-bit\include" -external:ID:\Inzynieria-Oprogramowania-grupa2\medimaxzut\cmake-build-debug-visual-studio\medimaxzut_autogen\include -external:IC:\Qt\6.9.0\msvc2022_64\include\QtCore -external:IC:\Qt\6.9.0\msvc2022_64\include -external:IC:\Qt\6.9.0\msvc2022_64\mkspecs\win32-msvc -external:IC:\Qt\6.9.0\msvc2022_64\include\QtWidgets -external:IC:\Qt\6.9.0\msvc2022_64\include\QtGui -external:W0
+  OBJ_FILE = CMakeFiles\medimaxzut.dir\mailList\listmail.cpp.obj
+  PREPROCESSED_OUTPUT_FILE = CMakeFiles\medimaxzut.dir\mailList\listmail.cpp.obj.ddi.i
+
+build CMakeFiles\medimaxzut.dir\mailList\listmail.cpp.obj: CXX_COMPILER__medimaxzut_scanned_Debug D$:\Inzynieria-Oprogramowania-grupa2\medimaxzut\mailList\listmail.cpp | CMakeFiles\medimaxzut.dir\mailList\listmail.cpp.obj.modmap || cmake_object_order_depends_target_medimaxzut CMakeFiles\medimaxzut.dir\CXX.dd
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DYNDEP_MODULE_MAP_FILE = CMakeFiles\medimaxzut.dir\mailList\listmail.cpp.obj.modmap
+  FLAGS = /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++20 -MDd -Zi -Zc:__cplusplus -permissive- -utf-8
+  INCLUDES = -I"C:\Program Files\MariaDB\MariaDB C++ Connector 64-bit\include" -external:ID:\Inzynieria-Oprogramowania-grupa2\medimaxzut\cmake-build-debug-visual-studio\medimaxzut_autogen\include -external:IC:\Qt\6.9.0\msvc2022_64\include\QtCore -external:IC:\Qt\6.9.0\msvc2022_64\include -external:IC:\Qt\6.9.0\msvc2022_64\mkspecs\win32-msvc -external:IC:\Qt\6.9.0\msvc2022_64\include\QtWidgets -external:IC:\Qt\6.9.0\msvc2022_64\include\QtGui -external:W0
+  OBJECT_DIR = CMakeFiles\medimaxzut.dir
+  OBJECT_FILE_DIR = CMakeFiles\medimaxzut.dir\mailList
+  TARGET_COMPILE_PDB = CMakeFiles\medimaxzut.dir\
+  TARGET_PDB = medimaxzut.pdb
+  dyndep = CMakeFiles/medimaxzut.dir/CXX.dd
+
+build CMakeFiles\medimaxzut.dir\CXX.dd | D$:\Inzynieria-Oprogramowania-grupa2\medimaxzut\cmake-build-debug-visual-studio\CMakeFiles\medimaxzut.dir\CXXModules.json CMakeFiles\medimaxzut.dir\main.cpp.obj.modmap CMakeFiles\medimaxzut.dir\login\login.cpp.obj.modmap CMakeFiles\medimaxzut.dir\mainWindow\mainwindow.cpp.obj.modmap CMakeFiles\medimaxzut.dir\mainWindow\navibutton.cpp.obj.modmap CMakeFiles\medimaxzut.dir\userList\listuser.cpp.obj.modmap CMakeFiles\medimaxzut.dir\userList\listitem.cpp.obj.modmap CMakeFiles\medimaxzut.dir\mailList\listmail.cpp.obj.modmap: CXX_DYNDEP__medimaxzut_Debug CMakeFiles\medimaxzut.dir\main.cpp.obj.ddi CMakeFiles\medimaxzut.dir\login\login.cpp.obj.ddi CMakeFiles\medimaxzut.dir\mainWindow\mainwindow.cpp.obj.ddi CMakeFiles\medimaxzut.dir\mainWindow\navibutton.cpp.obj.ddi CMakeFiles\medimaxzut.dir\userList\listuser.cpp.obj.ddi CMakeFiles\medimaxzut.dir\userList\listitem.cpp.obj.ddi CMakeFiles\medimaxzut.dir\mailList\listmail.cpp.obj.ddi | D$:\Inzynieria-Oprogramowania-grupa2\medimaxzut\cmake-build-debug-visual-studio\CMakeFiles\medimaxzut.dir\CXXDependInfo.json
 
 
 # =============================================================================
@@ -188,7 +208,7 @@ build CMakeFiles\medimaxzut.dir\CXX.dd | D$:\Inzynieria-Oprogramowania-grupa2\me
 #############################################
 # Link the executable medimaxzut.exe
 
-build medimaxzut.exe: CXX_EXECUTABLE_LINKER__medimaxzut_Debug CMakeFiles\medimaxzut.dir\medimaxzut_autogen\mocs_compilation.cpp.obj CMakeFiles\medimaxzut.dir\main.cpp.obj CMakeFiles\medimaxzut.dir\login\login.cpp.obj CMakeFiles\medimaxzut.dir\mainWindow\mainwindow.cpp.obj CMakeFiles\medimaxzut.dir\mainWindow\navibutton.cpp.obj CMakeFiles\medimaxzut.dir\userList\listuser.cpp.obj CMakeFiles\medimaxzut.dir\userList\listitem.cpp.obj | C$:\Qt\6.9.0\msvc2022_64\lib\Qt6Cored.lib C$:\Qt\6.9.0\msvc2022_64\lib\Qt6Widgetsd.lib C$:\Qt\6.9.0\msvc2022_64\lib\Qt6Guid.lib || medimaxzut_autogen medimaxzut_autogen_timestamp_deps
+build medimaxzut.exe: CXX_EXECUTABLE_LINKER__medimaxzut_Debug CMakeFiles\medimaxzut.dir\medimaxzut_autogen\mocs_compilation.cpp.obj CMakeFiles\medimaxzut.dir\main.cpp.obj CMakeFiles\medimaxzut.dir\login\login.cpp.obj CMakeFiles\medimaxzut.dir\mainWindow\mainwindow.cpp.obj CMakeFiles\medimaxzut.dir\mainWindow\navibutton.cpp.obj CMakeFiles\medimaxzut.dir\userList\listuser.cpp.obj CMakeFiles\medimaxzut.dir\userList\listitem.cpp.obj CMakeFiles\medimaxzut.dir\mailList\listmail.cpp.obj | C$:\Qt\6.9.0\msvc2022_64\lib\Qt6Cored.lib C$:\Qt\6.9.0\msvc2022_64\lib\Qt6Widgetsd.lib C$:\Qt\6.9.0\msvc2022_64\lib\Qt6Guid.lib || medimaxzut_autogen medimaxzut_autogen_timestamp_deps
   FLAGS = /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -MDd -Zi
   LINK_FLAGS = /machine:x64 /debug /INCREMENTAL /subsystem:console
   LINK_LIBRARIES = C:\Qt\6.9.0\msvc2022_64\lib\Qt6Cored.lib  C:\Qt\6.9.0\msvc2022_64\lib\Qt6Widgetsd.lib  mariadbcpp.lib  C:\Qt\6.9.0\msvc2022_64\lib\Qt6Guid.lib  mpr.lib  userenv.lib  d3d11.lib  dxgi.lib  dxguid.lib  d3d12.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib

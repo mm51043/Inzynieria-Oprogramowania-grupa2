@@ -32,6 +32,11 @@
 			"language" : "CXX",
 			"source" : "D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/login/login.cpp"
 		},
+		"CMakeFiles/medimaxzut.dir/mailList/listmail.cpp.obj" : 
+		{
+			"language" : "CXX",
+			"source" : "D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/mailList/listmail.cpp"
+		},
 		"CMakeFiles/medimaxzut.dir/main.cpp.obj" : 
 		{
 			"language" : "CXX",

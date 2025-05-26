@@ -11,3 +11,5 @@ build CMakeFiles\medimaxzut.dir\userList\listuser.cpp.obj: dyndep
 
 build CMakeFiles\medimaxzut.dir\userList\listitem.cpp.obj: dyndep
 
+build CMakeFiles\medimaxzut.dir\mailList\listmail.cpp.obj: dyndep
+

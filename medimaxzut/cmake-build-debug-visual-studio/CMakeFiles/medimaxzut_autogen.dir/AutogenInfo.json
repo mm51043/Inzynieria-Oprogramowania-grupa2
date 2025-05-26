@@ -381,6 +381,12 @@
 			null
 		],
 		[
+			"D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/mailList/listmail.h",
+			"MU",
+			"AEDKIJ7ZFY/moc_listmail.cpp",
+			null
+		],
+		[
 			"D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/mainWindow/buttonname.h",
 			"MU",
 			"OVELE2FJD2/moc_buttonname.cpp",
@@ -469,6 +475,11 @@
 	[
 		[
 			"D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/login/login.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/mailList/listmail.cpp",
 			"MU",
 			null
 		],

@@ -398,6 +398,8 @@ medimaxzut_autogen/timestamp: \
 	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/login/login.h \
 	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/login/loginWindow.h \
 	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/login/loginui.h \
+	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/mailList/listmail.cpp \
+	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/mailList/listmail.h \
 	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/main.cpp \
 	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/mainWindow/buttonname.h \
 	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/mainWindow/mainwindow.cpp \
@@ -449,6 +451,7 @@ medimaxzut_autogen/timestamp: \
 	D:/JetBrains/CLion\ 2025.1/bin/cmake/win/x64/share/cmake-3.31/Modules/Platform/Windows-MSVC.cmake \
 	D:/JetBrains/CLion\ 2025.1/bin/cmake/win/x64/share/cmake-3.31/Modules/Platform/Windows.cmake \
 	D:/JetBrains/CLion\ 2025.1/bin/cmake/win/x64/share/cmake-3.31/Modules/Platform/WindowsPaths.cmake \
+	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/mailList/listmail.ui \
 	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/mainWindow/mainwindow.ui \
 	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/mainWindow/navibutton.ui \
 	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/userList/listitem.ui \

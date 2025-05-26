@@ -13,7 +13,7 @@ inline std::unique_ptr<sql::Connection> baza() {
         std::unique_ptr<sql::Connection> conn(driver->connect(url, properties));
         return conn;
     } catch (const sql::SQLException& e) {
-        std::cerr << "Error connecting to DB: " << e.what() << std::endl;
+        std::cerr << e.what() << std::endl;
         return nullptr;
     }
 }

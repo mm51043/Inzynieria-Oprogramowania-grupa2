@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "navibutton.h"
+#include "../mailList/listmail.h"
 #include "../userList/listuser.h"
 
 MainWindow::MainWindow(QWidget *parent)
@@ -13,6 +14,9 @@ MainWindow::MainWindow(QWidget *parent)
         layout->setContentsMargins(0, 0, 0, 0);
         ui->MainPanel->setLayout(layout);
     }
+    connect(ui->mainMailButton, &QPushButton::clicked, this, [this]() {
+        showMailList();
+    });
 }
 
 MainWindow::~MainWindow()
@@ -31,6 +35,21 @@ void MainWindow::showUserList() {
     }
 
     auto *listUserWidget = new ListUser();
+    layout->addWidget(listUserWidget);
+}
+
+void MainWindow::showMailList() {
+    QLayout *layout = ui->MainPanel->layout();
+
+    QLayoutItem *item;
+    while ((item = layout->takeAt(0)) != nullptr) {
+        if (item->widget()) {
+            item->widget()->deleteLater();
+        }
+        delete item;
+    }
+
+    auto *listUserWidget = new ListMail();
     layout->addWidget(listUserWidget);
 }
 

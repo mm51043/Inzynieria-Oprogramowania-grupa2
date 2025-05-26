@@ -21,6 +21,8 @@ public:
 
 private slots:
     void showUserList();
+    void showMailList();
+
 private:
 
     Ui::MainWindow *ui;
