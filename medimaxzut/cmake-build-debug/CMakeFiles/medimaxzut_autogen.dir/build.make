@@ -68,6 +68,7 @@ include CMakeFiles/medimaxzut_autogen.dir/progress.make
 CMakeFiles/medimaxzut_autogen: medimaxzut_autogen/timestamp
 
 medimaxzut_autogen/timestamp: C:/Qt/6.9.0/msvc2022_64/bin/moc.exe
+medimaxzut_autogen/timestamp: C:/Qt/6.9.0/msvc2022_64/bin/uic.exe
 medimaxzut_autogen/timestamp: CMakeFiles/medimaxzut_autogen.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=C:\Users\milos\Inzynieria-Oprogramowania-grupa2\medimaxzut\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target medimaxzut"
 	"C:\Program Files\JetBrains\CLion 2025.1\bin\cmake\win\x64\bin\cmake.exe" -E cmake_autogen C:/Users/milos/Inzynieria-Oprogramowania-grupa2/medimaxzut/cmake-build-debug/CMakeFiles/medimaxzut_autogen.dir/AutogenInfo.json Debug

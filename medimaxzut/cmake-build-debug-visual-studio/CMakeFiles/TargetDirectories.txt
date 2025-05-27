@@ -1,5 +1,0 @@
-D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/cmake-build-debug-visual-studio/CMakeFiles/medimaxzut.dir
-D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/cmake-build-debug-visual-studio/CMakeFiles/edit_cache.dir
-D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/cmake-build-debug-visual-studio/CMakeFiles/rebuild_cache.dir
-D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/cmake-build-debug-visual-studio/CMakeFiles/medimaxzut_autogen_timestamp_deps.dir
-D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/cmake-build-debug-visual-studio/CMakeFiles/medimaxzut_autogen.dir

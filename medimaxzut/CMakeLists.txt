@@ -6,10 +6,20 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 
-if(DEFINED ENV{QT_DIR})
-    list(APPEND CMAKE_PREFIX_PATH "$ENV{QT_DIR}")
+# Replace your Qt path logic with this:
+if(NOT DEFINED Qt6_DIR AND DEFINED ENV{Qt6_DIR})
+    set(Qt6_DIR "$ENV{Qt6_DIR}" CACHE PATH "Path to Qt6 CMake files")
 endif()
 
+find_package(Qt6 REQUIRED COMPONENTS Core Widgets)
+
+# Get the correct Qt installation path
+get_target_property(QT_LIB_LOCATION Qt6::Core LOCATION)
+get_filename_component(QT_INSTALL_PATH "${QT_LIB_LOCATION}" DIRECTORY)
+get_filename_component(QT_INSTALL_PATH "${QT_INSTALL_PATH}/../.." ABSOLUTE)
+message(STATUS "Qt6 installation path: ${QT_INSTALL_PATH}")  # Debug output
+
+# MariaDB include check
 set(MDB_DIR $ENV{MDB})
 if(NOT EXISTS "${MDB_DIR}/include/mariadb/conncpp.hpp")
     message(FATAL_ERROR "MariaDB Connector/C++ headers not found in ${MDB_DIR}/include")
@@ -18,9 +28,10 @@ endif()
 include_directories("${MDB_DIR}/include")
 link_directories("${MDB_DIR}")
 
-find_package(Qt6 COMPONENTS Core REQUIRED)
-find_package(Qt6 REQUIRED COMPONENTS Widgets)
+# Find Qt6
+find_package(Qt6 REQUIRED COMPONENTS Core Widgets)
 
+# Add executable BEFORE linking
 add_executable(medimaxzut
         main.cpp
         login/login.h
@@ -38,13 +49,32 @@ add_executable(medimaxzut
         prescriptionAdd/prescriptionitem.cpp
         prescriptionAdd/prescriptionwindow.cpp
 )
+add_custom_command(TARGET medimaxzut POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy_if_different
+        "${QT_INSTALL_PATH}/bin/Qt6Core.dll"
+        "${QT_INSTALL_PATH}/bin/Qt6Widgets.dll"
+        "$<TARGET_FILE_DIR:medimaxzut>"
+)
 
+# oraz folder "platforms":
+add_custom_command(TARGET medimaxzut POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E make_directory
+        "$<TARGET_FILE_DIR:medimaxzut>/plugins/platforms"
+)
+add_custom_command(TARGET medimaxzut POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy_if_different
+        "${QT_INSTALL_PATH}/plugins/platforms/qwindows.dll"
+        "$<TARGET_FILE_DIR:medimaxzut>/plugins/platforms"
+)
+
+# Link all libraries at once
 target_link_libraries(medimaxzut
         Qt6::Core
         Qt6::Widgets
         mariadbcpp
 )
 
+# DLL copying logic (unchanged, optional)
 if (WIN32 AND NOT DEFINED CMAKE_TOOLCHAIN_FILE)
     set(DEBUG_SUFFIX "")
     if (MSVC AND CMAKE_BUILD_TYPE MATCHES "Debug")
@@ -77,10 +107,13 @@ if (WIN32 AND NOT DEFINED CMAKE_TOOLCHAIN_FILE)
     endforeach ()
 endif ()
 
+# MariaDB DLL
 if(WIN32)
     add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
             COMMAND ${CMAKE_COMMAND} -E copy_if_different
             "${MDB_DIR}/mariadbcpp.dll"
             "$<TARGET_FILE_DIR:${PROJECT_NAME}>"
     )
-endif()
+endif ()
+
+# message(STATUS "Using Qt from: ${Qt5Widgets_INCLUDE_DIRS}")

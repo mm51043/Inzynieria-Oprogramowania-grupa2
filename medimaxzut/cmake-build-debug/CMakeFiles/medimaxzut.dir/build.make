@@ -101,22 +101,109 @@ CMakeFiles/medimaxzut.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/medimaxzut.dir/main.cpp.s"
 	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\milos\Inzynieria-Oprogramowania-grupa2\medimaxzut\main.cpp -o CMakeFiles\medimaxzut.dir\main.cpp.s
 
+CMakeFiles/medimaxzut.dir/login/login.cpp.obj: CMakeFiles/medimaxzut.dir/flags.make
+CMakeFiles/medimaxzut.dir/login/login.cpp.obj: CMakeFiles/medimaxzut.dir/includes_CXX.rsp
+CMakeFiles/medimaxzut.dir/login/login.cpp.obj: C:/Users/milos/Inzynieria-Oprogramowania-grupa2/medimaxzut/login/login.cpp
+CMakeFiles/medimaxzut.dir/login/login.cpp.obj: CMakeFiles/medimaxzut.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\milos\Inzynieria-Oprogramowania-grupa2\medimaxzut\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/medimaxzut.dir/login/login.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/medimaxzut.dir/login/login.cpp.obj -MF CMakeFiles\medimaxzut.dir\login\login.cpp.obj.d -o CMakeFiles\medimaxzut.dir\login\login.cpp.obj -c C:\Users\milos\Inzynieria-Oprogramowania-grupa2\medimaxzut\login\login.cpp
+
+CMakeFiles/medimaxzut.dir/login/login.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/medimaxzut.dir/login/login.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\milos\Inzynieria-Oprogramowania-grupa2\medimaxzut\login\login.cpp > CMakeFiles\medimaxzut.dir\login\login.cpp.i
+
+CMakeFiles/medimaxzut.dir/login/login.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/medimaxzut.dir/login/login.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\milos\Inzynieria-Oprogramowania-grupa2\medimaxzut\login\login.cpp -o CMakeFiles\medimaxzut.dir\login\login.cpp.s
+
+CMakeFiles/medimaxzut.dir/mainWindow/mainwindow.cpp.obj: CMakeFiles/medimaxzut.dir/flags.make
+CMakeFiles/medimaxzut.dir/mainWindow/mainwindow.cpp.obj: CMakeFiles/medimaxzut.dir/includes_CXX.rsp
+CMakeFiles/medimaxzut.dir/mainWindow/mainwindow.cpp.obj: C:/Users/milos/Inzynieria-Oprogramowania-grupa2/medimaxzut/mainWindow/mainwindow.cpp
+CMakeFiles/medimaxzut.dir/mainWindow/mainwindow.cpp.obj: CMakeFiles/medimaxzut.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\milos\Inzynieria-Oprogramowania-grupa2\medimaxzut\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/medimaxzut.dir/mainWindow/mainwindow.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/medimaxzut.dir/mainWindow/mainwindow.cpp.obj -MF CMakeFiles\medimaxzut.dir\mainWindow\mainwindow.cpp.obj.d -o CMakeFiles\medimaxzut.dir\mainWindow\mainwindow.cpp.obj -c C:\Users\milos\Inzynieria-Oprogramowania-grupa2\medimaxzut\mainWindow\mainwindow.cpp
+
+CMakeFiles/medimaxzut.dir/mainWindow/mainwindow.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/medimaxzut.dir/mainWindow/mainwindow.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\milos\Inzynieria-Oprogramowania-grupa2\medimaxzut\mainWindow\mainwindow.cpp > CMakeFiles\medimaxzut.dir\mainWindow\mainwindow.cpp.i
+
+CMakeFiles/medimaxzut.dir/mainWindow/mainwindow.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/medimaxzut.dir/mainWindow/mainwindow.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\milos\Inzynieria-Oprogramowania-grupa2\medimaxzut\mainWindow\mainwindow.cpp -o CMakeFiles\medimaxzut.dir\mainWindow\mainwindow.cpp.s
+
+CMakeFiles/medimaxzut.dir/mainWindow/navibutton.cpp.obj: CMakeFiles/medimaxzut.dir/flags.make
+CMakeFiles/medimaxzut.dir/mainWindow/navibutton.cpp.obj: CMakeFiles/medimaxzut.dir/includes_CXX.rsp
+CMakeFiles/medimaxzut.dir/mainWindow/navibutton.cpp.obj: C:/Users/milos/Inzynieria-Oprogramowania-grupa2/medimaxzut/mainWindow/navibutton.cpp
+CMakeFiles/medimaxzut.dir/mainWindow/navibutton.cpp.obj: CMakeFiles/medimaxzut.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\milos\Inzynieria-Oprogramowania-grupa2\medimaxzut\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/medimaxzut.dir/mainWindow/navibutton.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/medimaxzut.dir/mainWindow/navibutton.cpp.obj -MF CMakeFiles\medimaxzut.dir\mainWindow\navibutton.cpp.obj.d -o CMakeFiles\medimaxzut.dir\mainWindow\navibutton.cpp.obj -c C:\Users\milos\Inzynieria-Oprogramowania-grupa2\medimaxzut\mainWindow\navibutton.cpp
+
+CMakeFiles/medimaxzut.dir/mainWindow/navibutton.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/medimaxzut.dir/mainWindow/navibutton.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\milos\Inzynieria-Oprogramowania-grupa2\medimaxzut\mainWindow\navibutton.cpp > CMakeFiles\medimaxzut.dir\mainWindow\navibutton.cpp.i
+
+CMakeFiles/medimaxzut.dir/mainWindow/navibutton.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/medimaxzut.dir/mainWindow/navibutton.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\milos\Inzynieria-Oprogramowania-grupa2\medimaxzut\mainWindow\navibutton.cpp -o CMakeFiles\medimaxzut.dir\mainWindow\navibutton.cpp.s
+
+CMakeFiles/medimaxzut.dir/userList/listuser.cpp.obj: CMakeFiles/medimaxzut.dir/flags.make
+CMakeFiles/medimaxzut.dir/userList/listuser.cpp.obj: CMakeFiles/medimaxzut.dir/includes_CXX.rsp
+CMakeFiles/medimaxzut.dir/userList/listuser.cpp.obj: C:/Users/milos/Inzynieria-Oprogramowania-grupa2/medimaxzut/userList/listuser.cpp
+CMakeFiles/medimaxzut.dir/userList/listuser.cpp.obj: CMakeFiles/medimaxzut.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\milos\Inzynieria-Oprogramowania-grupa2\medimaxzut\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/medimaxzut.dir/userList/listuser.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/medimaxzut.dir/userList/listuser.cpp.obj -MF CMakeFiles\medimaxzut.dir\userList\listuser.cpp.obj.d -o CMakeFiles\medimaxzut.dir\userList\listuser.cpp.obj -c C:\Users\milos\Inzynieria-Oprogramowania-grupa2\medimaxzut\userList\listuser.cpp
+
+CMakeFiles/medimaxzut.dir/userList/listuser.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/medimaxzut.dir/userList/listuser.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\milos\Inzynieria-Oprogramowania-grupa2\medimaxzut\userList\listuser.cpp > CMakeFiles\medimaxzut.dir\userList\listuser.cpp.i
+
+CMakeFiles/medimaxzut.dir/userList/listuser.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/medimaxzut.dir/userList/listuser.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\milos\Inzynieria-Oprogramowania-grupa2\medimaxzut\userList\listuser.cpp -o CMakeFiles\medimaxzut.dir\userList\listuser.cpp.s
+
+CMakeFiles/medimaxzut.dir/userList/listitem.cpp.obj: CMakeFiles/medimaxzut.dir/flags.make
+CMakeFiles/medimaxzut.dir/userList/listitem.cpp.obj: CMakeFiles/medimaxzut.dir/includes_CXX.rsp
+CMakeFiles/medimaxzut.dir/userList/listitem.cpp.obj: C:/Users/milos/Inzynieria-Oprogramowania-grupa2/medimaxzut/userList/listitem.cpp
+CMakeFiles/medimaxzut.dir/userList/listitem.cpp.obj: CMakeFiles/medimaxzut.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\milos\Inzynieria-Oprogramowania-grupa2\medimaxzut\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/medimaxzut.dir/userList/listitem.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/medimaxzut.dir/userList/listitem.cpp.obj -MF CMakeFiles\medimaxzut.dir\userList\listitem.cpp.obj.d -o CMakeFiles\medimaxzut.dir\userList\listitem.cpp.obj -c C:\Users\milos\Inzynieria-Oprogramowania-grupa2\medimaxzut\userList\listitem.cpp
+
+CMakeFiles/medimaxzut.dir/userList/listitem.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/medimaxzut.dir/userList/listitem.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\milos\Inzynieria-Oprogramowania-grupa2\medimaxzut\userList\listitem.cpp > CMakeFiles\medimaxzut.dir\userList\listitem.cpp.i
+
+CMakeFiles/medimaxzut.dir/userList/listitem.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/medimaxzut.dir/userList/listitem.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\milos\Inzynieria-Oprogramowania-grupa2\medimaxzut\userList\listitem.cpp -o CMakeFiles\medimaxzut.dir\userList\listitem.cpp.s
+
 # Object files for target medimaxzut
 medimaxzut_OBJECTS = \
 "CMakeFiles/medimaxzut.dir/medimaxzut_autogen/mocs_compilation.cpp.obj" \
-"CMakeFiles/medimaxzut.dir/main.cpp.obj"
+"CMakeFiles/medimaxzut.dir/main.cpp.obj" \
+"CMakeFiles/medimaxzut.dir/login/login.cpp.obj" \
+"CMakeFiles/medimaxzut.dir/mainWindow/mainwindow.cpp.obj" \
+"CMakeFiles/medimaxzut.dir/mainWindow/navibutton.cpp.obj" \
+"CMakeFiles/medimaxzut.dir/userList/listuser.cpp.obj" \
+"CMakeFiles/medimaxzut.dir/userList/listitem.cpp.obj"
 
 # External object files for target medimaxzut
 medimaxzut_EXTERNAL_OBJECTS =
 
 medimaxzut.exe: CMakeFiles/medimaxzut.dir/medimaxzut_autogen/mocs_compilation.cpp.obj
 medimaxzut.exe: CMakeFiles/medimaxzut.dir/main.cpp.obj
+medimaxzut.exe: CMakeFiles/medimaxzut.dir/login/login.cpp.obj
+medimaxzut.exe: CMakeFiles/medimaxzut.dir/mainWindow/mainwindow.cpp.obj
+medimaxzut.exe: CMakeFiles/medimaxzut.dir/mainWindow/navibutton.cpp.obj
+medimaxzut.exe: CMakeFiles/medimaxzut.dir/userList/listuser.cpp.obj
+medimaxzut.exe: CMakeFiles/medimaxzut.dir/userList/listitem.cpp.obj
 medimaxzut.exe: CMakeFiles/medimaxzut.dir/build.make
+medimaxzut.exe: C:/Qt/6.9.0/msvc2022_64/lib/Qt6Widgetsd.lib
+medimaxzut.exe: C:/Qt/6.9.0/msvc2022_64/lib/Qt6Guid.lib
 medimaxzut.exe: C:/Qt/6.9.0/msvc2022_64/lib/Qt6Cored.lib
 medimaxzut.exe: CMakeFiles/medimaxzut.dir/linkLibs.rsp
 medimaxzut.exe: CMakeFiles/medimaxzut.dir/objects1.rsp
 medimaxzut.exe: CMakeFiles/medimaxzut.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\milos\Inzynieria-Oprogramowania-grupa2\medimaxzut\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable medimaxzut.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\milos\Inzynieria-Oprogramowania-grupa2\medimaxzut\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable medimaxzut.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\medimaxzut.dir\link.txt --verbose=$(VERBOSE)
 	"C:\Program Files\JetBrains\CLion 2025.1\bin\cmake\win\x64\bin\cmake.exe" -E make_directory C:/Users/milos/Inzynieria-Oprogramowania-grupa2/medimaxzut/cmake-build-debug/plugins/platforms/
 	"C:\Program Files\JetBrains\CLion 2025.1\bin\cmake\win\x64\bin\cmake.exe" -E copy C:\Qt\6.9.0\msvc2022_64/plugins/platforms/qwindows.dll C:/Users/milos/Inzynieria-Oprogramowania-grupa2/medimaxzut/cmake-build-debug/plugins/platforms/
