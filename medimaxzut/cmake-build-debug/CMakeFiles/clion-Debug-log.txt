@@ -1,5 +1,0 @@
-"C:\Program Files\JetBrains\CLion 2025.1\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "MinGW Makefiles" -S C:\Users\milos\Inzynieria-Oprogramowania-grupa2\medimaxzut -B C:\Users\milos\Inzynieria-Oprogramowania-grupa2\medimaxzut\cmake-build-debug
--- Could NOT find WrapVulkanHeaders (missing: Vulkan_INCLUDE_DIR) 
--- Configuring done (0.7s)
--- Generating done (0.4s)
--- Build files have been written to: C:/Users/milos/Inzynieria-Oprogramowania-grupa2/medimaxzut/cmake-build-debug

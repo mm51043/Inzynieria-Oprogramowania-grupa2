@@ -387,6 +387,18 @@
 			null
 		],
 		[
+			"D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/mailList/mailext.h",
+			"MU",
+			"AEDKIJ7ZFY/moc_mailext.cpp",
+			null
+		],
+		[
+			"D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/mailList/mailitem.h",
+			"MU",
+			"AEDKIJ7ZFY/moc_mailitem.cpp",
+			null
+		],
+		[
 			"D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/mainWindow/buttonname.h",
 			"MU",
 			"OVELE2FJD2/moc_buttonname.cpp",
@@ -402,6 +414,18 @@
 			"D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/mainWindow/navibutton.h",
 			"MU",
 			"OVELE2FJD2/moc_navibutton.cpp",
+			null
+		],
+		[
+			"D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/prescriptionAdd/prescriptionitem.h",
+			"MU",
+			"5HNRRA4SB5/moc_prescriptionitem.cpp",
+			null
+		],
+		[
+			"D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/prescriptionAdd/prescriptionwindow.h",
+			"MU",
+			"5HNRRA4SB5/moc_prescriptionwindow.cpp",
 			null
 		],
 		[
@@ -483,6 +507,16 @@
 			"MU",
 			null
 		],
+		[
+			"D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/mailList/mailext.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/mailList/mailitem.cpp",
+			"MU",
+			null
+		],
 		[ "D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/main.cpp", "MU", null ],
 		[
 			"D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/mainWindow/mainwindow.cpp",
@@ -491,6 +525,16 @@
 		],
 		[
 			"D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/mainWindow/navibutton.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/prescriptionAdd/prescriptionitem.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/prescriptionAdd/prescriptionwindow.cpp",
 			"MU",
 			null
 		],

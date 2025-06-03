@@ -37,6 +37,16 @@
 			"language" : "CXX",
 			"source" : "D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/mailList/listmail.cpp"
 		},
+		"CMakeFiles/medimaxzut.dir/mailList/mailext.cpp.obj" : 
+		{
+			"language" : "CXX",
+			"source" : "D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/mailList/mailext.cpp"
+		},
+		"CMakeFiles/medimaxzut.dir/mailList/mailitem.cpp.obj" : 
+		{
+			"language" : "CXX",
+			"source" : "D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/mailList/mailitem.cpp"
+		},
 		"CMakeFiles/medimaxzut.dir/main.cpp.obj" : 
 		{
 			"language" : "CXX",
@@ -51,6 +61,16 @@
 		{
 			"language" : "CXX",
 			"source" : "D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/mainWindow/navibutton.cpp"
+		},
+		"CMakeFiles/medimaxzut.dir/prescriptionAdd/prescriptionitem.cpp.obj" : 
+		{
+			"language" : "CXX",
+			"source" : "D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/prescriptionAdd/prescriptionitem.cpp"
+		},
+		"CMakeFiles/medimaxzut.dir/prescriptionAdd/prescriptionwindow.cpp.obj" : 
+		{
+			"language" : "CXX",
+			"source" : "D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/prescriptionAdd/prescriptionwindow.cpp"
 		},
 		"CMakeFiles/medimaxzut.dir/userList/listitem.cpp.obj" : 
 		{

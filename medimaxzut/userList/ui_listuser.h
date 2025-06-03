@@ -14,7 +14,6 @@
 #include <QtWidgets/QFrame>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QScrollArea>
-#include <QtWidgets/QTextBrowser>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -22,22 +21,23 @@ QT_BEGIN_NAMESPACE
 class Ui_ListUser
 {
 public:
+    QFrame *mainFrame;
+    QFrame *frame;
     QFrame *frame_7;
     QScrollArea *scrollArea;
     QWidget *List;
-    QLabel *label_21;
-    QFrame *line_11;
-    QLabel *label_17;
     QFrame *line_7;
-    QLabel *label_22;
-    QFrame *line_3;
-    QLabel *label_20;
-    QFrame *line_13;
-    QFrame *line_10;
-    QTextBrowser *textBrowser_6;
     QFrame *line_6;
-    QLabel *label_23;
-    QLabel *label_24;
+    QFrame *line_3;
+    QFrame *line_13;
+    QFrame *line_11;
+    QLabel *label4;
+    QFrame *line_10;
+    QLabel *label3;
+    QLabel *label1;
+    QLabel *label2;
+    QLabel *whatListLabel;
+    QLabel *title;
 
     void setupUi(QWidget *ListUser)
     {
@@ -47,15 +47,29 @@ public:
         ListUser->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 62, 154);\n"
 "border-radius: 10px;\n"
 ""));
-        frame_7 = new QFrame(ListUser);
+        mainFrame = new QFrame(ListUser);
+        mainFrame->setObjectName("mainFrame");
+        mainFrame->setGeometry(QRect(0, 0, 1471, 901));
+        mainFrame->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 62, 154);\n"
+"border-radius: 10px;"));
+        mainFrame->setFrameShape(QFrame::Shape::StyledPanel);
+        mainFrame->setFrameShadow(QFrame::Shadow::Raised);
+        frame = new QFrame(mainFrame);
+        frame->setObjectName("frame");
+        frame->setGeometry(QRect(20, 90, 1431, 791));
+        frame->setStyleSheet(QString::fromUtf8("background-color: rgb(50, 149, 168);\n"
+"border-radius: 10px;"));
+        frame->setFrameShape(QFrame::Shape::StyledPanel);
+        frame->setFrameShadow(QFrame::Shadow::Raised);
+        frame_7 = new QFrame(frame);
         frame_7->setObjectName("frame_7");
-        frame_7->setGeometry(QRect(50, 200, 1371, 651));
+        frame_7->setGeometry(QRect(30, 110, 1371, 641));
         frame_7->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 41, 94);"));
         frame_7->setFrameShape(QFrame::Shape::StyledPanel);
         frame_7->setFrameShadow(QFrame::Shadow::Raised);
         scrollArea = new QScrollArea(frame_7);
         scrollArea->setObjectName("scrollArea");
-        scrollArea->setGeometry(QRect(10, 0, 1351, 651));
+        scrollArea->setGeometry(QRect(40, 0, 1321, 651));
         scrollArea->setStyleSheet(QString::fromUtf8("QScrollArea QScrollBar:vertical {\n"
 "    border: 3px solid white;\n"
 "    border-radius: 8px;\n"
@@ -82,118 +96,112 @@ public:
         scrollArea->setWidgetResizable(true);
         List = new QWidget();
         List->setObjectName("List");
-        List->setGeometry(QRect(0, 0, 1351, 651));
+        List->setGeometry(QRect(0, 0, 1321, 651));
         List->setLayoutDirection(Qt::LayoutDirection::LeftToRight);
         scrollArea->setWidget(List);
-        label_21 = new QLabel(ListUser);
-        label_21->setObjectName("label_21");
-        label_21->setGeometry(QRect(340, 150, 251, 31));
-        QFont font;
-        font.setPointSize(14);
-        font.setBold(true);
-        label_21->setFont(font);
-        label_21->setLayoutDirection(Qt::LayoutDirection::LeftToRight);
-        label_21->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 41, 94);"));
-        label_21->setTextFormat(Qt::TextFormat::RichText);
-        label_21->setAlignment(Qt::AlignmentFlag::AlignCenter);
-        line_11 = new QFrame(ListUser);
-        line_11->setObjectName("line_11");
-        line_11->setGeometry(QRect(880, 150, 3, 41));
-        line_11->setStyleSheet(QString::fromUtf8("background-color: white;"));
-        line_11->setFrameShape(QFrame::Shape::VLine);
-        line_11->setFrameShadow(QFrame::Shadow::Sunken);
-        label_17 = new QLabel(ListUser);
-        label_17->setObjectName("label_17");
-        label_17->setGeometry(QRect(30, 20, 301, 41));
-        QFont font1;
-        font1.setPointSize(20);
-        font1.setBold(true);
-        label_17->setFont(font1);
-        label_17->setLayoutDirection(Qt::LayoutDirection::LeftToRight);
-        label_17->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 62, 154);"));
-        label_17->setTextFormat(Qt::TextFormat::RichText);
-        label_17->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
-        line_7 = new QFrame(ListUser);
+        line_7 = new QFrame(frame);
         line_7->setObjectName("line_7");
-        line_7->setGeometry(QRect(50, 840, 1371, 20));
+        line_7->setGeometry(QRect(30, 740, 1391, 20));
         line_7->setStyleSheet(QString::fromUtf8("background-color: white;"));
         line_7->setFrameShape(QFrame::Shape::HLine);
         line_7->setFrameShadow(QFrame::Shadow::Sunken);
-        label_22 = new QLabel(ListUser);
-        label_22->setObjectName("label_22");
-        label_22->setGeometry(QRect(90, 150, 221, 31));
-        label_22->setFont(font);
-        label_22->setLayoutDirection(Qt::LayoutDirection::LeftToRight);
-        label_22->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 41, 94);"));
-        label_22->setTextFormat(Qt::TextFormat::RichText);
-        label_22->setAlignment(Qt::AlignmentFlag::AlignCenter);
-        line_3 = new QFrame(ListUser);
-        line_3->setObjectName("line_3");
-        line_3->setGeometry(QRect(50, 190, 1371, 20));
-        line_3->setStyleSheet(QString::fromUtf8("background-color: white;"));
-        line_3->setFrameShape(QFrame::Shape::HLine);
-        line_3->setFrameShadow(QFrame::Shadow::Sunken);
-        label_20 = new QLabel(ListUser);
-        label_20->setObjectName("label_20");
-        label_20->setGeometry(QRect(90, 90, 1281, 41));
-        label_20->setFont(font1);
-        label_20->setLayoutDirection(Qt::LayoutDirection::LeftToRight);
-        label_20->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 41, 94);"));
-        label_20->setTextFormat(Qt::TextFormat::RichText);
-        label_20->setAlignment(Qt::AlignmentFlag::AlignCenter);
-        line_13 = new QFrame(ListUser);
-        line_13->setObjectName("line_13");
-        line_13->setGeometry(QRect(320, 150, 3, 41));
-        line_13->setStyleSheet(QString::fromUtf8("background-color: white;"));
-        line_13->setFrameShape(QFrame::Shape::VLine);
-        line_13->setFrameShadow(QFrame::Shadow::Sunken);
-        line_10 = new QFrame(ListUser);
-        line_10->setObjectName("line_10");
-        line_10->setGeometry(QRect(610, 150, 3, 41));
-        line_10->setStyleSheet(QString::fromUtf8("background-color: white;"));
-        line_10->setFrameShape(QFrame::Shape::VLine);
-        line_10->setFrameShadow(QFrame::Shadow::Sunken);
-        textBrowser_6 = new QTextBrowser(ListUser);
-        textBrowser_6->setObjectName("textBrowser_6");
-        textBrowser_6->setGeometry(QRect(20, 80, 1431, 801));
-        textBrowser_6->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 41, 94);\n"
-"border-radius: 10px;"));
-        line_6 = new QFrame(ListUser);
+        line_6 = new QFrame(frame);
         line_6->setObjectName("line_6");
-        line_6->setGeometry(QRect(1120, 150, 3, 41));
+        line_6->setGeometry(QRect(1120, 60, 3, 41));
         line_6->setStyleSheet(QString::fromUtf8("background-color: white;"));
         line_6->setFrameShape(QFrame::Shape::VLine);
         line_6->setFrameShadow(QFrame::Shadow::Sunken);
-        label_23 = new QLabel(ListUser);
-        label_23->setObjectName("label_23");
-        label_23->setGeometry(QRect(630, 150, 231, 31));
-        label_23->setFont(font);
-        label_23->setLayoutDirection(Qt::LayoutDirection::LeftToRight);
-        label_23->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 41, 94);"));
-        label_23->setTextFormat(Qt::TextFormat::RichText);
-        label_23->setAlignment(Qt::AlignmentFlag::AlignCenter);
-        label_24 = new QLabel(ListUser);
-        label_24->setObjectName("label_24");
-        label_24->setGeometry(QRect(900, 150, 211, 31));
-        label_24->setFont(font);
-        label_24->setLayoutDirection(Qt::LayoutDirection::LeftToRight);
-        label_24->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 41, 94);"));
-        label_24->setTextFormat(Qt::TextFormat::RichText);
-        label_24->setAlignment(Qt::AlignmentFlag::AlignCenter);
-        textBrowser_6->raise();
-        label_17->raise();
-        line_6->raise();
-        label_24->raise();
-        label_20->raise();
-        line_10->raise();
-        label_21->raise();
-        line_3->raise();
-        label_22->raise();
-        label_23->raise();
-        line_13->raise();
+        line_3 = new QFrame(frame);
+        line_3->setObjectName("line_3");
+        line_3->setGeometry(QRect(30, 100, 1371, 20));
+        line_3->setStyleSheet(QString::fromUtf8("background-color: white;"));
+        line_3->setFrameShape(QFrame::Shape::HLine);
+        line_3->setFrameShadow(QFrame::Shadow::Sunken);
+        line_13 = new QFrame(frame);
+        line_13->setObjectName("line_13");
+        line_13->setGeometry(QRect(320, 60, 3, 41));
+        line_13->setStyleSheet(QString::fromUtf8("background-color: white;"));
+        line_13->setFrameShape(QFrame::Shape::VLine);
+        line_13->setFrameShadow(QFrame::Shadow::Sunken);
+        line_11 = new QFrame(frame);
+        line_11->setObjectName("line_11");
+        line_11->setGeometry(QRect(880, 60, 3, 41));
+        line_11->setStyleSheet(QString::fromUtf8("background-color: white;"));
+        line_11->setFrameShape(QFrame::Shape::VLine);
+        line_11->setFrameShadow(QFrame::Shadow::Sunken);
+        label4 = new QLabel(frame);
+        label4->setObjectName("label4");
+        label4->setGeometry(QRect(900, 60, 211, 31));
+        QFont font;
+        font.setPointSize(14);
+        font.setBold(true);
+        label4->setFont(font);
+        label4->setLayoutDirection(Qt::LayoutDirection::LeftToRight);
+        label4->setStyleSheet(QString::fromUtf8(""));
+        label4->setTextFormat(Qt::TextFormat::RichText);
+        label4->setAlignment(Qt::AlignmentFlag::AlignCenter);
+        line_10 = new QFrame(frame);
+        line_10->setObjectName("line_10");
+        line_10->setGeometry(QRect(610, 60, 3, 41));
+        line_10->setStyleSheet(QString::fromUtf8("background-color: white;"));
+        line_10->setFrameShape(QFrame::Shape::VLine);
+        line_10->setFrameShadow(QFrame::Shadow::Sunken);
+        label3 = new QLabel(frame);
+        label3->setObjectName("label3");
+        label3->setGeometry(QRect(620, 60, 251, 31));
+        label3->setFont(font);
+        label3->setLayoutDirection(Qt::LayoutDirection::LeftToRight);
+        label3->setStyleSheet(QString::fromUtf8(""));
+        label3->setTextFormat(Qt::TextFormat::RichText);
+        label3->setAlignment(Qt::AlignmentFlag::AlignCenter);
+        label1 = new QLabel(frame);
+        label1->setObjectName("label1");
+        label1->setGeometry(QRect(90, 60, 221, 31));
+        label1->setFont(font);
+        label1->setLayoutDirection(Qt::LayoutDirection::LeftToRight);
+        label1->setStyleSheet(QString::fromUtf8(""));
+        label1->setTextFormat(Qt::TextFormat::RichText);
+        label1->setAlignment(Qt::AlignmentFlag::AlignCenter);
+        label2 = new QLabel(frame);
+        label2->setObjectName("label2");
+        label2->setGeometry(QRect(330, 60, 271, 31));
+        label2->setFont(font);
+        label2->setLayoutDirection(Qt::LayoutDirection::LeftToRight);
+        label2->setStyleSheet(QString::fromUtf8(""));
+        label2->setTextFormat(Qt::TextFormat::RichText);
+        label2->setAlignment(Qt::AlignmentFlag::AlignCenter);
+        whatListLabel = new QLabel(frame);
+        whatListLabel->setObjectName("whatListLabel");
+        whatListLabel->setGeometry(QRect(30, 10, 1391, 41));
+        QFont font1;
+        font1.setPointSize(20);
+        font1.setBold(true);
+        whatListLabel->setFont(font1);
+        whatListLabel->setLayoutDirection(Qt::LayoutDirection::LeftToRight);
+        whatListLabel->setStyleSheet(QString::fromUtf8(""));
+        whatListLabel->setTextFormat(Qt::TextFormat::RichText);
+        whatListLabel->setAlignment(Qt::AlignmentFlag::AlignCenter);
         line_7->raise();
-        line_11->raise();
+        line_6->raise();
+        line_3->raise();
         frame_7->raise();
+        line_13->raise();
+        line_11->raise();
+        label4->raise();
+        line_10->raise();
+        label3->raise();
+        label1->raise();
+        label2->raise();
+        whatListLabel->raise();
+        title = new QLabel(mainFrame);
+        title->setObjectName("title");
+        title->setGeometry(QRect(20, 20, 361, 61));
+        title->setFont(font1);
+        title->setLayoutDirection(Qt::LayoutDirection::LeftToRight);
+        title->setStyleSheet(QString::fromUtf8("background-color: rgb(50, 149, 168);\n"
+"border-radius: 10px;"));
+        title->setTextFormat(Qt::TextFormat::RichText);
+        title->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
 
         retranslateUi(ListUser);
 
@@ -203,12 +211,12 @@ public:
     void retranslateUi(QWidget *ListUser)
     {
         ListUser->setWindowTitle(QCoreApplication::translate("ListUser", "Form", nullptr));
-        label_21->setText(QCoreApplication::translate("ListUser", "Nazwisko", nullptr));
-        label_17->setText(QCoreApplication::translate("ListUser", "Lista pracownik\303\263w", nullptr));
-        label_22->setText(QCoreApplication::translate("ListUser", "Imi\304\231", nullptr));
-        label_20->setText(QCoreApplication::translate("ListUser", "Pracownicy", nullptr));
-        label_23->setText(QCoreApplication::translate("ListUser", "Typ", nullptr));
-        label_24->setText(QCoreApplication::translate("ListUser", "Ostatnie logowanie", nullptr));
+        label4->setText(QCoreApplication::translate("ListUser", "Ostatnie logowanie", nullptr));
+        label3->setText(QCoreApplication::translate("ListUser", "Typ", nullptr));
+        label1->setText(QCoreApplication::translate("ListUser", "Imi\304\231", nullptr));
+        label2->setText(QCoreApplication::translate("ListUser", "Nazwisko", nullptr));
+        whatListLabel->setText(QCoreApplication::translate("ListUser", "Pracownicy", nullptr));
+        title->setText(QCoreApplication::translate("ListUser", "Lista pracownik\303\263w", nullptr));
     } // retranslateUi
 
 };

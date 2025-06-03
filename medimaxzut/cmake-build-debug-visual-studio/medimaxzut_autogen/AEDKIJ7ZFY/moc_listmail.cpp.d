@@ -155,4 +155,6 @@ D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/cmake-build-debug-visual-studio/m
   C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/qtwidgets-config.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/qtwidgetsexports.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/qtwidgetsglobal.h \
-  C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/qwidget.h
+  C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/qwidget.h \
+  D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/mailList/mailext.h \
+  D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/mailList/mailitem.h

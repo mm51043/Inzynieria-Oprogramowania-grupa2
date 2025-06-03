@@ -4,19 +4,21 @@
 #include <QWidget>
 
 namespace Ui {
-class prescriptionItem;
+class PrescriptionItem;
 }
 
-class prescriptionItem : public QWidget
+class PrescriptionItem : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit prescriptionItem(QWidget *parent = nullptr);
-    ~prescriptionItem();
+    explicit PrescriptionItem(QWidget *parent = nullptr);
+    ~PrescriptionItem();
+
+    void setData(const QString &nazwa, const QString &ilosc);
 
 private:
-    Ui::prescriptionItem *ui;
+    Ui::PrescriptionItem *ui;
 };
 
 #endif // PRESCRIPTIONITEM_H

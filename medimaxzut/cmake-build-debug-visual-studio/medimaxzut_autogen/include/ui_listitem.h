@@ -60,9 +60,8 @@ public:
         frame = new QFrame(ListItem);
         frame->setObjectName("frame");
         frame->setGeometry(QRect(0, 0, 1301, 61));
-        frame->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 62, 154);\n"
-"border-radius: 10px;\n"
-""));
+        frame->setStyleSheet(QString::fromUtf8("background-color: rgb(50, 149, 168);\n"
+"border-radius: 10px;"));
         frame->setFrameShape(QFrame::Shape::StyledPanel);
         frame->setFrameShadow(QFrame::Shadow::Raised);
         phoneLabel = new QLabel(frame);
@@ -121,10 +120,7 @@ public:
         firstNameLabel->setGeometry(QRect(20, 10, 221, 41));
         firstNameLabel->setFont(font);
         firstNameLabel->setLayoutDirection(Qt::LayoutDirection::LeftToRight);
-        firstNameLabel->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 62, 154);\n"
-"border-radius: 10px;\n"
-"\n"
-""));
+        firstNameLabel->setStyleSheet(QString::fromUtf8(""));
         firstNameLabel->setTextFormat(Qt::TextFormat::RichText);
         firstNameLabel->setAlignment(Qt::AlignmentFlag::AlignCenter);
         profileButton = new QPushButton(frame);
@@ -132,7 +128,8 @@ public:
         profileButton->setGeometry(QRect(1074, 10, 201, 41));
         profileButton->setFont(font);
         profileButton->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 41, 94);\n"
-"border-radius: 10px;"));
+"border-radius: 10px;\n"
+"color: white"));
 
         retranslateUi(ListItem);
 

@@ -4,19 +4,23 @@
 #include <QWidget>
 
 namespace Ui {
-class prescriptionWindow;
+class PrescWindow;
 }
 
-class prescriptionWindow : public QWidget
+class PrescWindow : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit prescriptionWindow(QWidget *parent = nullptr);
-    ~prescriptionWindow();
+    explicit PrescWindow(QWidget *parent = nullptr);
+    ~PrescWindow();
+
+    void rlist();
+
+    void llist();
 
 private:
-    Ui::prescriptionWindow *ui;
+    Ui::PrescWindow *ui;
 };
 
 #endif // PRESCRIPTIONWINDOW_H

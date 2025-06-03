@@ -79,9 +79,8 @@ border-radius: 10px;</string>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(0, 62, 154);
-border-radius: 10px;
-</string>
+    <string notr="true">background-color: rgb(50, 149, 168);
+border-radius: 10px;</string>
    </property>
    <property name="frameShape">
     <enum>QFrame::Shape::StyledPanel</enum>
@@ -265,10 +264,7 @@ border-radius: 10px;
      <enum>Qt::LayoutDirection::LeftToRight</enum>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(0, 62, 154);
-border-radius: 10px;
-
-</string>
+     <string notr="true"/>
     </property>
     <property name="text">
      <string>Jan</string>
@@ -297,7 +293,8 @@ border-radius: 10px;
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(0, 41, 94);
-border-radius: 10px;</string>
+border-radius: 10px;
+color: white</string>
     </property>
     <property name="text">
      <string>Pokaż profil</string>

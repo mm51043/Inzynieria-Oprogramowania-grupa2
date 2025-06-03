@@ -53,3 +53,14 @@ void ListUser::list() {
     }
         layout->addStretch();
 }
+
+void ListUser::setLabels(std::string what) {
+    if (what == "patient") {
+        ui->label3->setText("Pesel");
+        ui->label4->setText("Nr Telefonu");
+    }
+    if (what == "user") {
+        ui->label3->setText("Typ");
+        ui->label4->setText("Ostatnie Logowanie");
+    }
+}

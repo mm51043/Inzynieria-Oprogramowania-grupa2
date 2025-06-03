@@ -41,4 +41,50 @@ inline std::vector<Pacjent> fetchPacjenci(sql::Connection* conn) {
 
     return pacjenci;
 }
+struct Lek {
+    int id;
+    std::string nazwa;
+    int ilosc;
+};
+inline std::vector<Lek> fetchLeki(sql::Connection* conn) {
+    std::vector<Lek> leki;
+    std::unique_ptr<sql::Statement> stmt(conn->createStatement());
+    std::unique_ptr<sql::ResultSet> res(stmt->executeQuery("SELECT * FROM lek"));
+
+    while (res->next()) {
+        Lek l;
+        l.id = res->getInt("LekID");
+        l.nazwa = res->getString("nazwa");
+        l.ilosc = res->getInt("iloscMagazyn");
+        leki.push_back(l);
+    }
+
+    return leki;
+}
+struct Wiadomosc {
+    int id;
+    std::string nadawca;
+    std::string tytul;
+    std::string dataNadania;
+    std::string czasNadania;
+    std::string tresc;
+};
+inline std::vector<Wiadomosc> fetchWiadomosci(sql::Connection* conn) {
+    std::vector<Wiadomosc> wiadomosci;
+    std::unique_ptr<sql::Statement> stmt(conn->createStatement());
+    std::unique_ptr<sql::ResultSet> res(stmt->executeQuery("SELECT WiadomoscID, CONCAT(p.imie, ' ', p.nazwisko) AS nazwaNadawcy, tytul, dataNadania, czasNadania, tresc FROM `wiadomosci` JOIN pracownik as p ON p.PracownikID = nadawca ORDER BY dataNadania DESC, czasNadania DESC"));
+
+    while (res->next()) {
+        Wiadomosc w;
+        w.id = res->getInt("WiadomoscID");
+        w.nadawca = res->getString("nazwaNadawcy");
+        w.tytul = res->getString("tytul");
+        w.dataNadania = res->getString("dataNadania");
+        w.czasNadania = res->getString("czasNadania");
+        w.tresc = res->getString("tresc");
+        wiadomosci.push_back(w);
+    }
+
+    return wiadomosci;
+}
 #endif //BAZA_H

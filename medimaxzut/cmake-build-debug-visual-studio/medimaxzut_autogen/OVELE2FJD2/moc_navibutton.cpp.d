@@ -1,4 +1,4 @@
-C:/Users/milos/Inzynieria-Oprogramowania-grupa2/medimaxzut/cmake-build-debug-visual-studio/medimaxzut_autogen/OVELE2FJD2/moc_navibutton.cpp: C:/Users/milos/Inzynieria-Oprogramowania-grupa2/medimaxzut/mainWindow/navibutton.h \
+D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/cmake-build-debug-visual-studio/medimaxzut_autogen/OVELE2FJD2/moc_navibutton.cpp: D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/mainWindow/navibutton.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtCore/QVariant \
   C:/Qt/6.9.0/msvc2022_64/include/QtCore/q17memory.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtCore/q20functional.h \
@@ -175,4 +175,4 @@ C:/Users/milos/Inzynieria-Oprogramowania-grupa2/medimaxzut/cmake-build-debug-vis
   C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/qtwidgetsexports.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/qtwidgetsglobal.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/qwidget.h \
-  C:/Users/milos/Inzynieria-Oprogramowania-grupa2/medimaxzut/mainWindow/ui_navibutton.h
+  D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/mainWindow/ui_navibutton.h

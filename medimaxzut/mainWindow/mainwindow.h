@@ -20,8 +20,9 @@ public:
     void navigation(const QStringList &buttons);
 
 private slots:
-    void showUserList();
+    void showPatientList();
     void showMailList();
+    void showPrescAdd();
 
 private:
 

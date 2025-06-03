@@ -1,14 +1,19 @@
 #include "prescriptionitem.h"
 #include "ui_prescriptionitem.h"
 
-prescriptionItem::prescriptionItem(QWidget *parent)
+PrescriptionItem::PrescriptionItem(QWidget *parent)
     : QWidget(parent)
-    , ui(new Ui::prescriptionItem)
+    , ui(new Ui::PrescriptionItem)
 {
     ui->setupUi(this);
 }
 
-prescriptionItem::~prescriptionItem()
+PrescriptionItem::~PrescriptionItem()
 {
     delete ui;
+}
+void PrescriptionItem::setData(const QString& nazwa, const QString& ilosc)
+{
+    ui->medNameLabel->setText(nazwa);
+    ui->medNumLabel->setText(ilosc);
 }

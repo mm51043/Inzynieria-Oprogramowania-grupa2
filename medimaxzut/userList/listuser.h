@@ -17,6 +17,8 @@ public:
 
     void list();
 
+    void setLabels(std::string what);
+
 private:
     Ui::ListUser *ui;
 };

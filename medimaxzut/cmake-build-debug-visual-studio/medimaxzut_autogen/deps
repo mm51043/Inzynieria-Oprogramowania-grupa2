@@ -1,44 +1,4 @@
 medimaxzut_autogen/timestamp: \
-	C:/Program\ Files/JetBrains/CLion\ 2025.1/bin/cmake/win/x64/share/cmake-3.31/Modules/CMakeCInformation.cmake \
-	C:/Program\ Files/JetBrains/CLion\ 2025.1/bin/cmake/win/x64/share/cmake-3.31/Modules/CMakeCXXInformation.cmake \
-	C:/Program\ Files/JetBrains/CLion\ 2025.1/bin/cmake/win/x64/share/cmake-3.31/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake \
-	C:/Program\ Files/JetBrains/CLion\ 2025.1/bin/cmake/win/x64/share/cmake-3.31/Modules/CMakeCommonLanguageInclude.cmake \
-	C:/Program\ Files/JetBrains/CLion\ 2025.1/bin/cmake/win/x64/share/cmake-3.31/Modules/CMakeFindDependencyMacro.cmake \
-	C:/Program\ Files/JetBrains/CLion\ 2025.1/bin/cmake/win/x64/share/cmake-3.31/Modules/CMakeGenericSystem.cmake \
-	C:/Program\ Files/JetBrains/CLion\ 2025.1/bin/cmake/win/x64/share/cmake-3.31/Modules/CMakeInitializeConfigs.cmake \
-	C:/Program\ Files/JetBrains/CLion\ 2025.1/bin/cmake/win/x64/share/cmake-3.31/Modules/CMakeLanguageInformation.cmake \
-	C:/Program\ Files/JetBrains/CLion\ 2025.1/bin/cmake/win/x64/share/cmake-3.31/Modules/CMakeRCInformation.cmake \
-	C:/Program\ Files/JetBrains/CLion\ 2025.1/bin/cmake/win/x64/share/cmake-3.31/Modules/CMakeSystemSpecificInformation.cmake \
-	C:/Program\ Files/JetBrains/CLion\ 2025.1/bin/cmake/win/x64/share/cmake-3.31/Modules/CMakeSystemSpecificInitialize.cmake \
-	C:/Program\ Files/JetBrains/CLion\ 2025.1/bin/cmake/win/x64/share/cmake-3.31/Modules/CheckCSourceCompiles.cmake \
-	C:/Program\ Files/JetBrains/CLion\ 2025.1/bin/cmake/win/x64/share/cmake-3.31/Modules/CheckCXXCompilerFlag.cmake \
-	C:/Program\ Files/JetBrains/CLion\ 2025.1/bin/cmake/win/x64/share/cmake-3.31/Modules/CheckCXXSourceCompiles.cmake \
-	C:/Program\ Files/JetBrains/CLion\ 2025.1/bin/cmake/win/x64/share/cmake-3.31/Modules/CheckIncludeFile.cmake \
-	C:/Program\ Files/JetBrains/CLion\ 2025.1/bin/cmake/win/x64/share/cmake-3.31/Modules/CheckLibraryExists.cmake \
-	C:/Program\ Files/JetBrains/CLion\ 2025.1/bin/cmake/win/x64/share/cmake-3.31/Modules/Compiler/CMakeCommonCompilerMacros.cmake \
-	C:/Program\ Files/JetBrains/CLion\ 2025.1/bin/cmake/win/x64/share/cmake-3.31/Modules/Compiler/MSVC-C.cmake \
-	C:/Program\ Files/JetBrains/CLion\ 2025.1/bin/cmake/win/x64/share/cmake-3.31/Modules/Compiler/MSVC-CXX.cmake \
-	C:/Program\ Files/JetBrains/CLion\ 2025.1/bin/cmake/win/x64/share/cmake-3.31/Modules/Compiler/MSVC.cmake \
-	C:/Program\ Files/JetBrains/CLion\ 2025.1/bin/cmake/win/x64/share/cmake-3.31/Modules/FindPackageHandleStandardArgs.cmake \
-	C:/Program\ Files/JetBrains/CLion\ 2025.1/bin/cmake/win/x64/share/cmake-3.31/Modules/FindPackageMessage.cmake \
-	C:/Program\ Files/JetBrains/CLion\ 2025.1/bin/cmake/win/x64/share/cmake-3.31/Modules/FindThreads.cmake \
-	C:/Program\ Files/JetBrains/CLion\ 2025.1/bin/cmake/win/x64/share/cmake-3.31/Modules/FindVulkan.cmake \
-	C:/Program\ Files/JetBrains/CLion\ 2025.1/bin/cmake/win/x64/share/cmake-3.31/Modules/GNUInstallDirs.cmake \
-	C:/Program\ Files/JetBrains/CLion\ 2025.1/bin/cmake/win/x64/share/cmake-3.31/Modules/Internal/CMakeCLinkerInformation.cmake \
-	C:/Program\ Files/JetBrains/CLion\ 2025.1/bin/cmake/win/x64/share/cmake-3.31/Modules/Internal/CMakeCXXLinkerInformation.cmake \
-	C:/Program\ Files/JetBrains/CLion\ 2025.1/bin/cmake/win/x64/share/cmake-3.31/Modules/Internal/CMakeCommonLinkerInformation.cmake \
-	C:/Program\ Files/JetBrains/CLion\ 2025.1/bin/cmake/win/x64/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake \
-	C:/Program\ Files/JetBrains/CLion\ 2025.1/bin/cmake/win/x64/share/cmake-3.31/Modules/Internal/CheckFlagCommonConfig.cmake \
-	C:/Program\ Files/JetBrains/CLion\ 2025.1/bin/cmake/win/x64/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake \
-	C:/Program\ Files/JetBrains/CLion\ 2025.1/bin/cmake/win/x64/share/cmake-3.31/Modules/Platform/Linker/Windows-MSVC-C.cmake \
-	C:/Program\ Files/JetBrains/CLion\ 2025.1/bin/cmake/win/x64/share/cmake-3.31/Modules/Platform/Linker/Windows-MSVC-CXX.cmake \
-	C:/Program\ Files/JetBrains/CLion\ 2025.1/bin/cmake/win/x64/share/cmake-3.31/Modules/Platform/Linker/Windows-MSVC.cmake \
-	C:/Program\ Files/JetBrains/CLion\ 2025.1/bin/cmake/win/x64/share/cmake-3.31/Modules/Platform/Windows-Initialize.cmake \
-	C:/Program\ Files/JetBrains/CLion\ 2025.1/bin/cmake/win/x64/share/cmake-3.31/Modules/Platform/Windows-MSVC-C.cmake \
-	C:/Program\ Files/JetBrains/CLion\ 2025.1/bin/cmake/win/x64/share/cmake-3.31/Modules/Platform/Windows-MSVC-CXX.cmake \
-	C:/Program\ Files/JetBrains/CLion\ 2025.1/bin/cmake/win/x64/share/cmake-3.31/Modules/Platform/Windows-MSVC.cmake \
-	C:/Program\ Files/JetBrains/CLion\ 2025.1/bin/cmake/win/x64/share/cmake-3.31/Modules/Platform/Windows.cmake \
-	C:/Program\ Files/JetBrains/CLion\ 2025.1/bin/cmake/win/x64/share/cmake-3.31/Modules/Platform/WindowsPaths.cmake \
 	C:/Qt/6.9.0/msvc2022_64/include/QtCore/QVariant \
 	C:/Qt/6.9.0/msvc2022_64/include/QtCore/q17memory.h \
 	C:/Qt/6.9.0/msvc2022_64/include/QtCore/q20functional.h \
@@ -428,7 +388,6 @@ medimaxzut_autogen/timestamp: \
 	C:/Qt/6.9.0/msvc2022_64/lib/cmake/Qt6ZlibPrivate/Qt6ZlibPrivateConfigVersionImpl.cmake \
 	C:/Qt/6.9.0/msvc2022_64/lib/cmake/Qt6ZlibPrivate/Qt6ZlibPrivateTargets.cmake \
 	C:/Qt/6.9.0/msvc2022_64/lib/cmake/Qt6ZlibPrivate/Qt6ZlibPrivateVersionlessAliasTargets.cmake \
-<<<<<<< HEAD
 	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/CMakeLists.txt \
 	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/baza.h \
 	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/cmake-build-debug-visual-studio/CMakeFiles/3.31.6/CMakeCCompiler.cmake \
@@ -441,6 +400,10 @@ medimaxzut_autogen/timestamp: \
 	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/login/loginui.h \
 	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/mailList/listmail.cpp \
 	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/mailList/listmail.h \
+	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/mailList/mailext.cpp \
+	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/mailList/mailext.h \
+	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/mailList/mailitem.cpp \
+	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/mailList/mailitem.h \
 	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/main.cpp \
 	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/mainWindow/buttonname.h \
 	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/mainWindow/mainwindow.cpp \
@@ -448,6 +411,10 @@ medimaxzut_autogen/timestamp: \
 	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/mainWindow/navibutton.cpp \
 	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/mainWindow/navibutton.h \
 	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/mainWindow/ui_navibutton.h \
+	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/prescriptionAdd/prescriptionitem.cpp \
+	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/prescriptionAdd/prescriptionitem.h \
+	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/prescriptionAdd/prescriptionwindow.cpp \
+	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/prescriptionAdd/prescriptionwindow.h \
 	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/userList/listitem.cpp \
 	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/userList/listitem.h \
 	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/userList/listuser.cpp \
@@ -493,36 +460,12 @@ medimaxzut_autogen/timestamp: \
 	D:/JetBrains/CLion\ 2025.1/bin/cmake/win/x64/share/cmake-3.31/Modules/Platform/Windows.cmake \
 	D:/JetBrains/CLion\ 2025.1/bin/cmake/win/x64/share/cmake-3.31/Modules/Platform/WindowsPaths.cmake \
 	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/mailList/listmail.ui \
+	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/mailList/mailext.ui \
+	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/mailList/mailitem.ui \
 	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/mainWindow/mainwindow.ui \
 	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/mainWindow/navibutton.ui \
+	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/prescriptionAdd/prescriptionitem.ui \
+	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/prescriptionAdd/prescriptionwindow.ui \
 	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/userList/listitem.ui \
 	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/userList/listuser.ui \
 	D:/JetBrains/CLion\ 2025.1/bin/cmake/win/x64/bin/cmake.exe
-=======
-	C:/Users/milos/Inzynieria-Oprogramowania-grupa2/medimaxzut/CMakeLists.txt \
-	C:/Users/milos/Inzynieria-Oprogramowania-grupa2/medimaxzut/baza.h \
-	C:/Users/milos/Inzynieria-Oprogramowania-grupa2/medimaxzut/cmake-build-debug-visual-studio/CMakeFiles/3.31.6/CMakeCCompiler.cmake \
-	C:/Users/milos/Inzynieria-Oprogramowania-grupa2/medimaxzut/cmake-build-debug-visual-studio/CMakeFiles/3.31.6/CMakeCXXCompiler.cmake \
-	C:/Users/milos/Inzynieria-Oprogramowania-grupa2/medimaxzut/cmake-build-debug-visual-studio/CMakeFiles/3.31.6/CMakeRCCompiler.cmake \
-	C:/Users/milos/Inzynieria-Oprogramowania-grupa2/medimaxzut/cmake-build-debug-visual-studio/CMakeFiles/3.31.6/CMakeSystem.cmake \
-	C:/Users/milos/Inzynieria-Oprogramowania-grupa2/medimaxzut/login/login.cpp \
-	C:/Users/milos/Inzynieria-Oprogramowania-grupa2/medimaxzut/login/login.h \
-	C:/Users/milos/Inzynieria-Oprogramowania-grupa2/medimaxzut/login/loginWindow.h \
-	C:/Users/milos/Inzynieria-Oprogramowania-grupa2/medimaxzut/login/loginui.h \
-	C:/Users/milos/Inzynieria-Oprogramowania-grupa2/medimaxzut/main.cpp \
-	C:/Users/milos/Inzynieria-Oprogramowania-grupa2/medimaxzut/mainWindow/buttonname.h \
-	C:/Users/milos/Inzynieria-Oprogramowania-grupa2/medimaxzut/mainWindow/mainwindow.cpp \
-	C:/Users/milos/Inzynieria-Oprogramowania-grupa2/medimaxzut/mainWindow/mainwindow.h \
-	C:/Users/milos/Inzynieria-Oprogramowania-grupa2/medimaxzut/mainWindow/navibutton.cpp \
-	C:/Users/milos/Inzynieria-Oprogramowania-grupa2/medimaxzut/mainWindow/navibutton.h \
-	C:/Users/milos/Inzynieria-Oprogramowania-grupa2/medimaxzut/mainWindow/ui_navibutton.h \
-	C:/Users/milos/Inzynieria-Oprogramowania-grupa2/medimaxzut/userList/listitem.cpp \
-	C:/Users/milos/Inzynieria-Oprogramowania-grupa2/medimaxzut/userList/listitem.h \
-	C:/Users/milos/Inzynieria-Oprogramowania-grupa2/medimaxzut/userList/listuser.cpp \
-	C:/Users/milos/Inzynieria-Oprogramowania-grupa2/medimaxzut/userList/listuser.h \
-	C:/Users/milos/Inzynieria-Oprogramowania-grupa2/medimaxzut/mainWindow/mainwindow.ui \
-	C:/Users/milos/Inzynieria-Oprogramowania-grupa2/medimaxzut/mainWindow/navibutton.ui \
-	C:/Users/milos/Inzynieria-Oprogramowania-grupa2/medimaxzut/userList/listitem.ui \
-	C:/Users/milos/Inzynieria-Oprogramowania-grupa2/medimaxzut/userList/listuser.ui \
-	C:/Program\ Files/JetBrains/CLion\ 2025.1/bin/cmake/win/x64/bin/cmake.exe
->>>>>>> 025c68f1932e9a9312e88a565bae11e7fe025587

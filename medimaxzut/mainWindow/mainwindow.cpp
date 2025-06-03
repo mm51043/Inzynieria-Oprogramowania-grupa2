@@ -3,6 +3,7 @@
 #include "navibutton.h"
 #include "../mailList/listmail.h"
 #include "../userList/listuser.h"
+#include "../prescriptionAdd/prescriptionwindow.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -23,7 +24,7 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
-void MainWindow::showUserList() {
+void MainWindow::showPatientList() {
     QLayout *layout = ui->MainPanel->layout();
 
     QLayoutItem *item;
@@ -35,6 +36,7 @@ void MainWindow::showUserList() {
     }
 
     auto *listUserWidget = new ListUser();
+    listUserWidget->setLabels("patient");
     layout->addWidget(listUserWidget);
 }
 
@@ -50,6 +52,21 @@ void MainWindow::showMailList() {
     }
 
     auto *listUserWidget = new ListMail();
+    layout->addWidget(listUserWidget);
+}
+
+void MainWindow::showPrescAdd() {
+    QLayout *layout = ui->MainPanel->layout();
+
+    QLayoutItem *item;
+    while ((item = layout->takeAt(0)) != nullptr) {
+        if (item->widget()) {
+            item->widget()->deleteLater();
+        }
+        delete item;
+    }
+
+    auto *listUserWidget = new PrescWindow();
     layout->addWidget(listUserWidget);
 }
 
@@ -78,7 +95,12 @@ void MainWindow::navigation(const QStringList &buttons) {
         layout->addWidget(btn);
         if (name == "Lista Pacjentów") {
             connect(btn->pushButton, &QPushButton::clicked, this, [this]() {
-                showUserList();
+                showPatientList();
+            });
+        }
+        if (name == "Dodaj Receptę") {
+            connect(btn->pushButton, &QPushButton::clicked, this, [this]() {
+                showPrescAdd();
             });
         }
     }
