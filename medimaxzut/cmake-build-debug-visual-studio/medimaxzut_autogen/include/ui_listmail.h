@@ -34,7 +34,6 @@ public:
     QFrame *line_11;
     QFrame *line_13;
     QFrame *line_3;
-    QFrame *line_6;
     QFrame *line_7;
     QLabel *title;
 
@@ -159,12 +158,6 @@ public:
         line_3->setStyleSheet(QString::fromUtf8("background-color: white;"));
         line_3->setFrameShape(QFrame::Shape::HLine);
         line_3->setFrameShadow(QFrame::Shadow::Sunken);
-        line_6 = new QFrame(frame);
-        line_6->setObjectName("line_6");
-        line_6->setGeometry(QRect(1270, 60, 3, 41));
-        line_6->setStyleSheet(QString::fromUtf8("background-color: white;"));
-        line_6->setFrameShape(QFrame::Shape::VLine);
-        line_6->setFrameShadow(QFrame::Shadow::Sunken);
         line_7 = new QFrame(frame);
         line_7->setObjectName("line_7");
         line_7->setGeometry(QRect(30, 750, 1371, 20));
@@ -179,7 +172,6 @@ public:
         line_11->raise();
         line_13->raise();
         line_3->raise();
-        line_6->raise();
         line_7->raise();
         frame_7->raise();
         title = new QLabel(mainFrame);
