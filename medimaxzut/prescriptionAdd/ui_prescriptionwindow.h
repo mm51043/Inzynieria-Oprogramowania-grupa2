@@ -48,6 +48,7 @@ public:
     QPushButton *okButton;
     QPushButton *clearButton;
     QLabel *title;
+    QLabel *confirmationLabel;
 
     void setupUi(QWidget *PrescWindow)
     {
@@ -238,6 +239,11 @@ public:
 "border-radius: 10px;"));
         title->setTextFormat(Qt::TextFormat::RichText);
         title->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
+        confirmationLabel = new QLabel(mainFrame);
+        confirmationLabel->setObjectName("confirmationLabel");
+        confirmationLabel->setGeometry(QRect(1108, 829, 331, 31));
+        confirmationLabel->setFont(font1);
+        confirmationLabel->setStyleSheet(QString::fromUtf8("color: white;"));
 
         retranslateUi(PrescWindow);
 
@@ -256,6 +262,7 @@ public:
         okButton->setText(QCoreApplication::translate("PrescWindow", "Zatwierd\305\272", nullptr));
         clearButton->setText(QCoreApplication::translate("PrescWindow", "Wyczy\305\233\304\207", nullptr));
         title->setText(QCoreApplication::translate("PrescWindow", "Dodaj recept\304\231", nullptr));
+        confirmationLabel->setText(QString());
     } // retranslateUi
 
 };

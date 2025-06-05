@@ -1,4 +1,32 @@
 medimaxzut_autogen/timestamp: \
+	C:/Program\ Files/MariaDB/MariaDB\ C++\ Connector\ 64-bit/include/mariadb/MariaDbDataSource.hpp \
+	C:/Program\ Files/MariaDB/MariaDB\ C++\ Connector\ 64-bit/include/mariadb/conncpp.hpp \
+	C:/Program\ Files/MariaDB/MariaDB\ C++\ Connector\ 64-bit/include/mariadb/conncpp/CArray.hpp \
+	C:/Program\ Files/MariaDB/MariaDB\ C++\ Connector\ 64-bit/include/mariadb/conncpp/CallableStatement.hpp \
+	C:/Program\ Files/MariaDB/MariaDB\ C++\ Connector\ 64-bit/include/mariadb/conncpp/Connection.hpp \
+	C:/Program\ Files/MariaDB/MariaDB\ C++\ Connector\ 64-bit/include/mariadb/conncpp/DatabaseMEtaData.hpp \
+	C:/Program\ Files/MariaDB/MariaDB\ C++\ Connector\ 64-bit/include/mariadb/conncpp/Driver.hpp \
+	C:/Program\ Files/MariaDB/MariaDB\ C++\ Connector\ 64-bit/include/mariadb/conncpp/DriverManager.hpp \
+	C:/Program\ Files/MariaDB/MariaDB\ C++\ Connector\ 64-bit/include/mariadb/conncpp/Exception.hpp \
+	C:/Program\ Files/MariaDB/MariaDB\ C++\ Connector\ 64-bit/include/mariadb/conncpp/List.hpp \
+	C:/Program\ Files/MariaDB/MariaDB\ C++\ Connector\ 64-bit/include/mariadb/conncpp/ParameterMetaData.hpp \
+	C:/Program\ Files/MariaDB/MariaDB\ C++\ Connector\ 64-bit/include/mariadb/conncpp/PooledConnection.hpp \
+	C:/Program\ Files/MariaDB/MariaDB\ C++\ Connector\ 64-bit/include/mariadb/conncpp/PreparedStatement.hpp \
+	C:/Program\ Files/MariaDB/MariaDB\ C++\ Connector\ 64-bit/include/mariadb/conncpp/Properties.hpp \
+	C:/Program\ Files/MariaDB/MariaDB\ C++\ Connector\ 64-bit/include/mariadb/conncpp/ResultSet.hpp \
+	C:/Program\ Files/MariaDB/MariaDB\ C++\ Connector\ 64-bit/include/mariadb/conncpp/ResultSetMetaData.hpp \
+	C:/Program\ Files/MariaDB/MariaDB\ C++\ Connector\ 64-bit/include/mariadb/conncpp/SQLString.hpp \
+	C:/Program\ Files/MariaDB/MariaDB\ C++\ Connector\ 64-bit/include/mariadb/conncpp/Savepoint.hpp \
+	C:/Program\ Files/MariaDB/MariaDB\ C++\ Connector\ 64-bit/include/mariadb/conncpp/Statement.hpp \
+	C:/Program\ Files/MariaDB/MariaDB\ C++\ Connector\ 64-bit/include/mariadb/conncpp/Types.hpp \
+	C:/Program\ Files/MariaDB/MariaDB\ C++\ Connector\ 64-bit/include/mariadb/conncpp/Warning.hpp \
+	C:/Program\ Files/MariaDB/MariaDB\ C++\ Connector\ 64-bit/include/mariadb/conncpp/XAConnection.hpp \
+	C:/Program\ Files/MariaDB/MariaDB\ C++\ Connector\ 64-bit/include/mariadb/conncpp/buildconf.hpp \
+	C:/Program\ Files/MariaDB/MariaDB\ C++\ Connector\ 64-bit/include/mariadb/conncpp/compat/Executor.hpp \
+	C:/Program\ Files/MariaDB/MariaDB\ C++\ Connector\ 64-bit/include/mariadb/conncpp/compat/Object.hpp \
+	C:/Program\ Files/MariaDB/MariaDB\ C++\ Connector\ 64-bit/include/mariadb/conncpp/compat/Struct.hpp \
+	C:/Program\ Files/MariaDB/MariaDB\ C++\ Connector\ 64-bit/include/mariadb/conncpp/compat/XAResource.hpp \
+	C:/Program\ Files/MariaDB/MariaDB\ C++\ Connector\ 64-bit/include/mariadb/conncpp/jdbccompat.hpp \
 	C:/Qt/6.9.0/msvc2022_64/include/QtCore/QVariant \
 	C:/Qt/6.9.0/msvc2022_64/include/QtCore/q17memory.h \
 	C:/Qt/6.9.0/msvc2022_64/include/QtCore/q20functional.h \
@@ -415,6 +443,7 @@ medimaxzut_autogen/timestamp: \
 	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/prescriptionAdd/prescriptionitem.h \
 	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/prescriptionAdd/prescriptionwindow.cpp \
 	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/prescriptionAdd/prescriptionwindow.h \
+	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/session.h \
 	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/userList/listitem.cpp \
 	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/userList/listitem.h \
 	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/userList/listuser.cpp \

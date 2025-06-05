@@ -41,17 +41,23 @@ template <> constexpr inline auto MainWindow::qt_create_metaobjectdata<qt_meta_t
         "MainWindow",
         "showPatientList",
         "",
+        "prescription",
         "showMailList",
-        "showPrescAdd"
+        "showPrescAdd",
+        "patientId"
     };
 
     QtMocHelpers::UintData qt_methods {
         // Slot 'showPatientList'
-        QtMocHelpers::SlotData<void()>(1, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void(bool)>(1, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::Bool, 3 },
+        }}),
         // Slot 'showMailList'
-        QtMocHelpers::SlotData<void()>(3, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'showPrescAdd'
         QtMocHelpers::SlotData<void()>(4, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'showPrescAdd'
+        QtMocHelpers::SlotData<void(int)>(5, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::Int, 6 },
+        }}),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -75,13 +81,12 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
     auto *_t = static_cast<MainWindow *>(_o);
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
-        case 0: _t->showPatientList(); break;
+        case 0: _t->showPatientList((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
         case 1: _t->showMailList(); break;
-        case 2: _t->showPrescAdd(); break;
+        case 2: _t->showPrescAdd((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
         default: ;
         }
     }
-    (void)_a;
 }
 
 const QMetaObject *MainWindow::metaObject() const

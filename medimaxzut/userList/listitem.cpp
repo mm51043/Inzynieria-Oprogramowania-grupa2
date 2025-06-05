@@ -13,6 +13,9 @@ ListItem::~ListItem()
     delete ui;
 }
 
+QPushButton *ListItem::getButton() {
+    return ui->profileButton;
+}
 void ListItem::setData(const QString& imie, const QString& nazwisko, const QString& pesel, const QString& telefon)
 {
     ui->firstNameLabel->setText(imie);

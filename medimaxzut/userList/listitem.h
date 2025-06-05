@@ -1,6 +1,7 @@
 #ifndef LISTITEM_H
 #define LISTITEM_H
 
+#include <qpushbutton.h>
 #include <QWidget>
 
 namespace Ui {
@@ -14,6 +15,8 @@ class ListItem : public QWidget
 public:
     explicit ListItem(QWidget *parent = nullptr);
     ~ListItem();
+
+    QPushButton *getButton();
 
     void setData(const QString &imie, const QString &nazwisko, const QString &pesel, const QString &telefon);
 

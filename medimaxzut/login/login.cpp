@@ -1,6 +1,8 @@
 #include "loginWindow.h"
 #include "..\mainWindow\mainwindow.h"
 #include <QDebug>
+#include "../session.h"
+#include "../baza.h"
 
 LoginWindow::LoginWindow(QWidget *parent) : QMainWindow(parent) {
     ui.setupUi(this);
@@ -12,9 +14,9 @@ LoginWindow::LoginWindow(QWidget *parent) : QMainWindow(parent) {
 void LoginWindow::onEnter() {
     QString name = ui.loginUsername->text();
     QString pwd = ui.loginPassword->text();
-    qDebug() << "login " << name;
-    qDebug() << "haslo " << pwd;
     if (true) {
+        sessionUserId = 12;
+        setSessionUserName();
         emit loginPass();
     }
 }

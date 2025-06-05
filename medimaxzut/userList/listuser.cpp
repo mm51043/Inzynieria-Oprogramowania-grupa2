@@ -17,7 +17,10 @@ ListUser::~ListUser()
 {
     delete ui;
 }
-
+void ListUser::setPrescription(){
+    prescription = true;
+    list();
+}
 void ListUser::list() {
         QVBoxLayout* layout = qobject_cast<QVBoxLayout*>(ui->List->layout());
         if (!layout) {
@@ -48,13 +51,19 @@ void ListUser::list() {
                         QString::fromStdString(p.nazwisko),
                         QString::fromStdString(p.pesel),
                         QString::number(p.nrTelefonu));
+            if (prescription) {
+                connect(li->getButton(), &QPushButton::clicked, this, [this, p]() {
+                    qDebug() << "clicked " + p.id;
+                    emit userPicked(p.id);
+                });
+            }
             layout->addWidget(li);
         }
     }
         layout->addStretch();
 }
 
-void ListUser::setLabels(std::string what) {
+void ListUser::setLabels(const std::string& what) {
     if (what == "patient") {
         ui->label3->setText("Pesel");
         ui->label4->setText("Nr Telefonu");

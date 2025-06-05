@@ -2,6 +2,7 @@
 #define BAZA_H
 #include <mariadb/conncpp.hpp>
 #include <iostream>
+#include "session.h"
 inline std::unique_ptr<sql::Connection> baza() {
     try {
         const sql::SQLString url("jdbc:mariadb://localhost:4306/bazaprzychodnia");
@@ -15,6 +16,19 @@ inline std::unique_ptr<sql::Connection> baza() {
     } catch (const sql::SQLException& e) {
         std::cerr << e.what() << std::endl;
         return nullptr;
+    }
+}
+inline void setSessionUserName() {
+    auto conn = baza();
+    if (!conn) {
+        std::cerr << "baza nie chodzi" << std::endl;
+    }
+    std::unique_ptr<sql::Statement> stmt(conn->createStatement());
+    std::unique_ptr<sql::ResultSet> res(stmt->executeQuery("SELECT * FROM pracownik WHERE PracownikID = " + std::to_string(sessionUserId)));
+    if (res->next()) {
+        sessionUserName = res->getString("imie") + " " + res->getString("nazwisko");
+    } else {
+        qDebug() << "Nie ma usera";
     }
 }
 struct Pacjent {

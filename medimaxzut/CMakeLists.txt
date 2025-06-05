@@ -40,6 +40,7 @@ add_executable(medimaxzut
         mailList/mailext.cpp
         prescriptionAdd/prescriptionitem.cpp
         prescriptionAdd/prescriptionwindow.cpp
+        session.h
 )
 
 target_link_libraries(medimaxzut

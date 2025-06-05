@@ -17,3 +17,6 @@ void PrescriptionItem::setData(const QString& nazwa, const QString& ilosc)
     ui->medNameLabel->setText(nazwa);
     ui->medNumLabel->setText(ilosc);
 }
+QPushButton* PrescriptionItem::listAdd() {
+    return ui->prescUpdateButton;
+}

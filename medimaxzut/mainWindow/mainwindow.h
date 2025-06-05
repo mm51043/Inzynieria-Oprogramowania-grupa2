@@ -17,13 +17,14 @@ public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+    void setWelcomeUserName(const std::string &userName);
+
     void navigation(const QStringList &buttons);
 
 private slots:
-    void showPatientList();
+    void showPatientList(bool prescription);
     void showMailList();
-    void showPrescAdd();
-
+    void showPrescAdd(int patientId);
 private:
 
     Ui::MainWindow *ui;

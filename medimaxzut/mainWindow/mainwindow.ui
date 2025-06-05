@@ -146,12 +146,12 @@ li.checked::marker { content: &quot;\2612&quot;; }
      </property>
     </widget>
    </widget>
-   <widget class="QLabel" name="label_2">
+   <widget class="QLabel" name="welcomeLabel">
     <property name="geometry">
      <rect>
       <x>30</x>
       <y>20</y>
-      <width>261</width>
+      <width>781</width>
       <height>41</height>
      </rect>
     </property>
@@ -600,7 +600,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
    <zorder>MainPanel</zorder>
    <zorder>textBrowser</zorder>
    <zorder>groupBox</zorder>
-   <zorder>label_2</zorder>
+   <zorder>welcomeLabel</zorder>
    <zorder>frame</zorder>
    <zorder>frame_2</zorder>
    <zorder>frame_3</zorder>

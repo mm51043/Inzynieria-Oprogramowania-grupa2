@@ -15,12 +15,16 @@ public:
     explicit ListUser(QWidget *parent = nullptr);
     ~ListUser();
 
+    void setPrescription();
+
     void list();
 
-    void setLabels(std::string what);
-
+    void setLabels(const std::string& what);
+signals:
+    void userPicked(int id);
 private:
     Ui::ListUser *ui;
+    bool prescription{};
 };
 
 #endif // LISTUSER_H

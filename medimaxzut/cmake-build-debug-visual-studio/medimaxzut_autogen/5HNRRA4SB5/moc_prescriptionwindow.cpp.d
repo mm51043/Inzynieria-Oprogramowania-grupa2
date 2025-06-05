@@ -1,4 +1,32 @@
 D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/cmake-build-debug-visual-studio/medimaxzut_autogen/5HNRRA4SB5/moc_prescriptionwindow.cpp: D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/prescriptionAdd/prescriptionwindow.h \
+  C:/Program\ Files/MariaDB/MariaDB\ C++\ Connector\ 64-bit/include/mariadb/MariaDbDataSource.hpp \
+  C:/Program\ Files/MariaDB/MariaDB\ C++\ Connector\ 64-bit/include/mariadb/conncpp.hpp \
+  C:/Program\ Files/MariaDB/MariaDB\ C++\ Connector\ 64-bit/include/mariadb/conncpp/CArray.hpp \
+  C:/Program\ Files/MariaDB/MariaDB\ C++\ Connector\ 64-bit/include/mariadb/conncpp/CallableStatement.hpp \
+  C:/Program\ Files/MariaDB/MariaDB\ C++\ Connector\ 64-bit/include/mariadb/conncpp/Connection.hpp \
+  C:/Program\ Files/MariaDB/MariaDB\ C++\ Connector\ 64-bit/include/mariadb/conncpp/DatabaseMetaData.hpp \
+  C:/Program\ Files/MariaDB/MariaDB\ C++\ Connector\ 64-bit/include/mariadb/conncpp/Driver.hpp \
+  C:/Program\ Files/MariaDB/MariaDB\ C++\ Connector\ 64-bit/include/mariadb/conncpp/DriverManager.hpp \
+  C:/Program\ Files/MariaDB/MariaDB\ C++\ Connector\ 64-bit/include/mariadb/conncpp/Exception.hpp \
+  C:/Program\ Files/MariaDB/MariaDB\ C++\ Connector\ 64-bit/include/mariadb/conncpp/List.hpp \
+  C:/Program\ Files/MariaDB/MariaDB\ C++\ Connector\ 64-bit/include/mariadb/conncpp/ParameterMetaData.hpp \
+  C:/Program\ Files/MariaDB/MariaDB\ C++\ Connector\ 64-bit/include/mariadb/conncpp/PooledConnection.hpp \
+  C:/Program\ Files/MariaDB/MariaDB\ C++\ Connector\ 64-bit/include/mariadb/conncpp/PreparedStatement.hpp \
+  C:/Program\ Files/MariaDB/MariaDB\ C++\ Connector\ 64-bit/include/mariadb/conncpp/Properties.hpp \
+  C:/Program\ Files/MariaDB/MariaDB\ C++\ Connector\ 64-bit/include/mariadb/conncpp/ResultSet.hpp \
+  C:/Program\ Files/MariaDB/MariaDB\ C++\ Connector\ 64-bit/include/mariadb/conncpp/ResultSetMetaData.hpp \
+  C:/Program\ Files/MariaDB/MariaDB\ C++\ Connector\ 64-bit/include/mariadb/conncpp/SQLString.hpp \
+  C:/Program\ Files/MariaDB/MariaDB\ C++\ Connector\ 64-bit/include/mariadb/conncpp/Savepoint.hpp \
+  C:/Program\ Files/MariaDB/MariaDB\ C++\ Connector\ 64-bit/include/mariadb/conncpp/Statement.hpp \
+  C:/Program\ Files/MariaDB/MariaDB\ C++\ Connector\ 64-bit/include/mariadb/conncpp/Types.hpp \
+  C:/Program\ Files/MariaDB/MariaDB\ C++\ Connector\ 64-bit/include/mariadb/conncpp/Warning.hpp \
+  C:/Program\ Files/MariaDB/MariaDB\ C++\ Connector\ 64-bit/include/mariadb/conncpp/XAConnection.hpp \
+  C:/Program\ Files/MariaDB/MariaDB\ C++\ Connector\ 64-bit/include/mariadb/conncpp/buildconf.hpp \
+  C:/Program\ Files/MariaDB/MariaDB\ C++\ Connector\ 64-bit/include/mariadb/conncpp/compat/Executor.hpp \
+  C:/Program\ Files/MariaDB/MariaDB\ C++\ Connector\ 64-bit/include/mariadb/conncpp/compat/Object.hpp \
+  C:/Program\ Files/MariaDB/MariaDB\ C++\ Connector\ 64-bit/include/mariadb/conncpp/compat/Struct.hpp \
+  C:/Program\ Files/MariaDB/MariaDB\ C++\ Connector\ 64-bit/include/mariadb/conncpp/compat/XAResource.hpp \
+  C:/Program\ Files/MariaDB/MariaDB\ C++\ Connector\ 64-bit/include/mariadb/conncpp/jdbccompat.hpp \
   C:/Qt/6.9.0/msvc2022_64/include/QtCore/q17memory.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtCore/q20functional.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtCore/q20iterator.h \
@@ -150,9 +178,16 @@ D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/cmake-build-debug-visual-studio/m
   C:/Qt/6.9.0/msvc2022_64/include/QtGui/qtransform.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtGui/qwindowdefs.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtGui/qwindowdefs_win.h \
+  C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/QVBoxLayout \
   C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/QWidget \
+  C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/qboxlayout.h \
+  C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/qgridlayout.h \
+  C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/qlayout.h \
+  C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/qlayoutitem.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/qsizepolicy.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/qtwidgets-config.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/qtwidgetsexports.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/qtwidgetsglobal.h \
-  C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/qwidget.h
+  C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/qwidget.h \
+  D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/baza.h \
+  D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/session.h

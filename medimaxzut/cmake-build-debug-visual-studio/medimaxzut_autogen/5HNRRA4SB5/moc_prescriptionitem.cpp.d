@@ -150,7 +150,10 @@ D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/cmake-build-debug-visual-studio/m
   C:/Qt/6.9.0/msvc2022_64/include/QtGui/qtransform.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtGui/qwindowdefs.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtGui/qwindowdefs_win.h \
+  C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/QPushButton \
   C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/QWidget \
+  C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/qabstractbutton.h \
+  C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/qpushbutton.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/qsizepolicy.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/qtwidgets-config.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/qtwidgetsexports.h \
