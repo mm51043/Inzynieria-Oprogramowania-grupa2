@@ -4,6 +4,7 @@
 #include "../mailList/listmail.h"
 #include "../userList/listuser.h"
 #include "../prescriptionAdd/prescriptionwindow.h"
+#include "../store/storewindow.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -19,6 +20,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->mainMailButton, &QPushButton::clicked, this, [this]() {
         showMailList();
     });
+    \
 }
 
 MainWindow::~MainWindow()
@@ -80,6 +82,20 @@ void MainWindow::showPrescAdd(int patientId) {
     layout->addWidget(listUserWidget);
 }
 
+void MainWindow::showStore() {
+    QLayout *layout = ui->MainPanel->layout();
+
+    QLayoutItem *item;
+    while ((item = layout->takeAt(0)) != nullptr) {
+        if (item->widget()) {
+            item->widget()->deleteLater();
+        }
+        delete item;
+    }
+    auto *storeWidget = new StoreWindow();
+    layout->addWidget(storeWidget);
+}
+
 void MainWindow::navigation(const QStringList &buttons) {
     QVBoxLayout* layout = qobject_cast<QVBoxLayout*>(ui->naviList->layout());
     if (!layout) {
@@ -111,6 +127,11 @@ void MainWindow::navigation(const QStringList &buttons) {
         if (name == "Dodaj Receptę") {
             connect(btn->pushButton, &QPushButton::clicked, this, [this]() {
                 showPatientList(true);
+            });
+        }
+        if (name == "Apteka") {
+            connect(btn->pushButton, &QPushButton::clicked, this, [this]() {
+                showStore();
             });
         }
     }

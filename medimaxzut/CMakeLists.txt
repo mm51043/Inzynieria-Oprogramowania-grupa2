@@ -41,6 +41,10 @@ add_executable(medimaxzut
         prescriptionAdd/prescriptionitem.cpp
         prescriptionAdd/prescriptionwindow.cpp
         session.h
+        store/storewindow.cpp
+        store/storewindow.h
+        store/storeitem.cpp
+        store/storeitem.h
 )
 
 target_link_libraries(medimaxzut

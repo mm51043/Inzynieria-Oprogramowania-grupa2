@@ -25,6 +25,7 @@ private slots:
     void showPatientList(bool prescription);
     void showMailList();
     void showPrescAdd(int patientId);
+    void showStore();
 private:
 
     Ui::MainWindow *ui;
