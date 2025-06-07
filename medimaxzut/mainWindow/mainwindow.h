@@ -17,7 +17,7 @@ public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-    void setWelcomeUserName(const std::string &userName);
+    void setWelcomeUserName(const std::string &userName) const;
 
     void navigation(const QStringList &buttons);
 
@@ -26,6 +26,9 @@ private slots:
     void showMailList();
     void showPrescAdd(int patientId);
     void showStore();
+
+    void showSchedule();
+
 private:
 
     Ui::MainWindow *ui;

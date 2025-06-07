@@ -534,7 +534,7 @@ public:
         arrowLeft->setFont(font4);
         frame_98 = new QFrame(frame_5);
         frame_98->setObjectName("frame_98");
-        frame_98->setGeometry(QRect(1360, 60, 91, 91));
+        frame_98->setGeometry(QRect(1360, 70, 91, 91));
         frame_98->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 62, 154);"));
         frame_98->setFrameShape(QFrame::Shape::StyledPanel);
         frame_98->setFrameShadow(QFrame::Shadow::Raised);

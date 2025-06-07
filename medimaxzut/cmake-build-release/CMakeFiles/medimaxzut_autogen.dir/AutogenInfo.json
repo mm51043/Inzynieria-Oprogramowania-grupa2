@@ -436,6 +436,12 @@
 			null
 		],
 		[
+			"D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/schedule/scheduleview.h",
+			"MU",
+			"JUFIZBJ6BF/moc_scheduleview.cpp",
+			null
+		],
+		[
 			"D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/session.h",
 			"MU",
 			"EWIEGA46WW/moc_session.cpp",
@@ -576,6 +582,11 @@
 		],
 		[
 			"D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/prescriptionAdd/prescriptionwindow.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/schedule/scheduleview.cpp",
 			"MU",
 			null
 		],

@@ -161,6 +161,14 @@ build CMakeFiles/medimaxzut.dir/store/storeitem.cpp.obj: CXX_COMPILER__medimaxzu
   OBJECT_DIR = CMakeFiles\medimaxzut.dir
   OBJECT_FILE_DIR = CMakeFiles\medimaxzut.dir\store
 
+build CMakeFiles/medimaxzut.dir/schedule/scheduleview.cpp.obj: CXX_COMPILER__medimaxzut_unscanned_Release D$:/Inzynieria-Oprogramowania-grupa2/medimaxzut/schedule/scheduleview.cpp || cmake_object_order_depends_target_medimaxzut
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\medimaxzut.dir\schedule\scheduleview.cpp.obj.d
+  FLAGS = -O3 -DNDEBUG -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -I"C:/Program Files/MariaDB/MariaDB C++ Connector 64-bit/include" -isystem D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/cmake-build-release/medimaxzut_autogen/include -isystem C:/Qt/6.9.0/msvc2022_64/include/QtCore -isystem C:/Qt/6.9.0/msvc2022_64/include -isystem C:/Qt/6.9.0/msvc2022_64/mkspecs/win32-msvc -isystem C:/Qt/6.9.0/msvc2022_64/include/QtWidgets -isystem C:/Qt/6.9.0/msvc2022_64/include/QtGui
+  OBJECT_DIR = CMakeFiles\medimaxzut.dir
+  OBJECT_FILE_DIR = CMakeFiles\medimaxzut.dir\schedule
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target medimaxzut
@@ -169,7 +177,7 @@ build CMakeFiles/medimaxzut.dir/store/storeitem.cpp.obj: CXX_COMPILER__medimaxzu
 #############################################
 # Link the executable medimaxzut.exe
 
-build medimaxzut.exe: CXX_EXECUTABLE_LINKER__medimaxzut_Release CMakeFiles/medimaxzut.dir/medimaxzut_autogen/mocs_compilation.cpp.obj CMakeFiles/medimaxzut.dir/main.cpp.obj CMakeFiles/medimaxzut.dir/login/login.cpp.obj CMakeFiles/medimaxzut.dir/mainWindow/mainwindow.cpp.obj CMakeFiles/medimaxzut.dir/mainWindow/navibutton.cpp.obj CMakeFiles/medimaxzut.dir/userList/listuser.cpp.obj CMakeFiles/medimaxzut.dir/userList/listitem.cpp.obj CMakeFiles/medimaxzut.dir/mailList/listmail.cpp.obj CMakeFiles/medimaxzut.dir/mailList/mailitem.cpp.obj CMakeFiles/medimaxzut.dir/mailList/mailext.cpp.obj CMakeFiles/medimaxzut.dir/prescriptionAdd/prescriptionitem.cpp.obj CMakeFiles/medimaxzut.dir/prescriptionAdd/prescriptionwindow.cpp.obj CMakeFiles/medimaxzut.dir/store/storewindow.cpp.obj CMakeFiles/medimaxzut.dir/store/storeitem.cpp.obj | C$:/Qt/6.9.0/msvc2022_64/lib/Qt6Widgets.lib C$:/Qt/6.9.0/msvc2022_64/lib/Qt6Gui.lib C$:/Qt/6.9.0/msvc2022_64/lib/Qt6Core.lib || medimaxzut_autogen medimaxzut_autogen_timestamp_deps
+build medimaxzut.exe: CXX_EXECUTABLE_LINKER__medimaxzut_Release CMakeFiles/medimaxzut.dir/medimaxzut_autogen/mocs_compilation.cpp.obj CMakeFiles/medimaxzut.dir/main.cpp.obj CMakeFiles/medimaxzut.dir/login/login.cpp.obj CMakeFiles/medimaxzut.dir/mainWindow/mainwindow.cpp.obj CMakeFiles/medimaxzut.dir/mainWindow/navibutton.cpp.obj CMakeFiles/medimaxzut.dir/userList/listuser.cpp.obj CMakeFiles/medimaxzut.dir/userList/listitem.cpp.obj CMakeFiles/medimaxzut.dir/mailList/listmail.cpp.obj CMakeFiles/medimaxzut.dir/mailList/mailitem.cpp.obj CMakeFiles/medimaxzut.dir/mailList/mailext.cpp.obj CMakeFiles/medimaxzut.dir/prescriptionAdd/prescriptionitem.cpp.obj CMakeFiles/medimaxzut.dir/prescriptionAdd/prescriptionwindow.cpp.obj CMakeFiles/medimaxzut.dir/store/storewindow.cpp.obj CMakeFiles/medimaxzut.dir/store/storeitem.cpp.obj CMakeFiles/medimaxzut.dir/schedule/scheduleview.cpp.obj | C$:/Qt/6.9.0/msvc2022_64/lib/Qt6Widgets.lib C$:/Qt/6.9.0/msvc2022_64/lib/Qt6Gui.lib C$:/Qt/6.9.0/msvc2022_64/lib/Qt6Core.lib || medimaxzut_autogen medimaxzut_autogen_timestamp_deps
   FLAGS = -O3 -DNDEBUG
   LINK_LIBRARIES = C:/Qt/6.9.0/msvc2022_64/lib/Qt6Widgets.lib  -lmariadbcpp  C:/Qt/6.9.0/msvc2022_64/lib/Qt6Gui.lib  C:/Qt/6.9.0/msvc2022_64/lib/Qt6Core.lib  -lmpr  -luserenv  -ld3d11  -ldxgi  -ldxguid  -ld3d12  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   LINK_PATH = -LC:/PROGRA~1/MariaDB/MARIAD~1

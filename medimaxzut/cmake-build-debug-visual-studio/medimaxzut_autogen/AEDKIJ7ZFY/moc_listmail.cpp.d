@@ -1,4 +1,4 @@
-C:/Users/milos/Inzynieria-Oprogramowania-grupa2/medimaxzut/cmake-build-debug-visual-studio/medimaxzut_autogen/AEDKIJ7ZFY/moc_listmail.cpp: C:/Users/milos/Inzynieria-Oprogramowania-grupa2/medimaxzut/mailList/listmail.h \
+D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/cmake-build-debug-visual-studio/medimaxzut_autogen/AEDKIJ7ZFY/moc_listmail.cpp: D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/mailList/listmail.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtCore/q17memory.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtCore/q20functional.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtCore/q20iterator.h \
@@ -156,5 +156,5 @@ C:/Users/milos/Inzynieria-Oprogramowania-grupa2/medimaxzut/cmake-build-debug-vis
   C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/qtwidgetsexports.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/qtwidgetsglobal.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/qwidget.h \
-  C:/Users/milos/Inzynieria-Oprogramowania-grupa2/medimaxzut/mailList/mailext.h \
-  C:/Users/milos/Inzynieria-Oprogramowania-grupa2/medimaxzut/mailList/mailitem.h
+  D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/mailList/mailext.h \
+  D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/mailList/mailitem.h

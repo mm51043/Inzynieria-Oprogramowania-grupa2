@@ -101,4 +101,84 @@ inline std::vector<Wiadomosc> fetchWiadomosci(sql::Connection* conn) {
 
     return wiadomosci;
 }
+inline std::string checkUserRole() {
+    auto conn = baza();
+    if (!conn) {
+        std::cerr << "baza nie chodzi" << std::endl;
+    }
+    std::unique_ptr<sql::Statement> stmt(conn->createStatement());
+    std::string query =
+        "SELECT CASE "
+        "WHEN EXISTS (SELECT 1 FROM administrator WHERE administrator.pracownikID = pracownik.pracownikID) THEN 'admin' "
+        "WHEN EXISTS (SELECT 1 FROM rejestracja WHERE rejestracja.pracownikID = pracownik.pracownikID) THEN 'rejestracja' "
+        "WHEN EXISTS (SELECT 1 FROM lekarz WHERE lekarz.pracownikID = pracownik.pracownikID) THEN 'lekarz' "
+        "WHEN EXISTS (SELECT 1 FROM dyrektor WHERE dyrektor.pracownikID = pracownik.pracownikID) THEN 'dyrektor' "
+        "WHEN EXISTS (SELECT 1 FROM sprzedawca WHERE sprzedawca.pracownikID = pracownik.pracownikID) THEN 'sprzedawca' "
+        "ELSE '' END AS position "
+        "FROM pracownik "
+        "WHERE pracownikID = " + std::to_string(sessionUserId);
+    std::unique_ptr<sql::ResultSet> res(stmt->executeQuery(query));
+    if (res->next()) {
+        return std::string(res->getString("position"));
+    }
+    return "";
+}
+inline std::vector<std::string> getWeek(int week) {
+    std::vector<std::string> weekdays;
+    auto conn = baza();
+    if (!conn) {
+        std::cerr << "baza nie chodzi" << std::endl;
+        return weekdays;
+    }
+    std::unique_ptr<sql::Statement> stmt(conn->createStatement());
+    std::string query = "SELECT DATE_SUB(CURDATE(), INTERVAL WEEKDAY(CURDATE()) DAY) AS weekstart";
+    std::unique_ptr<sql::ResultSet> res(stmt->executeQuery(query));
+    res->next();
+    std::string weekstart{res->getString("weekstart")};
+
+    std::string wsquery = "SELECT DATE_ADD('" + weekstart + "', INTERVAL " + std::to_string(week * 7) + " DAY) AS weekstart";
+    std::unique_ptr<sql::ResultSet> wres(stmt->executeQuery(wsquery));
+    wres->next();
+    std::string wstart{wres->getString("weekstart")};
+
+    for (int i = 0; i < 5; i++) {
+        std::string dquery = "SELECT DATE_FORMAT(DATE_ADD(STR_TO_DATE('" + wstart + "', '%Y-%m-%d'), INTERVAL " + std::to_string(i) + " DAY), '%d.%m.%Y') AS day";
+        std::unique_ptr<sql::ResultSet> dres(stmt->executeQuery(dquery));
+        dres->next();
+        weekdays.emplace_back(dres->getString("day"));
+    }
+    return weekdays;
+}
+struct Wizyta {
+    std::string data;
+    std::string czas;
+    std::string temat;
+    std::string pacjent;
+};
+inline std::vector<Wizyta> getAppointments(std::string date) {
+    std::vector<Wizyta> appointments;
+    auto conn = baza();
+    if (!conn) {
+        std::cerr << "baza nie chodzi" << std::endl;
+        return appointments;
+    }
+    std::unique_ptr<sql::Statement> stmt(conn->createStatement());
+    std::string query =
+    "SELECT wizyta.*, pacjent.imie, pacjent.nazwisko "
+    "FROM wizyta "
+    "JOIN pacjent ON wizyta.pacjentID = pacjent.pacjentID "
+    "WHERE wizyta.pracownikID = " + std::to_string(sessionUserId) +
+    " AND wizyta.data = STR_TO_DATE('" + date + "', '%d.%m.%Y') "
+    "ORDER BY wizyta.godzinaPoczatek";
+    std::unique_ptr<sql::ResultSet> res(stmt->executeQuery(query));
+    while (res->next()) {
+        Wizyta w;
+        w.data = res->getString("data");
+        w.czas = res->getString("godzinaPoczatek");
+        w.temat = res->getString("tytul");
+        w.pacjent = res->getString("imie") + " " + res->getString("nazwisko");
+        appointments.push_back(w);
+    }
+    return appointments;
+}
 #endif //BAZA_H

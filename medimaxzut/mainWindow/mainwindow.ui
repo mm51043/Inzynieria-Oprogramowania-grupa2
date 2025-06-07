@@ -92,7 +92,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
       <enum>Qt::LayoutDirection::LeftToRight</enum>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(0, 62, 154);</string>
+      <string notr="true">color:white;
+background-color: rgb(0, 62, 154);</string>
      </property>
      <property name="text">
       <string>Nawigacja</string>
@@ -114,7 +115,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: black;</string>
+      <string notr="true">background-color:white;</string>
      </property>
      <property name="orientation">
       <enum>Qt::Orientation::Horizontal</enum>
@@ -165,7 +166,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <enum>Qt::LayoutDirection::LeftToRight</enum>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(0, 62, 154);</string>
+     <string notr="true">color:white;
+background-color: rgb(0, 62, 154);</string>
     </property>
     <property name="text">
      <string>Witaj, Dyrektor</string>
@@ -272,7 +274,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
       <enum>Qt::LayoutDirection::LeftToRight</enum>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(0, 62, 154);</string>
+      <string notr="true">background-color: rgb(0, 62, 154);
+color:white;</string>
      </property>
      <property name="text">
       <string>Kontakty</string>
@@ -303,7 +306,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
       <enum>Qt::LayoutDirection::LeftToRight</enum>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(0, 62, 154);</string>
+      <string notr="true">background-color: rgb(0, 62, 154);
+color:white;</string>
      </property>
      <property name="text">
       <string>Dyrektor:</string>
@@ -334,7 +338,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
       <enum>Qt::LayoutDirection::LeftToRight</enum>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(0, 62, 154);</string>
+      <string notr="true">color:white;
+background-color: rgb(0, 62, 154);</string>
      </property>
      <property name="text">
       <string>tel. 727272727</string>
@@ -365,7 +370,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
       <enum>Qt::LayoutDirection::LeftToRight</enum>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(0, 62, 154);</string>
+      <string notr="true">color:white;
+background-color: rgb(0, 62, 154);</string>
      </property>
      <property name="text">
       <string>Administrator:</string>
@@ -396,7 +402,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
       <enum>Qt::LayoutDirection::LeftToRight</enum>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(0, 62, 154);</string>
+      <string notr="true">color:white;
+background-color: rgb(0, 62, 154);</string>
      </property>
      <property name="text">
       <string>tel. 272727272</string>
@@ -428,7 +435,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <property name="frameShadow">
      <enum>QFrame::Shadow::Raised</enum>
     </property>
-    <widget class="QLabel" name="label">
+    <widget class="QLabel" name="dmLabel">
      <property name="geometry">
       <rect>
        <x>20</x>
@@ -447,7 +454,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
       <enum>Qt::LayoutDirection::LeftToRight</enum>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(0, 62, 154);</string>
+      <string notr="true">color:white;
+background-color: rgb(0, 62, 154);</string>
      </property>
      <property name="text">
       <string>7 lipca</string>
@@ -459,7 +467,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
       <set>Qt::AlignmentFlag::AlignCenter</set>
      </property>
     </widget>
-    <widget class="QLabel" name="label_10">
+    <widget class="QLabel" name="yLabel">
      <property name="geometry">
       <rect>
        <x>40</x>
@@ -478,7 +486,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
       <enum>Qt::LayoutDirection::LeftToRight</enum>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(0, 62, 154);</string>
+      <string notr="true">color:white;
+background-color: rgb(0, 62, 154);</string>
      </property>
      <property name="text">
       <string>2727r.</string>
@@ -510,7 +519,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <property name="frameShadow">
      <enum>QFrame::Shadow::Raised</enum>
     </property>
-    <widget class="QLabel" name="label_7">
+    <widget class="QLabel" name="timeLabel">
      <property name="geometry">
       <rect>
        <x>20</x>
@@ -529,7 +538,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
       <enum>Qt::LayoutDirection::LeftToRight</enum>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(0, 62, 154);</string>
+      <string notr="true">color:white;
+background-color: rgb(0, 62, 154);</string>
      </property>
      <property name="text">
       <string>21:15</string>
@@ -591,7 +601,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(0, 62, 154);
-      border-radius: 10px;</string>
+      border-radius: 10px;
+color:white;</string>
     </property>
     <property name="text">
      <string>Skrzynka Odbiorcza</string>

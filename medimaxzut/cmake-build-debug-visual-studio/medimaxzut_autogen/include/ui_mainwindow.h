@@ -41,10 +41,10 @@ public:
     QLabel *label_15;
     QLabel *label_16;
     QFrame *frame_3;
-    QLabel *label;
-    QLabel *label_10;
+    QLabel *dmLabel;
+    QLabel *yLabel;
     QFrame *frame_4;
-    QLabel *label_7;
+    QLabel *timeLabel;
     QFrame *MainPanel;
     QPushButton *mainMailButton;
     QStatusBar *statusbar;
@@ -79,13 +79,14 @@ public:
         font.setBold(true);
         label_8->setFont(font);
         label_8->setLayoutDirection(Qt::LayoutDirection::LeftToRight);
-        label_8->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 62, 154);"));
+        label_8->setStyleSheet(QString::fromUtf8("color:white;\n"
+"background-color: rgb(0, 62, 154);"));
         label_8->setTextFormat(Qt::TextFormat::RichText);
         label_8->setAlignment(Qt::AlignmentFlag::AlignCenter);
         line = new QFrame(groupBox);
         line->setObjectName("line");
         line->setGeometry(QRect(20, 60, 181, 3));
-        line->setStyleSheet(QString::fromUtf8("background-color: black;"));
+        line->setStyleSheet(QString::fromUtf8("background-color:white;"));
         line->setFrameShape(QFrame::Shape::HLine);
         line->setFrameShadow(QFrame::Shadow::Sunken);
         naviList = new QGroupBox(groupBox);
@@ -101,7 +102,8 @@ public:
         font1.setBold(true);
         welcomeLabel->setFont(font1);
         welcomeLabel->setLayoutDirection(Qt::LayoutDirection::LeftToRight);
-        welcomeLabel->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 62, 154);"));
+        welcomeLabel->setStyleSheet(QString::fromUtf8("color:white;\n"
+"background-color: rgb(0, 62, 154);"));
         welcomeLabel->setTextFormat(Qt::TextFormat::RichText);
         welcomeLabel->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
         frame = new QFrame(centralwidget);
@@ -133,7 +135,8 @@ public:
         label_12->setGeometry(QRect(20, 20, 141, 41));
         label_12->setFont(font);
         label_12->setLayoutDirection(Qt::LayoutDirection::LeftToRight);
-        label_12->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 62, 154);"));
+        label_12->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 62, 154);\n"
+"color:white;"));
         label_12->setTextFormat(Qt::TextFormat::RichText);
         label_12->setAlignment(Qt::AlignmentFlag::AlignCenter);
         label_13 = new QLabel(frame_2);
@@ -144,7 +147,8 @@ public:
         font2.setBold(true);
         label_13->setFont(font2);
         label_13->setLayoutDirection(Qt::LayoutDirection::LeftToRight);
-        label_13->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 62, 154);"));
+        label_13->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 62, 154);\n"
+"color:white;"));
         label_13->setTextFormat(Qt::TextFormat::RichText);
         label_13->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
         label_14 = new QLabel(frame_2);
@@ -152,7 +156,8 @@ public:
         label_14->setGeometry(QRect(30, 100, 111, 31));
         label_14->setFont(font2);
         label_14->setLayoutDirection(Qt::LayoutDirection::LeftToRight);
-        label_14->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 62, 154);"));
+        label_14->setStyleSheet(QString::fromUtf8("color:white;\n"
+"background-color: rgb(0, 62, 154);"));
         label_14->setTextFormat(Qt::TextFormat::RichText);
         label_14->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
         label_15 = new QLabel(frame_2);
@@ -160,7 +165,8 @@ public:
         label_15->setGeometry(QRect(30, 140, 121, 31));
         label_15->setFont(font2);
         label_15->setLayoutDirection(Qt::LayoutDirection::LeftToRight);
-        label_15->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 62, 154);"));
+        label_15->setStyleSheet(QString::fromUtf8("color:white;\n"
+"background-color: rgb(0, 62, 154);"));
         label_15->setTextFormat(Qt::TextFormat::RichText);
         label_15->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
         label_16 = new QLabel(frame_2);
@@ -168,7 +174,8 @@ public:
         label_16->setGeometry(QRect(30, 170, 111, 31));
         label_16->setFont(font2);
         label_16->setLayoutDirection(Qt::LayoutDirection::LeftToRight);
-        label_16->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 62, 154);"));
+        label_16->setStyleSheet(QString::fromUtf8("color:white;\n"
+"background-color: rgb(0, 62, 154);"));
         label_16->setTextFormat(Qt::TextFormat::RichText);
         label_16->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
         frame_3 = new QFrame(centralwidget);
@@ -178,22 +185,24 @@ public:
 "      border-radius: 10px;"));
         frame_3->setFrameShape(QFrame::Shape::StyledPanel);
         frame_3->setFrameShadow(QFrame::Shadow::Raised);
-        label = new QLabel(frame_3);
-        label->setObjectName("label");
-        label->setGeometry(QRect(20, 20, 141, 41));
-        label->setFont(font);
-        label->setLayoutDirection(Qt::LayoutDirection::LeftToRight);
-        label->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 62, 154);"));
-        label->setTextFormat(Qt::TextFormat::RichText);
-        label->setAlignment(Qt::AlignmentFlag::AlignCenter);
-        label_10 = new QLabel(frame_3);
-        label_10->setObjectName("label_10");
-        label_10->setGeometry(QRect(40, 60, 111, 41));
-        label_10->setFont(font1);
-        label_10->setLayoutDirection(Qt::LayoutDirection::LeftToRight);
-        label_10->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 62, 154);"));
-        label_10->setTextFormat(Qt::TextFormat::RichText);
-        label_10->setAlignment(Qt::AlignmentFlag::AlignCenter);
+        dmLabel = new QLabel(frame_3);
+        dmLabel->setObjectName("dmLabel");
+        dmLabel->setGeometry(QRect(20, 20, 141, 41));
+        dmLabel->setFont(font);
+        dmLabel->setLayoutDirection(Qt::LayoutDirection::LeftToRight);
+        dmLabel->setStyleSheet(QString::fromUtf8("color:white;\n"
+"background-color: rgb(0, 62, 154);"));
+        dmLabel->setTextFormat(Qt::TextFormat::RichText);
+        dmLabel->setAlignment(Qt::AlignmentFlag::AlignCenter);
+        yLabel = new QLabel(frame_3);
+        yLabel->setObjectName("yLabel");
+        yLabel->setGeometry(QRect(40, 60, 111, 41));
+        yLabel->setFont(font1);
+        yLabel->setLayoutDirection(Qt::LayoutDirection::LeftToRight);
+        yLabel->setStyleSheet(QString::fromUtf8("color:white;\n"
+"background-color: rgb(0, 62, 154);"));
+        yLabel->setTextFormat(Qt::TextFormat::RichText);
+        yLabel->setAlignment(Qt::AlignmentFlag::AlignCenter);
         frame_4 = new QFrame(centralwidget);
         frame_4->setObjectName("frame_4");
         frame_4->setGeometry(QRect(1720, 880, 181, 101));
@@ -201,17 +210,18 @@ public:
 "      border-radius: 10px;"));
         frame_4->setFrameShape(QFrame::Shape::StyledPanel);
         frame_4->setFrameShadow(QFrame::Shadow::Raised);
-        label_7 = new QLabel(frame_4);
-        label_7->setObjectName("label_7");
-        label_7->setGeometry(QRect(20, 10, 141, 81));
+        timeLabel = new QLabel(frame_4);
+        timeLabel->setObjectName("timeLabel");
+        timeLabel->setGeometry(QRect(20, 10, 141, 81));
         QFont font3;
         font3.setPointSize(36);
         font3.setBold(true);
-        label_7->setFont(font3);
-        label_7->setLayoutDirection(Qt::LayoutDirection::LeftToRight);
-        label_7->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 62, 154);"));
-        label_7->setTextFormat(Qt::TextFormat::RichText);
-        label_7->setAlignment(Qt::AlignmentFlag::AlignCenter);
+        timeLabel->setFont(font3);
+        timeLabel->setLayoutDirection(Qt::LayoutDirection::LeftToRight);
+        timeLabel->setStyleSheet(QString::fromUtf8("color:white;\n"
+"background-color: rgb(0, 62, 154);"));
+        timeLabel->setTextFormat(Qt::TextFormat::RichText);
+        timeLabel->setAlignment(Qt::AlignmentFlag::AlignCenter);
         MainPanel = new QFrame(centralwidget);
         MainPanel->setObjectName("MainPanel");
         MainPanel->setGeometry(QRect(240, 80, 1471, 901));
@@ -226,7 +236,8 @@ public:
         mainMailButton->setGeometry(QRect(1680, 10, 221, 61));
         mainMailButton->setFont(font);
         mainMailButton->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 62, 154);\n"
-"      border-radius: 10px;"));
+"      border-radius: 10px;\n"
+"color:white;"));
         MainWindow->setCentralWidget(centralwidget);
         MainPanel->raise();
         textBrowser->raise();
@@ -268,9 +279,9 @@ public:
         label_14->setText(QCoreApplication::translate("MainWindow", "tel. 727272727", nullptr));
         label_15->setText(QCoreApplication::translate("MainWindow", "Administrator:", nullptr));
         label_16->setText(QCoreApplication::translate("MainWindow", "tel. 272727272", nullptr));
-        label->setText(QCoreApplication::translate("MainWindow", "7 lipca", nullptr));
-        label_10->setText(QCoreApplication::translate("MainWindow", "2727r.", nullptr));
-        label_7->setText(QCoreApplication::translate("MainWindow", "21:15", nullptr));
+        dmLabel->setText(QCoreApplication::translate("MainWindow", "7 lipca", nullptr));
+        yLabel->setText(QCoreApplication::translate("MainWindow", "2727r.", nullptr));
+        timeLabel->setText(QCoreApplication::translate("MainWindow", "21:15", nullptr));
         mainMailButton->setText(QCoreApplication::translate("MainWindow", "Skrzynka Odbiorcza", nullptr));
     } // retranslateUi
 

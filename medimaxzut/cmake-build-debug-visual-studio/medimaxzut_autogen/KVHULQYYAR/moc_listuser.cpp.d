@@ -1,4 +1,4 @@
-C:/Users/milos/Inzynieria-Oprogramowania-grupa2/medimaxzut/cmake-build-debug-visual-studio/medimaxzut_autogen/KVHULQYYAR/moc_listuser.cpp: C:/Users/milos/Inzynieria-Oprogramowania-grupa2/medimaxzut/userList/listuser.h \
+D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/cmake-build-debug-visual-studio/medimaxzut_autogen/KVHULQYYAR/moc_listuser.cpp: D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/userList/listuser.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtCore/q17memory.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtCore/q20functional.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtCore/q20iterator.h \

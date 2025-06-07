@@ -7,6 +7,8 @@
 #include "OVELE2FJD2/moc_navibutton.cpp"
 #include "5HNRRA4SB5/moc_prescriptionitem.cpp"
 #include "5HNRRA4SB5/moc_prescriptionwindow.cpp"
+#include "JUFIZBJ6BF/moc_schedulecell.cpp"
+#include "JUFIZBJ6BF/moc_scheduleview.cpp"
 #include "FWFAAK5S4E/moc_storeitem.cpp"
 #include "FWFAAK5S4E/moc_storewindow.cpp"
 #include "KVHULQYYAR/moc_listitem.cpp"

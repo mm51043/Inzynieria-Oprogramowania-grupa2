@@ -15,12 +15,18 @@ int main(int argc, char *argv[]) {
         lgw.close();
         mpw.setWelcomeUserName(sessionUserName);
         mpw.showMaximized();
-        std::string user = "dyrektor";
+        std::string user = checkUserRole();
         if (user == "admin") {
-            mpw.navigation(adminButtons);
-        } else if (user == "dyrektor") {
-            mpw.navigation(dyrektorButtons);
-        }
+     mpw.navigation(adminButtons);
+ } else if (user == "dyrektor") {
+     mpw.navigation(bossButtons);
+ } else if (user == "lekarz") {
+     mpw.navigation(doctorButtons);
+ } else if (user == "recepcja") {
+     mpw.navigation(recButtons);
+ } else if (user == "sprzedawca") {
+     mpw.navigation(salesButtons);
+ }
     });
 
     lgw.show();

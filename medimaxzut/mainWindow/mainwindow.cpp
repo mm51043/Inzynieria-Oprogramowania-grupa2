@@ -4,7 +4,10 @@
 #include "../mailList/listmail.h"
 #include "../userList/listuser.h"
 #include "../prescriptionAdd/prescriptionwindow.h"
+#include "../schedule/scheduleview.h"
 #include "../store/storewindow.h"
+#include <QTimer>
+#include <QTime>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -12,6 +15,19 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     setWindowTitle("MediMaxZut");
+    QTimer* timer = new QTimer(this);
+    const QStringList months = {
+        "stycznia", "lutego", "marca", "kwietnia", "maja", "czerwca",
+        "lipca", "sierpnia", "września", "października", "listopada", "grudnia"
+    };
+    connect(timer, &QTimer::timeout, this, [this, months]() {
+        QString currentTime = QTime::currentTime().toString("HH:mm");
+        ui->timeLabel->setText(currentTime);
+        QDate currentDate = QDate::currentDate();
+        ui->dmLabel->setText(currentDate.toString(QString("%1 %2").arg(currentDate.day()).arg(months[currentDate.month()-1])));
+        ui->yLabel->setText(currentDate.toString("yyyyr."));
+    });
+    timer->start(1000);
     if (!ui->MainPanel->layout()) {
         auto* layout = new QVBoxLayout(ui->MainPanel);
         layout->setContentsMargins(0, 0, 0, 0);
@@ -20,14 +36,13 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->mainMailButton, &QPushButton::clicked, this, [this]() {
         showMailList();
     });
-    \
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
 }
-void MainWindow::setWelcomeUserName(const std::string& userName) {
+void MainWindow::setWelcomeUserName(const std::string& userName) const {
     ui->welcomeLabel->setText(QString::fromStdString("Witaj, " + userName));
 }
 void MainWindow::showPatientList(bool prescription) {
@@ -62,8 +77,8 @@ void MainWindow::showMailList() {
         delete item;
     }
 
-    auto *listUserWidget = new ListMail();
-    layout->addWidget(listUserWidget);
+    auto *listMailWidget = new ListMail();
+    layout->addWidget(listMailWidget);
 }
 
 void MainWindow::showPrescAdd(int patientId) {
@@ -77,9 +92,9 @@ void MainWindow::showPrescAdd(int patientId) {
         }
         delete item;
     }
-    auto *listUserWidget = new PrescWindow();
-    listUserWidget->setPatientId(patientId);
-    layout->addWidget(listUserWidget);
+    auto *prescriptionWidget = new PrescWindow();
+    prescriptionWidget->setPatientId(patientId);
+    layout->addWidget(prescriptionWidget);
 }
 
 void MainWindow::showStore() {
@@ -95,7 +110,19 @@ void MainWindow::showStore() {
     auto *storeWidget = new StoreWindow();
     layout->addWidget(storeWidget);
 }
+void MainWindow::showSchedule() {
+    QLayout *layout = ui->MainPanel->layout();
 
+    QLayoutItem *item;
+    while ((item = layout->takeAt(0)) != nullptr) {
+        if (item->widget()) {
+            item->widget()->deleteLater();
+        }
+        delete item;
+    }
+    auto *scheduleWidget = new ScheduleView();
+    layout->addWidget(scheduleWidget);
+}
 void MainWindow::navigation(const QStringList &buttons) {
     QVBoxLayout* layout = qobject_cast<QVBoxLayout*>(ui->naviList->layout());
     if (!layout) {
@@ -127,6 +154,11 @@ void MainWindow::navigation(const QStringList &buttons) {
         if (name == "Dodaj Receptę") {
             connect(btn->pushButton, &QPushButton::clicked, this, [this]() {
                 showPatientList(true);
+            });
+        }
+        if (name == "Harmonogram") {
+            connect(btn->pushButton, &QPushButton::clicked, this, [this]() {
+               showSchedule();
             });
         }
         if (name == "Apteka") {

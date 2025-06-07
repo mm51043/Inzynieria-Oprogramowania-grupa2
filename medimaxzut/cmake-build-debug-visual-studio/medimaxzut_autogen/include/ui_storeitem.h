@@ -32,7 +32,7 @@ public:
     {
         if (storeitem->objectName().isEmpty())
             storeitem->setObjectName("storeitem");
-        storeitem->resize(571, 61);
+        storeitem->resize(569, 64);
         frame_50 = new QFrame(storeitem);
         frame_50->setObjectName("frame_50");
         frame_50->setGeometry(QRect(0, 0, 571, 61));
