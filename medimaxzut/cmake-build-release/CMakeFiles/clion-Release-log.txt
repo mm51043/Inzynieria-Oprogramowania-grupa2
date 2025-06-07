@@ -1,5 +1,5 @@
 "D:\JetBrains\CLion 2025.1\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Release "-DCMAKE_MAKE_PROGRAM=D:/JetBrains/CLion 2025.1/bin/ninja/win/x64/ninja.exe" -G Ninja -S D:\Inzynieria-Oprogramowania-grupa2\medimaxzut -B D:\Inzynieria-Oprogramowania-grupa2\medimaxzut\cmake-build-release
 -- Could NOT find WrapVulkanHeaders (missing: Vulkan_INCLUDE_DIR) 
--- Configuring done (2.9s)
+-- Configuring done (0.7s)
 -- Generating done (0.3s)
 -- Build files have been written to: D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/cmake-build-release
