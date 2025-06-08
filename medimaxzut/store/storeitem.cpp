@@ -23,3 +23,12 @@ void StoreItem::setData(const QString& nazwa, const QString& ilosc)
 QPushButton* StoreItem::listAdd() {
     return ui->storeUpdateButton;
 }
+
+void StoreItem::setDisabled(bool disabled) {
+    ui->storeUpdateButton->setEnabled(!disabled);
+    if (disabled) {
+        ui->storeUpdateButton->setStyleSheet("background-color: gray; border-radius: 10px; color: white;");
+    } else {
+        ui->storeUpdateButton->setStyleSheet("background-color: rgb(0, 41, 94); border-radius: 10px; color: white;");
+    }
+}

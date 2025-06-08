@@ -25,6 +25,7 @@ private:
     void lAdd(int id);
     void lRemove(int id);
     void lUpdate();
+    void updateMedicineQuantity(int id, int change);
 
     Ui::Store *ui;
     QVBoxLayout* llayout;

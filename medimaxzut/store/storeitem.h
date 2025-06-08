@@ -18,6 +18,7 @@ public:
 
     void setData(const QString &nazwa, const QString &ilosc);
     QPushButton* listAdd();
+    void setDisabled(bool disabled);
 
 private:
     Ui::storeitem *ui;

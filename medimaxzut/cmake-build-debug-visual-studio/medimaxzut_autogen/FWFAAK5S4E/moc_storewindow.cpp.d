@@ -1,4 +1,4 @@
-D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/cmake-build-debug-visual-studio/medimaxzut_autogen/FWFAAK5S4E/moc_storewindow.cpp: D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/store/storewindow.h \
+C:/Users/milos/Inzynieria-Oprogramowania-grupa2/medimaxzut/cmake-build-debug-visual-studio/medimaxzut_autogen/FWFAAK5S4E/moc_storewindow.cpp: C:/Users/milos/Inzynieria-Oprogramowania-grupa2/medimaxzut/store/storewindow.h \
   C:/Program\ Files/MariaDB/MariaDB\ C++\ Connector\ 64-bit/include/mariadb/MariaDbDataSource.hpp \
   C:/Program\ Files/MariaDB/MariaDB\ C++\ Connector\ 64-bit/include/mariadb/conncpp.hpp \
   C:/Program\ Files/MariaDB/MariaDB\ C++\ Connector\ 64-bit/include/mariadb/conncpp/CArray.hpp \
@@ -189,5 +189,5 @@ D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/cmake-build-debug-visual-studio/m
   C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/qtwidgetsexports.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/qtwidgetsglobal.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/qwidget.h \
-  D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/baza.h \
-  D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/session.h
+  C:/Users/milos/Inzynieria-Oprogramowania-grupa2/medimaxzut/baza.h \
+  C:/Users/milos/Inzynieria-Oprogramowania-grupa2/medimaxzut/session.h

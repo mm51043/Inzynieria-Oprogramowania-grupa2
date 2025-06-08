@@ -1,4 +1,4 @@
-D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/cmake-build-debug-visual-studio/medimaxzut_autogen/AEDKIJ7ZFY/moc_mailext.cpp: D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/mailList/mailext.h \
+C:/Users/milos/Inzynieria-Oprogramowania-grupa2/medimaxzut/cmake-build-debug-visual-studio/medimaxzut_autogen/AEDKIJ7ZFY/moc_mailext.cpp: C:/Users/milos/Inzynieria-Oprogramowania-grupa2/medimaxzut/mailList/mailext.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtCore/q17memory.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtCore/q20functional.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtCore/q20iterator.h \

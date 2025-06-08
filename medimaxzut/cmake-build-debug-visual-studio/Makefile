@@ -391,6 +391,54 @@ prescriptionAdd\prescriptionwindow.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\medimaxzut.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\medimaxzut.dir\prescriptionAdd\prescriptionwindow.cpp.s
 .PHONY : prescriptionAdd\prescriptionwindow.cpp.s
 
+schedule\schedulecell.obj: schedule\schedulecell.cpp.obj
+.PHONY : schedule\schedulecell.obj
+
+# target to build an object file
+schedule\schedulecell.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\medimaxzut.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\medimaxzut.dir\schedule\schedulecell.cpp.obj
+.PHONY : schedule\schedulecell.cpp.obj
+
+schedule\schedulecell.i: schedule\schedulecell.cpp.i
+.PHONY : schedule\schedulecell.i
+
+# target to preprocess a source file
+schedule\schedulecell.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\medimaxzut.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\medimaxzut.dir\schedule\schedulecell.cpp.i
+.PHONY : schedule\schedulecell.cpp.i
+
+schedule\schedulecell.s: schedule\schedulecell.cpp.s
+.PHONY : schedule\schedulecell.s
+
+# target to generate assembly for a file
+schedule\schedulecell.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\medimaxzut.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\medimaxzut.dir\schedule\schedulecell.cpp.s
+.PHONY : schedule\schedulecell.cpp.s
+
+schedule\scheduleview.obj: schedule\scheduleview.cpp.obj
+.PHONY : schedule\scheduleview.obj
+
+# target to build an object file
+schedule\scheduleview.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\medimaxzut.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\medimaxzut.dir\schedule\scheduleview.cpp.obj
+.PHONY : schedule\scheduleview.cpp.obj
+
+schedule\scheduleview.i: schedule\scheduleview.cpp.i
+.PHONY : schedule\scheduleview.i
+
+# target to preprocess a source file
+schedule\scheduleview.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\medimaxzut.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\medimaxzut.dir\schedule\scheduleview.cpp.i
+.PHONY : schedule\scheduleview.cpp.i
+
+schedule\scheduleview.s: schedule\scheduleview.cpp.s
+.PHONY : schedule\scheduleview.s
+
+# target to generate assembly for a file
+schedule\scheduleview.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\medimaxzut.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\medimaxzut.dir\schedule\scheduleview.cpp.s
+.PHONY : schedule\scheduleview.cpp.s
+
 store\storeitem.obj: store\storeitem.cpp.obj
 .PHONY : store\storeitem.obj
 
@@ -529,6 +577,12 @@ help:
 	@echo ... prescriptionAdd/prescriptionwindow.obj
 	@echo ... prescriptionAdd/prescriptionwindow.i
 	@echo ... prescriptionAdd/prescriptionwindow.s
+	@echo ... schedule/schedulecell.obj
+	@echo ... schedule/schedulecell.i
+	@echo ... schedule/schedulecell.s
+	@echo ... schedule/scheduleview.obj
+	@echo ... schedule/scheduleview.i
+	@echo ... schedule/scheduleview.s
 	@echo ... store/storeitem.obj
 	@echo ... store/storeitem.i
 	@echo ... store/storeitem.s

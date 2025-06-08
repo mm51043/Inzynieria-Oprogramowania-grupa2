@@ -1,4 +1,4 @@
-D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/cmake-build-debug-visual-studio/medimaxzut_autogen/5HNRRA4SB5/moc_prescriptionitem.cpp: D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/prescriptionAdd/prescriptionitem.h \
+C:/Users/milos/Inzynieria-Oprogramowania-grupa2/medimaxzut/cmake-build-debug-visual-studio/medimaxzut_autogen/5HNRRA4SB5/moc_prescriptionitem.cpp: C:/Users/milos/Inzynieria-Oprogramowania-grupa2/medimaxzut/prescriptionAdd/prescriptionitem.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtCore/q17memory.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtCore/q20functional.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtCore/q20iterator.h \

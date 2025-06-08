@@ -15,7 +15,7 @@ void LoginWindow::onEnter() {
     QString name = ui.loginUsername->text();
     QString pwd = ui.loginPassword->text();
     if (true) {
-        sessionUserId = 12;
+        sessionUserId = 1;
         setSessionUserName();
         emit loginPass();
     }

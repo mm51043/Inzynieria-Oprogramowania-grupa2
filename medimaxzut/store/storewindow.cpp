@@ -9,12 +9,26 @@ StoreWindow::StoreWindow(QWidget *parent)
     , ui(new Ui::Store)
 {
     ui->setupUi(this);
+
+    ui->rightList->setStyleSheet("");
+    ui->rightArea->setStyleSheet("");
+
+    if (!ui->rightList->layout()) {
+        ui->rightList->setLayout(new QVBoxLayout(ui->rightList));
+    }
+    ui->rightArea->setWidgetResizable(true);
+    ui->rightArea->setWidget(ui->rightList);
+
     llayout = lListLayout();
     auto conn = baza();
     if (!conn) {
         qDebug() << "baza nie chodzi";
     } else {
         leki = fetchLeki(conn.get());
+        qDebug() << "Pobrano leków:" << leki.size();
+        for (const auto& lek : leki) {
+            qDebug() << "Lek:" << QString::fromStdString(lek.nazwa) << "Ilość:" << lek.ilosc;
+        }
     }
     rList();
     connect(ui->clearButton, &QPushButton::clicked, this, [this]() {
@@ -35,12 +49,13 @@ QVBoxLayout* StoreWindow::lListLayout() {
     }
     return layout;
 }
-
 void StoreWindow::rList() {
     QVBoxLayout* layout = qobject_cast<QVBoxLayout*>(ui->rightList->layout());
     if (!layout) {
         layout = new QVBoxLayout(ui->rightList);
         ui->rightList->setLayout(layout);
+        layout->setContentsMargins(0, 5, 0, 5);
+        layout->setSpacing(5);
     }
 
     QLayoutItem *child;
@@ -51,18 +66,46 @@ void StoreWindow::rList() {
         delete child;
     }
 
-    layout->setContentsMargins(0, 5, 0, 5);
-    layout->setSpacing(5);
+    qDebug() << "Aktualizacja listy leków...";
+
     for (const auto& l : leki) {
+        qDebug() << "Tworzenie StoreItem dla:" << QString::fromStdString(l.nazwa);
         auto* li = new StoreItem();
-        li->setData(QString::fromStdString(l.nazwa), QString::number(l.ilosc));
-        connect(li->listAdd(), &QPushButton::clicked, this, [this, li, l]() {
+
+        if (l.ilosc <= 0) {
+            li->setData(QString::fromStdString(l.nazwa), "Brak środków");
+            li->listAdd()->setEnabled(false);
+            li->listAdd()->setStyleSheet(
+                "background-color: gray; border-radius: 10px; color: white;"
+            );
+        } else {
+            li->setData(QString::fromStdString(l.nazwa), QString::number(l.ilosc));
+            li->listAdd()->setEnabled(true);
+            li->listAdd()->setStyleSheet(
+                "background-color: rgb(0, 41, 94); border-radius: 10px; color: white;"
+            );
+        }
+
+        connect(li->listAdd(), &QPushButton::clicked, this, [this, l]() {
+            if (l.ilosc > 0) {
+                qDebug() << "Kliknięto przycisk Dodaj dla:" << QString::fromStdString(l.nazwa);
                 lAdd(l.id);
                 lUpdate();
+
+                auto it = std::find_if(leki.begin(), leki.end(),
+                    [&l](const Lek& lek) { return lek.id == l.id; });
+                if (it != leki.end() && it->ilosc <= 0) {
+                    rList();
+                }
+            }
         });
+
         layout->addWidget(li);
     }
+
     layout->addStretch();
+    ui->rightList->layout()->update();
+    ui->rightList->updateGeometry();
 }
 
 void StoreWindow::lClear() {
@@ -70,15 +113,40 @@ void StoreWindow::lClear() {
     lUpdate();
 }
 
+void StoreWindow::updateMedicineQuantity(int id, int change) {
+    auto it = std::find_if(leki.begin(), leki.end(), [id](const Lek& l) {
+        return l.id == id;
+    });
+
+    if (it != leki.end()) {
+        it->ilosc += change;
+        // Ogranicz do wartości nieujemnych
+        if (it->ilosc < 0) it->ilosc = 0;
+        rList(); // Odśwież listę
+    }
+}
+
 void StoreWindow::lAdd(int id) {
+    auto lek_it = std::find_if(leki.begin(), leki.end(), [id](const Lek& l) {
+        return l.id == id;
+    });
+
+    if (lek_it == leki.end() || lek_it->ilosc <= 0) {
+        return;
+    }
+
     auto it = std::find_if(leftLek.begin(), leftLek.end(), [id](const std::pair<int, int>& p) {
         return p.first == id;
     });
+
     if (it == leftLek.end()) {
         leftLek.emplace_back(id, 1);
     } else {
         it->second++;
     }
+
+    updateMedicineQuantity(id, -1);
+    lUpdate();
 }
 
 void StoreWindow::lRemove(int id) {
