@@ -190,7 +190,7 @@ void MainWindow::navigation(const QStringList &buttons) {
         }
         if (name == "Dodaj Receptę") {
             connect(btn->pushButton, &QPushButton::clicked, this, [this]() {
-                showPrescAdd( 1);
+                showPatientList(true, false, 1);
             });
         }
         if (name == "Harmonogram") {

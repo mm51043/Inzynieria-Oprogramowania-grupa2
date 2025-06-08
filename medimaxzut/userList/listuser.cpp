@@ -33,7 +33,7 @@ void ListUser::setAppointment() {
 }
 void ListUser::list() {
     qDebug() << prescription << ", " << appointment;
-    QVBoxLayout* layout = qobject_cast<QVBoxLayout*>(ui->List->layout());
+    auto* layout = qobject_cast<QVBoxLayout*>(ui->List->layout());
     if (!layout) {
         layout = new QVBoxLayout(ui->List);
         ui->List->setLayout(layout);

@@ -447,6 +447,12 @@
 			null
 		],
 		[
+			"D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/profile/profil.h",
+			"MU",
+			"IBI7BCOZAJ/moc_profil.cpp",
+			null
+		],
+		[
 			"D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/schedule/schedulecell.h",
 			"MU",
 			"JUFIZBJ6BF/moc_schedulecell.cpp",
@@ -691,6 +697,11 @@
 		],
 		[
 			"D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/prescriptionAdd/prescriptionwindow.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/profile/profil.cpp",
 			"MU",
 			null
 		],
