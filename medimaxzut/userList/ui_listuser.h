@@ -215,8 +215,8 @@ public:
         label3->setText(QCoreApplication::translate("ListUser", "Typ", nullptr));
         label1->setText(QCoreApplication::translate("ListUser", "Imi\304\231", nullptr));
         label2->setText(QCoreApplication::translate("ListUser", "Nazwisko", nullptr));
-        whatListLabel->setText(QCoreApplication::translate("ListUser", "Pracownicy", nullptr));
-        title->setText(QCoreApplication::translate("ListUser", "Lista pracownik\303\263w", nullptr));
+        whatListLabel->setText(QCoreApplication::translate("ListUser", "Pacjenci", nullptr));
+        title->setText(QCoreApplication::translate("ListUser", "Lista pacjent\303\263w", nullptr));
     } // retranslateUi
 
 };

@@ -368,7 +368,7 @@ QScrollArea QScrollBar::sub-page:vertical {
       <string notr="true"/>
      </property>
      <property name="text">
-      <string>Pracownicy</string>
+      <string>Pacjenci</string>
      </property>
      <property name="textFormat">
       <enum>Qt::TextFormat::RichText</enum>
@@ -413,7 +413,7 @@ QScrollArea QScrollBar::sub-page:vertical {
 border-radius: 10px;</string>
     </property>
     <property name="text">
-     <string>Lista pracowników</string>
+     <string>Lista pacjentów</string>
     </property>
     <property name="textFormat">
      <enum>Qt::TextFormat::RichText</enum>
