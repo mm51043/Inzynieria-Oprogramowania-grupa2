@@ -13,6 +13,7 @@ ScheduleView::ScheduleView(MainWindow* mw, QWidget *parent)
     , ui(new Ui::ScheduleView)
     , week(0)
     , mainWindow(mw)
+    , newAppointment(false)
 {
     ui->setupUi(this);
     fillSchedule();

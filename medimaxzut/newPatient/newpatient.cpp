@@ -137,3 +137,6 @@ void NewPatient::hideErrors() {
     ui->patHouseErr->setVisible(false);
     ui->patPeselDuplicate->setVisible(false);
 }
+void NewPatient::fillDocList() {
+
+}

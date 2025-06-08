@@ -30,6 +30,8 @@ public:
 
     void hideErrors();
 
+    void fillDocList();
+
 private:
     Ui::NewPatient *ui;
     int patientId;

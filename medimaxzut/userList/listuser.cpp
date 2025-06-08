@@ -10,6 +10,8 @@ ListUser::ListUser(MainWindow* mw, QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::ListUser)
     , mainWindow(mw)
+    , prescription(false)
+    , appointment(false)
 {
     ui->setupUi(this);
     list();
@@ -28,6 +30,7 @@ void ListUser::setAppointment() {
     list();
 }
 void ListUser::list() {
+    qDebug() << prescription << ", " << appointment;
         QVBoxLayout* layout = qobject_cast<QVBoxLayout*>(ui->List->layout());
         if (!layout) {
             layout = new QVBoxLayout(ui->List);

@@ -25,7 +25,7 @@ public:
     void showPrescAdd(int patientId) const;
     void showStore() const;
     void showNewPatient(int patientId, std::string date, std::string time);
-    void showSchedule(bool insert, int doctorid) const;
+    void showSchedule(bool insert, int doctorid);
 
 private:
 

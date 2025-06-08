@@ -62,9 +62,11 @@ void MainWindow::showPatientList(bool prescription, bool newAppointment, int mod
     else if (mode == 1)
         listUserWidget->setLabels("patient");
     if (prescription) {
+        qDebug() << prescription << "Prescription";
         listUserWidget->setPrescription();
     }
     if (newAppointment) {
+        qDebug() << newAppointment << "Appointment";
         listUserWidget->setAppointment();
     }
     layout->addWidget(listUserWidget);
@@ -131,7 +133,7 @@ void MainWindow::showNewPatient(int patientId, std::string date, std::string tim
     }
     layout->addWidget(newPatientWidget);
 }
-void MainWindow::showSchedule(bool insert, int doctorid) const {
+void MainWindow::showSchedule(bool insert, int doctorid) {
     QLayout *layout = ui->MainPanel->layout();
     QLayoutItem *item;
     while ((item = layout->takeAt(0)) != nullptr) {
@@ -140,7 +142,7 @@ void MainWindow::showSchedule(bool insert, int doctorid) const {
         }
         delete item;
     }
-    auto *scheduleWidget = new ScheduleView();
+    auto *scheduleWidget = new ScheduleView(this);
     if (doctorid) {
 
     }

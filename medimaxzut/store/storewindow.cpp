@@ -32,7 +32,8 @@ QVBoxLayout* StoreWindow::lListLayout() {
 }
 
 void StoreWindow::rList() {
-    QVBoxLayout* layout = qobject_cast<QVBoxLayout*>(ui->rightList->layout());
+
+    auto layout = qobject_cast<QVBoxLayout*>(ui->rightList->layout());
     if (!layout) {
         layout = new QVBoxLayout(ui->rightList);
         ui->rightList->setLayout(layout);
@@ -45,7 +46,9 @@ void StoreWindow::rList() {
         }
         delete child;
     }
-
+    auto leki = fetchLeki();
+    qDebug() << "rlist";
+    qDebug() << std::to_string(leki.size());
     layout->setContentsMargins(0, 5, 0, 5);
     layout->setSpacing(5);
     for (const auto& l : leki) {

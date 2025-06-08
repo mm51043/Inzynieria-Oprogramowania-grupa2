@@ -49,6 +49,7 @@ add_executable(medimaxzut
         schedule/schedulecell.cpp
         newPatient/newpatient.cpp
         newPatient/newpatientdoctorlistitem.cpp
+        schedule/schedulecellempty.cpp
 )
 
 target_link_libraries(medimaxzut
