@@ -176,9 +176,14 @@ void MainWindow::navigation(const QStringList &buttons) {
                 showPatientList(false, false, 1);
             });
         }
+        if (name == "Lista Pracowników") {
+            connect(btn->pushButton, &QPushButton::clicked, this, [this]() {
+                showPatientList(false, false, 1);
+            });
+        }
         if (name == "Dodaj Receptę") {
             connect(btn->pushButton, &QPushButton::clicked, this, [this]() {
-                showPatientList(true, false, 1);
+                showPrescAdd( 1);
             });
         }
         if (name == "Harmonogram") {
