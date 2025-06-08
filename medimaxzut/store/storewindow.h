@@ -18,6 +18,7 @@ public:
     ~StoreWindow();
 
     QVBoxLayout *lListLayout();
+    bool canAddMedicine(int id) const;
 
 private:
     void rList();

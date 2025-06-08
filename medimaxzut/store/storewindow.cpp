@@ -31,8 +31,28 @@ QVBoxLayout* StoreWindow::lListLayout() {
     return layout;
 }
 
-void StoreWindow::rList() {
+bool StoreWindow::canAddMedicine(int id) const {
+    auto it = std::find_if(leki.begin(), leki.end(), [id](const Lek& l) {
+        return l.id == id;
+    });
 
+    if (it != leki.end()) {
+        // Sprawdź ile już jest w koszyku
+        int inCart = 0;
+        auto cartIt = std::find_if(leftLek.begin(), leftLek.end(), [id](const std::pair<int, int>& p) {
+            return p.first == id;
+        });
+
+        if (cartIt != leftLek.end()) {
+            inCart = cartIt->second;
+        }
+
+        return inCart < it->ilosc;
+    }
+    return false;
+}
+
+void StoreWindow::rList() {
     auto layout = qobject_cast<QVBoxLayout*>(ui->rightList->layout());
     if (!layout) {
         layout = new QVBoxLayout(ui->rightList);
@@ -46,18 +66,22 @@ void StoreWindow::rList() {
         }
         delete child;
     }
-    auto leki = fetchLeki();
-    qDebug() << "rlist";
-    qDebug() << std::to_string(leki.size());
+
+    leki = fetchLeki(); // Odśwież listę leków
     layout->setContentsMargins(0, 5, 0, 5);
     layout->setSpacing(5);
+
     for (const auto& l : leki) {
         auto* li = new StoreItem();
         li->setData(QString::fromStdString(l.nazwa), QString::number(l.ilosc));
-        connect(li->listAdd(), &QPushButton::clicked, this, [this, li, l]() {
-                lAdd(l.id);
-                lUpdate();
+
+        QPushButton* addButton = li->listAdd();
+        connect(addButton, &QPushButton::clicked, this, [this, li, l]() {
+            lAdd(l.id);
         });
+
+        addButton->setEnabled(canAddMedicine(l.id));
+
         layout->addWidget(li);
     }
     layout->addStretch();
@@ -69,14 +93,21 @@ void StoreWindow::lClear() {
 }
 
 void StoreWindow::lAdd(int id) {
+    if (!canAddMedicine(id)) {
+        return;
+    }
+
     auto it = std::find_if(leftLek.begin(), leftLek.end(), [id](const std::pair<int, int>& p) {
         return p.first == id;
     });
+
     if (it == leftLek.end()) {
         leftLek.emplace_back(id, 1);
     } else {
         it->second++;
     }
+    lUpdate();
+    rList();
 }
 
 void StoreWindow::lRemove(int id) {
@@ -101,16 +132,22 @@ void StoreWindow::lUpdate() {
             w->deleteLater();
         delete child;
     }
+
     for (const auto& lid : leftLek) {
         auto it = std::find_if(leki.begin(), leki.end(), [lid](const Lek& l) {
             return l.id == lid.first;
         });
+
         auto* li = new StoreItem();
         connect(li->listAdd(), &QPushButton::clicked, this, [this, lid]() {
             lRemove(lid.first);
+            rList(); // Odśwież listę dostępnych leków po usunięciu
         });
+
         li->setData(QString::fromStdString(it->nazwa), QString::number(lid.second));
         llayout->addWidget(li);
     }
     llayout->addStretch();
+
+     rList();
 }

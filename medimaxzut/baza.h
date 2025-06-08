@@ -68,28 +68,32 @@ inline Pacjent getPatientData(int patientId) {
     auto conn = baza();
     if (!conn) {
         std::cerr << "baza nie chodzi" << std::endl;
+        return Pacjent();  // Zwróć domyślny obiekt Pacjent w przypadku błędu
     }
+
     std::unique_ptr<sql::Statement> stmt(conn->createStatement());
     std::unique_ptr<sql::ResultSet> res(stmt->executeQuery("SELECT * FROM pacjent WHERE pacjentID = " + std::to_string(patientId)));
-    res->next();
+
+    if (!res->next()) {
+        return Pacjent();  // Zwróć domyślny obiekt jeśli nie znaleziono pacjenta
+    }
+
     Pacjent p;
+    p.id = patientId;
     p.imie = res->getString("imie");
     p.nazwisko = res->getString("nazwisko");
     p.pesel = res->getString("pesel");
     p.nrTelefonu = res->getInt("nrTelefonu");
-    if (!res->isNull("historia"))
-        p.historia = res->getString("historia");
-    else
-        p.historia = "";
+
+    p.historia = res->isNull("historia") ? std::string() : static_cast<std::string>(res->getString("historia"));
     p.miasto = res->getString("miasto");
     p.ulica = res->getString("ulica");
     p.nrDomu = res->getInt("nrDomu");
-    if (!res->isNull("nrMieszkania"))
-        p.nrMieszkania = res->getInt("nrMieszkania");
-    else
-        p.nrMieszkania = 0;
+    p.nrMieszkania = res->isNull("nrMieszkania") ? 0 : res->getInt("nrMieszkania");
+
     return p;
 }
+
 
 inline bool checkPeselDuplicate(const std::string& pesel) {
     auto conn = baza();

@@ -343,6 +343,54 @@ medimaxzut_autogen\mocs_compilation.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\medimaxzut.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\medimaxzut.dir\medimaxzut_autogen\mocs_compilation.cpp.s
 .PHONY : medimaxzut_autogen\mocs_compilation.cpp.s
 
+newPatient\newpatient.obj: newPatient\newpatient.cpp.obj
+.PHONY : newPatient\newpatient.obj
+
+# target to build an object file
+newPatient\newpatient.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\medimaxzut.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\medimaxzut.dir\newPatient\newpatient.cpp.obj
+.PHONY : newPatient\newpatient.cpp.obj
+
+newPatient\newpatient.i: newPatient\newpatient.cpp.i
+.PHONY : newPatient\newpatient.i
+
+# target to preprocess a source file
+newPatient\newpatient.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\medimaxzut.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\medimaxzut.dir\newPatient\newpatient.cpp.i
+.PHONY : newPatient\newpatient.cpp.i
+
+newPatient\newpatient.s: newPatient\newpatient.cpp.s
+.PHONY : newPatient\newpatient.s
+
+# target to generate assembly for a file
+newPatient\newpatient.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\medimaxzut.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\medimaxzut.dir\newPatient\newpatient.cpp.s
+.PHONY : newPatient\newpatient.cpp.s
+
+newPatient\newpatientdoctorlistitem.obj: newPatient\newpatientdoctorlistitem.cpp.obj
+.PHONY : newPatient\newpatientdoctorlistitem.obj
+
+# target to build an object file
+newPatient\newpatientdoctorlistitem.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\medimaxzut.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\medimaxzut.dir\newPatient\newpatientdoctorlistitem.cpp.obj
+.PHONY : newPatient\newpatientdoctorlistitem.cpp.obj
+
+newPatient\newpatientdoctorlistitem.i: newPatient\newpatientdoctorlistitem.cpp.i
+.PHONY : newPatient\newpatientdoctorlistitem.i
+
+# target to preprocess a source file
+newPatient\newpatientdoctorlistitem.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\medimaxzut.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\medimaxzut.dir\newPatient\newpatientdoctorlistitem.cpp.i
+.PHONY : newPatient\newpatientdoctorlistitem.cpp.i
+
+newPatient\newpatientdoctorlistitem.s: newPatient\newpatientdoctorlistitem.cpp.s
+.PHONY : newPatient\newpatientdoctorlistitem.s
+
+# target to generate assembly for a file
+newPatient\newpatientdoctorlistitem.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\medimaxzut.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\medimaxzut.dir\newPatient\newpatientdoctorlistitem.cpp.s
+.PHONY : newPatient\newpatientdoctorlistitem.cpp.s
+
 prescriptionAdd\prescriptionitem.obj: prescriptionAdd\prescriptionitem.cpp.obj
 .PHONY : prescriptionAdd\prescriptionitem.obj
 
@@ -390,6 +438,102 @@ prescriptionAdd\prescriptionwindow.s: prescriptionAdd\prescriptionwindow.cpp.s
 prescriptionAdd\prescriptionwindow.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\medimaxzut.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\medimaxzut.dir\prescriptionAdd\prescriptionwindow.cpp.s
 .PHONY : prescriptionAdd\prescriptionwindow.cpp.s
+
+profile\profil.obj: profile\profil.cpp.obj
+.PHONY : profile\profil.obj
+
+# target to build an object file
+profile\profil.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\medimaxzut.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\medimaxzut.dir\profile\profil.cpp.obj
+.PHONY : profile\profil.cpp.obj
+
+profile\profil.i: profile\profil.cpp.i
+.PHONY : profile\profil.i
+
+# target to preprocess a source file
+profile\profil.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\medimaxzut.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\medimaxzut.dir\profile\profil.cpp.i
+.PHONY : profile\profil.cpp.i
+
+profile\profil.s: profile\profil.cpp.s
+.PHONY : profile\profil.s
+
+# target to generate assembly for a file
+profile\profil.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\medimaxzut.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\medimaxzut.dir\profile\profil.cpp.s
+.PHONY : profile\profil.cpp.s
+
+schedule\schedulecell.obj: schedule\schedulecell.cpp.obj
+.PHONY : schedule\schedulecell.obj
+
+# target to build an object file
+schedule\schedulecell.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\medimaxzut.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\medimaxzut.dir\schedule\schedulecell.cpp.obj
+.PHONY : schedule\schedulecell.cpp.obj
+
+schedule\schedulecell.i: schedule\schedulecell.cpp.i
+.PHONY : schedule\schedulecell.i
+
+# target to preprocess a source file
+schedule\schedulecell.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\medimaxzut.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\medimaxzut.dir\schedule\schedulecell.cpp.i
+.PHONY : schedule\schedulecell.cpp.i
+
+schedule\schedulecell.s: schedule\schedulecell.cpp.s
+.PHONY : schedule\schedulecell.s
+
+# target to generate assembly for a file
+schedule\schedulecell.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\medimaxzut.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\medimaxzut.dir\schedule\schedulecell.cpp.s
+.PHONY : schedule\schedulecell.cpp.s
+
+schedule\schedulecellempty.obj: schedule\schedulecellempty.cpp.obj
+.PHONY : schedule\schedulecellempty.obj
+
+# target to build an object file
+schedule\schedulecellempty.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\medimaxzut.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\medimaxzut.dir\schedule\schedulecellempty.cpp.obj
+.PHONY : schedule\schedulecellempty.cpp.obj
+
+schedule\schedulecellempty.i: schedule\schedulecellempty.cpp.i
+.PHONY : schedule\schedulecellempty.i
+
+# target to preprocess a source file
+schedule\schedulecellempty.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\medimaxzut.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\medimaxzut.dir\schedule\schedulecellempty.cpp.i
+.PHONY : schedule\schedulecellempty.cpp.i
+
+schedule\schedulecellempty.s: schedule\schedulecellempty.cpp.s
+.PHONY : schedule\schedulecellempty.s
+
+# target to generate assembly for a file
+schedule\schedulecellempty.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\medimaxzut.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\medimaxzut.dir\schedule\schedulecellempty.cpp.s
+.PHONY : schedule\schedulecellempty.cpp.s
+
+schedule\scheduleview.obj: schedule\scheduleview.cpp.obj
+.PHONY : schedule\scheduleview.obj
+
+# target to build an object file
+schedule\scheduleview.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\medimaxzut.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\medimaxzut.dir\schedule\scheduleview.cpp.obj
+.PHONY : schedule\scheduleview.cpp.obj
+
+schedule\scheduleview.i: schedule\scheduleview.cpp.i
+.PHONY : schedule\scheduleview.i
+
+# target to preprocess a source file
+schedule\scheduleview.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\medimaxzut.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\medimaxzut.dir\schedule\scheduleview.cpp.i
+.PHONY : schedule\scheduleview.cpp.i
+
+schedule\scheduleview.s: schedule\scheduleview.cpp.s
+.PHONY : schedule\scheduleview.s
+
+# target to generate assembly for a file
+schedule\scheduleview.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\medimaxzut.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\medimaxzut.dir\schedule\scheduleview.cpp.s
+.PHONY : schedule\scheduleview.cpp.s
 
 store\storeitem.obj: store\storeitem.cpp.obj
 .PHONY : store\storeitem.obj
@@ -523,12 +667,30 @@ help:
 	@echo ... medimaxzut_autogen/mocs_compilation.obj
 	@echo ... medimaxzut_autogen/mocs_compilation.i
 	@echo ... medimaxzut_autogen/mocs_compilation.s
+	@echo ... newPatient/newpatient.obj
+	@echo ... newPatient/newpatient.i
+	@echo ... newPatient/newpatient.s
+	@echo ... newPatient/newpatientdoctorlistitem.obj
+	@echo ... newPatient/newpatientdoctorlistitem.i
+	@echo ... newPatient/newpatientdoctorlistitem.s
 	@echo ... prescriptionAdd/prescriptionitem.obj
 	@echo ... prescriptionAdd/prescriptionitem.i
 	@echo ... prescriptionAdd/prescriptionitem.s
 	@echo ... prescriptionAdd/prescriptionwindow.obj
 	@echo ... prescriptionAdd/prescriptionwindow.i
 	@echo ... prescriptionAdd/prescriptionwindow.s
+	@echo ... profile/profil.obj
+	@echo ... profile/profil.i
+	@echo ... profile/profil.s
+	@echo ... schedule/schedulecell.obj
+	@echo ... schedule/schedulecell.i
+	@echo ... schedule/schedulecell.s
+	@echo ... schedule/schedulecellempty.obj
+	@echo ... schedule/schedulecellempty.i
+	@echo ... schedule/schedulecellempty.s
+	@echo ... schedule/scheduleview.obj
+	@echo ... schedule/scheduleview.i
+	@echo ... schedule/scheduleview.s
 	@echo ... store/storeitem.obj
 	@echo ... store/storeitem.i
 	@echo ... store/storeitem.s
