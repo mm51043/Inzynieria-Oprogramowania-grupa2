@@ -14,6 +14,7 @@ public:
     void showPatientProfile(int patientId);
 
 private:
+    void showDefaultPhoto();
     Ui::profil ui;
 };
 

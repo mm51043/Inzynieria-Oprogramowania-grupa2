@@ -10,11 +10,11 @@ StoreWindow::StoreWindow(QWidget *parent)
 {
     ui->setupUi(this);
     llayout = lListLayout();
-        leki = fetchLeki();
+    leki = fetchLeki();
     rList();
-    connect(ui->clearButton, &QPushButton::clicked, this, [this]() {
-        lClear();
-    });
+
+    connect(ui->clearButton, &QPushButton::clicked, this, &StoreWindow::lClear);
+    connect(ui->okButton, &QPushButton::clicked, this, &StoreWindow::submitOrder);
 }
 
 StoreWindow::~StoreWindow()
@@ -67,7 +67,7 @@ void StoreWindow::rList() {
         delete child;
     }
 
-    leki = fetchLeki(); // Odśwież listę leków
+    leki = fetchLeki(); // Odświeżamy listę leków
     layout->setContentsMargins(0, 5, 0, 5);
     layout->setSpacing(5);
 
@@ -75,12 +75,26 @@ void StoreWindow::rList() {
         auto* li = new StoreItem();
         li->setData(QString::fromStdString(l.nazwa), QString::number(l.ilosc));
 
-        QPushButton* addButton = li->listAdd();
-        connect(addButton, &QPushButton::clicked, this, [this, li, l]() {
-            lAdd(l.id);
+        // Sprawdzamy ile już jest w koszyku
+        int inCart = 0;
+        auto cartIt = std::find_if(leftLek.begin(), leftLek.end(), [l](const std::pair<int, int>& p) {
+            return p.first == l.id;
         });
+        if (cartIt != leftLek.end()) {
+            inCart = cartIt->second;
+        }
 
-        addButton->setEnabled(canAddMedicine(l.id));
+        // Ustawiamy tekst przycisku w zależności od stanu
+        if (inCart > 0) {
+            li->listAdd()->setText(QString("Dodano (%1)").arg(inCart));
+        } else {
+            li->listAdd()->setText("Dodaj");
+        }
+
+        connect(li->listAdd(), &QPushButton::clicked, this, [this, li, l]() {
+            lAdd(l.id);
+            rList();
+        });
 
         layout->addWidget(li);
     }
@@ -92,22 +106,33 @@ void StoreWindow::lClear() {
     lUpdate();
 }
 
-void StoreWindow::lAdd(int id) {
-    if (!canAddMedicine(id)) {
-        return;
-    }
-
+bool StoreWindow::lAdd(int id) {
     auto it = std::find_if(leftLek.begin(), leftLek.end(), [id](const std::pair<int, int>& p) {
         return p.first == id;
     });
+
+    // Znajdź lek w magazynie
+    auto lekIt = std::find_if(leki.begin(), leki.end(), [id](const Lek& l) {
+        return l.id == id;
+    });
+
+    if (lekIt == leki.end()) return false;
+
+    int inCart = (it == leftLek.end()) ? 0 : it->second;
+
+    if (inCart >= lekIt->ilosc) {
+        QMessageBox::warning(this, "Błąd", "Przekroczono dostępną ilość leku!");
+        return false;
+    }
 
     if (it == leftLek.end()) {
         leftLek.emplace_back(id, 1);
     } else {
         it->second++;
     }
+
     lUpdate();
-    rList();
+    return true;
 }
 
 void StoreWindow::lRemove(int id) {
@@ -150,4 +175,35 @@ void StoreWindow::lUpdate() {
     llayout->addStretch();
 
      rList();
+}
+
+void StoreWindow::submitOrder() {
+    auto conn = baza();
+    if (!conn) {
+        QMessageBox::critical(this, "Błąd", "Problem z połączeniem do bazy danych");
+        return;
+    }
+
+    try {
+        conn->setAutoCommit(false);
+
+
+        for (const auto& item : leftLek) {
+            std::unique_ptr<sql::PreparedStatement> stmt(
+                conn->prepareStatement("UPDATE lek SET iloscMagazyn = iloscMagazyn - ? WHERE LekID = ?")
+            );
+            stmt->setInt(1, item.second);
+            stmt->setInt(2, item.first);
+            stmt->executeUpdate();
+        }
+
+        conn->commit();
+        QMessageBox::information(this, "Sukces", "Zamówienie zostało zatwierdzone!");
+        lClear();
+        leki = fetchLeki();
+        rList();
+    } catch (const sql::SQLException& e) {
+        conn->rollback();
+        QMessageBox::critical(this, "Błąd", QString("Wystąpił błąd podczas aktualizacji bazy: %1").arg(e.what()));
+    }
 }

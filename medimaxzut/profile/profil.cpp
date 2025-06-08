@@ -5,6 +5,8 @@ Profil::Profil(QWidget *parent)
     : QMainWindow(parent)
 {
     ui.setupUi(this);
+    ui.profilePhoto->setAlignment(Qt::AlignCenter);
+    ui.profilePhoto->setScaledContents(true);
 }
 
 void Profil::showPatientProfile(int patientId)
@@ -16,16 +18,39 @@ void Profil::showPatientProfile(int patientId)
         return;
     }
 
-    // Ustawiamy dane w UI
     ui.NameLabel_3->setText(QString::fromStdString(p.imie + " " + p.nazwisko));
     ui.PeselLabel_2->setText("PESEL: " + QString::fromStdString(p.pesel));
     ui.CTLabel_2->setText("Tel: " + QString::number(p.nrTelefonu));
-    ui.pnstLabel_2->setText("Kraj: Polska"); // Stała wartość, bo nie mamy w bazie
+    ui.pnstLabel_2->setText("Kraj: Polska");
     ui.MiastoLabel_2->setText("Miasto: " + QString::fromStdString(p.miasto));
     ui.PeselLabel_7->setText("Ulica: " + QString::fromStdString(p.ulica + " " +
-                              std::to_string(p.nrDomu) +
-                              (p.nrMieszkania > 0 ? "/" + std::to_string(p.nrMieszkania) : "")));
+                          std::to_string(p.nrDomu) +
+                          (p.nrMieszkania > 0 ? "/" + std::to_string(p.nrMieszkania) : "")));
     ui.PeselLabel_8->setText("Nr pacjenta: " + QString::number(p.id));
 
-    this->show(); // Pokazujemy okno profilu
+    if (!p.zdjecie_data.empty()) {
+        QPixmap photo;
+        if (photo.loadFromData(p.zdjecie_data.data(), p.zdjecie_data.size())) {
+            ui.profilePhoto->setPixmap(photo.scaled(ui.profilePhoto->size(),
+                Qt::KeepAspectRatio, Qt::SmoothTransformation));
+        } else {
+            showDefaultPhoto();
+        }
+    } else {
+        showDefaultPhoto();
+    }
+
+    this->show();
+}
+
+void Profil::showDefaultPhoto()
+{
+    QPixmap defaultPhoto(":/images/default_profile.png");  // Make sure this resource exists
+    if (!defaultPhoto.isNull()) {
+        ui.profilePhoto->setPixmap(defaultPhoto.scaled(ui.profilePhoto->size(),
+            Qt::KeepAspectRatio, Qt::SmoothTransformation));
+    } else {
+        qDebug() << "Failed to load default profile photo";
+        ui.profilePhoto->setText("No Image");
+    }
 }

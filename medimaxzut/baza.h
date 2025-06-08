@@ -36,12 +36,13 @@ struct Pacjent {
     std::string imie;
     std::string nazwisko;
     std::string pesel;
-    int nrTelefonu;
     std::string historia;
+    int nrTelefonu;
     std::string miasto;
     std::string ulica;
     int nrDomu;
     int nrMieszkania;
+    std::vector<unsigned char> zdjecie_data;
 };
 inline std::vector<Pacjent> fetchPacjenci() {
     auto conn = baza();
@@ -249,8 +250,8 @@ inline int submitPatient(const Pacjent& p) {
     }
     std::unique_ptr<sql::PreparedStatement> stmt(
         conn->prepareStatement(
-            "INSERT INTO pacjent (imie, nazwisko, pesel, historia, nrTelefonu, miasto, ulica, nrDomu, nrMieszkania) "
-            "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)"
+            "INSERT INTO pacjent (imie, nazwisko, pesel, historia, nrTelefonu, miasto, ulica, nrDomu, nrMieszkania, zdjecie_data) "
+            "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
         )
     );
     stmt->setString(1, p.imie);
@@ -264,6 +265,12 @@ inline int submitPatient(const Pacjent& p) {
     stmt->setString(6, p.miasto);
     stmt->setString(7, p.ulica);
     stmt->setInt(8, p.nrDomu);
+    if (p.zdjecie_data.empty()) {
+        stmt->setNull(10, sql::DataType::BLOB);
+    } else {
+        stmt->setBlob(10, new std::istringstream(
+            std::string(p.zdjecie_data.begin(), p.zdjecie_data.end())));
+    }
     if (p.nrMieszkania == 0)
         stmt->setNull(9, sql::DataType::INTEGER);
     else

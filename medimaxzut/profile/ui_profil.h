@@ -36,6 +36,7 @@ public:
     QLabel *NameLabel_4;
     QFrame *line_41;
     QLabel *PeselLabel_8;
+    QLabel *profilePhoto;
 
     void setupUi(QWidget *profil)
     {
@@ -163,6 +164,13 @@ public:
         PeselLabel_8->setStyleSheet(QString::fromUtf8(""));
         PeselLabel_8->setTextFormat(Qt::TextFormat::RichText);
         PeselLabel_8->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
+        profilePhoto = new QLabel(frame_52);
+        profilePhoto->setObjectName("profilePhoto");
+        profilePhoto->setGeometry(QRect(319, 60, 221, 231));
+        profilePhoto->setMinimumSize(QSize(0, 16));
+        profilePhoto->setStyleSheet(QString::fromUtf8("background-color: rgb(200, 200, 200);\n"
+"border-radius: 100px;\n"
+"border: 3px solid white;"));
 
         retranslateUi(profil);
 
@@ -180,6 +188,7 @@ public:
         PeselLabel_7->setText(QCoreApplication::translate("profil", "ul. ", nullptr));
         NameLabel_4->setText(QCoreApplication::translate("profil", "Kartoteka", nullptr));
         PeselLabel_8->setText(QCoreApplication::translate("profil", "NumerPacjenta", nullptr));
+        profilePhoto->setText(QCoreApplication::translate("profil", "TextLabel", nullptr));
     } // retranslateUi
 
 };

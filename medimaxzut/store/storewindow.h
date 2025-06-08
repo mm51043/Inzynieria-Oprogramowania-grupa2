@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QVBoxLayout>
 #include "../baza.h"
+#include <QMessageBox>
 
 namespace Ui {
 class Store;
@@ -23,9 +24,10 @@ public:
 private:
     void rList();
     void lClear();
-    void lAdd(int id);
+    bool lAdd(int id);
     void lRemove(int id);
     void lUpdate();
+    void submitOrder();
 
     Ui::Store *ui;
     QVBoxLayout* llayout;
