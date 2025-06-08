@@ -20,13 +20,11 @@ ListMail::~ListMail()
 }
 
 void ListMail::list() {
-
     QVBoxLayout* layout = qobject_cast<QVBoxLayout*>(ui->List->layout());
     if (!layout) {
         layout = new QVBoxLayout(ui->List);
         ui->List->setLayout(layout);
     }
-
     QLayoutItem *child;
     while ((child = layout->takeAt(0)) != nullptr) {
         if (child->widget()) {
@@ -34,18 +32,9 @@ void ListMail::list() {
         }
         delete child;
     }
-
     layout->setContentsMargins(0, 5, 0, 5);
     layout->setSpacing(5);
-
-    auto conn = baza();
-    if (!conn) {
-        qDebug() << "Database connection failed";
-        return;
-    }
-
-    auto messages = fetchWiadomosci(conn.get());
-
+    auto messages = fetchWiadomosci();
     for (const auto& w : messages) {
         auto* mi = new MailItem();
         mi->setData(
@@ -55,7 +44,6 @@ void ListMail::list() {
             QString::fromStdString(w.tresc)
         );
         layout->addWidget(mi);
-
         connect(mi, &MailItem::expandSignal, this, [=](MailItem* sender, bool expand) {
             if (expand) {
                 auto* ext = new MailExt();

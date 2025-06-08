@@ -5,11 +5,14 @@
 #include "ui_scheduleview.h"
 #include "../baza.h"
 #include "schedulecell.h"
+#include "schedulecellempty.h"
+#include "../mainWindow/mainwindow.h"
 
-ScheduleView::ScheduleView(QWidget *parent)
+ScheduleView::ScheduleView(MainWindow* mw, QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::ScheduleView)
     , week(0)
+    , mainWindow(mw)
 {
     ui->setupUi(this);
     fillSchedule();
@@ -28,25 +31,41 @@ ScheduleView::~ScheduleView()
 {
     delete ui;
 }
-void ScheduleView::fillSchedule() const {
+void ScheduleView::setDoctorId(int id){
+    doctorid = id;
+}
+void ScheduleView::setAppointment() {
+    newAppointment = true;
+}
+void ScheduleView::fillSchedule() {
+    auto weekdays = getWeek(week);
+    ui->dateRangeLabel->setText(QString::fromStdString(weekdays[0] + " - " + weekdays[4]));
     for (int day = 0; day < 5; ++day) {
         for (int hour = 0; hour < 8; ++hour) {
             QString frameName = QString("frame%1%2").arg(day).arg(hour);
             auto* frame = this->findChild<QFrame*>(frameName);
-            if (frame) {
-                if (QLayout* layout = frame->layout()) {
-                    while (QLayoutItem* item = layout->takeAt(0)) {
-                        delete item->widget();
-                        delete item;
-                    }
-                } else {
-                    frame->setLayout(new QVBoxLayout(frame));
-                }
+            if (!frame) continue;
+            QLayout* layout = frame->layout();
+            if (!layout) {
+                layout = new QVBoxLayout(frame);
+                frame->setLayout(layout);
+            }
+            while (QLayoutItem* item = layout->takeAt(0)) {
+                delete item->widget();
+                delete item;
+            }
+            layout->setContentsMargins(0, 0, 0, 0);
+            if (newAppointment) {
+                std::string date = weekdays[day];
+                auto* empty = new ScheduleCellEmpty(frame);
+                connect(empty->getButton(), &QPushButton::clicked, this, [this, date, hour]() {
+                    mainWindow->showNewPatient(doctorid, date, std::to_string(hour+8));
+                });
+                layout->addWidget(empty);
             }
         }
     }
-    auto weekdays = getWeek(week);
-    ui->dateRangeLabel->setText(QString::fromStdString(weekdays[0] + " - " + weekdays[4]));
+
     for (int i = 0; i < weekdays.size(); i++) {
         auto wizyty = getAppointments(weekdays[i]);
         for (auto w : wizyty) {
