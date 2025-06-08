@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:4306
--- Generation Time: Jun 03, 2025 at 10:31 PM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- Generation Time: Cze 08, 2025 at 11:19 PM
+-- Wersja serwera: 10.4.32-MariaDB
+-- Wersja PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `administrator`
+-- Struktura tabeli dla tabeli `administrator`
 --
 
 CREATE TABLE `administrator` (
@@ -42,7 +42,7 @@ INSERT INTO `administrator` (`PracownikID`, `nrTelefonuSluzbowego`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dyrektor`
+-- Struktura tabeli dla tabeli `dyrektor`
 --
 
 CREATE TABLE `dyrektor` (
@@ -60,7 +60,7 @@ INSERT INTO `dyrektor` (`PracownikID`, `nrTelefonuSluzbowego`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `lek`
+-- Struktura tabeli dla tabeli `lek`
 --
 
 CREATE TABLE `lek` (
@@ -88,7 +88,7 @@ INSERT INTO `lek` (`LekID`, `nazwa`, `cena`, `iloscMagazyn`, `naRecepte`) VALUES
 (10, 'Zinnat', 24.00, 10, 0x31),
 (11, 'Acard', 6.30, 70, 0x31),
 (12, 'Tantum Verde', 14.20, 30, 0x30),
-(13, 'Xanax', 19.99, 5, 0x31),
+(13, 'Xanax', 19.99, 1, 0x31),
 (14, 'Diclac', 16.00, 12, 0x31),
 (15, 'Fluimucil', 13.00, 20, 0x30),
 (16, 'Nospa', 8.10, 40, 0x30),
@@ -100,7 +100,7 @@ INSERT INTO `lek` (`LekID`, `nazwa`, `cena`, `iloscMagazyn`, `naRecepte`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `lekarz`
+-- Struktura tabeli dla tabeli `lekarz`
 --
 
 CREATE TABLE `lekarz` (
@@ -126,7 +126,7 @@ INSERT INTO `lekarz` (`PracownikID`, `nrGabinetu`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pacjent`
+-- Struktura tabeli dla tabeli `pacjent`
 --
 
 CREATE TABLE `pacjent` (
@@ -139,39 +139,40 @@ CREATE TABLE `pacjent` (
   `miasto` varchar(42) NOT NULL,
   `ulica` varchar(56) NOT NULL,
   `nrDomu` int(10) NOT NULL,
-  `nrMieszkania` int(10) DEFAULT NULL
+  `nrMieszkania` int(10) DEFAULT NULL,
+  `zdjecie_path` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `pacjent`
 --
 
-INSERT INTO `pacjent` (`PacjentID`, `imie`, `nazwisko`, `pesel`, `historia`, `nrTelefonu`, `miasto`, `ulica`, `nrDomu`, `nrMieszkania`) VALUES
-(1, 'Adam', 'Malinowski', '20000101001', 'Brak', 700001001, 'Szczecin', 'Lipowa', 10, 1),
-(2, 'Beata', 'Kaczmarek', '20000101002', NULL, 700001002, 'Szczecin', 'Brzozowa', 12, 2),
-(3, 'Cezary', 'Lis', '20000101003', 'Alergie', 700001003, 'Szczecin', 'Topolowa', 14, NULL),
-(4, 'Dorota', 'Górska', '20000101004', NULL, 700001004, 'Szczecin', 'Klonowa', 5, 4),
-(5, 'Emil', 'Jabłoński', '20000101005', 'Cukrzyca', 700001005, 'Szczecin', 'Jesionowa', 6, 5),
-(6, 'Filip', 'Bąk', '20000101006', NULL, 700001006, 'Szczecin', 'Grabowa', 9, NULL),
-(7, 'Grażyna', 'Czarnecka', '20000101007', 'Problemy z sercem', 700001007, 'Szczecin', 'Akacjowa', 20, 1),
-(8, 'Hubert', 'Krupa', '20000101008', NULL, 700001008, 'Szczecin', 'Wrzosowa', 21, NULL),
-(9, 'Irena', 'Urban', '20000101009', NULL, 700001009, 'Szczecin', 'Sosnowa', 22, 2),
-(10, 'Jerzy', 'Rogowski', '20000101010', NULL, 700001010, 'Szczecin', 'Bukowa', 23, 3),
-(11, 'Katarzyna', 'Michalak', '20000101011', NULL, 700001011, 'Szczecin', 'Świerkowa', 24, NULL),
-(12, 'Łukasz', 'Sawicki', '20000101012', NULL, 700001012, 'Szczecin', 'Cisowa', 25, 1),
-(13, 'Monika', 'Zalewska', '20000101013', NULL, 700001013, 'Szczecin', 'Leszczynowa', 26, 2),
-(14, 'Norbert', 'Marciniak', '20000101014', NULL, 700001014, 'Szczecin', 'Jarzębinowa', 27, NULL),
-(15, 'Olga', 'Pawlak', '20000101015', NULL, 700001015, 'Szczecin', 'Modrzewiowa', 28, 3),
-(16, 'Patryk', 'Zięba', '20000101016', NULL, 700001016, 'Szczecin', 'Olchowa', 29, NULL),
-(17, 'Renata', 'Bednarek', '20000101017', NULL, 700001017, 'Szczecin', 'Jaśminowa', 30, 2),
-(18, 'Sebastian', 'Ratajczak', '20000101018', NULL, 700001018, 'Szczecin', 'Czereśniowa', 31, NULL),
-(19, 'Teresa', 'Czerwińska', '20000101019', NULL, 700001019, 'Szczecin', 'Malinowa', 32, 3),
-(20, 'Urszula', 'Makowska', '20000101020', NULL, 700001020, 'Szczecin', 'Poziomkowa', 33, NULL);
+INSERT INTO `pacjent` (`PacjentID`, `imie`, `nazwisko`, `pesel`, `historia`, `nrTelefonu`, `miasto`, `ulica`, `nrDomu`, `nrMieszkania`, `zdjecie_path`) VALUES
+(1, 'Adam', 'Malinowski', '20000101001', 'Brak', 700001001, 'Szczecin', 'Lipowa', 10, 1, NULL),
+(2, 'Beata', 'Kaczmarek', '20000101002', NULL, 700001002, 'Szczecin', 'Brzozowa', 12, 2, NULL),
+(3, 'Cezary', 'Lis', '20000101003', 'Alergie', 700001003, 'Szczecin', 'Topolowa', 14, NULL, NULL),
+(4, 'Dorota', 'Górska', '20000101004', NULL, 700001004, 'Szczecin', 'Klonowa', 5, 4, NULL),
+(5, 'Emil', 'Jabłoński', '20000101005', 'Cukrzyca', 700001005, 'Szczecin', 'Jesionowa', 6, 5, NULL),
+(6, 'Filip', 'Bąk', '20000101006', NULL, 700001006, 'Szczecin', 'Grabowa', 9, NULL, NULL),
+(7, 'Grażyna', 'Czarnecka', '20000101007', 'Problemy z sercem', 700001007, 'Szczecin', 'Akacjowa', 20, 1, NULL),
+(8, 'Hubert', 'Krupa', '20000101008', NULL, 700001008, 'Szczecin', 'Wrzosowa', 21, NULL, NULL),
+(9, 'Irena', 'Urban', '20000101009', NULL, 700001009, 'Szczecin', 'Sosnowa', 22, 2, NULL),
+(10, 'Jerzy', 'Rogowski', '20000101010', NULL, 700001010, 'Szczecin', 'Bukowa', 23, 3, NULL),
+(11, 'Katarzyna', 'Michalak', '20000101011', NULL, 700001011, 'Szczecin', 'Świerkowa', 24, NULL, NULL),
+(12, 'Łukasz', 'Sawicki', '20000101012', NULL, 700001012, 'Szczecin', 'Cisowa', 25, 1, NULL),
+(13, 'Monika', 'Zalewska', '20000101013', NULL, 700001013, 'Szczecin', 'Leszczynowa', 26, 2, NULL),
+(14, 'Norbert', 'Marciniak', '20000101014', NULL, 700001014, 'Szczecin', 'Jarzębinowa', 27, NULL, NULL),
+(15, 'Olga', 'Pawlak', '20000101015', NULL, 700001015, 'Szczecin', 'Modrzewiowa', 28, 3, NULL),
+(16, 'Patryk', 'Zięba', '20000101016', NULL, 700001016, 'Szczecin', 'Olchowa', 29, NULL, NULL),
+(17, 'Renata', 'Bednarek', '20000101017', NULL, 700001017, 'Szczecin', 'Jaśminowa', 30, 2, NULL),
+(18, 'Sebastian', 'Ratajczak', '20000101018', NULL, 700001018, 'Szczecin', 'Czereśniowa', 31, NULL, NULL),
+(19, 'Teresa', 'Czerwińska', '20000101019', NULL, 700001019, 'Szczecin', 'Malinowa', 32, 3, NULL),
+(20, 'Urszula', 'Makowska', '20000101020', NULL, 700001020, 'Szczecin', 'Poziomkowa', 33, NULL, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pracownik`
+-- Struktura tabeli dla tabeli `pracownik`
 --
 
 CREATE TABLE `pracownik` (
@@ -180,39 +181,40 @@ CREATE TABLE `pracownik` (
   `nazwisko` varchar(30) NOT NULL,
   `nrTelefonu` int(11) NOT NULL,
   `pesel` varchar(11) NOT NULL,
-  `ostatniLogin` date DEFAULT NULL
+  `ostatniLogin` date DEFAULT NULL,
+  `zdjecie_path` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `pracownik`
 --
 
-INSERT INTO `pracownik` (`PracownikID`, `imie`, `nazwisko`, `nrTelefonu`, `pesel`, `ostatniLogin`) VALUES
-(1, 'Anna', 'Nowak', 501001001, '90010112345', NULL),
-(2, 'Jan', 'Kowalski', 502002002, '80020212345', NULL),
-(3, 'Marta', 'Wiśniewska', 503003003, '85030312345', NULL),
-(4, 'Paweł', 'Zieliński', 504004004, '82040412345', NULL),
-(5, 'Karolina', 'Wójcik', 505005005, '83050512345', NULL),
-(6, 'Tomasz', 'Kamiński', 506006006, '87060612345', NULL),
-(7, 'Ewa', 'Lewandowska', 507007007, '81070712345', NULL),
-(8, 'Krzysztof', 'Dąbrowski', 508008008, '89080812345', NULL),
-(9, 'Magda', 'Szymańska', 509009009, '88090912345', NULL),
-(10, 'Robert', 'Woźniak', 510010010, '89101012345', NULL),
-(11, 'Agnieszka', 'Mazur', 511011011, '88111112345', NULL),
-(12, 'Piotr', 'Krawczyk', 512012012, '86121212345', NULL),
-(13, 'Zofia', 'Zając', 513013013, '92010112345', NULL),
-(14, 'Grzegorz', 'Król', 514014014, '93020212345', NULL),
-(15, 'Natalia', 'Wieczorek', 515015015, '94030312345', NULL),
-(16, 'Marek', 'Jankowski', 516016016, '95040412345', NULL),
-(17, 'Iwona', 'Baran', 517017017, '96050512345', NULL),
-(18, 'Artur', 'Sikora', 518018018, '97060612345', NULL),
-(19, 'Elżbieta', 'Wróbel', 519019019, '98070712345', NULL),
-(20, 'Damian', 'Nowicki', 520020020, '99080812345', NULL);
+INSERT INTO `pracownik` (`PracownikID`, `imie`, `nazwisko`, `nrTelefonu`, `pesel`, `ostatniLogin`, `zdjecie_path`) VALUES
+(1, 'Anna', 'Nowak', 501001001, '90010112345', NULL, NULL),
+(2, 'Jan', 'Kowalski', 502002002, '80020212345', NULL, NULL),
+(3, 'Marta', 'Wiśniewska', 503003003, '85030312345', NULL, NULL),
+(4, 'Paweł', 'Zieliński', 504004004, '82040412345', NULL, NULL),
+(5, 'Karolina', 'Wójcik', 505005005, '83050512345', NULL, NULL),
+(6, 'Tomasz', 'Kamiński', 506006006, '87060612345', NULL, NULL),
+(7, 'Ewa', 'Lewandowska', 507007007, '81070712345', NULL, NULL),
+(8, 'Krzysztof', 'Dąbrowski', 508008008, '89080812345', NULL, NULL),
+(9, 'Magda', 'Szymańska', 509009009, '88090912345', NULL, NULL),
+(10, 'Robert', 'Woźniak', 510010010, '89101012345', NULL, NULL),
+(11, 'Agnieszka', 'Mazur', 511011011, '88111112345', NULL, NULL),
+(12, 'Piotr', 'Krawczyk', 512012012, '86121212345', NULL, NULL),
+(13, 'Zofia', 'Zając', 513013013, '92010112345', NULL, NULL),
+(14, 'Grzegorz', 'Król', 514014014, '93020212345', NULL, NULL),
+(15, 'Natalia', 'Wieczorek', 515015015, '94030312345', NULL, NULL),
+(16, 'Marek', 'Jankowski', 516016016, '95040412345', NULL, NULL),
+(17, 'Iwona', 'Baran', 517017017, '96050512345', NULL, NULL),
+(18, 'Artur', 'Sikora', 518018018, '97060612345', NULL, NULL),
+(19, 'Elżbieta', 'Wróbel', 519019019, '98070712345', NULL, NULL),
+(20, 'Damian', 'Nowicki', 520020020, '99080812345', NULL, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pracowniklogin`
+-- Struktura tabeli dla tabeli `pracowniklogin`
 --
 
 CREATE TABLE `pracowniklogin` (
@@ -224,7 +226,7 @@ CREATE TABLE `pracowniklogin` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `recepta`
+-- Struktura tabeli dla tabeli `recepta`
 --
 
 CREATE TABLE `recepta` (
@@ -253,7 +255,7 @@ INSERT INTO `recepta` (`ReceptaID`, `PracownikID`, `PacjentID`, `zrealizowano`) 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `receptalek`
+-- Struktura tabeli dla tabeli `receptalek`
 --
 
 CREATE TABLE `receptalek` (
@@ -291,7 +293,7 @@ INSERT INTO `receptalek` (`ReceptaID`, `LekID`, `ilosc`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `rejestracja`
+-- Struktura tabeli dla tabeli `rejestracja`
 --
 
 CREATE TABLE `rejestracja` (
@@ -315,7 +317,7 @@ INSERT INTO `rejestracja` (`PracownikID`, `zmiana`, `stanowisko`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sprzedawca`
+-- Struktura tabeli dla tabeli `sprzedawca`
 --
 
 CREATE TABLE `sprzedawca` (
@@ -335,7 +337,7 @@ INSERT INTO `sprzedawca` (`PracownikID`, `zmiana`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sprzedaz`
+-- Struktura tabeli dla tabeli `sprzedaz`
 --
 
 CREATE TABLE `sprzedaz` (
@@ -365,7 +367,7 @@ INSERT INTO `sprzedaz` (`SprzedazID`, `ReceptaID`, `PracownikID`, `data`, `godzi
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sprzedazlek`
+-- Struktura tabeli dla tabeli `sprzedazlek`
 --
 
 CREATE TABLE `sprzedazlek` (
@@ -394,7 +396,7 @@ INSERT INTO `sprzedazlek` (`SprzedazID`, `LekID`, `ilosc`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `wiadomosci`
+-- Struktura tabeli dla tabeli `wiadomosci`
 --
 
 CREATE TABLE `wiadomosci` (
@@ -425,7 +427,7 @@ INSERT INTO `wiadomosci` (`WiadomoscID`, `nadawca`, `tytul`, `czasNadania`, `dat
 -- --------------------------------------------------------
 
 --
--- Table structure for table `wizyta`
+-- Struktura tabeli dla tabeli `wizyta`
 --
 
 CREATE TABLE `wizyta` (
@@ -456,39 +458,39 @@ INSERT INTO `wizyta` (`WizytaID`, `PracownikID`, `PacjentID`, `godzinaPoczatek`,
 (10, 12, 10, '10:15:00.000000', '10:30:00.000000', 0x31, 'Wizyta kontrolna', '2025-05-01');
 
 --
--- Indexes for dumped tables
+-- Indeksy dla zrzutów tabel
 --
 
 --
--- Indexes for table `administrator`
+-- Indeksy dla tabeli `administrator`
 --
 ALTER TABLE `administrator`
   ADD UNIQUE KEY `nrTelefonuSluzbowego` (`nrTelefonuSluzbowego`),
   ADD UNIQUE KEY `PracownikID` (`PracownikID`);
 
 --
--- Indexes for table `dyrektor`
+-- Indeksy dla tabeli `dyrektor`
 --
 ALTER TABLE `dyrektor`
   ADD UNIQUE KEY `nrTelefonuSluzbowego` (`nrTelefonuSluzbowego`),
   ADD UNIQUE KEY `PracownikID` (`PracownikID`);
 
 --
--- Indexes for table `lek`
+-- Indeksy dla tabeli `lek`
 --
 ALTER TABLE `lek`
   ADD PRIMARY KEY (`LekID`),
   ADD UNIQUE KEY `LekID` (`LekID`);
 
 --
--- Indexes for table `lekarz`
+-- Indeksy dla tabeli `lekarz`
 --
 ALTER TABLE `lekarz`
   ADD UNIQUE KEY `PracownikID` (`PracownikID`),
   ADD UNIQUE KEY `nrGabinetu` (`nrGabinetu`);
 
 --
--- Indexes for table `pacjent`
+-- Indeksy dla tabeli `pacjent`
 --
 ALTER TABLE `pacjent`
   ADD PRIMARY KEY (`PacjentID`),
@@ -497,7 +499,7 @@ ALTER TABLE `pacjent`
   ADD UNIQUE KEY `PacjentID` (`PacjentID`);
 
 --
--- Indexes for table `pracownik`
+-- Indeksy dla tabeli `pracownik`
 --
 ALTER TABLE `pracownik`
   ADD PRIMARY KEY (`PracownikID`),
@@ -506,13 +508,13 @@ ALTER TABLE `pracownik`
   ADD UNIQUE KEY `PracownikID` (`PracownikID`);
 
 --
--- Indexes for table `pracowniklogin`
+-- Indeksy dla tabeli `pracowniklogin`
 --
 ALTER TABLE `pracowniklogin`
   ADD UNIQUE KEY `pracownikID` (`pracownikID`);
 
 --
--- Indexes for table `recepta`
+-- Indeksy dla tabeli `recepta`
 --
 ALTER TABLE `recepta`
   ADD PRIMARY KEY (`ReceptaID`),
@@ -521,26 +523,26 @@ ALTER TABLE `recepta`
   ADD KEY `FKRecepta754398` (`PacjentID`);
 
 --
--- Indexes for table `receptalek`
+-- Indeksy dla tabeli `receptalek`
 --
 ALTER TABLE `receptalek`
   ADD KEY `FKReceptaLek865329` (`ReceptaID`),
   ADD KEY `FKReceptaLek152797` (`LekID`);
 
 --
--- Indexes for table `rejestracja`
+-- Indeksy dla tabeli `rejestracja`
 --
 ALTER TABLE `rejestracja`
   ADD UNIQUE KEY `PracownikID` (`PracownikID`);
 
 --
--- Indexes for table `sprzedawca`
+-- Indeksy dla tabeli `sprzedawca`
 --
 ALTER TABLE `sprzedawca`
   ADD UNIQUE KEY `PracownikID` (`PracownikID`);
 
 --
--- Indexes for table `sprzedaz`
+-- Indeksy dla tabeli `sprzedaz`
 --
 ALTER TABLE `sprzedaz`
   ADD PRIMARY KEY (`SprzedazID`),
@@ -549,14 +551,14 @@ ALTER TABLE `sprzedaz`
   ADD KEY `FKSprzedaz207623` (`ReceptaID`);
 
 --
--- Indexes for table `sprzedazlek`
+-- Indeksy dla tabeli `sprzedazlek`
 --
 ALTER TABLE `sprzedazlek`
   ADD KEY `FKSprzedazLe966989` (`SprzedazID`),
   ADD KEY `FKSprzedazLe780692` (`LekID`);
 
 --
--- Indexes for table `wiadomosci`
+-- Indeksy dla tabeli `wiadomosci`
 --
 ALTER TABLE `wiadomosci`
   ADD PRIMARY KEY (`WiadomoscID`),
@@ -564,7 +566,7 @@ ALTER TABLE `wiadomosci`
   ADD KEY `idx_wiadomosci_data_czas` (`dataNadania`,`czasNadania`);
 
 --
--- Indexes for table `wizyta`
+-- Indeksy dla tabeli `wizyta`
 --
 ALTER TABLE `wizyta`
   ADD PRIMARY KEY (`WizytaID`),
@@ -598,7 +600,7 @@ ALTER TABLE `pracownik`
 -- AUTO_INCREMENT for table `recepta`
 --
 ALTER TABLE `recepta`
-  MODIFY `ReceptaID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `ReceptaID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `sprzedaz`
