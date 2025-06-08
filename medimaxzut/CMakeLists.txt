@@ -47,6 +47,8 @@ add_executable(medimaxzut
         store/storeitem.h
         schedule/scheduleview.cpp
         schedule/schedulecell.cpp
+        newPatient/newpatient.cpp
+        newPatient/newpatientdoctorlistitem.cpp
 )
 
 target_link_libraries(medimaxzut

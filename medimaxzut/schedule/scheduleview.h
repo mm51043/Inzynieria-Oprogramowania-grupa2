@@ -3,6 +3,8 @@
 
 #include <QWidget>
 
+class MainWindow;
+
 namespace Ui {
 class ScheduleView;
 }
@@ -12,14 +14,21 @@ class ScheduleView : public QWidget
     Q_OBJECT
 
 public:
-    explicit ScheduleView(QWidget *parent = nullptr);
+    explicit ScheduleView(MainWindow* mainWindow, QWidget *parent = nullptr);
     ~ScheduleView();
 
-    void fillSchedule() const;
+    void setDoctorId(int id);
+
+    void setAppointment();
+
+    void fillSchedule();
 
 private:
     Ui::ScheduleView *ui;
     int week;
+    MainWindow* mainWindow;
+    bool newAppointment;
+    int doctorid;
 };
 
 #endif // HARMONOGRAM_H

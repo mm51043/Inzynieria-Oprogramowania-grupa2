@@ -4,10 +4,12 @@
 #include "ui_listitem.h"
 #include "../baza.h"
 #include <QVBoxLayout>
+#include "../mainWindow/mainwindow.h"
 
-ListUser::ListUser(QWidget *parent)
+ListUser::ListUser(MainWindow* mw, QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::ListUser)
+    , mainWindow(mw)
 {
     ui->setupUi(this);
     list();
@@ -19,6 +21,10 @@ ListUser::~ListUser()
 }
 void ListUser::setPrescription(){
     prescription = true;
+    list();
+}
+void ListUser::setAppointment() {
+    appointment = true;
     list();
 }
 void ListUser::list() {
@@ -38,13 +44,7 @@ void ListUser::list() {
 
         layout->setContentsMargins(0, 5, 0, 5);
         layout->setSpacing(5);
-        auto conn = baza();
-        if (!conn) {
-            qDebug() << "baza nie chodzi";
-        }
-    else {
-        auto pacjenci = fetchPacjenci(conn.get());
-
+        auto pacjenci = fetchPacjenci();
         for (const auto& p : pacjenci) {
             auto* li = new ListItem();
             li->setData(QString::fromStdString(p.imie),
@@ -53,13 +53,20 @@ void ListUser::list() {
                         QString::number(p.nrTelefonu));
             if (prescription) {
                 connect(li->getButton(), &QPushButton::clicked, this, [this, p]() {
-                    qDebug() << "clicked " + p.id;
-                    emit userPicked(p.id);
+                    if (mainWindow) {
+                        mainWindow->showPrescAdd(p.id);
+                    }
+                });
+            }
+            if (appointment) {
+                connect(li->getButton(), &QPushButton::clicked, this, [this, p]() {
+                    if (mainWindow) {
+                        mainWindow->showNewPatient(p.id, "", "");
+                    }
                 });
             }
             layout->addWidget(li);
         }
-    }
         layout->addStretch();
 }
 

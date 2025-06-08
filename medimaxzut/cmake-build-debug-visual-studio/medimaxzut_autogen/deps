@@ -439,6 +439,10 @@ medimaxzut_autogen/timestamp: \
 	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/mainWindow/navibutton.cpp \
 	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/mainWindow/navibutton.h \
 	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/mainWindow/ui_navibutton.h \
+	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/newPatient/newpatient.cpp \
+	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/newPatient/newpatient.h \
+	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/newPatient/newpatientdoctorlistitem.cpp \
+	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/newPatient/newpatientdoctorlistitem.h \
 	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/prescriptionAdd/prescriptionitem.cpp \
 	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/prescriptionAdd/prescriptionitem.h \
 	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/prescriptionAdd/prescriptionwindow.cpp \
@@ -501,6 +505,8 @@ medimaxzut_autogen/timestamp: \
 	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/mailList/mailitem.ui \
 	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/mainWindow/mainwindow.ui \
 	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/mainWindow/navibutton.ui \
+	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/newPatient/newpatient.ui \
+	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/newPatient/newpatientdoctorlistitem.ui \
 	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/prescriptionAdd/prescriptionitem.ui \
 	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/prescriptionAdd/prescriptionwindow.ui \
 	D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/schedule/schedulecell.ui \

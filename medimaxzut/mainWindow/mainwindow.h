@@ -20,14 +20,12 @@ public:
     void setWelcomeUserName(const std::string &userName) const;
 
     void navigation(const QStringList &buttons);
-
-private slots:
-    void showPatientList(bool prescription);
+    void showPatientList(bool prescription, bool newAppointment, int mode);
     void showMailList();
-    void showPrescAdd(int patientId);
-    void showStore();
-
-    void showSchedule();
+    void showPrescAdd(int patientId) const;
+    void showStore() const;
+    void showNewPatient(int patientId, std::string date, std::string time);
+    void showSchedule(bool insert, int doctorid) const;
 
 private:
 

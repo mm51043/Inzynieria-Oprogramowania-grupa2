@@ -725,6 +725,9 @@ color: white;
     <property name="text">
      <string>Lub</string>
     </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignCenter</set>
+    </property>
     <property name="wordWrap">
      <bool>false</bool>
     </property>
@@ -732,9 +735,9 @@ color: white;
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>870</x>
+      <x>860</x>
       <y>480</y>
-      <width>101</width>
+      <width>171</width>
       <height>41</height>
      </rect>
     </property>
@@ -746,6 +749,9 @@ color: white;
     </property>
     <property name="text">
      <string>lekarza</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
    <widget class="QLabel" name="doctorLabel">

@@ -5,6 +5,8 @@
 #include "AEDKIJ7ZFY/moc_mailitem.cpp"
 #include "OVELE2FJD2/moc_mainwindow.cpp"
 #include "OVELE2FJD2/moc_navibutton.cpp"
+#include "ZGAT3UKTZW/moc_newpatient.cpp"
+#include "ZGAT3UKTZW/moc_newpatientdoctorlistitem.cpp"
 #include "5HNRRA4SB5/moc_prescriptionitem.cpp"
 #include "5HNRRA4SB5/moc_prescriptionwindow.cpp"
 #include "JUFIZBJ6BF/moc_schedulecell.cpp"

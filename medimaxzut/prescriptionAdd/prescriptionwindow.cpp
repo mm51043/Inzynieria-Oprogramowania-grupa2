@@ -10,12 +10,7 @@ PrescWindow::PrescWindow(QWidget *parent)
 {
     ui->setupUi(this);
     llayout = lListLayout();
-    auto conn = baza();
-    if (!conn) {
-        qDebug() << "baza nie chodzi";
-    } else {
-        leki = fetchLeki(conn.get());
-    }
+    leki = fetchLeki();
     rList();
     connect(ui->clearButton, &QPushButton::clicked, this, [this]() {
         lClear();
@@ -116,33 +111,10 @@ void PrescWindow::lUpdate() {
     llayout->addStretch();
 }
 void PrescWindow::submit() {
-    if (leftLek.empty()) {
-        return;
+    if (submitPrescription(leftLek, leki, patientId)) {
+        ui->confirmationLabel->setText("Recepta dodana poprawnie");
+        lClear();
+    } else {
+        ui->confirmationLabel->setText("Błąd dodawania recepty");
     }
-    auto conn = baza();
-    if (!conn) {
-        qDebug() << "baza nie chodzi";
-    }else {
-        std::unique_ptr<sql::PreparedStatement> stmt(conn->prepareStatement("INSERT INTO recepta(PracownikID, PacjentID, zrealizowano) VALUES (?, ?, ?)"));
-        stmt->setInt(1, sessionUserId);
-        stmt->setInt(2, patientId);
-        stmt->setInt(3, 0);
-        stmt->executeUpdate();
-        std::unique_ptr<sql::Statement> idStmt(conn->createStatement());
-        std::unique_ptr<sql::ResultSet> res(idStmt->executeQuery("SELECT LAST_INSERT_ID()"));
-        if (res->next()) {
-            for (const auto& lid : leftLek) {
-                auto it = std::find_if(leki.begin(), leki.end(), [lid](const Lek& l) {
-                    return l.id == lid.first;
-                });
-                std::unique_ptr<sql::PreparedStatement> nStmt(conn->prepareStatement("INSERT INTO receptalek(ReceptaID, LekID, ilosc) VALUES (?, ?, ?)"));
-                nStmt->setInt(1, res->getInt(1));
-                nStmt->setInt(2, lid.first);
-                nStmt->setInt(3, lid.second);
-                nStmt->executeUpdate();
-            }
-        }
-    }
-    ui->confirmationLabel->setText("Recepta dodana poprawnie");
-    lClear();
 }

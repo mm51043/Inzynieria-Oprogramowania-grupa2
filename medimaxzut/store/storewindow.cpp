@@ -10,12 +10,7 @@ StoreWindow::StoreWindow(QWidget *parent)
 {
     ui->setupUi(this);
     llayout = lListLayout();
-    auto conn = baza();
-    if (!conn) {
-        qDebug() << "baza nie chodzi";
-    } else {
-        leki = fetchLeki(conn.get());
-    }
+        leki = fetchLeki();
     rList();
     connect(ui->clearButton, &QPushButton::clicked, this, [this]() {
         lClear();

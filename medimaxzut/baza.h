@@ -37,8 +37,17 @@ struct Pacjent {
     std::string nazwisko;
     std::string pesel;
     int nrTelefonu;
+    std::string historia;
+    std::string miasto;
+    std::string ulica;
+    int nrDomu;
+    int nrMieszkania;
 };
-inline std::vector<Pacjent> fetchPacjenci(sql::Connection* conn) {
+inline std::vector<Pacjent> fetchPacjenci() {
+    auto conn = baza();
+    if (!conn) {
+        std::cerr << "baza nie chodzi" << std::endl;
+    }
     std::vector<Pacjent> pacjenci;
     std::unique_ptr<sql::Statement> stmt(conn->createStatement());
     std::unique_ptr<sql::ResultSet> res(stmt->executeQuery("SELECT * FROM pacjent"));
@@ -55,12 +64,58 @@ inline std::vector<Pacjent> fetchPacjenci(sql::Connection* conn) {
 
     return pacjenci;
 }
+inline Pacjent getPatientData(int patientId) {
+    auto conn = baza();
+    if (!conn) {
+        std::cerr << "baza nie chodzi" << std::endl;
+    }
+    std::unique_ptr<sql::Statement> stmt(conn->createStatement());
+    std::unique_ptr<sql::ResultSet> res(stmt->executeQuery("SELECT * FROM pacjent WHERE pacjentID = " + std::to_string(patientId)));
+    res->next();
+    Pacjent p;
+    p.imie = res->getString("imie");
+    p.nazwisko = res->getString("nazwisko");
+    p.pesel = res->getString("pesel");
+    p.nrTelefonu = res->getInt("nrTelefonu");
+    if (!res->isNull("historia"))
+        p.historia = res->getString("historia");
+    else
+        p.historia = "";
+    p.miasto = res->getString("miasto");
+    p.ulica = res->getString("ulica");
+    p.nrDomu = res->getInt("nrDomu");
+    if (!res->isNull("nrMieszkania"))
+        p.nrMieszkania = res->getInt("nrMieszkania");
+    else
+        p.nrMieszkania = 0;
+    return p;
+}
+
+inline bool checkPeselDuplicate(const std::string& pesel) {
+    auto conn = baza();
+    if (!conn) {
+        std::cerr << "baza nie chodzi" << std::endl;
+    }
+    std::unique_ptr<sql::PreparedStatement> stmt(
+    conn->prepareStatement("SELECT COUNT(*) FROM pacjent WHERE pesel = ?"));
+    stmt->setString(1, pesel);
+    std::unique_ptr<sql::ResultSet> res(stmt->executeQuery());
+    if (res->next()) {
+        int count = res->getInt(1);
+        return count > 0;
+    }
+    return false;
+}
 struct Lek {
     int id;
     std::string nazwa;
     int ilosc;
 };
-inline std::vector<Lek> fetchLeki(sql::Connection* conn) {
+inline std::vector<Lek> fetchLeki() {
+    auto conn = baza();
+    if (!conn) {
+        std::cerr << "baza nie chodzi" << std::endl;
+    }
     std::vector<Lek> leki;
     std::unique_ptr<sql::Statement> stmt(conn->createStatement());
     std::unique_ptr<sql::ResultSet> res(stmt->executeQuery("SELECT * FROM lek"));
@@ -72,7 +127,6 @@ inline std::vector<Lek> fetchLeki(sql::Connection* conn) {
         l.ilosc = res->getInt("iloscMagazyn");
         leki.push_back(l);
     }
-
     return leki;
 }
 struct Wiadomosc {
@@ -83,7 +137,11 @@ struct Wiadomosc {
     std::string czasNadania;
     std::string tresc;
 };
-inline std::vector<Wiadomosc> fetchWiadomosci(sql::Connection* conn) {
+inline std::vector<Wiadomosc> fetchWiadomosci() {
+    auto conn = baza();
+    if (!conn) {
+        std::cerr << "baza nie chodzi" << std::endl;
+    }
     std::vector<Wiadomosc> wiadomosci;
     std::unique_ptr<sql::Statement> stmt(conn->createStatement());
     std::unique_ptr<sql::ResultSet> res(stmt->executeQuery("SELECT WiadomoscID, CONCAT(p.imie, ' ', p.nazwisko) AS nazwaNadawcy, tytul, dataNadania, czasNadania, tresc FROM `wiadomosci` JOIN pracownik as p ON p.PracownikID = nadawca ORDER BY dataNadania DESC, czasNadania DESC"));
@@ -98,7 +156,6 @@ inline std::vector<Wiadomosc> fetchWiadomosci(sql::Connection* conn) {
         w.tresc = res->getString("tresc");
         wiadomosci.push_back(w);
     }
-
     return wiadomosci;
 }
 inline std::string checkUserRole() {
@@ -180,5 +237,68 @@ inline std::vector<Wizyta> getAppointments(std::string date) {
         appointments.push_back(w);
     }
     return appointments;
+}
+inline int submitPatient(const Pacjent& p) {
+    auto conn = baza();
+    if (!conn) {
+        std::cerr << "baza nie chodzi" << std::endl;
+    }
+    std::unique_ptr<sql::PreparedStatement> stmt(
+        conn->prepareStatement(
+            "INSERT INTO pacjent (imie, nazwisko, pesel, historia, nrTelefonu, miasto, ulica, nrDomu, nrMieszkania) "
+            "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)"
+        )
+    );
+    stmt->setString(1, p.imie);
+    stmt->setString(2, p.nazwisko);
+    stmt->setString(3, p.pesel);
+    if (p.historia.empty())
+        stmt->setNull(4, sql::DataType::VARCHAR);
+    else
+        stmt->setString(4, p.historia);
+    stmt->setInt(5, p.nrTelefonu);
+    stmt->setString(6, p.miasto);
+    stmt->setString(7, p.ulica);
+    stmt->setInt(8, p.nrDomu);
+    if (p.nrMieszkania == 0)
+        stmt->setNull(9, sql::DataType::INTEGER);
+    else
+        stmt->setInt(9, p.nrMieszkania);
+    stmt->executeUpdate();
+    std::unique_ptr<sql::ResultSet> res(stmt->getGeneratedKeys());
+    if (res->next())
+        return res->getInt(1);
+    return 0;
+}
+
+inline bool submitPrescription(const std::vector<std::pair<int, int>>& leftLek, const std::vector<Lek>& leki, int patientId) {
+    if (leftLek.empty()) {
+        return false;
+    }
+    auto conn = baza();
+    if (!conn) {
+        std::cerr << "baza nie chodzi" << std::endl;
+        return false;
+    }
+        std::unique_ptr<sql::PreparedStatement> stmt(conn->prepareStatement("INSERT INTO recepta(PracownikID, PacjentID, zrealizowano) VALUES (?, ?, ?)"));
+        stmt->setInt(1, sessionUserId);
+        stmt->setInt(2, patientId);
+        stmt->setInt(3, 0);
+        stmt->executeUpdate();
+        std::unique_ptr<sql::Statement> idStmt(conn->createStatement());
+        std::unique_ptr<sql::ResultSet> res(idStmt->executeQuery("SELECT LAST_INSERT_ID()"));
+        if (res->next()) {
+            for (const auto& lid : leftLek) {
+                auto it = std::find_if(leki.begin(), leki.end(), [lid](const Lek& l) {
+                    return l.id == lid.first;
+                });
+                std::unique_ptr<sql::PreparedStatement> nStmt(conn->prepareStatement("INSERT INTO receptalek(ReceptaID, LekID, ilosc) VALUES (?, ?, ?)"));
+                nStmt->setInt(1, res->getInt(1));
+                nStmt->setInt(2, lid.first);
+                nStmt->setInt(3, lid.second);
+                nStmt->executeUpdate();
+            }
+        }
+    return true;
 }
 #endif //BAZA_H

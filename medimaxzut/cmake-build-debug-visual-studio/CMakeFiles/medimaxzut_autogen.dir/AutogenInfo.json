@@ -417,6 +417,18 @@
 			null
 		],
 		[
+			"D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/newPatient/newpatient.h",
+			"MU",
+			"ZGAT3UKTZW/moc_newpatient.cpp",
+			null
+		],
+		[
+			"D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/newPatient/newpatientdoctorlistitem.h",
+			"MU",
+			"ZGAT3UKTZW/moc_newpatientdoctorlistitem.cpp",
+			null
+		],
+		[
 			"D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/prescriptionAdd/prescriptionitem.h",
 			"MU",
 			"5HNRRA4SB5/moc_prescriptionitem.cpp",
@@ -555,6 +567,16 @@
 		],
 		[
 			"D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/mainWindow/navibutton.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/newPatient/newpatient.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/newPatient/newpatientdoctorlistitem.cpp",
 			"MU",
 			null
 		],
