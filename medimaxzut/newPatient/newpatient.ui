@@ -159,8 +159,8 @@ border-radius: 10px;</string>
    <widget class="QPushButton" name="confirmButton">
     <property name="geometry">
      <rect>
-      <x>1210</x>
-      <y>810</y>
+      <x>1250</x>
+      <y>720</y>
       <width>201</width>
       <height>61</height>
      </rect>
@@ -180,7 +180,7 @@ border-radius: 10px;
 color: white;</string>
     </property>
     <property name="text">
-     <string>Dodaj Wizyte</string>
+     <string>Dodaj Wizytę</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="patName">
@@ -193,9 +193,13 @@ color: white;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(0, 45, 154);
+     <string notr="true">background-color: rgb(197, 197, 197);
 border-radius: 10px;
-color: white;</string>
+color:black;
+font-size: 30pt;</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
    <widget class="QLineEdit" name="patPesel">
@@ -208,9 +212,13 @@ color: white;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(0, 45, 154);
+     <string notr="true">background-color: rgb(197, 197, 197);
 border-radius: 10px;
-color: white;</string>
+color: black;
+font-size: 13px;</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
    <widget class="QLineEdit" name="patSurname">
@@ -223,9 +231,13 @@ color: white;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(0, 45, 154);
+     <string notr="true">background-color: rgb(197, 197, 197);
 border-radius: 10px;
-color: white;</string>
+color:black;
+font-size: 13px;</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
    <widget class="QPushButton" name="dbButton">
@@ -328,9 +340,13 @@ color: white;
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(0, 45, 154);
+     <string notr="true">background-color: rgb(197, 197, 197);
 border-radius: 10px;
-color: white;</string>
+color: black;
+font-size: 13px;</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
    <widget class="QLineEdit" name="patPhone">
@@ -343,9 +359,13 @@ color: white;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(0, 45, 154);
+     <string notr="true">background-color: rgb(197, 197, 197);
 border-radius: 10px;
-color: white;</string>
+color: black;
+font-size: 13px;</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
    <widget class="QPushButton" name="addNewButton">
@@ -433,9 +453,13 @@ color: white;
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(0, 45, 154);
+     <string notr="true">background-color: rgb(197, 197, 197);
 border-radius: 10px;
-color: white;</string>
+color: black;
+font-size: 13px;</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
    <widget class="QLineEdit" name="patStreet">
@@ -448,9 +472,13 @@ color: white;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(0, 45, 154);
+     <string notr="true">background-color: rgb(197, 197, 197);
 border-radius: 10px;
-color: white;</string>
+color: black;
+font-size: 13px;</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
    <widget class="QLabel" name="label_29">
@@ -525,9 +553,13 @@ color: white;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(0, 45, 154);
+     <string notr="true">background-color: rgb(197, 197, 197);
 border-radius: 10px;
-color: white;</string>
+color: black;
+font-size: 13px;</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
    <widget class="QLineEdit" name="patApartment">
@@ -540,9 +572,13 @@ color: white;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(0, 45, 154);
+     <string notr="true">background-color: rgb(197, 197, 197);
 border-radius: 10px;
-color: white;</string>
+color: black;
+font-size: 13px;</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
    <widget class="QLabel" name="label_33">
@@ -581,7 +617,7 @@ color: white;</string>
      <rect>
       <x>330</x>
       <y>680</y>
-      <width>211</width>
+      <width>121</width>
       <height>31</height>
      </rect>
     </property>
@@ -863,13 +899,13 @@ background-color: rgb(50, 149, 168);</string>
      <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
     </property>
    </widget>
-   <widget class="QFrame" name="houdini">
+   <widget class="QFrame" name="step2">
     <property name="geometry">
      <rect>
       <x>639</x>
       <y>79</y>
       <width>821</width>
-      <height>701</height>
+      <height>371</height>
      </rect>
     </property>
     <property name="frameShape">
@@ -878,60 +914,6 @@ background-color: rgb(50, 149, 168);</string>
     <property name="frameShadow">
      <enum>QFrame::Shadow::Raised</enum>
     </property>
-    <widget class="QLabel" name="label_26">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>490</y>
-       <width>181</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>12</pointsize>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="layoutDirection">
-      <enum>Qt::LayoutDirection::LeftToRight</enum>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgb(50, 149, 168);</string>
-     </property>
-     <property name="text">
-      <string>Wybrany termin</string>
-     </property>
-     <property name="textFormat">
-      <enum>Qt::TextFormat::RichText</enum>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
-     </property>
-    </widget>
-    <widget class="QLabel" name="dateTime">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>550</y>
-       <width>771</width>
-       <height>51</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>12</pointsize>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgb(0, 45, 154);
-color: white;</string>
-     </property>
-     <property name="text">
-      <string>TextLabel</string>
-     </property>
-    </widget>
     <widget class="QFrame" name="frame_7">
      <property name="geometry">
       <rect>
@@ -1005,28 +987,6 @@ color: white;</string>
       <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
      </property>
     </widget>
-    <widget class="QLabel" name="label_2">
-     <property name="geometry">
-      <rect>
-       <x>210</x>
-       <y>400</y>
-       <width>171</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>12</pointsize>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="text">
-      <string>lekarza</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignCenter</set>
-     </property>
-    </widget>
     <widget class="QLabel" name="label_4">
      <property name="geometry">
       <rect>
@@ -1046,11 +1006,27 @@ color: white;</string>
       <string>Wybierz Lekarza i Termin Wizyty</string>
      </property>
     </widget>
+   </widget>
+   <widget class="QFrame" name="step3">
+    <property name="geometry">
+     <rect>
+      <x>640</x>
+      <y>449</y>
+      <width>821</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Shape::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Shadow::Raised</enum>
+    </property>
     <widget class="QPushButton" name="scheduleButton">
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>390</y>
+       <y>20</y>
        <width>181</width>
        <height>61</height>
       </rect>
@@ -1077,9 +1053,104 @@ color: white;
     <widget class="QLabel" name="doctorLabel">
      <property name="geometry">
       <rect>
-       <x>400</x>
-       <y>396</y>
-       <width>381</width>
+       <x>410</x>
+       <y>20</y>
+       <width>401</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(0, 45, 154);
+color: white;</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="docScheduleLabel">
+     <property name="geometry">
+      <rect>
+       <x>200</x>
+       <y>30</y>
+       <width>201</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>lekarza</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="step4">
+    <property name="geometry">
+     <rect>
+      <x>640</x>
+      <y>549</y>
+      <width>821</width>
+      <height>171</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Shape::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Shadow::Raised</enum>
+    </property>
+    <widget class="QLabel" name="scheduleLabel">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>0</y>
+       <width>181</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::LayoutDirection::LeftToRight</enum>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(50, 149, 168);</string>
+     </property>
+     <property name="text">
+      <string>Wybrany termin</string>
+     </property>
+     <property name="textFormat">
+      <enum>Qt::TextFormat::RichText</enum>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="dateTime">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>801</width>
        <height>51</height>
       </rect>
      </property>
@@ -1094,9 +1165,85 @@ color: white;
 color: white;</string>
      </property>
      <property name="text">
-      <string>TextLabel</string>
+      <string/>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
      </property>
     </widget>
+    <widget class="QLineEdit" name="title">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>100</y>
+       <width>801</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(197, 197, 197);
+border-radius: 10px;
+color: black;
+font-size: 13px;</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="success">
+    <property name="geometry">
+     <rect>
+      <x>860</x>
+      <y>720</y>
+      <width>381</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>15</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:white;
+background-color:green;
+</string>
+    </property>
+    <property name="text">
+     <string>Wizyta dodana pomyślnie</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="newAppointmentButton">
+    <property name="geometry">
+     <rect>
+      <x>650</x>
+      <y>720</y>
+      <width>201</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="mouseTracking">
+     <bool>true</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(0, 41, 94);
+border-radius: 10px;
+color: white;</string>
+    </property>
+    <property name="text">
+     <string>Nowa Wizyta</string>
+    </property>
    </widget>
    <zorder>label_17</zorder>
    <zorder>label_20</zorder>
@@ -1130,7 +1277,11 @@ color: white;</string>
    <zorder>patName</zorder>
    <zorder>patHistory</zorder>
    <zorder>patPeselDuplicate</zorder>
-   <zorder>houdini</zorder>
+   <zorder>step2</zorder>
+   <zorder>step3</zorder>
+   <zorder>step4</zorder>
+   <zorder>success</zorder>
+   <zorder>newAppointmentButton</zorder>
   </widget>
  </widget>
  <resources/>

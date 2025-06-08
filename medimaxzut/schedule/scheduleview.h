@@ -17,11 +17,15 @@ public:
     explicit ScheduleView(MainWindow* mainWindow, QWidget *parent = nullptr);
     ~ScheduleView();
 
+    void setPatientId(int id);
+
     void setDoctorId(int id);
 
     void setAppointment();
 
     void fillSchedule();
+
+    bool checkDateTime(std::string date, std::string time);
 
 private:
     Ui::ScheduleView *ui;
@@ -29,6 +33,7 @@ private:
     MainWindow* mainWindow;
     bool newAppointment;
     int doctorid;
+    int patientid;
 };
 
 #endif // HARMONOGRAM_H

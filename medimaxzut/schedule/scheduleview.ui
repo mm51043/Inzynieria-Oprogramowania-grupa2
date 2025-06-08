@@ -69,7 +69,7 @@ border-radius: 10px;</string>
       <x>120</x>
       <y>130</y>
       <width>1231</width>
-      <height>20</height>
+      <height>31</height>
      </rect>
     </property>
     <property name="font">
@@ -1464,6 +1464,32 @@ color: white;</string>
       <string>➡️</string>
      </property>
     </widget>
+   </widget>
+   <widget class="QLabel" name="tooEarlyWarning">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>130</y>
+      <width>411</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>15</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:white;
+background-color:red;</string>
+    </property>
+    <property name="text">
+     <string>Terminy wizyt tylko od dnia następnego</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignCenter</set>
+    </property>
    </widget>
   </widget>
  </widget>

@@ -212,7 +212,7 @@ struct Wizyta {
     std::string temat;
     std::string pacjent;
 };
-inline std::vector<Wizyta> getAppointments(std::string date) {
+inline std::vector<Wizyta> getAppointments(std::string date, int doctorid) {
     std::vector<Wizyta> appointments;
     auto conn = baza();
     if (!conn) {
@@ -224,7 +224,7 @@ inline std::vector<Wizyta> getAppointments(std::string date) {
     "SELECT wizyta.*, pacjent.imie, pacjent.nazwisko "
     "FROM wizyta "
     "JOIN pacjent ON wizyta.pacjentID = pacjent.pacjentID "
-    "WHERE wizyta.pracownikID = " + std::to_string(sessionUserId) +
+    "WHERE wizyta.pracownikID = " + std::to_string(doctorid) +
     " AND wizyta.data = STR_TO_DATE('" + date + "', '%d.%m.%Y') "
     "ORDER BY wizyta.godzinaPoczatek";
     std::unique_ptr<sql::ResultSet> res(stmt->executeQuery(query));
@@ -300,5 +300,82 @@ inline bool submitPrescription(const std::vector<std::pair<int, int>>& leftLek, 
             }
         }
     return true;
+}
+struct Lekarz {
+    int id;
+    std::string imie;
+    std::string nazwisko;
+    std::string pesel;
+    std::string nrTelefonu;
+    int nrGabinetu;
+};
+inline std::vector<Lekarz> getDoctor() {
+    auto conn = baza();
+    if (!conn) {
+        std::cerr << "baza nie chodzi" << std::endl;
+        return{};
+    }
+    std::vector<Lekarz> l;
+    std::unique_ptr<sql::Statement> stmt(conn->createStatement());
+    std::unique_ptr<sql::ResultSet> res(stmt->executeQuery("SELECT p.pracownikID, p.imie, p.nazwisko, p.pesel, p.nrTelefonu, l.nrGabinetu FROM pracownik as p INNER JOIN lekarz as l ON p.pracownikID = l.pracownikID"));
+    while (res->next()) {
+        Lekarz d;
+        d.id = res->getInt("pracownikID");
+        d.imie = res->getString("imie");
+        d.nazwisko = res->getString("nazwisko");
+        d.pesel = res->getString("pesel");
+        d.nrTelefonu = res->getString("nrTelefonu");
+        d.nrGabinetu = res->getInt("nrGabinetu");
+        l.push_back(d);
+    }
+    return l;
+}
+inline Lekarz getDoctorData(int doctorid) {
+    auto conn = baza();
+    if (!conn) {
+        std::cerr << "baza nie chodzi" << std::endl;
+        return{};
+    }
+    std::unique_ptr<sql::Statement> stmt(conn->createStatement());
+    std::unique_ptr<sql::ResultSet> res(stmt->executeQuery("SELECT p.pracownikID, p.imie, p.nazwisko, p.pesel, p.nrTelefonu, l.nrGabinetu FROM pracownik as p INNER JOIN lekarz as l ON p.pracownikID = l.pracownikID WHERE p.pracownikId = " + std::to_string(doctorid)));
+    res->next();
+    Lekarz d;
+    d.id = res->getInt("pracownikID");
+    d.imie = res->getString("imie");
+    d.nazwisko = res->getString("nazwisko");
+    d.pesel = res->getString("pesel");
+    d.nrTelefonu = res->getString("nrTelefonu");
+    d.nrGabinetu = res->getInt("nrGabinetu");
+    return d;
+}
+
+inline bool insertAppointment(int doctorId, int patientId, std::string date, std::string time, std::string title) {
+    auto conn = baza();
+    if (!conn) {
+        std::cerr << "baza nie chodzi" << std::endl;
+    }
+    try {
+        std::unique_ptr<sql::PreparedStatement> nStmt(
+            conn->prepareStatement(
+       "INSERT INTO wizyta "
+            "(PracownikID, PacjentID, godzinaPoczatek, godzinaKoniec, zakonczone, tytul, data) "
+            "VALUES (?, ?, STR_TO_DATE(?, '%H:%i:%s'), DATE_ADD(STR_TO_DATE(?, '%H:%i:%s'), INTERVAL 1 HOUR), 0, ?, STR_TO_DATE(?, '%d.%m.%Y'))"));
+        nStmt->setInt(1, doctorId);
+        nStmt->setInt(2, patientId);
+        nStmt->setString(3, time);
+        nStmt->setString(4, time);
+        if (title.empty()) {
+            nStmt->setNull(5, sql::DataType::VARCHAR);
+        } else {
+            nStmt->setString(5, title);
+        }
+        nStmt->setString(6, date);
+        nStmt->executeUpdate();
+        return true;
+    } catch (const sql::SQLException &e) {
+        std::cerr << date << time << "baza: " << e.what() << std::endl;
+        return false;
+    }
+
 }
 #endif //BAZA_H

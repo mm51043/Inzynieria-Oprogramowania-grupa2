@@ -18,24 +18,34 @@ public:
     explicit NewPatient(MainWindow* mw, QWidget *parent = nullptr);
     ~NewPatient();
 
-    void setAppointmentData(std::string date, std::string time);
+    void setDoctor(int id);
 
-    void setPatientData(int patientId);
+    void setAppointmentData(const std::string &date, const std::string &time);
+
+    void setSchedule();
+
+    void setPatientData(int id);
 
     bool checkData() const;
 
-    Pacjent getStuff();
+    Pacjent getStuff() const;
 
-    void lockEdit();
-
-    void hideErrors();
+    void lockEdit() const;
+    void setDoctorData();
+    void hideErrors() const;
 
     void fillDocList();
+
+    void submitAppointment();
 
 private:
     Ui::NewPatient *ui;
     int patientId;
+    int doctorId;
     MainWindow* mainWindow;
+    bool scheduleSet;
+    std::string setDate;
+    std::string setTime;
 };
 
 #endif // NEWPATIENT_H

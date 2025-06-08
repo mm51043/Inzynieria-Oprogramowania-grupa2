@@ -56,17 +56,22 @@ public:
     QLabel *patStreetErr;
     QLabel *patHouseErr;
     QLabel *patPeselDuplicate;
-    QFrame *houdini;
-    QLabel *label_26;
-    QLabel *dateTime;
+    QFrame *step2;
     QFrame *frame_7;
     QScrollArea *scrollArea;
     QWidget *docList;
     QLabel *label_25;
-    QLabel *label_2;
     QLabel *label_4;
+    QFrame *step3;
     QPushButton *scheduleButton;
     QLabel *doctorLabel;
+    QLabel *docScheduleLabel;
+    QFrame *step4;
+    QLabel *scheduleLabel;
+    QLabel *dateTime;
+    QLineEdit *title;
+    QLabel *success;
+    QPushButton *newAppointmentButton;
 
     void setupUi(QWidget *NewPatient)
     {
@@ -120,7 +125,7 @@ public:
         label_23->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
         confirmButton = new QPushButton(mainFrame);
         confirmButton->setObjectName("confirmButton");
-        confirmButton->setGeometry(QRect(1210, 810, 201, 61));
+        confirmButton->setGeometry(QRect(1250, 720, 201, 61));
         QFont font2;
         font2.setPointSize(10);
         font2.setBold(true);
@@ -132,21 +137,27 @@ public:
         patName = new QLineEdit(mainFrame);
         patName->setObjectName("patName");
         patName->setGeometry(QRect(20, 150, 600, 51));
-        patName->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 45, 154);\n"
+        patName->setStyleSheet(QString::fromUtf8("background-color: rgb(197, 197, 197);\n"
 "border-radius: 10px;\n"
-"color: white;"));
+"color:black;\n"
+"font-size: 13px;"));
+        patName->setAlignment(Qt::AlignmentFlag::AlignCenter);
         patPesel = new QLineEdit(mainFrame);
         patPesel->setObjectName("patPesel");
         patPesel->setGeometry(QRect(20, 310, 600, 51));
-        patPesel->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 45, 154);\n"
+        patPesel->setStyleSheet(QString::fromUtf8("background-color: rgb(197, 197, 197);\n"
 "border-radius: 10px;\n"
-"color: white;"));
+"color: black;\n"
+"font-size: 13px;"));
+        patPesel->setAlignment(Qt::AlignmentFlag::AlignCenter);
         patSurname = new QLineEdit(mainFrame);
         patSurname->setObjectName("patSurname");
         patSurname->setGeometry(QRect(20, 230, 600, 51));
-        patSurname->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 45, 154);\n"
+        patSurname->setStyleSheet(QString::fromUtf8("background-color: rgb(197, 197, 197);\n"
 "border-radius: 10px;\n"
-"color: white;"));
+"color:black;\n"
+"font-size: 13px;"));
+        patSurname->setAlignment(Qt::AlignmentFlag::AlignCenter);
         dbButton = new QPushButton(mainFrame);
         dbButton->setObjectName("dbButton");
         dbButton->setGeometry(QRect(360, 820, 261, 61));
@@ -175,15 +186,19 @@ public:
         patHistory = new QLineEdit(mainFrame);
         patHistory->setObjectName("patHistory");
         patHistory->setGeometry(QRect(20, 470, 600, 51));
-        patHistory->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 45, 154);\n"
+        patHistory->setStyleSheet(QString::fromUtf8("background-color: rgb(197, 197, 197);\n"
 "border-radius: 10px;\n"
-"color: white;"));
+"color: black;\n"
+"font-size: 13px;"));
+        patHistory->setAlignment(Qt::AlignmentFlag::AlignCenter);
         patPhone = new QLineEdit(mainFrame);
         patPhone->setObjectName("patPhone");
         patPhone->setGeometry(QRect(20, 390, 600, 51));
-        patPhone->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 45, 154);\n"
+        patPhone->setStyleSheet(QString::fromUtf8("background-color: rgb(197, 197, 197);\n"
 "border-radius: 10px;\n"
-"color: white;"));
+"color: black;\n"
+"font-size: 13px;"));
+        patPhone->setAlignment(Qt::AlignmentFlag::AlignCenter);
         addNewButton = new QPushButton(mainFrame);
         addNewButton->setObjectName("addNewButton");
         addNewButton->setGeometry(QRect(20, 820, 181, 61));
@@ -210,15 +225,19 @@ public:
         patCity = new QLineEdit(mainFrame);
         patCity->setObjectName("patCity");
         patCity->setGeometry(QRect(20, 550, 600, 51));
-        patCity->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 45, 154);\n"
+        patCity->setStyleSheet(QString::fromUtf8("background-color: rgb(197, 197, 197);\n"
 "border-radius: 10px;\n"
-"color: white;"));
+"color: black;\n"
+"font-size: 13px;"));
+        patCity->setAlignment(Qt::AlignmentFlag::AlignCenter);
         patStreet = new QLineEdit(mainFrame);
         patStreet->setObjectName("patStreet");
         patStreet->setGeometry(QRect(20, 630, 600, 51));
-        patStreet->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 45, 154);\n"
+        patStreet->setStyleSheet(QString::fromUtf8("background-color: rgb(197, 197, 197);\n"
 "border-radius: 10px;\n"
-"color: white;"));
+"color: black;\n"
+"font-size: 13px;"));
+        patStreet->setAlignment(Qt::AlignmentFlag::AlignCenter);
         label_29 = new QLabel(mainFrame);
         label_29->setObjectName("label_29");
         label_29->setGeometry(QRect(20, 600, 211, 31));
@@ -238,15 +257,19 @@ public:
         patHouse = new QLineEdit(mainFrame);
         patHouse->setObjectName("patHouse");
         patHouse->setGeometry(QRect(20, 710, 291, 51));
-        patHouse->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 45, 154);\n"
+        patHouse->setStyleSheet(QString::fromUtf8("background-color: rgb(197, 197, 197);\n"
 "border-radius: 10px;\n"
-"color: white;"));
+"color: black;\n"
+"font-size: 13px;"));
+        patHouse->setAlignment(Qt::AlignmentFlag::AlignCenter);
         patApartment = new QLineEdit(mainFrame);
         patApartment->setObjectName("patApartment");
         patApartment->setGeometry(QRect(330, 710, 291, 51));
-        patApartment->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 45, 154);\n"
+        patApartment->setStyleSheet(QString::fromUtf8("background-color: rgb(197, 197, 197);\n"
 "border-radius: 10px;\n"
-"color: white;"));
+"color: black;\n"
+"font-size: 13px;"));
+        patApartment->setAlignment(Qt::AlignmentFlag::AlignCenter);
         label_33 = new QLabel(mainFrame);
         label_33->setObjectName("label_33");
         label_33->setGeometry(QRect(20, 680, 151, 31));
@@ -257,7 +280,7 @@ public:
         label_33->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
         label_34 = new QLabel(mainFrame);
         label_34->setObjectName("label_34");
-        label_34->setGeometry(QRect(330, 680, 211, 31));
+        label_34->setGeometry(QRect(330, 680, 121, 31));
         label_34->setFont(font1);
         label_34->setLayoutDirection(Qt::LayoutDirection::LeftToRight);
         label_34->setStyleSheet(QString::fromUtf8("background-color: rgb(50, 149, 168);"));
@@ -335,26 +358,12 @@ public:
 "background-color: rgb(50, 149, 168);"));
         patPeselDuplicate->setTextFormat(Qt::TextFormat::RichText);
         patPeselDuplicate->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
-        houdini = new QFrame(mainFrame);
-        houdini->setObjectName("houdini");
-        houdini->setGeometry(QRect(639, 79, 821, 701));
-        houdini->setFrameShape(QFrame::Shape::StyledPanel);
-        houdini->setFrameShadow(QFrame::Shadow::Raised);
-        label_26 = new QLabel(houdini);
-        label_26->setObjectName("label_26");
-        label_26->setGeometry(QRect(10, 490, 181, 31));
-        label_26->setFont(font1);
-        label_26->setLayoutDirection(Qt::LayoutDirection::LeftToRight);
-        label_26->setStyleSheet(QString::fromUtf8("background-color: rgb(50, 149, 168);"));
-        label_26->setTextFormat(Qt::TextFormat::RichText);
-        label_26->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
-        dateTime = new QLabel(houdini);
-        dateTime->setObjectName("dateTime");
-        dateTime->setGeometry(QRect(10, 550, 771, 51));
-        dateTime->setFont(font1);
-        dateTime->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 45, 154);\n"
-"color: white;"));
-        frame_7 = new QFrame(houdini);
+        step2 = new QFrame(mainFrame);
+        step2->setObjectName("step2");
+        step2->setGeometry(QRect(639, 79, 821, 371));
+        step2->setFrameShape(QFrame::Shape::StyledPanel);
+        step2->setFrameShadow(QFrame::Shadow::Raised);
+        frame_7 = new QFrame(step2);
         frame_7->setObjectName("frame_7");
         frame_7->setGeometry(QRect(10, 70, 801, 291));
         frame_7->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 41, 94);"));
@@ -368,7 +377,7 @@ public:
         docList->setObjectName("docList");
         docList->setGeometry(QRect(0, 0, 781, 271));
         scrollArea->setWidget(docList);
-        label_25 = new QLabel(houdini);
+        label_25 = new QLabel(step2);
         label_25->setObjectName("label_25");
         label_25->setGeometry(QRect(10, 40, 181, 21));
         label_25->setFont(font1);
@@ -376,29 +385,82 @@ public:
         label_25->setStyleSheet(QString::fromUtf8("background-color: rgb(50, 149, 168);"));
         label_25->setTextFormat(Qt::TextFormat::RichText);
         label_25->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
-        label_2 = new QLabel(houdini);
-        label_2->setObjectName("label_2");
-        label_2->setGeometry(QRect(210, 400, 171, 41));
-        label_2->setFont(font1);
-        label_2->setAlignment(Qt::AlignmentFlag::AlignCenter);
-        label_4 = new QLabel(houdini);
+        label_4 = new QLabel(step2);
         label_4->setObjectName("label_4");
         label_4->setGeometry(QRect(260, 10, 321, 31));
         label_4->setFont(font3);
-        scheduleButton = new QPushButton(houdini);
+        step3 = new QFrame(mainFrame);
+        step3->setObjectName("step3");
+        step3->setGeometry(QRect(640, 449, 821, 101));
+        step3->setFrameShape(QFrame::Shape::StyledPanel);
+        step3->setFrameShadow(QFrame::Shadow::Raised);
+        scheduleButton = new QPushButton(step3);
         scheduleButton->setObjectName("scheduleButton");
-        scheduleButton->setGeometry(QRect(10, 390, 181, 61));
+        scheduleButton->setGeometry(QRect(10, 20, 181, 61));
         scheduleButton->setFont(font1);
         scheduleButton->setMouseTracking(true);
         scheduleButton->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 41, 94);\n"
 "border-radius: 10px;\n"
 "color: white;\n"
 ""));
-        doctorLabel = new QLabel(houdini);
+        doctorLabel = new QLabel(step3);
         doctorLabel->setObjectName("doctorLabel");
-        doctorLabel->setGeometry(QRect(400, 396, 381, 51));
+        doctorLabel->setGeometry(QRect(410, 20, 401, 61));
         doctorLabel->setFont(font1);
         doctorLabel->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 45, 154);\n"
+"color: white;"));
+        doctorLabel->setAlignment(Qt::AlignmentFlag::AlignCenter);
+        docScheduleLabel = new QLabel(step3);
+        docScheduleLabel->setObjectName("docScheduleLabel");
+        docScheduleLabel->setGeometry(QRect(200, 30, 201, 41));
+        docScheduleLabel->setFont(font1);
+        docScheduleLabel->setAlignment(Qt::AlignmentFlag::AlignCenter);
+        step4 = new QFrame(mainFrame);
+        step4->setObjectName("step4");
+        step4->setGeometry(QRect(640, 549, 821, 171));
+        step4->setFrameShape(QFrame::Shape::StyledPanel);
+        step4->setFrameShadow(QFrame::Shadow::Raised);
+        scheduleLabel = new QLabel(step4);
+        scheduleLabel->setObjectName("scheduleLabel");
+        scheduleLabel->setGeometry(QRect(10, 0, 181, 31));
+        scheduleLabel->setFont(font1);
+        scheduleLabel->setLayoutDirection(Qt::LayoutDirection::LeftToRight);
+        scheduleLabel->setStyleSheet(QString::fromUtf8("background-color: rgb(50, 149, 168);"));
+        scheduleLabel->setTextFormat(Qt::TextFormat::RichText);
+        scheduleLabel->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
+        dateTime = new QLabel(step4);
+        dateTime->setObjectName("dateTime");
+        dateTime->setGeometry(QRect(10, 30, 801, 51));
+        dateTime->setFont(font1);
+        dateTime->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 45, 154);\n"
+"color: white;"));
+        dateTime->setAlignment(Qt::AlignmentFlag::AlignCenter);
+        title = new QLineEdit(step4);
+        title->setObjectName("title");
+        title->setGeometry(QRect(10, 100, 801, 51));
+        title->setStyleSheet(QString::fromUtf8("background-color: rgb(197, 197, 197);\n"
+"border-radius: 10px;\n"
+"color: black;\n"
+"font-size: 13px;"));
+        title->setAlignment(Qt::AlignmentFlag::AlignCenter);
+        success = new QLabel(mainFrame);
+        success->setObjectName("success");
+        success->setGeometry(QRect(860, 720, 381, 61));
+        QFont font4;
+        font4.setPointSize(15);
+        font4.setBold(true);
+        success->setFont(font4);
+        success->setStyleSheet(QString::fromUtf8("color:white;\n"
+"background-color:green;\n"
+""));
+        success->setAlignment(Qt::AlignmentFlag::AlignCenter);
+        newAppointmentButton = new QPushButton(mainFrame);
+        newAppointmentButton->setObjectName("newAppointmentButton");
+        newAppointmentButton->setGeometry(QRect(650, 720, 201, 61));
+        newAppointmentButton->setFont(font2);
+        newAppointmentButton->setMouseTracking(true);
+        newAppointmentButton->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 41, 94);\n"
+"border-radius: 10px;\n"
 "color: white;"));
         label_17->raise();
         label_20->raise();
@@ -432,7 +494,11 @@ public:
         patName->raise();
         patHistory->raise();
         patPeselDuplicate->raise();
-        houdini->raise();
+        step2->raise();
+        step3->raise();
+        step4->raise();
+        success->raise();
+        newAppointmentButton->raise();
 
         retranslateUi(NewPatient);
 
@@ -446,7 +512,7 @@ public:
         label_20->setText(QCoreApplication::translate("NewPatient", "Nazwisko:", nullptr));
         label_21->setText(QCoreApplication::translate("NewPatient", "Imi\304\231:", nullptr));
         label_23->setText(QCoreApplication::translate("NewPatient", "Pesel:", nullptr));
-        confirmButton->setText(QCoreApplication::translate("NewPatient", "Dodaj Wizyte", nullptr));
+        confirmButton->setText(QCoreApplication::translate("NewPatient", "Dodaj Wizyt\304\231", nullptr));
         dbButton->setText(QCoreApplication::translate("NewPatient", "Wybierz z Bazy Pacjent\303\263w", nullptr));
         label_27->setText(QCoreApplication::translate("NewPatient", "Numer Telefonu", nullptr));
         label_28->setText(QCoreApplication::translate("NewPatient", "Miasto", nullptr));
@@ -465,13 +531,15 @@ public:
         patStreetErr->setText(QCoreApplication::translate("NewPatient", "Pole wymagane", nullptr));
         patHouseErr->setText(QCoreApplication::translate("NewPatient", "Pole wymagane", nullptr));
         patPeselDuplicate->setText(QCoreApplication::translate("NewPatient", "Duplikat pesel", nullptr));
-        label_26->setText(QCoreApplication::translate("NewPatient", "Wybrany termin", nullptr));
-        dateTime->setText(QCoreApplication::translate("NewPatient", "TextLabel", nullptr));
         label_25->setText(QCoreApplication::translate("NewPatient", "Lekarze:", nullptr));
-        label_2->setText(QCoreApplication::translate("NewPatient", "lekarza", nullptr));
         label_4->setText(QCoreApplication::translate("NewPatient", "Wybierz Lekarza i Termin Wizyty", nullptr));
         scheduleButton->setText(QCoreApplication::translate("NewPatient", "Harmonogram", nullptr));
-        doctorLabel->setText(QCoreApplication::translate("NewPatient", "TextLabel", nullptr));
+        doctorLabel->setText(QString());
+        docScheduleLabel->setText(QCoreApplication::translate("NewPatient", "lekarza", nullptr));
+        scheduleLabel->setText(QCoreApplication::translate("NewPatient", "Wybrany termin", nullptr));
+        dateTime->setText(QString());
+        success->setText(QCoreApplication::translate("NewPatient", "Wizyta dodana pomy\305\233lnie", nullptr));
+        newAppointmentButton->setText(QCoreApplication::translate("NewPatient", "Nowa Wizyta", nullptr));
     } // retranslateUi
 
 };

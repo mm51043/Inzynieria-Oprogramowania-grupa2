@@ -9,23 +9,22 @@ namespace Ui {
 class MainWindow;
 }
 
-class MainWindow : public QMainWindow
+class MainWindow final : public QMainWindow
 {
     Q_OBJECT
 
 public:
     explicit MainWindow(QWidget *parent = nullptr);
-    ~MainWindow();
+    ~MainWindow() override;
 
     void setWelcomeUserName(const std::string &userName) const;
-
     void navigation(const QStringList &buttons);
     void showPatientList(bool prescription, bool newAppointment, int mode);
-    void showMailList();
-    void showPrescAdd(int patientId) const;
+    void showMailList() const;
+    void showPrescriptionAdd(int patientId) const;
     void showStore() const;
-    void showNewPatient(int patientId, std::string date, std::string time);
-    void showSchedule(bool insert, int doctorid);
+    void showNewPatient(int patientId, int doctorId, const std::string &date, const std::string &time);
+    void showSchedule(bool insert, int doctorId, int patientId);
 
 private:
 

@@ -1,4 +1,6 @@
 #include "newpatient.h"
+
+#include "newpatientdoctorlistitem.h"
 #include "ui_newpatient.h"
 #include "../baza.h"
 #include "../mainWindow/mainwindow.h"
@@ -7,20 +9,48 @@ NewPatient::NewPatient(MainWindow* mw, QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::NewPatient)
     , mainWindow(mw)
+    , doctorId(0)
+    , patientId(0)
+    , scheduleSet(false)
+    , setDate("")
+    , setTime("")
 {
     ui->setupUi(this);
+    ui->success->setVisible(false);
+    ui->newAppointmentButton->setVisible(false);
     hideErrors();
-    ui->houdini->setVisible(false);
+    fillDocList();
+    if(doctorId == 0) {
+        ui->step3->setVisible(false);
+    }
+    if (!scheduleSet) {
+        ui->step4->setVisible(false);
+        ui->confirmButton->setVisible(false);
+    }
+    ui->step2->setVisible(false);
     connect(ui->addNewButton, &QPushButton::clicked, this, [this]() {
                 if (checkData()) {
                     patientId = submitPatient(getStuff());
                     lockEdit();
-                    ui->houdini->setVisible(true);
+                    ui->step2->setVisible(true);
                 }
             });
     connect(ui->dbButton, &QPushButton::clicked, this, [this]() {
         if (mainWindow) {
             mainWindow->showPatientList(false, true, 1);
+        }
+    });
+    connect(ui->scheduleButton, &QPushButton::clicked, this, [this]() {
+        if (mainWindow) {
+            mainWindow->showSchedule(true, doctorId, patientId);
+        }
+    });
+    connect(ui->confirmButton, &QPushButton::clicked, this, [this]() {
+        submitAppointment();
+    });
+    connect(ui->newAppointmentButton, &QPushButton::clicked, this, [this]() {
+        if (mainWindow) {
+            mainWindow->showNewPatient(0, 0, "", "");
         }
     });
 }
@@ -29,11 +59,28 @@ NewPatient::~NewPatient()
 {
     delete ui;
 }
-void NewPatient::setAppointmentData(std::string date, std::string time) {
-    ui->dateTime->setText(QString::fromStdString(date) + " | " + QString::fromStdString(time));
+void NewPatient::setDoctor(const int id) {
+    doctorId = id;
+    setDoctorData();
+    ui->step3->setVisible(true);
 }
-void NewPatient::setPatientData(int patientId) {
-    auto p = getPatientData(patientId);
+void NewPatient::setDoctorData() {
+    auto doctor = getDoctorData(doctorId);
+    ui->doctorLabel->setText(QString::fromStdString(doctor.imie + " " + doctor.nazwisko));
+}
+void NewPatient::setAppointmentData(const std::string &date, const std::string &time) {
+    setDate = date;
+    setTime = time;
+    ui->step4->setVisible(true);
+    ui->confirmButton->setVisible(true);
+    ui->dateTime->setText(QString::fromStdString(setDate) + " | " + QString::fromStdString(setTime));
+}
+void NewPatient::setSchedule() {
+    scheduleSet = true;
+}
+void NewPatient::setPatientData(const int id) {
+    patientId = id;
+    auto p = getPatientData(id);
     ui->patName->setText(QString::fromStdString(p.imie));
     ui->patSurname->setText(QString::fromStdString(p.nazwisko));
     ui->patPesel->setText(QString::fromStdString(p.pesel));
@@ -45,7 +92,7 @@ void NewPatient::setPatientData(int patientId) {
     if (p.nrMieszkania != 0)
     ui->patApartment->setText(QString::number(p.nrMieszkania));
     lockEdit();
-    ui->houdini->setVisible(true);
+    ui->step2->setVisible(true);
 }
 bool NewPatient::checkData() const {
     bool pass = true;
@@ -99,7 +146,7 @@ bool NewPatient::checkData() const {
     }
     return pass;
 }
-Pacjent NewPatient::getStuff() {
+Pacjent NewPatient::getStuff() const {
     Pacjent p;
     p.imie = ui->patName->text().toStdString();
     p.nazwisko = ui->patSurname->text().toStdString();
@@ -115,7 +162,7 @@ Pacjent NewPatient::getStuff() {
     }
     return p;
 }
-void NewPatient::lockEdit() {
+void NewPatient::lockEdit() const {
     ui->dbButton->setEnabled(false);
     ui->patName->setEnabled(false);
     ui->patSurname->setEnabled(false);
@@ -127,7 +174,7 @@ void NewPatient::lockEdit() {
     ui->patApartment->setEnabled(false);
     ui->addNewButton->setEnabled(false);
 }
-void NewPatient::hideErrors() {
+void NewPatient::hideErrors() const {
     ui->patNameErr->setVisible(false);
     ui->patSurnameErr->setVisible(false);
     ui->patPeselErr->setVisible(false);
@@ -138,5 +185,36 @@ void NewPatient::hideErrors() {
     ui->patPeselDuplicate->setVisible(false);
 }
 void NewPatient::fillDocList() {
-
+    auto layout = qobject_cast<QVBoxLayout*>(ui->docList->layout());
+    if (!layout) {
+        layout = new QVBoxLayout(ui->docList);
+        ui->docList->setLayout(layout);
+    }
+    QLayoutItem *child;
+    while ((child = layout->takeAt(0)) != nullptr) {
+        if (child->widget()) {
+            child->widget()->deleteLater();
+        }
+        delete child;
+    }
+    layout->setContentsMargins(0, 5, 0, 5);
+    layout->setSpacing(5);
+    for (const auto lekarze = getDoctor(); const auto& l : lekarze) {
+        auto* li = new NewPatientDoctorListItem();
+        li->setData(QString::fromStdString(l.imie), QString::fromStdString(l.nazwisko), QString::fromStdString(std::to_string(l.nrGabinetu)));
+        connect(li->getButton(), &QPushButton::clicked, this, [this, l]() {
+            if (!scheduleSet)
+            setDoctor(l.id);
+        });
+        layout->addWidget(li);
+    }
+    layout->addStretch();
+}
+void NewPatient::submitAppointment() {
+    if (insertAppointment(doctorId, patientId, setDate, setTime, ui->title->text().toStdString())) {
+        ui->scheduleButton->setEnabled(false);
+        ui->title->setEnabled(false);
+        ui->success->setVisible(true);
+        ui->newAppointmentButton->setVisible(true);
+    }
 }

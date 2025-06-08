@@ -90,6 +90,7 @@ public:
     QPushButton *arrowLeft;
     QFrame *frame_98;
     QPushButton *arrowRight;
+    QLabel *tooEarlyWarning;
 
     void setupUi(QWidget *ScheduleView)
     {
@@ -116,7 +117,7 @@ public:
         label_3->setAlignment(Qt::AlignmentFlag::AlignCenter);
         dateRangeLabel = new QLabel(frame_5);
         dateRangeLabel->setObjectName("dateRangeLabel");
-        dateRangeLabel->setGeometry(QRect(120, 130, 1231, 20));
+        dateRangeLabel->setGeometry(QRect(120, 130, 1231, 31));
         QFont font1;
         font1.setPointSize(15);
         font1.setBold(true);
@@ -542,6 +543,13 @@ public:
         arrowRight->setObjectName("arrowRight");
         arrowRight->setGeometry(QRect(10, 0, 71, 81));
         arrowRight->setFont(font4);
+        tooEarlyWarning = new QLabel(frame_5);
+        tooEarlyWarning->setObjectName("tooEarlyWarning");
+        tooEarlyWarning->setGeometry(QRect(160, 130, 411, 31));
+        tooEarlyWarning->setFont(font1);
+        tooEarlyWarning->setStyleSheet(QString::fromUtf8("color:white;\n"
+"background-color:red;"));
+        tooEarlyWarning->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
         retranslateUi(ScheduleView);
 
@@ -569,6 +577,7 @@ public:
         label_13->setText(QCoreApplication::translate("ScheduleView", "Pi\304\205tek", nullptr));
         arrowLeft->setText(QCoreApplication::translate("ScheduleView", "\342\254\205\357\270\217", nullptr));
         arrowRight->setText(QCoreApplication::translate("ScheduleView", "\342\236\241\357\270\217", nullptr));
+        tooEarlyWarning->setText(QCoreApplication::translate("ScheduleView", "Terminy wizyt tylko od dnia nast\304\231pnego", nullptr));
     } // retranslateUi
 
 };

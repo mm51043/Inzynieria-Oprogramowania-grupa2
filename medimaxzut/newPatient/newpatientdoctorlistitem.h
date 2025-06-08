@@ -1,6 +1,7 @@
 #ifndef NEWPATIENTDOCTORLISTITEM_H
 #define NEWPATIENTDOCTORLISTITEM_H
 
+#include <QPushButton>
 #include <QWidget>
 
 namespace Ui {
@@ -15,6 +16,8 @@ public:
     explicit NewPatientDoctorListItem(QWidget *parent = nullptr);
     ~NewPatientDoctorListItem();
 
+    void setData(const QString &imie, const QString &nazwisko, const QString &gabinet) const;
+    QPushButton* getButton() const;
 private:
     Ui::NewPatientDoctorListItem *ui;
 };

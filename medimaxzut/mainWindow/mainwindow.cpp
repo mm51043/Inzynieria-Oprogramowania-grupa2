@@ -72,7 +72,7 @@ void MainWindow::showPatientList(bool prescription, bool newAppointment, int mod
     layout->addWidget(listUserWidget);
 }
 
-void MainWindow::showMailList() {
+void MainWindow::showMailList() const {
     QLayout *layout = ui->MainPanel->layout();
 
     QLayoutItem *item;
@@ -86,7 +86,7 @@ void MainWindow::showMailList() {
     auto *listMailWidget = new ListMail();
     layout->addWidget(listMailWidget);
 }
-void MainWindow::showPrescAdd(int patientId) const {
+void MainWindow::showPrescriptionAdd(int patientId) const {
 
     QLayout *layout = ui->MainPanel->layout();
 
@@ -115,7 +115,8 @@ void MainWindow::showStore() const {
     auto *storeWidget = new StoreWindow();
     layout->addWidget(storeWidget);
 }
-void MainWindow::showNewPatient(int patientId, std::string date, std::string time) {
+void MainWindow::showNewPatient(const int patientId, const int doctorId, const std::string &date, const std::string &time) {
+    qDebug() << date << " " << time;
     QLayout *layout = ui->MainPanel->layout();
     QLayoutItem *item;
     while ((item = layout->takeAt(0)) != nullptr) {
@@ -125,7 +126,11 @@ void MainWindow::showNewPatient(int patientId, std::string date, std::string tim
         delete item;
     }
     auto *newPatientWidget = new NewPatient(this);
+    if (doctorId != 0) {
+        newPatientWidget->setDoctor(doctorId);
+    }
     if (!date.empty() && !time.empty()) {
+        newPatientWidget->setSchedule();
         newPatientWidget->setAppointmentData(date, time);
     }
     if (patientId != 0) {
@@ -133,7 +138,7 @@ void MainWindow::showNewPatient(int patientId, std::string date, std::string tim
     }
     layout->addWidget(newPatientWidget);
 }
-void MainWindow::showSchedule(bool insert, int doctorid) {
+void MainWindow::showSchedule(const bool insert, const int doctorId, const int patientId) {
     QLayout *layout = ui->MainPanel->layout();
     QLayoutItem *item;
     while ((item = layout->takeAt(0)) != nullptr) {
@@ -143,8 +148,10 @@ void MainWindow::showSchedule(bool insert, int doctorid) {
         delete item;
     }
     auto *scheduleWidget = new ScheduleView(this);
-    if (doctorid) {
-
+    if (insert) {
+        scheduleWidget->setAppointment();
+        scheduleWidget->setDoctorId(doctorId);
+        scheduleWidget->setPatientId(patientId);
     }
     layout->addWidget(scheduleWidget);
 }
@@ -183,7 +190,7 @@ void MainWindow::navigation(const QStringList &buttons) {
         }
         if (name == "Harmonogram") {
             connect(btn->pushButton, &QPushButton::clicked, this, [this]() {
-               showSchedule(false, 0);
+               showSchedule(false, 0, 0);
             });
         }
         if (name == "Apteka") {
@@ -193,7 +200,7 @@ void MainWindow::navigation(const QStringList &buttons) {
         }
         if (name == "Dodaj Pacjenta/Umów Wizytę") {
             connect(btn->pushButton, &QPushButton::clicked, this, [this]() {
-                showNewPatient(0, "", "");
+                showNewPatient(0, 0, "", "");
             });
         }
     }

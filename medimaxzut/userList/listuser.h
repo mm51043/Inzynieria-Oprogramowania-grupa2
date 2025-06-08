@@ -23,7 +23,7 @@ public:
 
     void list();
 
-    void setLabels(const std::string& what);
+    void setLabels(const std::string& what) const;
 signals:
     void userPicked(int id);
 private:

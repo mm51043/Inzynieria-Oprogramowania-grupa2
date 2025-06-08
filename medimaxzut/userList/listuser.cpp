@@ -47,8 +47,7 @@ void ListUser::list() {
 
         layout->setContentsMargins(0, 5, 0, 5);
         layout->setSpacing(5);
-        auto pacjenci = fetchPacjenci();
-        for (const auto& p : pacjenci) {
+    for (const auto pacjenci = fetchPacjenci(); const auto& p : pacjenci) {
             auto* li = new ListItem();
             li->setData(QString::fromStdString(p.imie),
                         QString::fromStdString(p.nazwisko),
@@ -57,14 +56,14 @@ void ListUser::list() {
             if (prescription) {
                 connect(li->getButton(), &QPushButton::clicked, this, [this, p]() {
                     if (mainWindow) {
-                        mainWindow->showPrescAdd(p.id);
+                        mainWindow->showPrescriptionAdd(p.id);
                     }
                 });
             }
             if (appointment) {
                 connect(li->getButton(), &QPushButton::clicked, this, [this, p]() {
                     if (mainWindow) {
-                        mainWindow->showNewPatient(p.id, "", "");
+                        mainWindow->showNewPatient(p.id, 0, "", "");
                     }
                 });
             }
@@ -73,7 +72,7 @@ void ListUser::list() {
         layout->addStretch();
 }
 
-void ListUser::setLabels(const std::string& what) {
+void ListUser::setLabels(const std::string& what) const {
     if (what == "patient") {
         ui->label3->setText("Pesel");
         ui->label4->setText("Nr Telefonu");
