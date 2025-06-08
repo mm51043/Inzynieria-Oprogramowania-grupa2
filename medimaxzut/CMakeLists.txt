@@ -50,6 +50,7 @@ add_executable(medimaxzut
         newPatient/newpatient.cpp
         newPatient/newpatientdoctorlistitem.cpp
         schedule/schedulecellempty.cpp
+        profile/profil.cpp
         lists.h
 )
 

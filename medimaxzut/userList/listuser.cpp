@@ -5,6 +5,7 @@
 #include "../baza.h"
 #include <QVBoxLayout>
 #include "../mainWindow/mainwindow.h"
+#include "../profile/profil.h"
 
 ListUser::ListUser(MainWindow* mw, QWidget *parent)
     : QWidget(parent)
@@ -12,6 +13,7 @@ ListUser::ListUser(MainWindow* mw, QWidget *parent)
     , mainWindow(mw)
     , prescription(false)
     , appointment(false)
+    , profilWindow(nullptr)
 {
     ui->setupUi(this);
     list();
@@ -31,48 +33,57 @@ void ListUser::setAppointment() {
 }
 void ListUser::list() {
     qDebug() << prescription << ", " << appointment;
-        QVBoxLayout* layout = qobject_cast<QVBoxLayout*>(ui->List->layout());
-        if (!layout) {
-            layout = new QVBoxLayout(ui->List);
-            ui->List->setLayout(layout);
-        }
+    QVBoxLayout* layout = qobject_cast<QVBoxLayout*>(ui->List->layout());
+    if (!layout) {
+        layout = new QVBoxLayout(ui->List);
+        ui->List->setLayout(layout);
+    }
 
-        QLayoutItem *child;
-        while ((child = layout->takeAt(0)) != nullptr) {
-            if (child->widget()) {
-                child->widget()->deleteLater();
-            }
-            delete child;
+    QLayoutItem *child;
+    while ((child = layout->takeAt(0)) != nullptr) {
+        if (child->widget()) {
+            child->widget()->deleteLater();
         }
+        delete child;
+    }
 
-        layout->setContentsMargins(0, 5, 0, 5);
-        layout->setSpacing(5);
+    layout->setContentsMargins(0, 5, 0, 5);
+    layout->setSpacing(5);
+    if (!profilWindow) {
+        profilWindow = new Profil();
+    }
     for (const auto pacjenci = fetchPacjenci(); const auto& p : pacjenci) {
-            auto* li = new ListItem();
-            li->setData(QString::fromStdString(p.imie),
-                        QString::fromStdString(p.nazwisko),
-                        QString::fromStdString(p.pesel),
-                        QString::number(p.nrTelefonu));
-            if (prescription) {
-                connect(li->getButton(), &QPushButton::clicked, this, [this, p]() {
-                    if (mainWindow) {
-                        mainWindow->showPrescriptionAdd(p.id);
-                    }
-                });
-            }
-            if (appointment) {
-                connect(li->getButton(), &QPushButton::clicked, this, [this, p]() {
-                    if (mainWindow) {
-                        mainWindow->showNewPatient(p.id, 0, "", "");
-                    }
-                });
-            }
-            layout->addWidget(li);
+        auto* li = new ListItem();
+        li->setData(QString::fromStdString(p.imie),
+                    QString::fromStdString(p.nazwisko),
+                    QString::fromStdString(p.pesel),
+                    QString::number(p.nrTelefonu));
+        if (prescription) {
+            connect(li->getButton(), &QPushButton::clicked, this, [this, p]() {
+                if (mainWindow) {
+                    mainWindow->showPrescriptionAdd(p.id);
+                }
+            });
         }
-        layout->addStretch();
+        else if (appointment) {
+            connect(li->getButton(), &QPushButton::clicked, this, [this, p]() {
+                if (mainWindow) {
+                    mainWindow->showNewPatient(p.id, 0, "", "");
+                }
+            });
+        }
+        else {
+            connect(li->getButton(), &QPushButton::clicked, this, [this, p]() {
+                profilWindow->showPatientProfile(p.id);
+                emit showProfileRequested(p.id);
+            });
+        }
+        layout->addWidget(li);
+    }
+    layout->addStretch();
 }
 
-void ListUser::setLabels(const std::string& what) const {
+void ListUser::setLabels(const std::string& what) {
     if (what == "patient") {
         ui->label3->setText("Pesel");
         ui->label4->setText("Nr Telefonu");
