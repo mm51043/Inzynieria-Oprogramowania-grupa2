@@ -22,12 +22,16 @@ public:
     void showPatientList(bool prescription, bool newAppointment, int mode);
     void showMailList() const;
 
+    void showAdminPanel();
+
     void showNewMessage() const;
 
     void showPrescriptionAdd(int patientId) const;
-    void showStore() const;
+    void showStore();
     void showNewPatient(int patientId, int doctorId, const std::string &date, const std::string &time);
     void showSchedule(bool insert, int doctorId, int patientId);
+
+    void showPrescriptionList();
 
 private:
 

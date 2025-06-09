@@ -3,10 +3,12 @@
 #include "storeitem.h"
 #include <QVBoxLayout>
 #include "../baza.h"
+#include "../mainWindow/mainwindow.h"
 
-StoreWindow::StoreWindow(QWidget *parent)
+StoreWindow::StoreWindow(MainWindow* mw, QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::Store)
+    , mainWindow(mw)
 {
     ui->setupUi(this);
     llayout = lListLayout();
@@ -37,7 +39,6 @@ bool StoreWindow::canAddMedicine(int id) const {
     });
 
     if (it != leki.end()) {
-        // Sprawdź ile już jest w koszyku
         int inCart = 0;
         auto cartIt = std::find_if(leftLek.begin(), leftLek.end(), [id](const std::pair<int, int>& p) {
             return p.first == id;
@@ -67,15 +68,13 @@ void StoreWindow::rList() {
         delete child;
     }
 
-    leki = fetchLeki(); // Odświeżamy listę leków
+    leki = fetchLeki();
     layout->setContentsMargins(0, 5, 0, 5);
     layout->setSpacing(5);
 
     for (const auto& l : leki) {
         auto* li = new StoreItem();
         li->setData(QString::fromStdString(l.nazwa), QString::number(l.ilosc));
-
-        // Sprawdzamy ile już jest w koszyku
         int inCart = 0;
         auto cartIt = std::find_if(leftLek.begin(), leftLek.end(), [l](const std::pair<int, int>& p) {
             return p.first == l.id;
@@ -83,15 +82,13 @@ void StoreWindow::rList() {
         if (cartIt != leftLek.end()) {
             inCart = cartIt->second;
         }
-
-        // Ustawiamy tekst przycisku w zależności od stanu
         if (inCart > 0) {
             li->listAdd()->setText(QString("Dodano (%1)").arg(inCart));
         } else {
             li->listAdd()->setText("Dodaj");
         }
 
-        connect(li->listAdd(), &QPushButton::clicked, this, [this, li, l]() {
+        connect(li->listAdd(), &QPushButton::clicked, this, [this, l]() {
             lAdd(l.id);
             rList();
         });
@@ -166,7 +163,7 @@ void StoreWindow::lUpdate() {
         auto* li = new StoreItem();
         connect(li->listAdd(), &QPushButton::clicked, this, [this, lid]() {
             lRemove(lid.first);
-            rList(); // Odśwież listę dostępnych leków po usunięciu
+            rList();
         });
 
         li->setData(QString::fromStdString(it->nazwa), QString::number(lid.second));

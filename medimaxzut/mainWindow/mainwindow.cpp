@@ -8,8 +8,11 @@
 #include "../store/storewindow.h"
 #include "../newPatient/newpatient.h"
 #include "../message/newmessage.h"
+#include "../store/prescriptionlist.h"
 #include <QTimer>
 #include <QTime>
+
+#include "../userList/adminpanel.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -85,6 +88,19 @@ void MainWindow::showMailList() const {
 
     auto *listMailWidget = new ListMail();
     layout->addWidget(listMailWidget);
+}void MainWindow::showAdminPanel() {
+    QLayout *layout = ui->MainPanel->layout();
+
+    QLayoutItem *item;
+    while ((item = layout->takeAt(0)) != nullptr) {
+        if (item->widget()) {
+            item->widget()->deleteLater();
+        }
+        delete item;
+    }
+
+    auto *adminWidget = new AdminPanel();
+    layout->addWidget(adminWidget);
 }
 void MainWindow::showNewMessage() const {
     QLayout *layout = ui->MainPanel->layout();
@@ -116,7 +132,7 @@ void MainWindow::showPrescriptionAdd(int patientId) const {
     layout->addWidget(prescriptionWidget);
 }
 
-void MainWindow::showStore() const {
+void MainWindow::showStore() {
     QLayout *layout = ui->MainPanel->layout();
 
     QLayoutItem *item;
@@ -126,7 +142,7 @@ void MainWindow::showStore() const {
         }
         delete item;
     }
-    auto *storeWidget = new StoreWindow();
+    auto *storeWidget = new StoreWindow(this);
     layout->addWidget(storeWidget);
 }
 void MainWindow::showNewPatient(const int patientId, const int doctorId, const std::string &date, const std::string &time) {
@@ -168,6 +184,18 @@ void MainWindow::showSchedule(const bool insert, const int doctorId, const int p
         scheduleWidget->setPatientId(patientId);
     }
     layout->addWidget(scheduleWidget);
+}
+void MainWindow::showPrescriptionList() {
+    QLayout *layout = ui->MainPanel->layout();
+    QLayoutItem *item;
+    while ((item = layout->takeAt(0)) != nullptr) {
+        if (item->widget()) {
+            item->widget()->deleteLater();
+        }
+        delete item;
+    }
+    auto *presclistWidget = new PrescriptionList(this);
+    layout->addWidget(presclistWidget);
 }
 void MainWindow::navigation(const QStringList &buttons) {
     QVBoxLayout* layout = qobject_cast<QVBoxLayout*>(ui->naviList->layout());
@@ -225,6 +253,11 @@ void MainWindow::navigation(const QStringList &buttons) {
         else if (name == "Dodaj Wiadomość") {
             connect(btn->pushButton, &QPushButton::clicked, this, [this]() {
                 showNewMessage();
+            });
+        }
+        else if (name == "Panel Administracyjny") {
+            connect(btn->pushButton, &QPushButton::clicked, this, [this]() {
+                showAdminPanel();
             });
         }
     }

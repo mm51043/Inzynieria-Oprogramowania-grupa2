@@ -600,6 +600,29 @@ border-radius: 10px;</string>
      <string/>
     </property>
    </widget>
+   <widget class="QPushButton" name="addPrescription">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>820</y>
+      <width>351</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>14</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(50, 149, 168);
+border-radius: 10px;</string>
+    </property>
+    <property name="text">
+     <string>Dodaj Leki z Recepty</string>
+    </property>
+   </widget>
   </widget>
  </widget>
  <resources/>

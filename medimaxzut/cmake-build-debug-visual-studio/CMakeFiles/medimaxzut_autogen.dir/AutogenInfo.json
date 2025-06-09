@@ -483,6 +483,18 @@
 			null
 		],
 		[
+			"D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/store/prescriptionlist.h",
+			"MU",
+			"FWFAAK5S4E/moc_prescriptionlist.cpp",
+			null
+		],
+		[
+			"D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/store/prescriptionlistitem.h",
+			"MU",
+			"FWFAAK5S4E/moc_prescriptionlistitem.cpp",
+			null
+		],
+		[
 			"D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/store/storeitem.h",
 			"MU",
 			"FWFAAK5S4E/moc_storeitem.cpp",
@@ -492,6 +504,12 @@
 			"D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/store/storewindow.h",
 			"MU",
 			"FWFAAK5S4E/moc_storewindow.cpp",
+			null
+		],
+		[
+			"D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/userList/adminpanel.h",
+			"MU",
+			"KVHULQYYAR/moc_adminpanel.cpp",
 			null
 		],
 		[
@@ -732,12 +750,27 @@
 			null
 		],
 		[
+			"D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/store/prescriptionlist.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/store/prescriptionlistitem.cpp",
+			"MU",
+			null
+		],
+		[
 			"D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/store/storeitem.cpp",
 			"MU",
 			null
 		],
 		[
 			"D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/store/storewindow.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/userList/adminpanel.cpp",
 			"MU",
 			null
 		],

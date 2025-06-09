@@ -437,9 +437,10 @@ inline void sendMessage(std::string message, std::string title) {
         std::cerr << "baza nie chodzi" << std::endl;
         return;
     }
+    try{
     std::unique_ptr<sql::PreparedStatement> stmt(
         conn->prepareStatement(
-            "INSERT INTO wiadomosc (nadawca, tytul, czasNadania, dataNadania, tresc) "
+            "INSERT INTO wiadomosci (nadawca, tytul, czasNadania, dataNadania, tresc) "
             "VALUES (?, ?, CURRENT_TIME(), CURRENT_DATE(), ?)"
         )
     );
@@ -447,6 +448,15 @@ inline void sendMessage(std::string message, std::string title) {
     stmt->setString(2, title);
     stmt->setString(3, message);
     stmt->execute();
+} catch (sql::SQLException& e) {
+    std::cerr << "SQL error: " << e.what() << "\n"
+              << "MySQL error code: " << e.getErrorCode() << "\n"
+              << "SQLState: " << e.getSQLState() << std::endl;
+} catch (std::exception& e) {
+    std::cerr << "Standard exception: " << e.what() << std::endl;
+} catch (...) {
+    std::cerr << "Unknown exception occurred." << std::endl;
+}
 }
 
 #endif //BAZA_H

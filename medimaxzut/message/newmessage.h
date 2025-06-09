@@ -15,6 +15,10 @@ public:
     explicit NewMessage(QWidget *parent = nullptr);
     ~NewMessage();
 
+    void clear();
+
+    void submit();
+
 private:
     Ui::NewMessage *ui;
 };

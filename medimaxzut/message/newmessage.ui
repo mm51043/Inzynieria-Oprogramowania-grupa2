@@ -142,7 +142,7 @@ border-radius: 10px;</string>
       <set>Qt::AlignmentFlag::AlignCenter</set>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit">
+    <widget class="QLineEdit" name="msgTitle">
      <property name="geometry">
       <rect>
        <x>480</x>

@@ -5,6 +5,7 @@
 #include <QVBoxLayout>
 #include "../baza.h"
 #include <QMessageBox>
+#include "../mainWindow/mainwindow.h"
 
 namespace Ui {
 class Store;
@@ -15,7 +16,7 @@ class StoreWindow : public QWidget
     Q_OBJECT
 
 public:
-    explicit StoreWindow(QWidget *parent = nullptr);
+    explicit StoreWindow(MainWindow* mainWindow, QWidget *parent = nullptr);
     ~StoreWindow();
 
     QVBoxLayout *lListLayout();
@@ -33,6 +34,7 @@ private:
     QVBoxLayout* llayout;
     std::vector<std::pair<int, int>> leftLek;
     std::vector<Lek> leki;
+    MainWindow* mainWindow;
 };
 
 

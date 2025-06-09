@@ -13,6 +13,7 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QFrame>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPlainTextEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QWidget>
@@ -28,6 +29,8 @@ public:
     QPushButton *clearButton;
     QPushButton *sendButton;
     QLabel *title_2;
+    QLineEdit *msgTitle;
+    QLabel *title_3;
     QLabel *title;
 
     void setupUi(QWidget *NewMessage)
@@ -51,7 +54,7 @@ public:
         frame->setFrameShadow(QFrame::Shadow::Raised);
         textField = new QPlainTextEdit(frame);
         textField->setObjectName("textField");
-        textField->setGeometry(QRect(23, 110, 1381, 591));
+        textField->setGeometry(QRect(23, 260, 1381, 441));
         textField->setStyleSheet(QString::fromUtf8("background-color:white;"));
         clearButton = new QPushButton(frame);
         clearButton->setObjectName("clearButton");
@@ -70,7 +73,7 @@ public:
 "background-color: rgb(0, 62, 154);"));
         title_2 = new QLabel(frame);
         title_2->setObjectName("title_2");
-        title_2->setGeometry(QRect(30, 20, 1371, 61));
+        title_2->setGeometry(QRect(30, 180, 1371, 61));
         QFont font1;
         font1.setPointSize(20);
         font1.setBold(true);
@@ -80,6 +83,19 @@ public:
 "border-radius: 10px;"));
         title_2->setTextFormat(Qt::TextFormat::RichText);
         title_2->setAlignment(Qt::AlignmentFlag::AlignCenter);
+        msgTitle = new QLineEdit(frame);
+        msgTitle->setObjectName("msgTitle");
+        msgTitle->setGeometry(QRect(480, 100, 491, 51));
+        msgTitle->setStyleSheet(QString::fromUtf8("background-color:white;"));
+        title_3 = new QLabel(frame);
+        title_3->setObjectName("title_3");
+        title_3->setGeometry(QRect(30, 30, 1371, 61));
+        title_3->setFont(font1);
+        title_3->setLayoutDirection(Qt::LayoutDirection::LeftToRight);
+        title_3->setStyleSheet(QString::fromUtf8("background-color: rgb(50, 149, 168);\n"
+"border-radius: 10px;"));
+        title_3->setTextFormat(Qt::TextFormat::RichText);
+        title_3->setAlignment(Qt::AlignmentFlag::AlignCenter);
         title = new QLabel(mainFrame);
         title->setObjectName("title");
         title->setGeometry(QRect(20, 20, 361, 61));
@@ -101,6 +117,7 @@ public:
         clearButton->setText(QCoreApplication::translate("NewMessage", "Wyczy\305\233\304\207", nullptr));
         sendButton->setText(QCoreApplication::translate("NewMessage", "Wy\305\233lij", nullptr));
         title_2->setText(QCoreApplication::translate("NewMessage", "Wprowad\305\272 tre\305\233\304\207 wiadomo\305\233ci", nullptr));
+        title_3->setText(QCoreApplication::translate("NewMessage", "Wprowad\305\272 tytu\305\202", nullptr));
         title->setText(QCoreApplication::translate("NewMessage", "Dodaj wiadomo\305\233\304\207", nullptr));
     } // retranslateUi
 

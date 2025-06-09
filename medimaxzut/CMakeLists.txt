@@ -52,6 +52,9 @@ add_executable(medimaxzut
         schedule/schedulecellempty.cpp
         profile/profil.cpp
         message/newmessage.cpp
+        store/prescriptionlist.cpp
+        store/prescriptionlistitem.cpp
+        userList/adminpanel.cpp
         lists.h
 )
 
