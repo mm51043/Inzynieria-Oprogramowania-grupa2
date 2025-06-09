@@ -21,7 +21,7 @@ ScheduleView::ScheduleView(MainWindow* mw, QWidget *parent)
     ui->setupUi(this);
     ui->tooEarlyWarning->setVisible(false);
     fillSchedule();
-    ui->docLabel->setText(QString::fromStdString(sessionUserName));
+    ui->docLabel->setText(QString::fromStdString(setSessionUserName(doctorid)));
     connect(ui->arrowLeft, &QPushButton::clicked, this, [this]() {
         week--;
         fillSchedule();
@@ -41,6 +41,8 @@ void ScheduleView::setPatientId(int id) {
 }
 void ScheduleView::setDoctorId(int id){
     doctorid = id;
+    ui->docLabel->setText(QString::fromStdString(setSessionUserName(doctorid)));
+    fillSchedule();
 }
 void ScheduleView::setAppointment() {
     newAppointment = true;

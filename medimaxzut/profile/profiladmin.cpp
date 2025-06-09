@@ -12,8 +12,6 @@ Profiladmin::Profiladmin(QWidget *parent) :
 {
     ui->setupUi(this);
     currentWorkerId = -1;
-
-    // Inicjalizacja widgetów edycyjnych
     nameEdit = new QLineEdit(this);
     peselEdit = new QLineEdit(this);
     phoneEdit = new QLineEdit(this);
@@ -34,8 +32,6 @@ Profiladmin::Profiladmin(QWidget *parent) :
 
 void Profiladmin::toggleEditMode() {
     isEditMode = !isEditMode;
-
-    // Przełącz widoczność widgetów
     ui->NameLabel_3->setVisible(!isEditMode);
     ui->PeselLabel_2->setVisible(!isEditMode);
     ui->CTLabel_2->setVisible(!isEditMode);
@@ -53,7 +49,7 @@ void Profiladmin::onEditSaveButtonClicked() {
     if (isEditMode) {
         auto conn = baza();
         if (!conn) {
-            qDebug() << "Błąd połączenia z bazą danych";
+            qDebug() << "baza nie chodzie";
             return;
         }
 
@@ -78,7 +74,7 @@ void Profiladmin::onEditSaveButtonClicked() {
             QMessageBox::information(this, "Sukces", "Dane zostały zaktualizowane.");
             showWorkerProfile(currentWorkerId); // Odśwież dane
         } catch (sql::SQLException& e) {
-            qDebug() << "SQL error:" << e.what();
+            qDebug() << e.what();
             QMessageBox::critical(this, "Błąd", "Nie udało się zaktualizować danych.");
         }
     }
@@ -89,7 +85,7 @@ void Profiladmin::showWorkerProfile(int workerId) {
     currentWorkerId = workerId;
     auto conn = baza();
     if (!conn) {
-        qDebug() << "Błąd połączenia z bazą danych";
+        qDebug() << "baza nie chodzi";
         return;
     }
 
@@ -124,7 +120,7 @@ void Profiladmin::showWorkerProfile(int workerId) {
             ui->MiastoLabel_2->setText("Ostatnie logowanie: " + QString::fromStdString(ostatniLogin));
         }
     } catch (sql::SQLException& e) {
-        qDebug() << "SQL error:" << e.what();
+        qDebug() << e.what();
     }
 
     if (isEditMode) {

@@ -19,20 +19,22 @@ inline std::unique_ptr<sql::Connection> baza() {
         return nullptr;
     }
 }
-inline void setSessionUserName() {
+inline std::string setSessionUserName(int id) {
     auto conn = baza();
     if (!conn) {
         std::cerr << "baza nie chodzi" << std::endl;
     }
     std::unique_ptr<sql::Statement> stmt(conn->createStatement());
-    std::unique_ptr<sql::ResultSet> res(stmt->executeQuery("SELECT * FROM pracownik WHERE PracownikID = " + std::to_string(sessionUserId)));
+    std::unique_ptr<sql::ResultSet> res(stmt->executeQuery("SELECT * FROM pracownik WHERE PracownikID = " + std::to_string(id)));
     if (res->next()) {
-        sessionUserName = res->getString("imie") + " " + res->getString("nazwisko");
+        return std::string(res->getString("imie") + " " + res->getString("nazwisko"));
     } else {
         qDebug() << "Nie ma usera";
+        return "";
     }
 }
-inline bool checkPassword(const std::string& username, const std::string& passwordHash) {
+inline int checkPassword(const std::string& username, const std::string& passwordHash) {
+    int loginid = 0;
     auto conn = baza();
     if (!conn) {
         std::cerr << "baza nie chodzi" << std::endl;
@@ -46,9 +48,9 @@ inline bool checkPassword(const std::string& username, const std::string& passwo
     std::unique_ptr<sql::ResultSet> res(stmt->executeQuery());
 
     if (res->next()) {
-        return true;
+        loginid = res->getInt("PracownikID");
     }
-    return false;
+    return loginid;
 }
 inline std::string sqlToString(const sql::SQLString& sqlStr) {
     return static_cast<std::string>(sqlStr);

@@ -38,7 +38,8 @@ public:
         font.setBold(true);
         pushButton->setFont(font);
         pushButton->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 41, 94);\n"
-"       border-radius: 10px;"));
+"       border-radius: 10px;\n"
+"color:white;"));
 
         retranslateUi(NaviButton);
 

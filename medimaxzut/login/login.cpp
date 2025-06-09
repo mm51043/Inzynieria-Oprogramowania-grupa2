@@ -19,9 +19,10 @@ void LoginWindow::onEnter() {
     QString pwd = ui.loginPassword->text();
     std::string usernameStd = name.toStdString();
     std::string passwordStd = pwd.toStdString();
-    if (checkPassword(usernameStd, std::to_string(hashP(passwordStd)))) {
-        sessionUserId = 1;
-        setSessionUserName();
+    int userid = checkPassword(usernameStd, std::to_string(hashP(passwordStd)));
+    if (userid != 0) {
+        sessionUserId = userid;
+        sessionUserName = setSessionUserName(userid);
         emit loginPass();
     } else {
         QMessageBox::warning(this, "Błąd logowania", "Zły login lub hasło");

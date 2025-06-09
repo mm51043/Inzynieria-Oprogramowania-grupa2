@@ -204,6 +204,9 @@ void MainWindow::showSchedule(const bool insert, const int doctorId, const int p
         scheduleWidget->setDoctorId(doctorId);
         scheduleWidget->setPatientId(patientId);
     }
+    if (doctorId != 0) {
+        scheduleWidget->setDoctorId(doctorId);
+    }
     layout->addWidget(scheduleWidget);
 }
 void MainWindow::showPrescriptionList() {
@@ -266,7 +269,7 @@ void MainWindow::navigation(const QStringList &buttons) {
                 showStore(0);
             });
         }
-        else if (name == "Dodaj Pacjenta/Umów Wizytę") {
+        else if (name == "Dodaj Pacjenta") {
             connect(btn->pushButton, &QPushButton::clicked, this, [this]() {
                 showNewPatient(0, 0, "", "");
             });
@@ -281,7 +284,7 @@ void MainWindow::navigation(const QStringList &buttons) {
                 showAdminPanel();
             });
         }
-        else if (name == "Harmonogramy Pracowników") {
+        else if (name == "Harmonogramy") {
             connect(btn->pushButton, &QPushButton::clicked, this, [this]() {
                 showPatientList(false, false, false, true, 0);
             });
