@@ -15,7 +15,7 @@ int main(int argc, char *argv[]) {
         lgw.close();
         mpw.setWelcomeUserName(sessionUserName);
         mpw.showMaximized();
-        std::string user = checkUserRole();
+        std::string user = checkUserRole(sessionUserId);
         if (user == "admin") {
      mpw.navigation(adminButtons);
  } else if (user == "dyrektor") {

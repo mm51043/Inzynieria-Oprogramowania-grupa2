@@ -22,11 +22,14 @@ public:
 
     void setAppointment();
 
+    void listPatients();
+
     void list();
 
-    void setLabels(const std::string &what);
+    void listUsers();
 
-    void setLabels(const std::string& what) const;
+    void setLabels(const std::string &what);
+    void setMode(int mode);
 signals:
     void userPicked(int id);
     void showProfileRequested(int patientId);
@@ -36,6 +39,7 @@ private:
     bool appointment;
     MainWindow* mainWindow;
     Profil* profilWindow;
+    int mode;
 };
 
 #endif // LISTUSER_H

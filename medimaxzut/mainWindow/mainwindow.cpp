@@ -7,6 +7,7 @@
 #include "../schedule/scheduleview.h"
 #include "../store/storewindow.h"
 #include "../newPatient/newpatient.h"
+#include "../message/newmessage.h"
 #include <QTimer>
 #include <QTime>
 
@@ -61,12 +62,11 @@ void MainWindow::showPatientList(bool prescription, bool newAppointment, int mod
         listUserWidget->setLabels("user");
     else if (mode == 1)
         listUserWidget->setLabels("patient");
+    listUserWidget->setMode(mode);
     if (prescription) {
-        qDebug() << prescription << "Prescription";
         listUserWidget->setPrescription();
     }
     if (newAppointment) {
-        qDebug() << newAppointment << "Appointment";
         listUserWidget->setAppointment();
     }
     layout->addWidget(listUserWidget);
@@ -85,6 +85,20 @@ void MainWindow::showMailList() const {
 
     auto *listMailWidget = new ListMail();
     layout->addWidget(listMailWidget);
+}
+void MainWindow::showNewMessage() const {
+    QLayout *layout = ui->MainPanel->layout();
+
+    QLayoutItem *item;
+    while ((item = layout->takeAt(0)) != nullptr) {
+        if (item->widget()) {
+            item->widget()->deleteLater();
+        }
+        delete item;
+    }
+
+    auto *messageWidget = new NewMessage();
+    layout->addWidget(messageWidget);
 }
 void MainWindow::showPrescriptionAdd(int patientId) const {
 
@@ -183,29 +197,34 @@ void MainWindow::navigation(const QStringList &buttons) {
                 showPatientList(false, false, 1);
             });
         }
-        if (name == "Lista Pracowników") {
+        else if (name == "Lista Pracowników") {
             connect(btn->pushButton, &QPushButton::clicked, this, [this]() {
-                showPatientList(false, false, 1);
+                showPatientList(false, false, 0);
             });
         }
-        if (name == "Dodaj Receptę") {
+        else if (name == "Dodaj Receptę") {
             connect(btn->pushButton, &QPushButton::clicked, this, [this]() {
                 showPatientList(true, false, 1);
             });
         }
-        if (name == "Harmonogram") {
+        else if (name == "Harmonogram") {
             connect(btn->pushButton, &QPushButton::clicked, this, [this]() {
                showSchedule(false, 0, 0);
             });
         }
-        if (name == "Apteka") {
+        else if (name == "Apteka") {
             connect(btn->pushButton, &QPushButton::clicked, this, [this]() {
                 showStore();
             });
         }
-        if (name == "Dodaj Pacjenta/Umów Wizytę") {
+        else if (name == "Dodaj Pacjenta/Umów Wizytę") {
             connect(btn->pushButton, &QPushButton::clicked, this, [this]() {
                 showNewPatient(0, 0, "", "");
+            });
+        }
+        else if (name == "Dodaj Wiadomość") {
+            connect(btn->pushButton, &QPushButton::clicked, this, [this]() {
+                showNewMessage();
             });
         }
     }

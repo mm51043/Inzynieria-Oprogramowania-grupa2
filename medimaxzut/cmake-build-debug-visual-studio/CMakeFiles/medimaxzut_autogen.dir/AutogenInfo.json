@@ -423,6 +423,12 @@
 			null
 		],
 		[
+			"D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/message/newmessage.h",
+			"MU",
+			"TGVJH5J54A/moc_newmessage.cpp",
+			null
+		],
+		[
 			"D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/newPatient/newpatient.h",
 			"MU",
 			"ZGAT3UKTZW/moc_newpatient.cpp",
@@ -677,6 +683,11 @@
 		],
 		[
 			"D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/mainWindow/navibutton.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/Inzynieria-Oprogramowania-grupa2/medimaxzut/message/newmessage.cpp",
 			"MU",
 			null
 		],

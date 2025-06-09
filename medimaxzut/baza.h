@@ -42,7 +42,6 @@ struct Pacjent {
     std::string ulica;
     int nrDomu;
     int nrMieszkania;
-    std::vector<unsigned char> zdjecie_data;
 };
 inline std::vector<Pacjent> fetchPacjenci() {
     auto conn = baza();
@@ -163,7 +162,7 @@ inline std::vector<Wiadomosc> fetchWiadomosci() {
     }
     return wiadomosci;
 }
-inline std::string checkUserRole() {
+inline std::string checkUserRole(int id) {
     auto conn = baza();
     if (!conn) {
         std::cerr << "baza nie chodzi" << std::endl;
@@ -178,7 +177,7 @@ inline std::string checkUserRole() {
         "WHEN EXISTS (SELECT 1 FROM sprzedawca WHERE sprzedawca.pracownikID = pracownik.pracownikID) THEN 'sprzedawca' "
         "ELSE '' END AS position "
         "FROM pracownik "
-        "WHERE pracownikID = " + std::to_string(sessionUserId);
+        "WHERE pracownikID = " + std::to_string(id);
     std::unique_ptr<sql::ResultSet> res(stmt->executeQuery(query));
     if (res->next()) {
         return std::string(res->getString("position"));
@@ -248,37 +247,43 @@ inline int submitPatient(const Pacjent& p) {
     if (!conn) {
         std::cerr << "baza nie chodzi" << std::endl;
     }
-    std::unique_ptr<sql::PreparedStatement> stmt(
-        conn->prepareStatement(
-            "INSERT INTO pacjent (imie, nazwisko, pesel, historia, nrTelefonu, miasto, ulica, nrDomu, nrMieszkania, zdjecie_data) "
-            "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
-        )
-    );
-    stmt->setString(1, p.imie);
-    stmt->setString(2, p.nazwisko);
-    stmt->setString(3, p.pesel);
-    if (p.historia.empty())
-        stmt->setNull(4, sql::DataType::VARCHAR);
-    else
-        stmt->setString(4, p.historia);
-    stmt->setInt(5, p.nrTelefonu);
-    stmt->setString(6, p.miasto);
-    stmt->setString(7, p.ulica);
-    stmt->setInt(8, p.nrDomu);
-    if (p.zdjecie_data.empty()) {
-        stmt->setNull(10, sql::DataType::BLOB);
-    } else {
-        stmt->setBlob(10, new std::istringstream(
-            std::string(p.zdjecie_data.begin(), p.zdjecie_data.end())));
+    try {
+        std::unique_ptr<sql::PreparedStatement> stmt(
+            conn->prepareStatement(
+                "INSERT INTO pacjent (imie, nazwisko, pesel, historia, nrTelefonu, miasto, ulica, nrDomu, nrMieszkania) "
+                "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
+                sql::Statement::RETURN_GENERATED_KEYS
+            )
+        );
+        stmt->setString(1, p.imie);
+        stmt->setString(2, p.nazwisko);
+        stmt->setString(3, p.pesel);
+        if (p.historia.empty())
+            stmt->setNull(4, sql::DataType::VARCHAR);
+        else
+            stmt->setString(4, p.historia);
+        stmt->setInt(5, p.nrTelefonu);
+        stmt->setString(6, p.miasto);
+        stmt->setString(7, p.ulica);
+        stmt->setInt(8, p.nrDomu);
+
+        if (p.nrMieszkania == 0)
+            stmt->setNull(9, sql::DataType::INTEGER);
+        else
+            stmt->setInt(9, p.nrMieszkania);
+        stmt->executeUpdate();
+        std::unique_ptr<sql::ResultSet> res(stmt->getGeneratedKeys());
+        if (res->next())
+            return res->getInt(1);
+    } catch (sql::SQLException& e) {
+        std::cerr << "SQL error: " << e.what() << "\n"
+                  << "MySQL error code: " << e.getErrorCode() << "\n"
+                  << "SQLState: " << e.getSQLState() << std::endl;
+    } catch (std::exception& e) {
+        std::cerr << "Standard exception: " << e.what() << std::endl;
+    } catch (...) {
+        std::cerr << "Unknown exception occurred." << std::endl;
     }
-    if (p.nrMieszkania == 0)
-        stmt->setNull(9, sql::DataType::INTEGER);
-    else
-        stmt->setInt(9, p.nrMieszkania);
-    stmt->executeUpdate();
-    std::unique_ptr<sql::ResultSet> res(stmt->getGeneratedKeys());
-    if (res->next())
-        return res->getInt(1);
     return 0;
 }
 
@@ -389,4 +394,59 @@ inline bool insertAppointment(int doctorId, int patientId, std::string date, std
     }
 
 }
+inline std::string capitalize(const std::string& role) {
+    std::string position = role;
+    position[0] = static_cast<char>(std::toupper(position[0]));
+    return position;
+}
+struct Pracownik {
+    int id;
+    std::string imie;
+    std::string nazwisko;
+    std::string ostatniLogin;
+    std::string typ;
+};
+
+inline std::vector<Pracownik> fetchPracownicy() {
+    std::vector<Pracownik> pracownicy;
+    auto conn = baza();
+    if (!conn) {
+        std::cerr << "baza nie chodzi" << std::endl;
+        return pracownicy;
+    }
+
+    std::unique_ptr<sql::PreparedStatement> stmt(
+        conn->prepareStatement("SELECT PracownikID, imie, nazwisko, ostatniLogin FROM Pracownik"));
+    std::unique_ptr<sql::ResultSet> res(stmt->executeQuery());
+
+    while (res->next()) {
+        Pracownik p;
+        p.id = res->getInt("PracownikID");
+        p.imie = res->getString("imie");
+        p.nazwisko = res->getString("nazwisko");
+        p.ostatniLogin = res->getString("ostatniLogin");
+        p.typ = capitalize(checkUserRole(p.id));
+        pracownicy.push_back(p);
+    }
+    return pracownicy;
+
+}
+inline void sendMessage(std::string message, std::string title) {
+    auto conn = baza();
+    if (!conn) {
+        std::cerr << "baza nie chodzi" << std::endl;
+        return;
+    }
+    std::unique_ptr<sql::PreparedStatement> stmt(
+        conn->prepareStatement(
+            "INSERT INTO wiadomosc (nadawca, tytul, czasNadania, dataNadania, tresc) "
+            "VALUES (?, ?, CURRENT_TIME(), CURRENT_DATE(), ?)"
+        )
+    );
+    stmt->setInt(1, sessionUserId);
+    stmt->setString(2, title);
+    stmt->setString(3, message);
+    stmt->execute();
+}
+
 #endif //BAZA_H

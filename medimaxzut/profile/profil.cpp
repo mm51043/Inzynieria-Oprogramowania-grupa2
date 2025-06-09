@@ -27,25 +27,14 @@ void Profil::showPatientProfile(int patientId)
                           std::to_string(p.nrDomu) +
                           (p.nrMieszkania > 0 ? "/" + std::to_string(p.nrMieszkania) : "")));
     ui.PeselLabel_8->setText("Nr pacjenta: " + QString::number(p.id));
-
-    if (!p.zdjecie_data.empty()) {
-        QPixmap photo;
-        if (photo.loadFromData(p.zdjecie_data.data(), p.zdjecie_data.size())) {
-            ui.profilePhoto->setPixmap(photo.scaled(ui.profilePhoto->size(),
-                Qt::KeepAspectRatio, Qt::SmoothTransformation));
-        } else {
-            showDefaultPhoto();
-        }
-    } else {
         showDefaultPhoto();
-    }
 
     this->show();
 }
 
 void Profil::showDefaultPhoto()
 {
-    QPixmap defaultPhoto(":/images/default_profile.png");  // Make sure this resource exists
+    QPixmap defaultPhoto(":/images/default_profile.png");
     if (!defaultPhoto.isNull()) {
         ui.profilePhoto->setPixmap(defaultPhoto.scaled(ui.profilePhoto->size(),
             Qt::KeepAspectRatio, Qt::SmoothTransformation));

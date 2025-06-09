@@ -21,6 +21,9 @@ public:
     void navigation(const QStringList &buttons);
     void showPatientList(bool prescription, bool newAppointment, int mode);
     void showMailList() const;
+
+    void showNewMessage() const;
+
     void showPrescriptionAdd(int patientId) const;
     void showStore() const;
     void showNewPatient(int patientId, int doctorId, const std::string &date, const std::string &time);
