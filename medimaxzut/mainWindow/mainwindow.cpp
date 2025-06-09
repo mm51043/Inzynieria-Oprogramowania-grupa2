@@ -39,7 +39,11 @@ MainWindow::MainWindow(QWidget *parent)
         ui->MainPanel->setLayout(layout);
     }
     connect(ui->mainMailButton, &QPushButton::clicked, this, [this]() {
-        showMailList();
+        if (sessionUserId == 1 || sessionUserId == 2) {
+            showPatientList(false, false, true, false, 0);
+        }else {
+            showMailList(sessionUserId);
+        }
     });
 }
 
@@ -50,7 +54,8 @@ MainWindow::~MainWindow()
 void MainWindow::setWelcomeUserName(const std::string& userName) const {
     ui->welcomeLabel->setText(QString::fromStdString("Witaj, " + userName));
 }
-void MainWindow::showPatientList(bool prescription, bool newAppointment, int mode) {
+void MainWindow::showPatientList(bool prescription, bool newAppointment, bool mail, bool schedule, int mode) {
+
     QLayout *layout = ui->MainPanel->layout();
 
     QLayoutItem *item;
@@ -61,6 +66,7 @@ void MainWindow::showPatientList(bool prescription, bool newAppointment, int mod
         delete item;
     }
     auto *listUserWidget = new ListUser(this);
+    qDebug() << mode;
     if (mode == 0)
         listUserWidget->setLabels("user");
     else if (mode == 1)
@@ -72,10 +78,16 @@ void MainWindow::showPatientList(bool prescription, bool newAppointment, int mod
     if (newAppointment) {
         listUserWidget->setAppointment();
     }
+    if (mail) {
+        listUserWidget->setMail();
+    }
+    if (schedule) {
+        listUserWidget->setSchedule();
+    }
     layout->addWidget(listUserWidget);
 }
 
-void MainWindow::showMailList() const {
+void MainWindow::showMailList(int id) const {
     QLayout *layout = ui->MainPanel->layout();
 
     QLayoutItem *item;
@@ -87,8 +99,12 @@ void MainWindow::showMailList() const {
     }
 
     auto *listMailWidget = new ListMail();
+    if (id != 0) {
+        listMailWidget->setUserId(id);
+    }
     layout->addWidget(listMailWidget);
-}void MainWindow::showAdminPanel() {
+}
+void MainWindow::showAdminPanel() {
     QLayout *layout = ui->MainPanel->layout();
 
     QLayoutItem *item;
@@ -132,7 +148,7 @@ void MainWindow::showPrescriptionAdd(int patientId) const {
     layout->addWidget(prescriptionWidget);
 }
 
-void MainWindow::showStore() {
+void MainWindow::showStore(int id) {
     QLayout *layout = ui->MainPanel->layout();
 
     QLayoutItem *item;
@@ -143,6 +159,11 @@ void MainWindow::showStore() {
         delete item;
     }
     auto *storeWidget = new StoreWindow(this);
+    if (id != 0) {
+        qDebug() << "id: " << id;
+        storeWidget->setPrescription(id);
+    }
+
     layout->addWidget(storeWidget);
 }
 void MainWindow::showNewPatient(const int patientId, const int doctorId, const std::string &date, const std::string &time) {
@@ -222,17 +243,17 @@ void MainWindow::navigation(const QStringList &buttons) {
         layout->addWidget(btn);
         if (name == "Lista Pacjentów") {
             connect(btn->pushButton, &QPushButton::clicked, this, [this]() {
-                showPatientList(false, false, 1);
+                showPatientList(false, false, false, false, 1);
             });
         }
         else if (name == "Lista Pracowników") {
             connect(btn->pushButton, &QPushButton::clicked, this, [this]() {
-                showPatientList(false, false, 0);
+                showPatientList(false, false, false, false, 0);
             });
         }
         else if (name == "Dodaj Receptę") {
             connect(btn->pushButton, &QPushButton::clicked, this, [this]() {
-                showPatientList(true, false, 1);
+                showPatientList(true, false, false, false, 1);
             });
         }
         else if (name == "Harmonogram") {
@@ -242,7 +263,7 @@ void MainWindow::navigation(const QStringList &buttons) {
         }
         else if (name == "Apteka") {
             connect(btn->pushButton, &QPushButton::clicked, this, [this]() {
-                showStore();
+                showStore(0);
             });
         }
         else if (name == "Dodaj Pacjenta/Umów Wizytę") {
@@ -258,6 +279,11 @@ void MainWindow::navigation(const QStringList &buttons) {
         else if (name == "Panel Administracyjny") {
             connect(btn->pushButton, &QPushButton::clicked, this, [this]() {
                 showAdminPanel();
+            });
+        }
+        else if (name == "Harmonogramy Pracowników") {
+            connect(btn->pushButton, &QPushButton::clicked, this, [this]() {
+                showPatientList(false, false, false, true, 0);
             });
         }
     }

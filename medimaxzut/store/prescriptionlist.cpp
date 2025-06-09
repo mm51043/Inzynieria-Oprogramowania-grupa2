@@ -10,13 +10,14 @@ PrescriptionList::PrescriptionList(MainWindow* mainWindow, QWidget *parent)
     , mainWindow(mainWindow)
 {
     ui->setupUi(this);
+    listPrescriptions();
 }
 
 PrescriptionList::~PrescriptionList()
 {
     delete ui;
 }
-/*
+
 void PrescriptionList::listPrescriptions(){
     auto* layout = qobject_cast<QVBoxLayout*>(ui->List->layout());
     if (!layout) {
@@ -32,16 +33,15 @@ void PrescriptionList::listPrescriptions(){
     }
     layout->setContentsMargins(0, 5, 0, 5);
     layout->setSpacing(5);
-    for (const auto pracownicy = fetchRecepty(); const auto& p : pracownicy) {
+    for (const auto recepty = fetchRecepty(); const auto& p : recepty) {
         auto* li = new PrescriptionListItem();
         li->setData(QString::fromStdString(p.pimie + " " + p.pnazwisko),
                     QString::fromStdString(p.dimie + " " + p.dnazwisko));
         li->getButton()->setText("Wybierz");
-        connect(li->getButton(), &QPushButton::clicked, this, [this]() {
-
+        connect(li->getButton(), &QPushButton::clicked, this, [this, p]() {
+            mainWindow->showStore(p.id);
         });
         layout->addWidget(li);
     }
     layout->addStretch();
 }
-*/

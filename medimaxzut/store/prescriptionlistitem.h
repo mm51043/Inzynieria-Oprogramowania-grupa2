@@ -1,6 +1,7 @@
 #ifndef PRESCRIPTIONLISTITEM_H
 #define PRESCRIPTIONLISTITEM_H
 
+#include <qpushbutton.h>
 #include <QWidget>
 
 namespace Ui {
@@ -16,6 +17,8 @@ public:
     ~PrescriptionListItem();
 
     void setData(const QString &patient, const QString &doctor);
+
+    QPushButton *getButton();
 
 private:
     Ui::PrescriptionListItem *ui;

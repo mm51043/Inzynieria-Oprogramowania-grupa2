@@ -29,8 +29,8 @@ void NewMessage::submit() {
     QString message = ui->textField->toPlainText().trimmed();
 
     if (title.isEmpty() || message.isEmpty()) {
-        return;  // Do nothing if any field is empty
+        return;
     }
 
-    sendMessage(message.toStdString(), title.toStdString());
+    //sendMessage(message.toStdString(), title.toStdString());
 }

@@ -79,7 +79,7 @@ border-radius: 10px;</string>
         <x>40</x>
         <y>0</y>
         <width>1321</width>
-        <height>651</height>
+        <height>571</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -116,13 +116,80 @@ QScrollArea QScrollBar::sub-page:vertical {
          <x>0</x>
          <y>0</y>
          <width>1321</width>
-         <height>651</height>
+         <height>571</height>
         </rect>
        </property>
        <property name="layoutDirection">
         <enum>Qt::LayoutDirection::LeftToRight</enum>
        </property>
+       <widget class="QLineEdit" name="lineEdit">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>500</y>
+          <width>113</width>
+          <height>22</height>
+         </rect>
+        </property>
+       </widget>
       </widget>
+     </widget>
+     <widget class="QLineEdit" name="titleEdit">
+      <property name="geometry">
+       <rect>
+        <x>32</x>
+        <y>581</y>
+        <width>311</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:white;</string>
+      </property>
+      <property name="maxLength">
+       <number>50</number>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
+      </property>
+      <property name="placeholderText">
+       <string>Tytuł Wiadomości</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="textEdit">
+      <property name="geometry">
+       <rect>
+        <x>350</x>
+        <y>581</y>
+        <width>851</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:white;</string>
+      </property>
+      <property name="maxLength">
+       <number>100</number>
+      </property>
+      <property name="placeholderText">
+       <string>Treść Wiadomości</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="sendButton">
+      <property name="geometry">
+       <rect>
+        <x>1214</x>
+        <y>580</y>
+        <width>141</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(50, 149, 168);</string>
+      </property>
+      <property name="text">
+       <string>Wyślij</string>
+      </property>
      </widget>
     </widget>
     <widget class="QLabel" name="label_20">
@@ -370,6 +437,31 @@ border-radius: 10px;</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="confirmationLabel">
+    <property name="geometry">
+     <rect>
+      <x>540</x>
+      <y>30</y>
+      <width>601</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>16</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:white;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
   </widget>

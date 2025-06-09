@@ -19,15 +19,15 @@ public:
 
     void setWelcomeUserName(const std::string &userName) const;
     void navigation(const QStringList &buttons);
-    void showPatientList(bool prescription, bool newAppointment, int mode);
-    void showMailList() const;
+    void showPatientList(bool prescription, bool newAppointment, bool mail, bool schedule, int mode);
+    void showMailList(int id) const;
 
     void showAdminPanel();
 
     void showNewMessage() const;
 
     void showPrescriptionAdd(int patientId) const;
-    void showStore();
+    void showStore(int id);
     void showNewPatient(int patientId, int doctorId, const std::string &date, const std::string &time);
     void showSchedule(bool insert, int doctorId, int patientId);
 

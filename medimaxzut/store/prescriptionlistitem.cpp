@@ -16,3 +16,6 @@ void PrescriptionListItem::setData(const QString& patient, const QString& doctor
     ui->patLabel->setText(patient);
     ui->docLabel->setText(doctor);
 }
+QPushButton* PrescriptionListItem::getButton() {
+    return ui->addButton;
+}

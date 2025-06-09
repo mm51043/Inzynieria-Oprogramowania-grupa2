@@ -17,11 +17,16 @@ public:
     explicit ListMail(QWidget *parent = nullptr);
     ~ListMail();
 
+    void setUserId(int id);
+
     void list();
+
+    void submit();
 
 private:
     Ui::ListMail *ui;
     QMap<MailItem*, MailExt*> extWidgets;
+    int userid;
 };
 
 #endif // LISTMAIL_H

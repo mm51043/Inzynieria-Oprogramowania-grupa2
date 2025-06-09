@@ -22,6 +22,10 @@ public:
 
     void setAppointment();
 
+    void setMail();
+
+    void setSchedule();
+
     void listPatients();
 
     void list();
@@ -39,6 +43,8 @@ private:
     bool appointment;
     MainWindow* mainWindow;
     Profil* profilWindow;
+    bool mail;
+    bool schedule;
     int mode;
 };
 

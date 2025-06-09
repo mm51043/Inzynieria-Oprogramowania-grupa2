@@ -9,17 +9,35 @@
 ListMail::ListMail(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::ListMail)
+    , userid(0)
 {
     ui->setupUi(this);
-    list();
+    if (userid != 0) {
+        list();
+    }
+    connect(ui->sendButton, &QPushButton::clicked, this, [this]() {
+        submit();
+    });
+    if (userid != 1 || userid != 2) {
+        ui->sendButton->setVisible(false);
+        ui->titleEdit->setVisible(false);
+    }
 }
 
 ListMail::~ListMail()
 {
     delete ui;
 }
-
+void ListMail::setUserId(int id) {
+    userid = id;
+    if (userid == 1 || userid == 2) {
+        ui->sendButton->setVisible(true);
+        ui->titleEdit->setVisible(true);
+    }
+    list();
+}
 void ListMail::list() {
+    qDebug() << userid;
     QVBoxLayout* layout = qobject_cast<QVBoxLayout*>(ui->List->layout());
     if (!layout) {
         layout = new QVBoxLayout(ui->List);
@@ -34,7 +52,7 @@ void ListMail::list() {
     }
     layout->setContentsMargins(0, 5, 0, 5);
     layout->setSpacing(5);
-    auto messages = fetchWiadomosci();
+    auto messages = fetchWiadomosci(userid);
     for (const auto& w : messages) {
         auto* mi = new MailItem();
         mi->setData(
@@ -62,4 +80,15 @@ void ListMail::list() {
     }
 
     layout->addStretch();
+}
+void ListMail::submit() {
+    QString title = ui->titleEdit->text();
+    QString message = ui->textEdit->text();
+    if (title.isEmpty() || message.isEmpty()) {
+        return;
+    }
+    sendMessage(message.toStdString(), title.toStdString(), userid);
+    ui->titleEdit->clear();
+    ui->textEdit->clear();
+    ui->confirmationLabel->setText("Wiadomość wysłana pomyślnie");
 }

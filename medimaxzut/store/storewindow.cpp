@@ -28,11 +28,14 @@ StoreWindow::~StoreWindow()
     delete ui;
 }
 void StoreWindow::setPrescription(int id) {
+    qDebug() << id;
     auto receptaleki = getPrescriptionMeds(id);
     for (const auto r : receptaleki) {
         for (int i = 0; i < r.ilosc; i++)
+            qDebug() << "trying to add" << r.id;
             lAdd(r.id);
     }
+
 }
 QVBoxLayout* StoreWindow::lListLayout() {
     QVBoxLayout* layout = qobject_cast<QVBoxLayout*>(ui->leftList->layout());

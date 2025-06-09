@@ -3,6 +3,7 @@
 #include <mariadb/conncpp.hpp>
 #include <iostream>
 #include "session.h"
+#include "login/login.h"
 inline std::unique_ptr<sql::Connection> baza() {
     try {
         const sql::SQLString url("jdbc:mariadb://localhost:4306/bazaprzychodnia");
@@ -30,6 +31,24 @@ inline void setSessionUserName() {
     } else {
         qDebug() << "Nie ma usera";
     }
+}
+inline bool checkPassword(const std::string& username, const std::string& passwordHash) {
+    auto conn = baza();
+    if (!conn) {
+        std::cerr << "baza nie chodzi" << std::endl;
+        return 0;
+    }
+    std::unique_ptr<sql::PreparedStatement> stmt(
+        conn->prepareStatement("SELECT PracownikID FROM pracowniklogin WHERE login = ? AND hasloHash = ?")
+    );
+    stmt->setString(1, username);
+    stmt->setString(2, passwordHash);
+    std::unique_ptr<sql::ResultSet> res(stmt->executeQuery());
+
+    if (res->next()) {
+        return true;
+    }
+    return false;
 }
 inline std::string sqlToString(const sql::SQLString& sqlStr) {
     return static_cast<std::string>(sqlStr);
@@ -71,14 +90,14 @@ inline Pacjent getPatientData(int patientId) {
     auto conn = baza();
     if (!conn) {
         std::cerr << "baza nie chodzi" << std::endl;
-        return Pacjent();  // Zwróć domyślny obiekt Pacjent w przypadku błędu
+        return Pacjent();
     }
 
     std::unique_ptr<sql::Statement> stmt(conn->createStatement());
     std::unique_ptr<sql::ResultSet> res(stmt->executeQuery("SELECT * FROM pacjent WHERE pacjentID = " + std::to_string(patientId)));
 
     if (!res->next()) {
-        return Pacjent();  // Zwróć domyślny obiekt jeśli nie znaleziono pacjenta
+        return Pacjent();
     }
 
     Pacjent p;
@@ -144,14 +163,14 @@ struct Wiadomosc {
     std::string czasNadania;
     std::string tresc;
 };
-inline std::vector<Wiadomosc> fetchWiadomosci() {
+inline std::vector<Wiadomosc> fetchWiadomosci(int id) {
     auto conn = baza();
     if (!conn) {
         std::cerr << "baza nie chodzi" << std::endl;
     }
     std::vector<Wiadomosc> wiadomosci;
     std::unique_ptr<sql::Statement> stmt(conn->createStatement());
-    std::unique_ptr<sql::ResultSet> res(stmt->executeQuery("SELECT WiadomoscID, CONCAT(p.imie, ' ', p.nazwisko) AS nazwaNadawcy, tytul, dataNadania, czasNadania, tresc FROM `wiadomosci` JOIN pracownik as p ON p.PracownikID = nadawca ORDER BY dataNadania DESC, czasNadania DESC"));
+    std::unique_ptr<sql::ResultSet> res(stmt->executeQuery("SELECT WiadomoscID, CONCAT(p.imie, ' ', p.nazwisko) AS nazwaNadawcy, tytul, dataNadania, czasNadania, tresc FROM `wiadomosci` JOIN pracownik as p ON p.PracownikID = nadawca WHERE odbiorca = " + std::to_string(id) + " ORDER BY dataNadania DESC, czasNadania DESC; "));
 
     while (res->next()) {
         Wiadomosc w;
@@ -498,7 +517,7 @@ inline std::vector<Pracownik> fetchPracownicy() {
     return pracownicy;
 
 }
-inline void sendMessage(std::string message, std::string title) {
+inline void sendMessage(std::string message, std::string title, int userid) {
     auto conn = baza();
     if (!conn) {
         std::cerr << "baza nie chodzi" << std::endl;
@@ -507,40 +526,44 @@ inline void sendMessage(std::string message, std::string title) {
     try{
     std::unique_ptr<sql::PreparedStatement> stmt(
         conn->prepareStatement(
-            "INSERT INTO wiadomosci (nadawca, tytul, czasNadania, dataNadania, tresc) "
-            "VALUES (?, ?, CURRENT_TIME(), CURRENT_DATE(), ?)"
+            "INSERT INTO wiadomosci (nadawca, odbiorca, tytul, czasNadania, dataNadania, tresc) "
+            "VALUES (?, ?, ?, CURRENT_TIME(), CURRENT_DATE(), ?)"
         )
     );
     stmt->setInt(1, sessionUserId);
-    stmt->setString(2, title);
-    stmt->setString(3, message);
+    stmt->setInt(2, userid);
+    stmt->setString(3, title);
+    stmt->setString(4, message);
     stmt->execute();
-} catch (sql::SQLException& e) {
-    std::cerr << "SQL error: " << e.what() << "\n"
-              << "MySQL error code: " << e.getErrorCode() << "\n"
-              << "SQLState: " << e.getSQLState() << std::endl;
-} catch (std::exception& e) {
-    std::cerr << "Standard exception: " << e.what() << std::endl;
-} catch (...) {
-    std::cerr << "Unknown exception occurred." << std::endl;
-}
+    } catch (sql::SQLException& e) {
+        std::cerr << "SQL error: " << e.what() << std::endl;
+    }
 }
 inline std::vector<Lek> getPrescriptionMeds(int id) {
+    std::vector<Lek> leki;
     auto conn = baza();
     if (!conn) {
         std::cerr << "baza nie chodzi" << std::endl;
+        return leki;
     }
-    std::vector<Lek> leki;
-    std::unique_ptr<sql::Statement> stmt(conn->createStatement());
-    std::unique_ptr<sql::ResultSet> res(stmt->executeQuery("SELECT LekID, ilosc FROM receptalek WHERE ReceptaID = " + id));
 
-    while (res->next()) {
-        Lek l;
-        l.id = res->getInt("LekID");
-        l.nazwa = "";
-        l.ilosc = res->getInt("ilosc");
-        leki.push_back(l);
+    try {
+        std::unique_ptr<sql::Statement> stmt(conn->createStatement());
+        std::unique_ptr<sql::ResultSet> res(stmt->executeQuery(
+            "SELECT LekID, ilosc FROM receptalek WHERE ReceptaID = " + std::to_string(id)
+        ));
+
+        while (res->next()) {
+            Lek l;
+            l.id = res->getInt("LekID");
+            l.nazwa = ""; // Placeholder — set later if needed
+            l.ilosc = res->getInt("ilosc");
+            leki.push_back(std::move(l));
+        }
+    } catch (sql::SQLException& e) {
+        std::cerr <<  e.what() << std::endl;
     }
+
     return leki;
 }
 struct ReceptaDane {
@@ -551,10 +574,39 @@ struct ReceptaDane {
     std::string dnazwisko;
 };
 
-inline void getRecepty() {
+inline std::vector<ReceptaDane> fetchRecepty() {
+    std::vector<ReceptaDane> recepty;
     auto conn = baza();
     if (!conn) {
         std::cerr << "baza nie chodzi" << std::endl;
+        return recepty;
     }
+
+    try {
+        std::unique_ptr<sql::Statement> stmt(conn->createStatement());
+        std::unique_ptr<sql::ResultSet> res(stmt->executeQuery(
+            "SELECT "
+            "recepta.ReceptaID, "
+            "pacjent.imie AS pimie, pacjent.nazwisko AS pnazwisko, "
+            "pracownik.imie AS dimie, pracownik.nazwisko AS dnazwisko "
+            "FROM recepta "
+            "JOIN pacjent ON recepta.PacjentID = pacjent.PacjentID "
+            "JOIN pracownik ON recepta.PracownikID = pracownik.PracownikID"
+        ));
+
+        while (res->next()) {
+            ReceptaDane r;
+            r.id = res->getInt("ReceptaID");
+            r.pimie = res->getString("pimie");
+            r.pnazwisko = res->getString("pnazwisko");
+            r.dimie = res->getString("dimie");
+            r.dnazwisko = res->getString("dnazwisko");
+            recepty.push_back(std::move(r));
+        }
+    } catch (const sql::SQLException& e) {
+        std::cerr << "SQL error: " << e.what() << std::endl;
+    }
+
+    return recepty;
 }
 #endif //BAZA_H

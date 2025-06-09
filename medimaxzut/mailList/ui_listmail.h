@@ -13,6 +13,8 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QFrame>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QLineEdit>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QScrollArea>
 #include <QtWidgets/QWidget>
 
@@ -26,6 +28,10 @@ public:
     QFrame *frame_7;
     QScrollArea *scrollArea;
     QWidget *List;
+    QLineEdit *lineEdit;
+    QLineEdit *titleEdit;
+    QLineEdit *textEdit;
+    QPushButton *sendButton;
     QLabel *label_20;
     QLabel *label_21;
     QLabel *label_22;
@@ -36,6 +42,7 @@ public:
     QFrame *line_3;
     QFrame *line_7;
     QLabel *title;
+    QLabel *confirmationLabel;
 
     void setupUi(QWidget *ListMail)
     {
@@ -66,7 +73,7 @@ public:
         frame_7->setFrameShadow(QFrame::Shadow::Raised);
         scrollArea = new QScrollArea(frame_7);
         scrollArea->setObjectName("scrollArea");
-        scrollArea->setGeometry(QRect(40, 0, 1321, 651));
+        scrollArea->setGeometry(QRect(40, 0, 1321, 571));
         scrollArea->setStyleSheet(QString::fromUtf8("QScrollArea QScrollBar:vertical {\n"
 "    border: 3px solid white;\n"
 "    border-radius: 8px;\n"
@@ -93,9 +100,27 @@ public:
         scrollArea->setWidgetResizable(true);
         List = new QWidget();
         List->setObjectName("List");
-        List->setGeometry(QRect(0, 0, 1321, 651));
+        List->setGeometry(QRect(0, 0, 1321, 571));
         List->setLayoutDirection(Qt::LayoutDirection::LeftToRight);
+        lineEdit = new QLineEdit(List);
+        lineEdit->setObjectName("lineEdit");
+        lineEdit->setGeometry(QRect(50, 500, 113, 22));
         scrollArea->setWidget(List);
+        titleEdit = new QLineEdit(frame_7);
+        titleEdit->setObjectName("titleEdit");
+        titleEdit->setGeometry(QRect(32, 581, 311, 51));
+        titleEdit->setStyleSheet(QString::fromUtf8("background-color:white;"));
+        titleEdit->setMaxLength(50);
+        titleEdit->setAlignment(Qt::AlignmentFlag::AlignCenter);
+        textEdit = new QLineEdit(frame_7);
+        textEdit->setObjectName("textEdit");
+        textEdit->setGeometry(QRect(350, 581, 851, 51));
+        textEdit->setStyleSheet(QString::fromUtf8("background-color:white;"));
+        textEdit->setMaxLength(100);
+        sendButton = new QPushButton(frame_7);
+        sendButton->setObjectName("sendButton");
+        sendButton->setGeometry(QRect(1214, 580, 141, 51));
+        sendButton->setStyleSheet(QString::fromUtf8("background-color: rgb(50, 149, 168);"));
         label_20 = new QLabel(frame);
         label_20->setObjectName("label_20");
         label_20->setGeometry(QRect(30, 10, 1371, 41));
@@ -183,6 +208,15 @@ public:
 "border-radius: 10px;"));
         title->setTextFormat(Qt::TextFormat::RichText);
         title->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
+        confirmationLabel = new QLabel(mainFrame);
+        confirmationLabel->setObjectName("confirmationLabel");
+        confirmationLabel->setGeometry(QRect(540, 30, 601, 41));
+        QFont font2;
+        font2.setPointSize(16);
+        font2.setBold(true);
+        confirmationLabel->setFont(font2);
+        confirmationLabel->setStyleSheet(QString::fromUtf8("color:white;"));
+        confirmationLabel->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
         retranslateUi(ListMail);
 
@@ -192,11 +226,15 @@ public:
     void retranslateUi(QWidget *ListMail)
     {
         ListMail->setWindowTitle(QCoreApplication::translate("ListMail", "Form", nullptr));
+        titleEdit->setPlaceholderText(QCoreApplication::translate("ListMail", "Tytu\305\202 Wiadomo\305\233ci", nullptr));
+        textEdit->setPlaceholderText(QCoreApplication::translate("ListMail", "Tre\305\233\304\207 Wiadomo\305\233ci", nullptr));
+        sendButton->setText(QCoreApplication::translate("ListMail", "Wy\305\233lij", nullptr));
         label_20->setText(QCoreApplication::translate("ListMail", "Wiadomo\305\233ci", nullptr));
         label_21->setText(QCoreApplication::translate("ListMail", "Tytu\305\202", nullptr));
         label_22->setText(QCoreApplication::translate("ListMail", "Autor", nullptr));
         label_23->setText(QCoreApplication::translate("ListMail", "Czas dostarczenia", nullptr));
         title->setText(QCoreApplication::translate("ListMail", "Skrzynka odbiorcza", nullptr));
+        confirmationLabel->setText(QString());
     } // retranslateUi
 
 };

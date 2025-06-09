@@ -13,6 +13,8 @@ ListUser::ListUser(MainWindow* mw, QWidget *parent)
     , mainWindow(mw)
     , prescription(false)
     , appointment(false)
+    , mail(false)
+    , schedule(false)
     , profilWindow(nullptr)
     , mode(-1)
 {
@@ -43,6 +45,14 @@ void ListUser::setPrescription(){
 void ListUser::setAppointment() {
     appointment = true;
     listPatients();
+}
+void ListUser::setMail() {
+    mail = true;
+    listUsers();
+}
+void ListUser::setSchedule() {
+    schedule = true;
+    listUsers();
 }
 void ListUser::listPatients() {
     qDebug() << prescription << ", " << appointment;
@@ -87,6 +97,7 @@ void ListUser::listPatients() {
                 }
             });
         }
+
         else {
             connect(li->getButton(), &QPushButton::clicked, this, [this, p]() {
                 profilWindow->showPatientProfile(p.id);
@@ -98,6 +109,7 @@ void ListUser::listPatients() {
     layout->addStretch();
 }
 void ListUser::listUsers(){
+    qDebug() << schedule;
     auto* layout = qobject_cast<QVBoxLayout*>(ui->List->layout());
     if (!layout) {
         layout = new QVBoxLayout(ui->List);
@@ -123,11 +135,30 @@ void ListUser::listUsers(){
                     QString::fromStdString(p.nazwisko),
                     QString::fromStdString(p.typ),
                     QString::fromStdString(p.ostatniLogin));
+        if (mail) {
+            li->getButton()->setText("Wybierz");
+            connect(li->getButton(), &QPushButton::clicked, this, [this, p]() {
+                if (mainWindow) {
+                    mainWindow->showMailList(p.id);
+                }
+            });
+        }
+        if (schedule) {
+            li->getButton()->setText("Wybierz");
+            connect(li->getButton(), &QPushButton::clicked, this, [this, p]() {
+                if (mainWindow) {
+                    if (checkUserRole(p.id) == "lekarz") {
+                        mainWindow->showSchedule(false, p.id, 0);
+                    }
+                }
+            });
+        }else {
             connect(li->getButton(), &QPushButton::clicked, this, [this, p]() {
                 profilWindow->showPatientProfile(p.id);
                 emit showProfileRequested(p.id);
             });
-        layout->addWidget(li);
+        }
+            layout->addWidget(li);
     }
     layout->addStretch();
 }

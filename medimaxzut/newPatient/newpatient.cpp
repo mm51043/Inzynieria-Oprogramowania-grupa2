@@ -37,7 +37,7 @@ NewPatient::NewPatient(MainWindow* mw, QWidget *parent)
             });
     connect(ui->dbButton, &QPushButton::clicked, this, [this]() {
         if (mainWindow) {
-            mainWindow->showPatientList(false, true, 1);
+            mainWindow->showPatientList(false, true, false, false, 1);
         }
     });
     connect(ui->scheduleButton, &QPushButton::clicked, this, [this]() {
