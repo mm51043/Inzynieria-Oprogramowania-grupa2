@@ -1,0 +1,138 @@
+1. Folder: login
+
+Folder login posiada pliki:
+login.cpp
+login.h
+loginui.h
+loginWindow.h
+
+W nim wykonuje się przypisanie jako kto otwieramy nasz projekt w zależności jaką wartość początkowąpodamy.
+
+2. Folder: mailList 
+
+Folder mailList posiada wszystkie dane związane z skrzynką pocztową w systemie oraz jej interfejsem. Zwiera on w sobie: 
+ui_mailitem.h
+ui_mailext.h
+ui_listmail.h
+mailitem.ui
+mailitem.h
+mailext.ui
+mailitem.cpp
+mailext.h
+mailext.cpp
+listmail.ui
+listmail.h
+listmail.cpp
+
+Kod jest podzielony na sam Widget skrzynki pocztowej w której znajdują się wiadomości, oraz obiekty które odpowiadają nadanym wiadomością. Funkcjonalność kodu została wzbogacona o ułatwiające czytelność wiadomości rozwiązania takie jak:
+rozwijanie wiadomości - w celu większej przejrzystości treści.
+możliwość scrollbaru - łatwiejsze przemieszczanie się po wiadomościach.
+segregacje indexów względem dat - łatwiejsze do znalezienia rozwiązanie.
+
+3. Folder: message
+
+Folder zawiera w sobie: 
+newmessage.ui
+newmessage.cpp
+newmessage.h
+ui_newmessage.h
+
+Ten segment zawiera całą funkcjonalność oraz interfejs względem wysyłania wiadomości na skrzynki pocztowe. 
+
+4. Folder: newPatient
+
+Folder NewPatient zawiera pliki związane z funkcjonalnością dodawania nowych pacjentów i wizyt w systemie. Składa się z następujących plików:
+
+newpatient.cpp
+newpatient.h
+newpatient.ui
+newpatientdoctorlistitem.cpp
+newpatientdoctorlistitem.h
+newpatientdoctorlistitem.ui
+ui_newpatient.h
+ui_newpatientdoctorlistitem.h
+
+Zawiera on dodawanie nowego pacjenta – wprowadzanie danych osobowych (imię, nazwisko, PESEL, adres, historia medyczna) z walidacją pól wymaganych. Wybór lekarza – dynamiczna lista lekarzy z możliwością wyboru specjalisty. Planowanie wizyty – ustawienie terminu wizyty i jej zatwierdzenie. Komunikaty błędów – wyświetlanie informacji o niepoprawnie wypełnionych polach lub duplikacie numeru PESEL. Integrację z harmonogramem – przekierowanie do modułu harmonogramu w celu wyboru terminu.
+
+5. Folder: prescriptionAdd
+
+Folder prescriptionADD zawiera pliki związane z funkcjonalnością dodawania i zarządzania receptami w systemie. Składa się z następujących plików:
+
+medimaxzut
+prescriptionitem.cpp
+prescriptionitem.h
+prescriptionitem.ui
+prescriptionwindow.cpp
+prescriptionwindow.h
+prescriptionwindow.ui
+ui_prescriptionitem.h
+ui_prescriptionwindow.h
+
+Kod zawiera przejrzysty i łatwy w obsłudze interfejs. Przeglądanie listy leków dostępnych w aptece – wyświetlane w prawej części okna. Dodawanie leków do recepty – poprzez przycisk "Dodaj" obok każdego leku. Zarządzanie zawartością recepty – wyświetlanie dodanych leków z możliwością zmiany ilości lub usunięcia. Czyszczenie recepty – przycisk "Wyczyść" resetuje listę wybranych leków. Zatwierdzanie recepty – przycisk "Zatwierdź" zapisuje receptę w systemie i wyświetla potwierdzenie.
+
+6. Folder: store
+
+Folder store zawiera wiele plików:
+prescriptionAdd
+prescriptionlist.cpp
+prescriptionlist.h
+prescriptionlist.ui
+prescriptionlistitem.cpp
+prescriptionlistitem.h
+storeitem.cpp
+prescriptionlistitem.ui
+storeitem.h
+storeitem.ui
+storewindow.cpp
+storewindow.h
+storewindow.ui
+ui_prescriptionlist.h
+ui_prescriptionlistitem.h
+ui_storeitem.h
+ui_storewindow.h
+
+W store pojawiły się rozwiązania podobne do tych zastosowanych w  przypadku recept. Interfejs jest wyglądowo podobny, z kilkoma różnicami. Jest zaimplementowana dodatkowa funkcja odwołująca się do recept, która generuje komendę potrzebnych leków z recepty. Kod dodatkowo ma kilka funkcji ograniczających jak brak możliwości przekraczania ilości produktów w sprzedaży, zatwierdzenie sprzedaży produktów oraz zmiana ich ilości w bazie oraz komunikat potwierdzający wprowadzenie sprzedaży.
+
+7. Folder: profile
+
+Folder profile zawiera wszystkie rozwiązania związane z profilami (pacjentów, pracowników, widok pracowników z konta admina). Zawiera on pliki:
+
+ui_profiladmin.h
+ui_profil.h
+profiladmin.ui
+profiladmin.h
+profiladmin.cpp
+profil.h
+profil.cpp
+profil.ui
+
+W nim zastosowane są liczne interfejsowe rozwiązania oraz funkcje związane z nimi. Wyświetlanie profilu pacjenta, Edycja danych pracowników, usuwanie potencjalnych błędnych lub przedawnionych rekordów bazy danych. 
+
+8. Folder: mainWindow
+
+Zawiera on główne okno w których aktywowane są wszystkie Widgety oraz posiada on liczne butony nawigujące po całym programie. Jego Zawartość to:
+
+buttonname.h
+mainwindow.cpp
+mainwindow.h
+mainwindow.ui
+navibutton.cpp
+navibutton.h
+navibutton.ui
+ui_mainwindow.h
+ui_navibutton.h
+
+Cała dostępność widgetów jest zaimplementowana w tym miejscu kodu, gdzie są wywołane wszystkie ścieżki przemieszczania się pomiędzy nimi.
+
+9. Baza.h 
+
+Plik zawierający wszelkie odwołania do bazy danych "bazaprzychodnia" oraz fundament wszystkich wywołań rekordów oraz połączeń licznych interfejsów. 
+
+10. main.cpp
+
+Wywołanie rozpoczynającego segmentu kodu
+
+
+
+
+
