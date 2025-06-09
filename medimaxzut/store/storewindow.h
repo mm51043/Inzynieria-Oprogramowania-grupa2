@@ -19,6 +19,8 @@ public:
     explicit StoreWindow(MainWindow* mainWindow, QWidget *parent = nullptr);
     ~StoreWindow();
 
+    void setPrescription(int id);
+
     QVBoxLayout *lListLayout();
     bool canAddMedicine(int id) const;
 
@@ -35,6 +37,7 @@ private:
     std::vector<std::pair<int, int>> leftLek;
     std::vector<Lek> leki;
     MainWindow* mainWindow;
+    int prescriptionId;
 };
 
 

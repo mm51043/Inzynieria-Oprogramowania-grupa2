@@ -9,6 +9,7 @@ StoreWindow::StoreWindow(MainWindow* mw, QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::Store)
     , mainWindow(mw)
+    , prescriptionId(0)
 {
     ui->setupUi(this);
     llayout = lListLayout();
@@ -17,13 +18,22 @@ StoreWindow::StoreWindow(MainWindow* mw, QWidget *parent)
 
     connect(ui->clearButton, &QPushButton::clicked, this, &StoreWindow::lClear);
     connect(ui->okButton, &QPushButton::clicked, this, &StoreWindow::submitOrder);
+    connect(ui->addPrescription, &QPushButton::clicked, this, [this]() {
+        mainWindow->showPrescriptionList();
+    });
 }
 
 StoreWindow::~StoreWindow()
 {
     delete ui;
 }
-
+void StoreWindow::setPrescription(int id) {
+    auto receptaleki = getPrescriptionMeds(id);
+    for (const auto r : receptaleki) {
+        for (int i = 0; i < r.ilosc; i++)
+            lAdd(r.id);
+    }
+}
 QVBoxLayout* StoreWindow::lListLayout() {
     QVBoxLayout* layout = qobject_cast<QVBoxLayout*>(ui->leftList->layout());
     if (!layout) {
@@ -108,7 +118,6 @@ bool StoreWindow::lAdd(int id) {
         return p.first == id;
     });
 
-    // Znajdź lek w magazynie
     auto lekIt = std::find_if(leki.begin(), leki.end(), [id](const Lek& l) {
         return l.id == id;
     });

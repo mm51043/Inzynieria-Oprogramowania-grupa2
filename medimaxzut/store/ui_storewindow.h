@@ -49,6 +49,7 @@ public:
     QPushButton *clearButton;
     QLabel *title;
     QLabel *confirmationLabel;
+    QPushButton *addPrescription;
 
     void setupUi(QWidget *Store)
     {
@@ -242,6 +243,12 @@ public:
         confirmationLabel->setGeometry(QRect(1108, 829, 331, 31));
         confirmationLabel->setFont(font1);
         confirmationLabel->setStyleSheet(QString::fromUtf8("color: white;"));
+        addPrescription = new QPushButton(mainFrame);
+        addPrescription->setObjectName("addPrescription");
+        addPrescription->setGeometry(QRect(20, 820, 351, 51));
+        addPrescription->setFont(font1);
+        addPrescription->setStyleSheet(QString::fromUtf8("background-color: rgb(50, 149, 168);\n"
+"border-radius: 10px;"));
 
         retranslateUi(Store);
 
@@ -261,6 +268,7 @@ public:
         clearButton->setText(QCoreApplication::translate("Store", "Wyczy\305\233\304\207", nullptr));
         title->setText(QCoreApplication::translate("Store", "Utw\303\263rz zam\303\263wienie", nullptr));
         confirmationLabel->setText(QString());
+        addPrescription->setText(QCoreApplication::translate("Store", "Dodaj Leki z Recepty", nullptr));
     } // retranslateUi
 
 };

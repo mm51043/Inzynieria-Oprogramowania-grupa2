@@ -458,5 +458,36 @@ inline void sendMessage(std::string message, std::string title) {
     std::cerr << "Unknown exception occurred." << std::endl;
 }
 }
+inline std::vector<Lek> getPrescriptionMeds(int id) {
+    auto conn = baza();
+    if (!conn) {
+        std::cerr << "baza nie chodzi" << std::endl;
+    }
+    std::vector<Lek> leki;
+    std::unique_ptr<sql::Statement> stmt(conn->createStatement());
+    std::unique_ptr<sql::ResultSet> res(stmt->executeQuery("SELECT LekID, ilosc FROM receptalek WHERE ReceptaID = " + id));
 
+    while (res->next()) {
+        Lek l;
+        l.id = res->getInt("LekID");
+        l.nazwa = "";
+        l.ilosc = res->getInt("ilosc");
+        leki.push_back(l);
+    }
+    return leki;
+}
+struct ReceptaDane {
+    int id;
+    std::string pimie;
+    std::string dimie;
+    std::string pnazwisko;
+    std::string dnazwisko;
+};
+
+inline void getRecepty() {
+    auto conn = baza();
+    if (!conn) {
+        std::cerr << "baza nie chodzi" << std::endl;
+    }
+}
 #endif //BAZA_H
