@@ -1,7 +1,8 @@
+
 #include "adminpanel.h"
-
+#include "../profile/profiladmin.h"
 #include <QVBoxLayout>
-
+#include <QDebug>
 #include "listitem.h"
 #include "ui_adminpanel.h"
 #include "../baza.h"
@@ -18,6 +19,7 @@ AdminPanel::~AdminPanel()
 {
     delete ui;
 }
+
 void AdminPanel::listUsers(){
     auto* layout = qobject_cast<QVBoxLayout*>(ui->List->layout());
     if (!layout) {
@@ -40,9 +42,25 @@ void AdminPanel::listUsers(){
                     QString::fromStdString(p.typ),
                     QString::fromStdString(p.ostatniLogin));
         li->getButton()->setText("Pokaż opcje");
-        connect(li->getButton(), &QPushButton::clicked, this, [this]() {
 
-        });
+        connect(li->getButton(), &QPushButton::clicked, this, [this, p]() {
+    Profiladmin* profileWindow = new Profiladmin();  // Use correct class name
+    profileWindow->showWorkerProfile(p.id);
+
+    // Use arrow operator consistently
+    connect(profileWindow->ui->AdminEdytuj, &QPushButton::clicked, this, [this, p]() {
+        qDebug() << "Editing worker:" << p.id;
+    });
+
+    connect(profileWindow->ui->AdminUsun, &QPushButton::clicked, this, [this, p, profileWindow]() {
+        if (deleteWorker(p.id)) {
+            profileWindow->close();
+            listUsers();
+        }
+    });
+
+    profileWindow->show();
+});
         layout->addWidget(li);
     }
     layout->addStretch();

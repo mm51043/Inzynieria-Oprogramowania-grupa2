@@ -31,6 +31,9 @@ inline void setSessionUserName() {
         qDebug() << "Nie ma usera";
     }
 }
+inline std::string sqlToString(const sql::SQLString& sqlStr) {
+    return static_cast<std::string>(sqlStr);
+}
 struct Pacjent {
     int id;
     std::string imie;
@@ -394,6 +397,70 @@ inline bool insertAppointment(int doctorId, int patientId, std::string date, std
     }
 
 }
+
+inline bool deleteWorker(int workerId) {
+    auto conn = baza();
+    if (!conn) {
+        std::cerr << "Błąd połączenia z bazą danych" << std::endl;
+        return false;
+    }
+
+    try {
+        std::unique_ptr<sql::PreparedStatement> stmt(
+            conn->prepareStatement("DELETE FROM pracownik WHERE PracownikID = ?")
+        );
+        stmt->setInt(1, workerId);
+        int affectedRows = stmt->executeUpdate();
+        return affectedRows > 0;
+    } catch (const sql::SQLException& e) {
+        std::cerr << "Błąd SQL przy usuwaniu pracownika: " << e.what() << std::endl;
+        return false;
+    }
+}
+inline bool updatePatient(const Pacjent& p) {
+    auto conn = baza();
+    if (!conn) {
+        std::cerr << "Błąd połączenia z bazą danych" << std::endl;
+        return false;
+    }
+
+    try {
+        std::unique_ptr<sql::PreparedStatement> stmt(
+            conn->prepareStatement(
+                "UPDATE pacjent SET "
+                "imie = ?, nazwisko = ?, pesel = ?, historia = ?, "
+                "nrTelefonu = ?, miasto = ?, ulica = ?, nrDomu = ?, nrMieszkania = ? "
+                "WHERE PacjentID = ?"
+            )
+        );
+
+        stmt->setString(1, p.imie);
+        stmt->setString(2, p.nazwisko);
+        stmt->setString(3, p.pesel);
+        if (p.historia.empty()) {
+            stmt->setNull(4, sql::DataType::VARCHAR);
+        } else {
+            stmt->setString(4, p.historia);
+        }
+        stmt->setInt(5, p.nrTelefonu);
+        stmt->setString(6, p.miasto);
+        stmt->setString(7, p.ulica);
+        stmt->setInt(8, p.nrDomu);
+        if (p.nrMieszkania == 0) {
+            stmt->setNull(9, sql::DataType::INTEGER);
+        } else {
+            stmt->setInt(9, p.nrMieszkania);
+        }
+        stmt->setInt(10, p.id);
+
+        int affectedRows = stmt->executeUpdate();
+        return affectedRows > 0;
+    } catch (const sql::SQLException& e) {
+        std::cerr << "Błąd SQL przy aktualizacji pacjenta: " << e.what() << std::endl;
+        return false;
+    }
+}
+
 inline std::string capitalize(const std::string& role) {
     std::string position = role;
     position[0] = static_cast<char>(std::toupper(position[0]));

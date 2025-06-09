@@ -55,6 +55,8 @@ add_executable(medimaxzut
         store/prescriptionlist.cpp
         store/prescriptionlistitem.cpp
         userList/adminpanel.cpp
+        profile/profiladmin.cpp
+        profile/profiladmin.h
         lists.h
 )
 

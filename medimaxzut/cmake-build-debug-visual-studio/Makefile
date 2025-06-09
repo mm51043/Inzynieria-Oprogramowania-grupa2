@@ -343,6 +343,30 @@ medimaxzut_autogen\mocs_compilation.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\medimaxzut.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\medimaxzut.dir\medimaxzut_autogen\mocs_compilation.cpp.s
 .PHONY : medimaxzut_autogen\mocs_compilation.cpp.s
 
+message\newmessage.obj: message\newmessage.cpp.obj
+.PHONY : message\newmessage.obj
+
+# target to build an object file
+message\newmessage.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\medimaxzut.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\medimaxzut.dir\message\newmessage.cpp.obj
+.PHONY : message\newmessage.cpp.obj
+
+message\newmessage.i: message\newmessage.cpp.i
+.PHONY : message\newmessage.i
+
+# target to preprocess a source file
+message\newmessage.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\medimaxzut.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\medimaxzut.dir\message\newmessage.cpp.i
+.PHONY : message\newmessage.cpp.i
+
+message\newmessage.s: message\newmessage.cpp.s
+.PHONY : message\newmessage.s
+
+# target to generate assembly for a file
+message\newmessage.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\medimaxzut.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\medimaxzut.dir\message\newmessage.cpp.s
+.PHONY : message\newmessage.cpp.s
+
 newPatient\newpatient.obj: newPatient\newpatient.cpp.obj
 .PHONY : newPatient\newpatient.obj
 
@@ -463,6 +487,30 @@ profile\profil.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\medimaxzut.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\medimaxzut.dir\profile\profil.cpp.s
 .PHONY : profile\profil.cpp.s
 
+profile\profiladmin.obj: profile\profiladmin.cpp.obj
+.PHONY : profile\profiladmin.obj
+
+# target to build an object file
+profile\profiladmin.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\medimaxzut.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\medimaxzut.dir\profile\profiladmin.cpp.obj
+.PHONY : profile\profiladmin.cpp.obj
+
+profile\profiladmin.i: profile\profiladmin.cpp.i
+.PHONY : profile\profiladmin.i
+
+# target to preprocess a source file
+profile\profiladmin.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\medimaxzut.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\medimaxzut.dir\profile\profiladmin.cpp.i
+.PHONY : profile\profiladmin.cpp.i
+
+profile\profiladmin.s: profile\profiladmin.cpp.s
+.PHONY : profile\profiladmin.s
+
+# target to generate assembly for a file
+profile\profiladmin.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\medimaxzut.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\medimaxzut.dir\profile\profiladmin.cpp.s
+.PHONY : profile\profiladmin.cpp.s
+
 schedule\schedulecell.obj: schedule\schedulecell.cpp.obj
 .PHONY : schedule\schedulecell.obj
 
@@ -535,6 +583,54 @@ schedule\scheduleview.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\medimaxzut.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\medimaxzut.dir\schedule\scheduleview.cpp.s
 .PHONY : schedule\scheduleview.cpp.s
 
+store\prescriptionlist.obj: store\prescriptionlist.cpp.obj
+.PHONY : store\prescriptionlist.obj
+
+# target to build an object file
+store\prescriptionlist.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\medimaxzut.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\medimaxzut.dir\store\prescriptionlist.cpp.obj
+.PHONY : store\prescriptionlist.cpp.obj
+
+store\prescriptionlist.i: store\prescriptionlist.cpp.i
+.PHONY : store\prescriptionlist.i
+
+# target to preprocess a source file
+store\prescriptionlist.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\medimaxzut.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\medimaxzut.dir\store\prescriptionlist.cpp.i
+.PHONY : store\prescriptionlist.cpp.i
+
+store\prescriptionlist.s: store\prescriptionlist.cpp.s
+.PHONY : store\prescriptionlist.s
+
+# target to generate assembly for a file
+store\prescriptionlist.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\medimaxzut.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\medimaxzut.dir\store\prescriptionlist.cpp.s
+.PHONY : store\prescriptionlist.cpp.s
+
+store\prescriptionlistitem.obj: store\prescriptionlistitem.cpp.obj
+.PHONY : store\prescriptionlistitem.obj
+
+# target to build an object file
+store\prescriptionlistitem.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\medimaxzut.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\medimaxzut.dir\store\prescriptionlistitem.cpp.obj
+.PHONY : store\prescriptionlistitem.cpp.obj
+
+store\prescriptionlistitem.i: store\prescriptionlistitem.cpp.i
+.PHONY : store\prescriptionlistitem.i
+
+# target to preprocess a source file
+store\prescriptionlistitem.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\medimaxzut.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\medimaxzut.dir\store\prescriptionlistitem.cpp.i
+.PHONY : store\prescriptionlistitem.cpp.i
+
+store\prescriptionlistitem.s: store\prescriptionlistitem.cpp.s
+.PHONY : store\prescriptionlistitem.s
+
+# target to generate assembly for a file
+store\prescriptionlistitem.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\medimaxzut.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\medimaxzut.dir\store\prescriptionlistitem.cpp.s
+.PHONY : store\prescriptionlistitem.cpp.s
+
 store\storeitem.obj: store\storeitem.cpp.obj
 .PHONY : store\storeitem.obj
 
@@ -582,6 +678,30 @@ store\storewindow.s: store\storewindow.cpp.s
 store\storewindow.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\medimaxzut.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\medimaxzut.dir\store\storewindow.cpp.s
 .PHONY : store\storewindow.cpp.s
+
+userList\adminpanel.obj: userList\adminpanel.cpp.obj
+.PHONY : userList\adminpanel.obj
+
+# target to build an object file
+userList\adminpanel.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\medimaxzut.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\medimaxzut.dir\userList\adminpanel.cpp.obj
+.PHONY : userList\adminpanel.cpp.obj
+
+userList\adminpanel.i: userList\adminpanel.cpp.i
+.PHONY : userList\adminpanel.i
+
+# target to preprocess a source file
+userList\adminpanel.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\medimaxzut.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\medimaxzut.dir\userList\adminpanel.cpp.i
+.PHONY : userList\adminpanel.cpp.i
+
+userList\adminpanel.s: userList\adminpanel.cpp.s
+.PHONY : userList\adminpanel.s
+
+# target to generate assembly for a file
+userList\adminpanel.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\medimaxzut.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\medimaxzut.dir\userList\adminpanel.cpp.s
+.PHONY : userList\adminpanel.cpp.s
 
 userList\listitem.obj: userList\listitem.cpp.obj
 .PHONY : userList\listitem.obj
@@ -667,6 +787,9 @@ help:
 	@echo ... medimaxzut_autogen/mocs_compilation.obj
 	@echo ... medimaxzut_autogen/mocs_compilation.i
 	@echo ... medimaxzut_autogen/mocs_compilation.s
+	@echo ... message/newmessage.obj
+	@echo ... message/newmessage.i
+	@echo ... message/newmessage.s
 	@echo ... newPatient/newpatient.obj
 	@echo ... newPatient/newpatient.i
 	@echo ... newPatient/newpatient.s
@@ -682,6 +805,9 @@ help:
 	@echo ... profile/profil.obj
 	@echo ... profile/profil.i
 	@echo ... profile/profil.s
+	@echo ... profile/profiladmin.obj
+	@echo ... profile/profiladmin.i
+	@echo ... profile/profiladmin.s
 	@echo ... schedule/schedulecell.obj
 	@echo ... schedule/schedulecell.i
 	@echo ... schedule/schedulecell.s
@@ -691,12 +817,21 @@ help:
 	@echo ... schedule/scheduleview.obj
 	@echo ... schedule/scheduleview.i
 	@echo ... schedule/scheduleview.s
+	@echo ... store/prescriptionlist.obj
+	@echo ... store/prescriptionlist.i
+	@echo ... store/prescriptionlist.s
+	@echo ... store/prescriptionlistitem.obj
+	@echo ... store/prescriptionlistitem.i
+	@echo ... store/prescriptionlistitem.s
 	@echo ... store/storeitem.obj
 	@echo ... store/storeitem.i
 	@echo ... store/storeitem.s
 	@echo ... store/storewindow.obj
 	@echo ... store/storewindow.i
 	@echo ... store/storewindow.s
+	@echo ... userList/adminpanel.obj
+	@echo ... userList/adminpanel.i
+	@echo ... userList/adminpanel.s
 	@echo ... userList/listitem.obj
 	@echo ... userList/listitem.i
 	@echo ... userList/listitem.s

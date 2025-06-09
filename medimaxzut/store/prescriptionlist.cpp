@@ -16,6 +16,7 @@ PrescriptionList::~PrescriptionList()
 {
     delete ui;
 }
+/*
 void PrescriptionList::listPrescriptions(){
     auto* layout = qobject_cast<QVBoxLayout*>(ui->List->layout());
     if (!layout) {
@@ -43,3 +44,4 @@ void PrescriptionList::listPrescriptions(){
     }
     layout->addStretch();
 }
+*/

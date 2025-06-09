@@ -27,6 +27,7 @@ C:/Users/milos/Inzynieria-Oprogramowania-grupa2/medimaxzut/cmake-build-debug-vis
   C:/Program\ Files/MariaDB/MariaDB\ C++\ Connector\ 64-bit/include/mariadb/conncpp/compat/Struct.hpp \
   C:/Program\ Files/MariaDB/MariaDB\ C++\ Connector\ 64-bit/include/mariadb/conncpp/compat/XAResource.hpp \
   C:/Program\ Files/MariaDB/MariaDB\ C++\ Connector\ 64-bit/include/mariadb/conncpp/jdbccompat.hpp \
+  C:/Qt/6.9.0/msvc2022_64/include/QtCore/QVariant \
   C:/Qt/6.9.0/msvc2022_64/include/QtCore/q17memory.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtCore/q20functional.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtCore/q20iterator.h \
@@ -34,6 +35,7 @@ C:/Users/milos/Inzynieria-Oprogramowania-grupa2/medimaxzut/cmake-build-debug-vis
   C:/Qt/6.9.0/msvc2022_64/include/QtCore/q20type_traits.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtCore/q20utility.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtCore/q23utility.h \
+  C:/Qt/6.9.0/msvc2022_64/include/QtCore/qabstracteventdispatcher.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtCore/qalgorithms.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtCore/qanystringview.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtCore/qarraydata.h \
@@ -43,6 +45,7 @@ C:/Users/milos/Inzynieria-Oprogramowania-grupa2/medimaxzut/cmake-build-debug-vis
   C:/Qt/6.9.0/msvc2022_64/include/QtCore/qatomic.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtCore/qatomic_cxx11.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtCore/qbasicatomic.h \
+  C:/Qt/6.9.0/msvc2022_64/include/QtCore/qbasictimer.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtCore/qbindingstorage.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtCore/qbytearray.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtCore/qbytearrayalgorithms.h \
@@ -59,10 +62,16 @@ C:/Users/milos/Inzynieria-Oprogramowania-grupa2/medimaxzut/cmake-build-debug-vis
   C:/Qt/6.9.0/msvc2022_64/include/QtCore/qcontainerinfo.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtCore/qcontainertools_impl.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtCore/qcontiguouscache.h \
+  C:/Qt/6.9.0/msvc2022_64/include/QtCore/qcoreapplication.h \
+  C:/Qt/6.9.0/msvc2022_64/include/QtCore/qcoreapplication_platform.h \
+  C:/Qt/6.9.0/msvc2022_64/include/QtCore/qcoreevent.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtCore/qdarwinhelpers.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtCore/qdatastream.h \
+  C:/Qt/6.9.0/msvc2022_64/include/QtCore/qdeadlinetimer.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtCore/qdebug.h \
+  C:/Qt/6.9.0/msvc2022_64/include/QtCore/qelapsedtimer.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtCore/qendian.h \
+  C:/Qt/6.9.0/msvc2022_64/include/QtCore/qeventloop.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtCore/qexceptionhandling.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtCore/qflags.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtCore/qfloat16.h \
@@ -80,6 +89,7 @@ C:/Users/milos/Inzynieria-Oprogramowania-grupa2/medimaxzut/cmake-build-debug-vis
   C:/Qt/6.9.0/msvc2022_64/include/QtCore/qlatin1stringview.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtCore/qline.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtCore/qlist.h \
+  C:/Qt/6.9.0/msvc2022_64/include/QtCore/qlocale.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtCore/qlogging.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtCore/qmalloc.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtCore/qmap.h \
@@ -89,6 +99,7 @@ C:/Users/milos/Inzynieria-Oprogramowania-grupa2/medimaxzut/cmake-build-debug-vis
   C:/Qt/6.9.0/msvc2022_64/include/QtCore/qmetatype.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtCore/qminmax.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtCore/qnamespace.h \
+  C:/Qt/6.9.0/msvc2022_64/include/QtCore/qnativeinterface.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtCore/qnumeric.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtCore/qobject.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtCore/qobject_impl.h \
@@ -161,8 +172,11 @@ C:/Users/milos/Inzynieria-Oprogramowania-grupa2/medimaxzut/cmake-build-debug-vis
   C:/Qt/6.9.0/msvc2022_64/include/QtGui/qfontinfo.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtGui/qfontmetrics.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtGui/qfontvariableaxis.h \
+  C:/Qt/6.9.0/msvc2022_64/include/QtGui/qguiapplication.h \
+  C:/Qt/6.9.0/msvc2022_64/include/QtGui/qguiapplication_platform.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtGui/qicon.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtGui/qimage.h \
+  C:/Qt/6.9.0/msvc2022_64/include/QtGui/qinputmethod.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtGui/qkeysequence.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtGui/qpaintdevice.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtGui/qpalette.h \
@@ -178,20 +192,31 @@ C:/Users/milos/Inzynieria-Oprogramowania-grupa2/medimaxzut/cmake-build-debug-vis
   C:/Qt/6.9.0/msvc2022_64/include/QtGui/qtransform.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtGui/qwindowdefs.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtGui/qwindowdefs_win.h \
+  C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/QApplication \
+  C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/QMainWindow \
   C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/QMessageBox \
+  C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/QPushButton \
   C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/QVBoxLayout \
   C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/QWidget \
+  C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/qabstractbutton.h \
+  C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/qapplication.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/qboxlayout.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/qdialog.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/qdialogbuttonbox.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/qgridlayout.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/qlayout.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/qlayoutitem.h \
+  C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/qmainwindow.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/qmessagebox.h \
+  C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/qpushbutton.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/qsizepolicy.h \
+  C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/qtabwidget.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/qtwidgets-config.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/qtwidgetsexports.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/qtwidgetsglobal.h \
   C:/Qt/6.9.0/msvc2022_64/include/QtWidgets/qwidget.h \
   C:/Users/milos/Inzynieria-Oprogramowania-grupa2/medimaxzut/baza.h \
+  C:/Users/milos/Inzynieria-Oprogramowania-grupa2/medimaxzut/mainWindow/mainwindow.h \
+  C:/Users/milos/Inzynieria-Oprogramowania-grupa2/medimaxzut/mainWindow/navibutton.h \
+  C:/Users/milos/Inzynieria-Oprogramowania-grupa2/medimaxzut/mainWindow/ui_navibutton.h \
   C:/Users/milos/Inzynieria-Oprogramowania-grupa2/medimaxzut/session.h
